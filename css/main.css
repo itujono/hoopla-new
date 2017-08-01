@@ -8,6 +8,7 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   font-family: "GothamRoundedMedium", Helvetica, sans-serif;
+  font-size: 14px;
 }
 
 h1, h2, h3, h4, h5, h6, p, a {
@@ -16,6 +17,14 @@ h1, h2, h3, h4, h5, h6, p, a {
 
 a {
   text-decoration: none;
+}
+
+ul {
+  padding-left: 0;
+}
+
+li {
+  list-style-type: none;
 }
 
 .container {
@@ -98,6 +107,13 @@ header nav li a:hover {
 
 main {
   grid-area: main;
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  grid-template-rows: 3fr 1fr 1fr;
+}
+
+.card .card-content img {
+  width: 100%;
 }
 
 aside {
@@ -106,4 +122,41 @@ aside {
 
 footer {
   grid-area: footer;
+  display: block;
+}
+
+footer .main-footer {
+  background-color: #e7e7e7;
+  padding-top: 20px;
+  margin: 0 auto;
+  text-align: center;
+  min-height: 180px;
+}
+
+footer .main-footer .social {
+  margin: 0;
+}
+
+footer .main-footer .social li {
+  display: inline-block;
+  margin-right: 1.6em;
+}
+
+footer .copyright {
+  padding: 0 3em;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  color: white;
+  min-height: 60px;
+  background-color: #9d6ad8;
 }
