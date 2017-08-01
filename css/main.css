@@ -61,7 +61,7 @@ header .main-logo {
 }
 
 header nav {
-  padding: 0 3em;
+  padding: 0 5em;
   min-height: 100px;
   display: -webkit-box;
   display: -webkit-flex;
@@ -79,7 +79,21 @@ header nav {
 
 header nav li {
   list-style-type: none;
-  margin-right: 20px;
+}
+
+header nav li a {
+  padding: 8px 12px;
+  border-radius: 7px;
+}
+
+header nav li a.active {
+  background-color: #9d6ad8;
+  color: white;
+}
+
+header nav li a:hover {
+  background-color: #96d019;
+  color: white;
 }
 
 main {
