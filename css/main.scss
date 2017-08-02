@@ -467,18 +467,19 @@ footer {
 }
 
 #about main {
-    grid-template-columns: 1fr;
-    grid-template-rows: repeat(3, 1fr);
+    grid-template-columns: 1fr 1fr;
+    // grid-template-rows: repeat(3, 1fr);
     padding: 0 2em;
 }
 
-.image { /*Kind of helper class*/
+.image { /* Kind of helper class */
     img {
         width: 100%;
     }
 }
 
 .first {
+    grid-column: 1/3;
     display: flex;
     > div:first-child {
         flex: 2;
@@ -488,6 +489,7 @@ footer {
             > div {
                 padding: 15px;
                 background-color: white;
+                border: 1px solid #ddd;
                 border-radius: 7px;
                 margin-right: 10px;
                 position: relative;
@@ -536,5 +538,15 @@ footer {
     }
     .image {
         flex: 1;
+    }
+}
+
+.second {
+    @include flexCenter;
+    .image {
+        max-width: 140px;
+    }
+    > div:first-child {
+
     }
 }
