@@ -601,7 +601,6 @@ footer .copyright {
 
 #about main {
   grid-template-columns: 1fr 1fr;
-  padding: 0 2em;
 }
 
 .image {
@@ -618,6 +617,8 @@ footer .copyright {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  padding: 0 3em;
+  margin-bottom: 2em;
 }
 
 .first > div:first-child {
@@ -694,7 +695,7 @@ footer .copyright {
 }
 
 .first > div:first-child p {
-  margin-bottom: 30px;
+  margin-bottom: 3em;
   line-height: 1.6;
 }
 
@@ -703,6 +704,16 @@ footer .copyright {
   -webkit-flex: 1;
   -ms-flex: 1;
   flex: 1;
+}
+
+.second, .third {
+  padding: 25px;
+}
+
+.second h3, .third h3 {
+  font-size: 3em;
+  margin-bottom: 10px;
+  color: #96d019;
 }
 
 .second {
@@ -718,8 +729,69 @@ footer .copyright {
   -webkit-align-items: center;
   -ms-flex-align: center;
   align-items: center;
+  -webkit-box-align: start;
+  -webkit-align-items: flex-start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+  background-color: #9d6ad8;
+  min-height: 300px;
+}
+
+.second h3 {
+  margin-top: 0;
+}
+
+.second ul {
+  margin-bottom: 2em;
 }
 
 .second .image {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
   max-width: 140px;
+  padding-right: 4em;
+  position: relative;
+  left: -25px;
+}
+
+.second .image img {
+  -webkit-transform: rotate(24deg);
+  -ms-transform: rotate(24deg);
+  transform: rotate(24deg);
+}
+
+.second > div:last-child {
+  -webkit-box-flex: 3;
+  -webkit-flex: 3;
+  -ms-flex: 3;
+  flex: 3;
+}
+
+.second > div:last-child li {
+  list-style-type: initial;
+  margin-bottom: 10px;
+  color: white;
+  letter-spacing: 1px;
+}
+
+.third {
+  background: url("../img/kid-laughing.jpg") center;
+}
+
+.third > div:last-child {
+  width: 60%;
+  float: right;
+}
+
+.third > div:last-child h3 {
+  margin-top: 0;
+  color: #3d3b54;
+  margin-bottom: 10px;
+}
+
+.third > div:last-child p {
+  line-height: 1.6;
+  margin-bottom: 25px;
 }
