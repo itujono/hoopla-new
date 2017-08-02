@@ -1,0 +1,95 @@
+
+// Fonts
+$fontDefault: 'GothamRoundedMedium', Helvetica, sans-serif;
+$fontBold: 'GothamRoundedBold', Helvetica, sans-serif;
+$fontSize: 14px;
+$fontSmall: 12px;
+
+// Colors
+$colorH4: #3d3b54; $softBlue: #dff0f7; $softPurple: #e0d0e2; $softPink: #fbdfdb; $grey: #ddd; $greyBody: #f9f9f9; $textBlue: #3e95cc;
+$coolPink: #ffb3da; $coolBlue: #c3e8ff; $coolPurple: #9d6ad8; $coolGrey: #e0e0e0; $coolGreen: #96d019; $coolRed: #EA624C; $darkBlue: #12292f;
+
+$boxShadow: 0 12px 15px 0 rgba(0, 0, 0, 0.09), 0 17px 50px 0 rgba(0, 0, 0, 0.1);
+$paddingPanel: 0 10px;
+$transitionEase: all .3s ease;
+
+
+
+
+@mixin recentAndCommented {
+    grid-column: 1/5;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 30px minmax(80px, 220px);
+    grid-gap: 15px;
+    margin-bottom: 20px;
+}
+
+@mixin panelContent {
+    flex: 3;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    overflow: hidden;
+    background-color: $softPink;
+    border-radius: 7px 7px 0 0;
+}
+
+@mixin beforeH4 {
+    content: '';
+    background: url(../img/bird.png) center;
+    background-size: 30px;
+    background-repeat: no-repeat;
+    width: 40px;
+    height: 50px;
+    position: absolute;
+    left: -10px; top: -15px;
+}
+
+@mixin flexCenter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin cardDefault {
+    background-color: white;
+    // border: 2px solid #eee;
+    border-bottom: 3px solid #ddd;
+    display: flex;
+    flex-direction: column;
+    font-size: $fontSmall;
+    transition: $transitionEase;
+}
+
+@mixin panelBottomCard {
+    flex: 1;
+    border-radius: 0 0 7px 7px;
+    // border-top: 2px solid #eee;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+@mixin panelBottomH3 {
+    margin-bottom: 5px;
+    margin-top: 0;
+    color: $colorH4;
+}
+
+@mixin hoverCard {
+    box-shadow: $boxShadow;
+    border: transparent;
+    transform: translateY(-5px);
+}
+
+@mixin hoverPanelBottomCard {
+    &:hover .panel-bottom {
+        background-color: $coolGreen;
+        border-top: transparent;
+        border-bottom: 2px solid darken($coolGreen, 8%);
+    }
+    &:hover .panel-bottom h3, &:hover .panel-bottom small {
+        color: white;
+    }
+}

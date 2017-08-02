@@ -540,13 +540,39 @@ footer .main-footer {
   min-height: 220px;
 }
 
+footer .main-footer h4 {
+  margin-bottom: 20px;
+}
+
 footer .main-footer .social {
   margin: 0;
 }
 
 footer .main-footer .social li {
   display: inline-block;
-  margin-right: 1.6em;
+  margin-right: 1.2em;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #9d6ad8;
+}
+
+footer .main-footer .social li:hover {
+  -webkit-transform: translateY(-3px);
+  -ms-transform: translateY(-3px);
+  transform: translateY(-3px);
+}
+
+footer .main-footer .social li a {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  color: white;
+  line-height: 3;
+}
+
+footer .main-footer .social li i {
+  font-size: 14px;
 }
 
 footer .copyright {
