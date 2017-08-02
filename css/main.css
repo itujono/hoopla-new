@@ -593,3 +593,113 @@ footer .copyright {
   min-height: 60px;
   background-color: #9d6ad8;
 }
+
+#about {
+  grid-template-columns: 1fr;
+  grid-template-areas: "header header" "main main" "footer footer";
+}
+
+#about main {
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(3, 1fr);
+  padding: 0 2em;
+}
+
+.image {
+  /*Kind of helper class*/
+}
+
+.image img {
+  width: 100%;
+}
+
+.first {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.first > div:first-child {
+  -webkit-box-flex: 2;
+  -webkit-flex: 2;
+  -ms-flex: 2;
+  flex: 2;
+}
+
+.first > div:first-child .why-us {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.first > div:first-child .why-us > div {
+  padding: 15px;
+  background-color: white;
+  border-radius: 7px;
+  margin-right: 10px;
+  position: relative;
+  -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.first > div:first-child .why-us > div:hover {
+  -webkit-box-shadow: 0 12px 15px 0 rgba(0, 0, 0, 0.09), 0 17px 50px 0 rgba(0, 0, 0, 0.1);
+  box-shadow: 0 12px 15px 0 rgba(0, 0, 0, 0.09), 0 17px 50px 0 rgba(0, 0, 0, 0.1);
+  -webkit-transform: translateY(-3px);
+  -ms-transform: translateY(-3px);
+  transform: translateY(-3px);
+}
+
+.first > div:first-child .why-us > div span {
+  position: absolute;
+  right: 0;
+  top: -20px;
+  display: inline-block;
+  text-align: center;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: #9d6ad8;
+}
+
+.first > div:first-child .why-us > div span i {
+  font-size: 2em;
+  line-height: 2.2;
+  color: white;
+}
+
+.first > div:first-child .why-us > div h4 {
+  color: #96d019;
+  font-size: 1.6rem;
+  margin: 0 0 10px 0;
+  padding-top: 20px;
+}
+
+.first > div:first-child .why-us > div p {
+  line-height: 1.6;
+}
+
+.first > div:first-child h2 {
+  font-size: 3em;
+  margin-bottom: 10px;
+  color: #96d019;
+}
+
+.first > div:first-child p {
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
+
+.first .image {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}

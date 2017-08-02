@@ -452,3 +452,89 @@ footer {
         background-color: $coolPurple;
     }
 }
+
+
+
+
+
+
+
+// Oke beklah kita meluncur ke About heheh
+
+#about {
+    grid-template-columns: 1fr;
+    grid-template-areas: "header header" "main main" "footer footer"
+}
+
+#about main {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, 1fr);
+    padding: 0 2em;
+}
+
+.image { /*Kind of helper class*/
+    img {
+        width: 100%;
+    }
+}
+
+.first {
+    display: flex;
+    > div:first-child {
+        flex: 2;
+        .why-us {
+            display: flex;
+            justify-content: space-between;
+            > div {
+                padding: 15px;
+                background-color: white;
+                border-radius: 7px;
+                margin-right: 10px;
+                position: relative;
+                transition: $transitionEase;
+                &:hover {
+                    box-shadow: $boxShadow;
+                    transform: translateY(-3px);
+                }
+
+                span {
+                    position: absolute;
+                    right: 0;
+                    top: -20px;
+                    display: inline-block;
+                    text-align: center;
+                    width: 60px;
+                    height: 60px;
+                    border-radius: 50%;
+                    background-color: $coolPurple;
+                    i {
+                        font-size: 2em;
+                        line-height: 2.2;
+                        color: white;
+                    }
+                }
+                h4 {
+                    color: $coolGreen;
+                    font-size: 1.6rem;
+                    margin: 0 0 10px 0;
+                    padding-top: 20px;
+                }
+                p {
+                    line-height: $lineHeightP;
+                }
+            }
+        }
+        h2 {
+            font-size: 3em;
+            margin-bottom: 10px;
+            color: $coolGreen;
+        }
+        p {
+            margin-bottom: 30px;
+            line-height: $lineHeightP;
+        }
+    }
+    .image {
+        flex: 1;
+    }
+}
