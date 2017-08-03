@@ -909,8 +909,9 @@ footer .copyright {
 
 #trivia main {
   grid-template-columns: 1fr;
-  grid-template-rows: 1fr;
-  padding: 0 3em;
+  grid-template-rows: -webkit-min-content;
+  grid-template-rows: min-content;
+  padding: 0 0 0 3em;
 }
 
 .wrapper {
@@ -930,6 +931,12 @@ footer .copyright {
   margin-bottom: 2em;
 }
 
+#trivia .card:hover img {
+  -webkit-transform: initial;
+  -ms-transform: initial;
+  transform: initial;
+}
+
 #trivia .card .card-content {
   height: auto;
 }
@@ -938,11 +945,79 @@ footer .copyright {
   max-width: initial;
 }
 
+#trivia .card .card-bottom {
+  padding: 15px;
+  padding-bottom: 25px;
+  background-color: white;
+}
+
 #trivia .card .card-bottom h4 {
+  font-size: 1.2em;
   margin-top: 0;
   margin-bottom: 10px;
 }
 
 #trivia .card .card-bottom p {
+  font-size: 12px;
   line-height: 1.6;
+  margin-bottom: 1.6em;
+}
+
+#trivia .card .card-bottom span {
+  color: #96d019;
+}
+
+.recent-post, .popular-post {
+  margin-bottom: 2em;
+}
+
+.recent-post > div, .popular-post > div {
+  position: relative;
+  padding: 15px 20px;
+  border: 1px solid #ddd;
+  border-radius: 7px;
+  margin-bottom: 1.8em;
+}
+
+.recent-post > div .cat, .popular-post > div .cat {
+  position: absolute;
+  top: -12px;
+  padding: 4px 8px;
+  border-radius: 7px;
+  background-color: #9d6ad8;
+  color: white;
+  font-size: 12px;
+}
+
+.recent-post > div .info a:hover h5, .popular-post > div .info a:hover h5 {
+  color: #96d019;
+}
+
+.recent-post > div .info h5, .popular-post > div .info h5 {
+  font-size: 1.2em;
+  margin: 10px 0 15px 0;
+}
+
+.recent-post > div .info .date, .popular-post > div .info .date {
+  color: #999;
+}
+
+.recent-post > h4, .popular-post > h4 {
+  margin: 0 0 25px 0;
+  position: relative;
+  padding-left: 2em;
+  font-size: 1.3rem;
+}
+
+.recent-post > h4:before, .popular-post > h4:before {
+  content: '';
+  background: url(../img/bird.png) center;
+  background-size: 30px;
+  background-repeat: no-repeat;
+  width: 40px;
+  height: 50px;
+  position: absolute;
+  left: -10px;
+  top: -15px;
+  top: -10px;
 }

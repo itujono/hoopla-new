@@ -16,6 +16,13 @@ $transitionEase: all .3s ease;
 
 
 
+@mixin heading4Section {
+    margin: 0 0 25px 0;
+    position: relative;
+    padding-left: 2em;
+    font-size: 1.3rem;
+}
+
 @mixin marginHeading {
     margin-top: 0;
     margin-bottom: 10px;

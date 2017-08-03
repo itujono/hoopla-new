@@ -678,8 +678,8 @@ footer {
 
 #trivia main {
     grid-template-columns: 1fr;
-    grid-template-rows: 1fr;
-    padding: 0 3em;
+    grid-template-rows: min-content;
+    padding: 0 0 0 3em;
 }
 
 .wrapper {
@@ -690,6 +690,9 @@ footer {
 #trivia .card {
     flex-basis: 31%;
     margin-bottom: 2em;
+    &:hover img {
+        transform: initial;
+    }
     .card-content {
         height: auto;
         img {
@@ -697,11 +700,59 @@ footer {
         }
     }
     .card-bottom {
+        padding: 15px;
+        padding-bottom: 25px;
+        background-color: white;
         h4 {
+            font-size: 1.2em;
             @include marginHeading;
         }
         p {
+            font-size: 12px;
             line-height: $lineHeightP;
+            margin-bottom: 1.6em;
+        }
+        span {
+            color: $coolGreen;
+        }
+    }
+}
+
+.recent-post, .popular-post {
+    margin-bottom: 2em;
+    > div {
+        position: relative;
+        padding: 15px 20px;
+        border: 1px solid #ddd;
+        border-radius: 7px;
+        margin-bottom: 1.8em;
+        .cat {
+            position: absolute;
+            top: -12px;
+            padding: 4px 8px;
+            border-radius: 7px;
+            background-color: $coolPurple;
+            color: white;
+            font-size: 12px;
+        }
+        .info {
+            a:hover h5 {
+                color: $coolGreen;
+            }
+            h5 {
+                font-size: 1.2em;
+                margin: 10px 0 15px 0;
+            }
+            .date {
+                color: #999;
+            }
+        }
+    }
+    > h4 {
+        @include heading4Section;
+        &:before {
+            @include beforeH4;
+            top: -10px;
         }
     }
 }
