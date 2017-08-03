@@ -836,13 +836,15 @@ footer .copyright {
 }
 
 .fourth .satelite {
-  background: url(../img/satellite.png) center;
+  background: url("../img/satellite.png") center;
   background-size: cover;
   position: absolute;
   width: 60px;
   height: 60px;
   top: -20px;
   right: 20px;
+  -webkit-animation: hover 2s ease infinite;
+  animation: hover 2s ease infinite;
 }
 
 .fourth .satelite.two {
@@ -853,4 +855,94 @@ footer .copyright {
   -webkit-transform: rotate(45deg);
   -ms-transform: rotate(45deg);
   transform: rotate(45deg);
+  -webkit-animation: hover 2s ease .5s infinite;
+  animation: hover 2s ease .5s infinite;
+}
+
+@-webkit-keyframes hover {
+  0% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    -webkit-filter: brightness(1);
+    filter: brightness(1);
+  }
+  50% {
+    -webkit-transform: translateY(8px);
+    transform: translateY(8px);
+    -webkit-filter: brightness(1.3);
+    filter: brightness(1.3);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    -webkit-filter: brightness(1);
+    filter: brightness(1);
+  }
+}
+
+@keyframes hover {
+  0% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    -webkit-filter: brightness(1);
+    filter: brightness(1);
+  }
+  50% {
+    -webkit-transform: translateY(8px);
+    transform: translateY(8px);
+    -webkit-filter: brightness(1.3);
+    filter: brightness(1.3);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    -webkit-filter: brightness(1);
+    filter: brightness(1);
+  }
+}
+
+#trivia {
+  grid-template-columns: 3fr 1fr;
+  grid-template-areas: "header header" "main sidebar" "footer footer";
+  grid-gap: 0 20px;
+}
+
+#trivia main {
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  padding: 0 3em;
+}
+
+.wrapper {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+#trivia .card {
+  -webkit-flex-basis: 31%;
+  -ms-flex-preferred-size: 31%;
+  flex-basis: 31%;
+  margin-bottom: 2em;
+}
+
+#trivia .card .card-content {
+  height: auto;
+}
+
+#trivia .card .card-content img {
+  max-width: initial;
+}
+
+#trivia .card .card-bottom h4 {
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+#trivia .card .card-bottom p {
+  line-height: 1.6;
 }
