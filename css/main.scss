@@ -910,6 +910,11 @@ footer {
 .topics {
     max-width: 250px;
     margin-right: 15px;
+    > h2 {
+        font-size: 1.2em;
+        letter-spacing: 1px;
+        color: #999;
+    }
     .qa {
         position: relative;
         padding: 10px 15px;
@@ -939,6 +944,53 @@ footer {
             line-height: $lineHeightP;
             font-size: 12px;
             color: #999;
+        }
+    }
+}
+
+
+
+
+
+
+
+// Maaak serius dah masuk Contact? Beuuuh!
+
+#contact {
+    grid-template-columns: 1fr;
+    grid-template-areas: "header header" "main main" "footer footer";
+    main {
+        width: 80%;
+        margin: 0 auto;
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.left > div {
+    display: flex;
+    > div:first-child {
+        width: 70px;
+        height: 70px;
+        border-radius: 50%;
+        margin-right: 20px;
+        background-color: $coolGreen;
+        @include flexCenter;
+        span {
+            display: inline-block;
+            font-size: 1.6em;
+            color: white;
+        }
+    }
+    > div:last-child {
+        h5 {
+            @include marginHeading;
+            margin-bottom: 5px;
+            font-size: 14px;
+            color: #96d019;
+        }
+        p {
+            margin: 0;
+            line-height: $lineHeightP;
         }
     }
 }
