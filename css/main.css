@@ -257,7 +257,9 @@ main {
 }
 
 .main-news .cta .image {
-  margin-bottom: 20px;
+  margin-bottom: 10px;
+  width: 200px;
+  padding-top: 20px;
 }
 
 .main-news .cta h4 {
@@ -706,11 +708,11 @@ footer .copyright {
   flex: 1;
 }
 
-.second, .third {
+.second, .third, .fourth {
   padding: 25px;
 }
 
-.second h3, .third h3 {
+.second h3, .third h3, .fourth h3 {
   font-size: 3em;
   margin-bottom: 10px;
   color: #96d019;
@@ -794,4 +796,61 @@ footer .copyright {
 .third > div:last-child p {
   line-height: 1.6;
   margin-bottom: 25px;
+}
+
+.fourth {
+  grid-column: 1/3;
+  position: relative;
+  background: url("../img/space.png") center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: #69e46d;
+  text-align: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.fourth .captioner {
+  width: 50%;
+}
+
+.fourth .captioner h3 {
+  color: aliceblue;
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.fourth .captioner p {
+  margin-bottom: 2.4em;
+  line-height: 1.6;
+}
+
+.fourth .satelite {
+  background: url(../img/satellite.png) center;
+  background-size: cover;
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  top: -20px;
+  right: 20px;
+}
+
+.fourth .satelite.two {
+  top: initial;
+  right: initial;
+  bottom: -20px;
+  left: 20px;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
 }
