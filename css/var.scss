@@ -16,6 +16,44 @@ $transitionEase: all .3s ease;
 
 
 
+
+
+
+@mixin socialIcons {
+    display: inline-block;
+    margin-right: 1.2em;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: $coolPurple;
+    &:hover {
+        transform: translateY(-3px);
+    }
+    a {
+        display: inline-block;
+        width: 40px;
+        height: 40px;
+        color: white;
+        line-height: 3;
+    }
+    i {
+        font-size: 14px;
+    }
+}
+
+@mixin btnHoopla {
+    padding: 8px 12px;
+    background-color: $coolGreen;
+    color: white;
+    border-radius: 50px;
+    margin-top: 0;
+    &:hover {
+        background-color: darken($coolGreen, 10%);
+        margin-top: -1px;
+        box-shadow: $boxShadow;
+    }
+}
+
 @mixin heading4Section {
     margin: 0 0 25px 0;
     position: relative;

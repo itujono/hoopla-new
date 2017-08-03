@@ -756,3 +756,90 @@ footer {
         }
     }
 }
+
+
+
+
+
+
+// Wah hebat tiba2 udah di Trivia Post aja heheh
+
+#trivia-post {
+    grid-template-columns: 1fr;
+}
+
+#trivia-post main {
+    width: 75%;
+    margin: 0 auto;
+    padding: 0 3em;
+    grid-template-columns: 1fr;
+    grid-template-rows: max-content;
+}
+
+.trivia-post {
+    display: grid;
+    grid-gap: 0 30px;
+    grid-template-columns: 1fr 4fr;
+    .meta {
+        .image {
+            width: 120px;
+            height: 120px;
+            img {
+                border-radius: 50%;
+            }
+        }
+        p a {
+            color: $coolGreen;
+        }
+        .tag {
+            li {
+                display: inline-block;
+                margin-bottom: 1em;
+            }
+            a {
+                @include btnHoopla;
+                padding: 5px 10px;
+                font-size: 10px;
+            }
+        }
+    }
+    .post {
+        h2 {
+            @include marginHeading;
+            font-size: 2em;
+        }
+        > span {
+            color: $coolGreen;
+        }
+        .main-post {
+            line-height: $lineHeightP;
+            padding-bottom: 2em;
+            margin: 2em 0;
+        }
+        .share-post {
+            li {
+                @include socialIcons;
+                text-align: center;
+            }
+        }
+    }
+    .similar-post {
+        grid-column: 2/3;
+        margin-bottom: 3em;
+        .card {
+            flex-basis: 28%;
+            padding: 15px;
+            border: 1px solid #ddd;
+            h4 {
+                @include marginHeading;
+            }
+        }
+        > h4 {
+            position: relative;
+            padding-left: 2.4em;
+            &:before {
+                @include beforeH4;
+            }
+        }
+    }
+}

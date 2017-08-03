@@ -50,23 +50,28 @@
             </header>
 
             <main>
-                <div class="trivia-post">
+                <section class="trivia-post">
                     <div class="meta">
                         <div class="image">
                             <img src="img/user.jpg" alt="Admin">
                         </div>
                         <p class="author">by <a href="#">Admin 2</a></p>
                         <div class="tag">
-                            <a href="#" class="tag">#girls</a>
-                            <a href="#" class="tag">#toys</a>
-                            <a href="#" class="tag">#new</a>
-                            <a href="#" class="tag">#keren</a>
-                            <a href="#" class="tag">#flex</a>
+                            <li><a href="#" class="tag">#girls</a></li>
+                            <li><a href="#" class="tag">#toys</a></li>
+                            <li><a href="#" class="tag">#new</a></li>
+                            <li><a href="#" class="tag">#keren</a></li>
+                            <li><a href="#" class="tag">#flex</a></li>
                         </div>
                     </div>
                     <div class="post">
                         <h2>Makan Apa Supaya Kenyang Banget Besok Lusa?</h2>
-                        <span class="date"><i class="fa fa-clock-o"></i> 16th, June 2017</span>/ &nbsp; <span class="cat"><i class="fa fa-file-text-o"></i> Toys &amp; Kids</span>
+                        <span class="date">
+                            <i class="fa fa-clock-o"></i> 16th, June 2017
+                        </span>/ &nbsp;
+                        <span class="cat">
+                            <i class="fa fa-file-text-o"></i> Toys &amp; Kids
+                        </span>
                         <p class="main-post">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. <br><br>
                         Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
                         </p>
@@ -80,30 +85,30 @@
                             </ul>
                         </div>
                     </div>
-                </div>
-                <section class="similar-post">
-                    <h3>Postingan Sejenis</h3>
-                    <div>
-                        <div class="card">
-                            <h4>Kenapa Kalo Begadang Badan Linu?</h4>
-                            <span><i class="fa fa-clock-o"></i> August 15, 2017</span>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut.</p>
-                            <a href="#" class="btn-hoopla">Baca sekarang</a>
-                        </div>
-                        <div class="card">
-                            <h4>Pasti Susah Kalo Mau Beli Tapi Gak Punya Dana.</h4>
-                            <span><i class="fa fa-clock-o"></i> August 15, 2017</span>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.</p>
-                            <a href="#" class="btn-hoopla">Baca sekarang</a>
-                        </div>
-                        <div class="card">
-                            <h4>Kenapa Anak Nggak Mau Minum Susu di Rumah Tetangga?</h4>
-                            <span><i class="fa fa-clock-o"></i> August 15, 2017</span>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam quis.</p>
-                            <a href="#" class="btn-hoopla">Baca sekarang</a>
+                    <div class="similar-post">
+                        <h4>Postingan Sejenis</h4>
+                        <div class="wrapper">
+                            <div class="card">
+                                <h4>Kenapa Kalo Begadang Badan Linu?</h4>
+                                <span><i class="fa fa-clock-o"></i> August 15, 2017</span>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut.</p>
+                                <a href="#" class="btn-hoopla">Baca sekarang</a>
+                            </div>
+                            <div class="card">
+                                <h4>Pasti Susah Kalo Mau Beli Tapi Gak Punya Dana.</h4>
+                                <span><i class="fa fa-clock-o"></i> August 15, 2017</span>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.</p>
+                                <a href="#" class="btn-hoopla">Baca sekarang</a>
+                            </div>
+                            <div class="card">
+                                <h4>Kenapa Anak Nggak Mau Minum Susu di Rumah Tetangga?</h4>
+                                <span><i class="fa fa-clock-o"></i> August 15, 2017</span>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam quis.</p>
+                                <a href="#" class="btn-hoopla">Baca sekarang</a>
+                            </div>
                         </div>
                     </div>
-                </div>
+                </section>
             </main>
 
             <footer>
@@ -129,6 +134,14 @@
         </div>
 
 
+        <script src="https://unpkg.com/tippy.js@1.2.0/dist/tippy.min.js"></script>
         <script src="js/main.js"></script>
+
+        <script type="text/javascript">
+            tippy('.social a', {
+                followCursor: true,
+                position: 'bottom'
+            });
+        </script>
     </body>
 </html>
