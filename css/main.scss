@@ -209,7 +209,9 @@ main {
         min-height: 120px;
         position: relative;
         .image {
-            margin-bottom: 20px;
+            margin-bottom: 10px;
+            width: 200px;
+            padding-top: 20px;
         }
         h4 {
             font-size: 1.2em;
