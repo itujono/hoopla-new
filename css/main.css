@@ -1210,3 +1210,67 @@ footer .copyright {
   left: -10px;
   top: -15px;
 }
+
+#tc {
+  grid-template-areas: "header header" "main main" "footer footer";
+  grid-template-columns: 1fr;
+}
+
+#tc main {
+  grid-template-columns: 1fr;
+  width: 80%;
+  margin: 0 auto;
+}
+
+#tc .wrapper {
+  padding-bottom: 4em;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  max-height: 2000px;
+}
+
+.topics {
+  max-width: 250px;
+  margin-right: 15px;
+}
+
+.topics .qa {
+  position: relative;
+  padding: 10px 15px;
+  border: 1px solid #ddd;
+  border-radius: 7px;
+  margin-bottom: 1.2em;
+}
+
+.topics .qa:hover {
+  background-color: white;
+  border-color: transparent;
+}
+
+.topics .qa .head h3 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  margin-top: 25px;
+}
+
+.topics .qa .head span {
+  padding: 5px 10px;
+  border-radius: 7px;
+  background-color: #96d019;
+  color: white;
+  position: absolute;
+  top: -5px;
+  right: -7px;
+}
+
+.topics .qa p {
+  line-height: 1.6;
+  font-size: 12px;
+  color: #999;
+}
