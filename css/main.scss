@@ -771,9 +771,18 @@ footer {
 #trivia-post main {
     width: 75%;
     margin: 0 auto;
-    padding: 0 3em;
+    padding: 0 0 0 3em;
     grid-template-columns: 1fr;
     grid-template-rows: max-content;
+}
+
+#trivia-post .card {
+    flex-basis: 28%;
+    padding: 15px;
+    border: 1px solid #ddd;
+    h4 {
+        @include marginHeading;
+    }
 }
 
 .trivia-post {
@@ -791,10 +800,13 @@ footer {
         p a {
             color: $coolGreen;
         }
-        .tag {
+        .tags {
             li {
                 display: inline-block;
                 margin-bottom: 1em;
+                &:hover {
+                    transform: translateY(-3px);
+                }
             }
             a {
                 @include btnHoopla;
@@ -804,6 +816,7 @@ footer {
         }
     }
     .post {
+        margin-bottom: 6em;
         h2 {
             @include marginHeading;
             font-size: 2em;
@@ -815,28 +828,53 @@ footer {
             line-height: $lineHeightP;
             padding-bottom: 2em;
             margin: 2em 0;
+            &::first-letter {
+                float: left;
+                font-size: 2.8em;
+                background-color: #9d6ad8;
+                padding: 0 15px;
+                border-radius: 7px;
+                color: white;
+                margin: 0 15px 0 0;
+            }
         }
         .share-post {
+            padding-left: 1.6em;
+            border-left: 6px solid $coolGreen;
             li {
                 @include socialIcons;
                 text-align: center;
+            }
+            h4 {
+                @include marginHeading;
             }
         }
     }
     .similar-post {
         grid-column: 2/3;
         margin-bottom: 3em;
-        .card {
-            flex-basis: 28%;
-            padding: 15px;
-            border: 1px solid #ddd;
-            h4 {
-                @include marginHeading;
+        .wrapper {
+            flex-wrap: initial;
+            .card {
+                background-color: white;
+                h4 {
+                    font-size: 1.2em;
+                }
+                span {
+                    color: $coolGreen;
+                }
+                p {
+                    margin-bottom: 1.8em;
+                    line-height: $lineHeightP;
+                    font-size: 12px;
+                    color: #999;
+                }
             }
         }
         > h4 {
             position: relative;
-            padding-left: 2.4em;
+            padding-left: 2em;
+            font-size: 1.8em;
             &:before {
                 @include beforeH4;
             }
