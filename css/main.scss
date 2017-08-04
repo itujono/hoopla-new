@@ -112,6 +112,7 @@ header {
                 &.active {
                     background-color: $coolPurple;
                     color: white;
+                    border-bottom: 3px solid $coolGreen;
                     box-shadow: $boxShadow;
                 }
                 &:hover {
@@ -1004,6 +1005,9 @@ footer {
                 line-height: $lineHeightP;
             }
         }
+    }
+    .cta-contact {
+        margin-bottom: -40px;
     }
 }
 
