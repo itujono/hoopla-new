@@ -119,6 +119,7 @@ header {
                     background-color: $coolGreen;
                     color: white;
                     box-shadow: $boxShadowInset;
+                    text-shadow: $textShadow;
                 }
             }
             .children {
@@ -682,12 +683,12 @@ footer {
     grid-template-columns: 1fr;
     grid-template-rows: min-content;
     padding: 0 0 0 3em;
+    .wrapper {
+        display: flex;
+        flex-wrap: wrap;
+    }
 }
 
-.wrapper {
-    display: flex;
-    flex-wrap: wrap;
-}
 
 #trivia .card {
     flex-basis: 31%;

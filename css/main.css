@@ -151,6 +151,7 @@ header nav li a:hover {
   color: white;
   -webkit-box-shadow: inset -1px 5px 12px 0px rgba(0, 0, 0, 0.21);
   box-shadow: inset -1px 5px 12px 0px rgba(0, 0, 0, 0.21);
+  text-shadow: 0 5px 12px rgba(0, 0, 0, 0.4);
 }
 
 header nav li .children {
@@ -917,7 +918,7 @@ footer .copyright {
   padding: 0 0 0 3em;
 }
 
-.wrapper {
+#trivia main .wrapper {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
