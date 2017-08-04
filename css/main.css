@@ -1289,7 +1289,26 @@ footer .copyright {
 #contact main {
   width: 80%;
   margin: 0 auto;
+  margin-bottom: 3em;
   grid-template-columns: 1fr 1fr;
+}
+
+.left > h2 {
+  position: relative;
+  padding-left: 2em;
+  margin-bottom: 2em;
+}
+
+.left > h2:before {
+  content: '';
+  background: url(../img/bird.png) center;
+  background-size: 30px;
+  background-repeat: no-repeat;
+  width: 40px;
+  height: 50px;
+  position: absolute;
+  left: -10px;
+  top: -15px;
 }
 
 .left > div {
@@ -1303,9 +1322,9 @@ footer .copyright {
 .left > div > div:first-child {
   width: 40px;
   height: 40px;
-  border-radius: 50%;
+  border-radius: 7px;
   margin-right: 20px;
-  background-color: #96d019;
+  background-color: #9d6ad8;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1337,4 +1356,85 @@ footer .copyright {
 .left > div > div:last-child p {
   margin: 0;
   line-height: 1.6;
+}
+
+.right > h2 {
+  position: relative;
+  padding-left: 2em;
+  margin-bottom: 2em;
+}
+
+.right > h2:before {
+  content: '';
+  background: url(../img/bird.png) center;
+  background-size: 30px;
+  background-repeat: no-repeat;
+  width: 40px;
+  height: 50px;
+  position: absolute;
+  left: -10px;
+  top: -15px;
+}
+
+.right .form-control label {
+  color: #96d019;
+}
+
+.right .form-control label span {
+  color: #EA624C;
+}
+
+.right .form-control input {
+  display: block;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  display: block;
+  margin-bottom: 25px;
+  width: 100%;
+}
+
+.right .form-control textarea {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  display: block;
+  margin-bottom: 25px;
+  width: 100%;
+}
+
+.right .form-control input, .right .form-control textarea {
+  margin-top: 10px;
+  -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  font-family: "GothamRoundedMedium", Helvetica, sans-serif;
+}
+
+.right .form-control input::-webkit-input-placeholder, .right .form-control textarea::-webkit-input-placeholder {
+  color: #ddd;
+}
+
+.right .form-control input::-moz-placeholder, .right .form-control textarea::-moz-placeholder {
+  color: #ddd;
+}
+
+.right .form-control input:-ms-input-placeholder, .right .form-control textarea:-ms-input-placeholder {
+  color: #ddd;
+}
+
+.right .form-control input::placeholder, .right .form-control textarea::placeholder {
+  color: #ddd;
+}
+
+.right .form-control input:focus, .right .form-control textarea:focus {
+  outline: none;
+  -webkit-box-shadow: 0 12px 15px 0 rgba(0, 0, 0, 0.09), 0 17px 50px 0 rgba(0, 0, 0, 0.1);
+  box-shadow: 0 12px 15px 0 rgba(0, 0, 0, 0.09), 0 17px 50px 0 rgba(0, 0, 0, 0.1);
+}
+
+.right .form-control button {
+  border: none;
+  font-family: "GothamRoundedMedium", Helvetica, sans-serif;
+  cursor: pointer;
 }

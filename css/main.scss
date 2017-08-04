@@ -962,36 +962,90 @@ footer {
     main {
         width: 80%;
         margin: 0 auto;
+        margin-bottom: 3em;
         grid-template-columns: 1fr 1fr;
     }
 }
 
-.left > div {
-    display: flex;
-    margin-bottom: 1.4em;
-    > div:first-child {
-        width:40px;
-        height:40px;
-        border-radius: 50%;
-        margin-right: 20px;
-        background-color: $coolGreen;
-        @include flexCenter;
-        span {
-            display: inline-block;
-            font-size: 1.6em;
-            color: white;
+.left {
+    > h2 {
+        position: relative;
+        padding-left: 2em;
+        margin-bottom: 2em;
+        &:before {
+            @include beforeH4;
         }
     }
-    > div:last-child {
-        h5 {
-            @include marginHeading;
-            margin-bottom: 5px;
-            font-size: 14px;
-            color: #96d019;
+    > div {
+        display: flex;
+        margin-bottom: 1.4em;
+        > div:first-child {
+            width:40px;
+            height:40px;
+            border-radius: 7px;
+            margin-right: 20px;
+            background-color: $coolPurple;
+            @include flexCenter;
+            span {
+                display: inline-block;
+                font-size: 1.6em;
+                color: white;
+            }
         }
-        p {
-            margin: 0;
-            line-height: $lineHeightP;
+        > div:last-child {
+            h5 {
+                @include marginHeading;
+                margin-bottom: 5px;
+                font-size: 14px;
+                color: #96d019;
+            }
+            p {
+                margin: 0;
+                line-height: $lineHeightP;
+            }
+        }
+    }
+}
+
+.right {
+    > h2 {
+        position: relative;
+        padding-left: 2em;
+        margin-bottom: 2em;
+        &:before {
+            @include beforeH4;
+        }
+    }
+    .form-control {
+        label {
+            color: $coolGreen;
+            span {
+                color: $coolRed;
+            }
+        }
+        input {
+            display: block;
+            @include inputForm;
+        }
+        textarea {
+            @include inputForm;
+        }
+        input, textarea {
+            margin-top: 10px;
+            transition: $transitionEase;
+            font-family: $fontDefault;
+            &::placeholder {
+                color: #ddd;
+            }
+            &:focus {
+                outline: none;
+                box-shadow: $boxShadow;
+            }
+        }
+        button {
+            border: none;
+            font-family: $fontDefault;
+            cursor: pointer;
         }
     }
 }

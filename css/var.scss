@@ -19,6 +19,18 @@ $transitionEase: all .3s ease;
 
 
 
+
+
+
+@mixin inputForm {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    display: block;
+    margin-bottom: 25px;
+    width: 100%;
+}
+
 @mixin socialIcons {
     display: inline-block;
     margin-right: 1.2em;
