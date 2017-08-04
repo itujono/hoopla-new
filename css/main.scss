@@ -118,6 +118,7 @@ header {
                 &:hover {
                     background-color: $coolGreen;
                     color: white;
+                    box-shadow: $boxShadowInset;
                 }
             }
             .children {

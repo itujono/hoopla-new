@@ -149,6 +149,8 @@ header nav li a.active {
 header nav li a:hover {
   background-color: #96d019;
   color: white;
+  -webkit-box-shadow: inset -1px 5px 12px 0px rgba(0, 0, 0, 0.21);
+  box-shadow: inset -1px 5px 12px 0px rgba(0, 0, 0, 0.21);
 }
 
 header nav li .children {
