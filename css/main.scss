@@ -261,6 +261,10 @@ main {
     }
 }
 
+.wrapper {
+    display: flex;
+}
+
 .most-recent {
     grid-row: 2/3;
     grid-column: 1 / span 3;
@@ -276,9 +280,6 @@ main {
         &:before {
             @include beforeH4;
         }
-    }
-    .wrapper {
-        display: flex;
     }
 }
 
@@ -1052,6 +1053,52 @@ footer {
             border: none;
             font-family: $fontDefault;
             cursor: pointer;
+        }
+    }
+}
+
+
+
+
+
+
+
+// Ebuset udah ke Products aja heheh. Keyen!
+
+#product main {
+    grid-template-columns: 1fr;
+    padding-left: 3em;
+}
+
+#product .wrapper {
+    flex-wrap: wrap;
+    .card {
+        flex-basis: 22%;
+        margin-bottom: 1.2em;
+        &.continue {
+            flex-direction: column;
+            @include flexCenter;
+            background-color: #eee;
+            border: 1px dashed #bbb;
+            transition: all .3s cubic-bezier(0.96, 0.07, 0, 0.99);
+            &:hover {
+                background-color: white;
+                border: transparent;
+                background: url('../img/space.png') center;
+                background-size: cover;
+                background-repeat: no-repeat;
+            }
+            &:hover a {
+                color: $colorH4;
+            }
+            a {
+                text-align: center;
+                width: 75%;
+                color: #999;
+                &:hover {
+                    color: $coolGreen;
+                }
+            }
         }
     }
 }
