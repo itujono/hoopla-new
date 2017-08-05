@@ -193,6 +193,7 @@ main {
   display: grid;
   grid-template-columns: 3fr 1fr;
   grid-template-rows: minmax(auto, 300px) 1fr 1fr;
+  padding-bottom: 5em;
 }
 
 .main-news {
@@ -623,10 +624,25 @@ footer .copyright {
 
 .image {
   /* Kind of helper class */
+  height: 80px;
+  overflow: hidden;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .image img {
   width: 100%;
+  min-height: 80px;
 }
 
 .first {
@@ -1699,4 +1715,69 @@ footer .copyright {
 
 .product-description .category a:hover {
   color: #96d019;
+}
+
+#discount main {
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+}
+
+#discount main section {
+  padding: 0 3em;
+}
+
+#discount main section > h4 {
+  position: relative;
+  padding-left: 1.4em;
+  font-size: 2em;
+}
+
+#discount main section > h4:before {
+  content: '';
+  background: url(../img/bird.png) center;
+  background-size: 30px;
+  background-repeat: no-repeat;
+  width: 40px;
+  height: 50px;
+  position: absolute;
+  left: -10px;
+  top: -15px;
+}
+
+#discount .wrapper {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+#discount .wrapper > div {
+  -webkit-flex-basis: 22%;
+  -ms-flex-preferred-size: 22%;
+  flex-basis: 22%;
+  margin: 0 15px 15px 0;
+}
+
+#discount .wrapper > div .title {
+  padding: 8px 10px 15px 10px;
+  border: 1px solid #ddd;
+  border-radius: 0 0 7px 7px;
+}
+
+#discount .wrapper > div .title h4 {
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+#discount .wrapper > div .title a {
+  padding: 5px 12px;
+}
+
+#discount .wrapper > div .valid {
+  font-size: 12px;
+  margin-bottom: 1.8em;
+  color: #999;
 }

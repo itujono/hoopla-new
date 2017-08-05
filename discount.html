@@ -2,128 +2,220 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title>Hoopla - Toys Rent</title>
+        <title>Package &amp; Discounts  - Hoopla Toys Rent</title>
         <link rel="stylesheet" href="/css/main.css">
+        <link rel="stylesheet" href="https://npmcdn.com/flickity@2/dist/flickity.css">
+        <link rel="stylesheet" href="https://unpkg.com/tippy.js@1.2.0/dist/tippy.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/modaal/0.3.1/css/modaal.min.css">
     </head>
     <body>
         <div class="container" id="discount">
 
-            <div class="top-panel">
-                <div>
-                    Contact kami di <span class="coolgreen">+62 778 325 253</span> atau info@hooplatoys.com
-                </div>
-                <div>
-                    <div class="cart">
-                        <a href="#"><i class="fa fa-shopping-cart"></i>&nbsp; Cart</a>
+            <header>
+                <div class="top-panel">
+                    <div>
+                        Contact kami di <span class="coolgreen">+62 778 325 253</span> atau info@hooplatoys.com
+                    </div>
+                    <div>
+                        <div class="cart">
+                            <a href="#"><i class="fa fa-shopping-cart"></i>&nbsp; Cart</a>
+                        </div>
                     </div>
                 </div>
-            </div>
-
-            <header>
                 <div class="main-logo">
                     <img src="../img/logo-web.png" alt="Logo utama">
                 </div>
                 <nav>
                     <li><a href="index.html">Home</a></li>
-                    <li><a href="product.html" class="active">Products</a></li>
+                    <li class="has-children">
+                        <a href="product.html">Products</a>
+                        <ul class="children">
+                            <li><a href="#">Boys</a></li>
+                            <li><a href="#">Girls</a></li>
+                            <li><a href="#">Toys</a></li>
+                        </ul>
+                    </li>
                     <li><a href="about.html">About us</a></li>
                     <li><a href="tc.html">T &amp; C</a></li>
-                    <li><a href="trivia.html">Trivia</a></li>
-                    <li><a href="contact.html">Contact us</a></li>
+                    <li class="has-children">
+                        <a href="trivia.html">Trivia</a>
+                        <ul class="children">
+                            <li><a href="#">Tips Tricks</a></li>
+                            <li><a href="#">Parenting</a></li>
+                            <li><a href="#">Toys</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="contact.html" class="active">Contact us</a></li>
                 </nav>
             </header>
 
             <main>
                 <section id="recent">
-                    <div>
-                        <div class="image">
-                            <img src="img/kids4.png" alt="Discounts">
+                    <h4>Terbaru</h4>
+                    <div class="wrapper">
+                        <div>
+                            <div class="image">
+                                <img src="img/kids3.png" alt="Discounts">
+                            </div>
+                            <div class="title">
+                                <h4>Diskon 30% Untuk Item-item Terpilih!</h4>
+                                <p class="valid">Sampai <br> 30 Oktober 2017</p>
+                                <a href="#" class="btn-hoopla">Lihat</a>
+                            </div>
                         </div>
-                        <div class="title">
-                            <h3>Diskon 30% Untuk Item-item Terpilih!</h3>
-                            Sampai 30 Oktober 2017
+                        <div>
+                            <div class="image">
+                                <img src="img/more.png" alt="Discounts">
+                            </div>
+                            <div class="title">
+                                <h4>Diskon 30% Untuk Item-item Terpilih!</h4>
+                                <p class="valid">Sampai <br> 30 Oktober 2017</p>
+                                <a href="#" class="btn-hoopla">Lihat</a>
+                            </div>
                         </div>
-                    </div>
-                    <div>
-                        <div class="image">
-                            <img src="img/kids4.png" alt="Discounts">
+                        <div>
+                            <div class="image">
+                                <img src="img/kids4.png" alt="Discounts">
+                            </div>
+                            <div class="title">
+                                <h4>Diskon 30% Untuk Item-item Terpilih!</h4>
+                                <p class="valid">Sampai <br> 30 Oktober 2017</p>
+                                <a href="#" class="btn-hoopla">Lihat</a>
+                            </div>
                         </div>
-                        <div class="title">
-                            <h3>Diskon 30% Untuk Item-item Terpilih!</h3>
-                            Sampai 30 Oktober 2017
+                        <div>
+                            <div class="image">
+                                <img src="img/tilt.jpg" alt="Discounts">
+                            </div>
+                            <div class="title">
+                                <h4>Diskon 30% Untuk Item-item Terpilih!</h4>
+                                <p class="valid">Sampai <br> 30 Oktober 2017</p>
+                                <a href="#" class="btn-hoopla">Lihat</a>
+                            </div>
                         </div>
-                    </div>
-                    <div>
-                        <div class="image">
-                            <img src="img/kids4.png" alt="Discounts">
+                        <div>
+                            <div class="image">
+                                <img src="img/kids4.png" alt="Discounts">
+                            </div>
+                            <div class="title">
+                                <h4>Diskon 30% Untuk Item-item Terpilih!</h4>
+                                <p class="valid">Sampai <br> 30 Oktober 2017</p>
+                                <a href="#" class="btn-hoopla">Lihat</a>
+                            </div>
                         </div>
-                        <div class="title">
-                            <h3>Diskon 30% Untuk Item-item Terpilih!</h3>
-                            Sampai 30 Oktober 2017
+                        <div>
+                            <div class="image">
+                                <img src="img/toys3.png" alt="Discounts">
+                            </div>
+                            <div class="title">
+                                <h4>Diskon 30% Untuk Item-item Terpilih!</h4>
+                                <p class="valid">Sampai <br> 30 Oktober 2017</p>
+                                <a href="#" class="btn-hoopla">Lihat</a>
+                            </div>
                         </div>
-                    </div>
-                    <div>
-                        <div class="image">
-                            <img src="img/kids4.png" alt="Discounts">
-                        </div>
-                        <div class="title">
-                            <h3>Diskon 30% Untuk Item-item Terpilih!</h3>
-                            Sampai 30 Oktober 2017
-                        </div>
-                    </div>
-                    <div>
-                        <div class="image">
-                            <img src="img/kids4.png" alt="Discounts">
-                        </div>
-                        <div class="title">
-                            <h3>Diskon 30% Untuk Item-item Terpilih!</h3>
-                            Sampai 30 Oktober 2017
-                        </div>
-                    </div>
-                    <div>
-                        <div class="image">
-                            <img src="img/kids4.png" alt="Discounts">
-                        </div>
-                        <div class="title">
-                            <h3>Diskon 30% Untuk Item-item Terpilih!</h3>
-                            Sampai 30 Oktober 2017
-                        </div>
-                    </div>
-                    <div>
-                        <div class="image">
-                            <img src="img/kids4.png" alt="Discounts">
-                        </div>
-                        <div class="title">
-                            <h3>Diskon 30% Untuk Item-item Terpilih!</h3>
-                            Sampai 30 Oktober 2017
+                        <div>
+                            <div class="image">
+                                <img src="img/2.jpg" alt="Discounts">
+                            </div>
+                            <div class="title">
+                                <h4>Diskon 30% Untuk Item-item Terpilih!</h4>
+                                <p class="valid">Sampai <br> 30 Oktober 2017</p>
+                                <a href="#" class="btn-hoopla">Lihat</a>
+                            </div>
                         </div>
                     </div>
                 </section>
                 <section id="older">
-                    <div>
-
+                    <h4>Terdahulu</h4>
+                    <div class="wrapper">
+                        <div>
+                            <div class="image">
+                                <img src="img/kids3.png" alt="Discounts">
+                            </div>
+                            <div class="title">
+                                <h4>Diskon 30% Untuk Item-item Terpilih!</h4>
+                                <p class="valid">Sampai <br> 30 Oktober 2017</p>
+                                <a href="#" class="btn-hoopla">Lihat</a>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="image">
+                                <img src="img/more.png" alt="Discounts">
+                            </div>
+                            <div class="title">
+                                <h4>Diskon 30% Untuk Item-item Terpilih!</h4>
+                                <p class="valid">Sampai <br> 30 Oktober 2017</p>
+                                <a href="#" class="btn-hoopla">Lihat</a>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="image">
+                                <img src="img/kids4.png" alt="Discounts">
+                            </div>
+                            <div class="title">
+                                <h4>Diskon 30% Untuk Item-item Terpilih!</h4>
+                                <p class="valid">Sampai <br> 30 Oktober 2017</p>
+                                <a href="#" class="btn-hoopla">Lihat</a>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="image">
+                                <img src="img/tilt.jpg" alt="Discounts">
+                            </div>
+                            <div class="title">
+                                <h4>Diskon 30% Untuk Item-item Terpilih!</h4>
+                                <p class="valid">Sampai <br> 30 Oktober 2017</p>
+                                <a href="#" class="btn-hoopla">Lihat</a>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="image">
+                                <img src="img/kids4.png" alt="Discounts">
+                            </div>
+                            <div class="title">
+                                <h4>Diskon 30% Untuk Item-item Terpilih!</h4>
+                                <p class="valid">Sampai <br> 30 Oktober 2017</p>
+                                <a href="#" class="btn-hoopla">Lihat</a>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="image">
+                                <img src="img/toys3.png" alt="Discounts">
+                            </div>
+                            <div class="title">
+                                <h4>Diskon 30% Untuk Item-item Terpilih!</h4>
+                                <p class="valid">Sampai <br> 30 Oktober 2017</p>
+                                <a href="#" class="btn-hoopla">Lihat</a>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="image">
+                                <img src="img/2.jpg" alt="Discounts">
+                            </div>
+                            <div class="title">
+                                <h4>Diskon 30% Untuk Item-item Terpilih!</h4>
+                                <p class="valid">Sampai <br> 30 Oktober 2017</p>
+                                <a href="#" class="btn-hoopla">Lihat</a>
+                            </div>
+                        </div>
                     </div>
                 </section>
             </main>
 
             <footer>
                 <div class="main-footer">
-                    <div class="wrapper">
-                        <img src="img/logo-web.png" alt="Logo Footer"width="200">
-                        <h4>Tempat rental mainan paling lengkap di Batam</h4>
-                        <ul class="social">
-                            <li><a href="#" class=""><i class="fa fa-twitter"></i></a></li>
-                            <li><a href="#" class=""><i class="fa fa-facebook"></i></a></li>
-                            <li><a href="#" class=""><i class="fa fa-instagram"></i></a></li>
-                            <li><a href="#" class=""><i class="fa fa-pinterest"></i></a></li>
-                        </ul>
-                    </div>
+                    <img src="img/logo-web.png" alt="Logo Footer" width="200">
+                    <h4>Tempat rental mainan paling lengkap di Batam</h4>
+                    <ul class="social">
+                        <li><a href="#" title="Twitter kami"><i class="fa fa-twitter"></i></a></li>
+                        <li><a href="#" title="Facebook kami"><i class="fa fa-facebook"></i></a></li>
+                        <li><a href="#" title="Instagram kami"><i class="fa fa-instagram"></i></a></li>
+                        <li><a href="#" title="Pinterest kami"><i class="fa fa-pinterest"></i></a></li>
+                    </ul>
                 </div>
                 <div class="copyright">
                     <div>
-                        Hoopla is built by <a href="http://codewell.id" target="_blank">these guys</a> &copy; 2017
+                        Copyright &copy; Sempardak 2017
                     </div>
                     <div>
                         <i class="fa fa-phone"></i> 0778 325 253

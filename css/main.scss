@@ -158,6 +158,7 @@ main {
     display: grid;
     grid-template-columns: 3fr 1fr;
     grid-template-rows: minmax(auto, 300px) 1fr 1fr;
+    padding-bottom: 5em;
 }
 
 .main-news {
@@ -484,8 +485,12 @@ footer {
 }
 
 .image { /* Kind of helper class */
+    height: 80px;
+    overflow: hidden;
+    @include flexCenter;
     img {
         width: 100%;
+        min-height: 80px;
     }
 }
 
@@ -1238,6 +1243,58 @@ footer {
             &:hover {
                 color: $coolGreen;
             }
+        }
+    }
+}
+
+
+
+
+
+
+// Whooop di P&D ternyata kita udah. Wohoooo!
+
+#discount {
+
+}
+
+#discount main {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    section {
+        padding: 0 3em;
+        > h4 {
+            position: relative;
+            padding-left: 1.4em;
+            font-size: 2em;
+            &:before {
+                @include beforeH4;
+            }
+        }
+    }
+}
+
+#discount .wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    > div {
+        flex-basis: 22%;
+        margin: 0 15px 15px 0;
+        .title {
+            padding: 8px 10px 15px 10px;
+            border: 1px solid #ddd;
+            border-radius: 0 0 7px 7px;
+            h4 {
+                @include marginHeading;
+            }
+            a {
+                padding: 5px 12px;
+            }
+        }
+        .valid {
+            font-size: 12px;
+            margin-bottom: 1.8em;
+            color: #999;
         }
     }
 }
