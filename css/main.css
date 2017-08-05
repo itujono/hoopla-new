@@ -1792,3 +1792,15 @@ footer .copyright {
   margin-bottom: 1.8em;
   color: #999;
 }
+
+.tingle-modal, .modaler {
+  display: none;
+}
+
+.tingle-modal .image, .modaler .image {
+  height: 240px;
+}
+
+.tingle-modal .image img, .modaler .image img {
+  min-height: initial;
+}

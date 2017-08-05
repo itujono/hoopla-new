@@ -1305,3 +1305,13 @@ footer {
         }
     }
 }
+
+.tingle-modal, .modaler {
+    display: none;
+    .image {
+        height: 240px;
+        img {
+            min-height: initial;
+        }
+    }
+}

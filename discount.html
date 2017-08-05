@@ -61,7 +61,7 @@
                             <div class="title">
                                 <h4>Diskon 30% Untuk Item-item Terpilih!</h4>
                                 <p class="valid">Sampai <br> 30 Oktober 2017</p>
-                                <button class="btn-hoopla modaal" id="modaal">Lihat</button>
+                                <a href="#" class="btn-hoopla modaal" id="modaal">Lihat</a>
                             </div>
                         </div>
                         <div>
@@ -71,7 +71,7 @@
                             <div class="title">
                                 <h4>Diskon 30% Untuk Item-item Terpilih!</h4>
                                 <p class="valid">Sampai <br> 30 Oktober 2017</p>
-                                <a href="#" class="btn-hoopla">Lihat</a>
+                                <a href="#" class="btn-hoopla modaal" id="modaal-second">Lihat</a>
                             </div>
                         </div>
                         <div>
@@ -239,6 +239,20 @@
                 </div>
             </div>
         </div>
+        <div class="tingle-content-wrapper">
+            <div class="modaler" id="second">
+                <div class="image">
+                    <img src="http://unsplash.it/500x500" alt="Modal image">
+                </div>
+                <div class="modal-content">
+                    <h2 class="modal-title">Diskon 40% Semua Produk Nano Nano!</h2>
+                    <p class="modal-description">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim verentunim.
+                    </p>
+                    <span class="modal-valid">Hingga 20 Oktober 2018</span>
+                </div>
+            </div>
+        </div>
 
 
         <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
@@ -247,7 +261,32 @@
 
 
         <script type="text/javascript">
+            var modal = new tingle.modal({
+                footer: false,
+                cssClass: ['modaler'],
+                onOpen: function() {
+                    console.log("Try sikit ya heheh");
+                }
+            });
 
+            var modalSecond = new tingle.modal({
+                footer: false,
+                cssClass: ['modaler'],
+                onOpen: function() {
+                    console.log("Try sikit lagi wak heheh");
+                }
+            });
+
+            modal.setContent(document.querySelector('#first').innerHTML);
+            modal.setContent(document.querySelector('#second').innerHTML);
+
+            document.querySelector('#modaal').addEventListener('click', function() {
+                modal.open();
+            });
+
+            document.querySelector('#modaal-second').addEventListener('click', function() {
+                modalSecond.open();
+            });
         </script>
 
     </body>
