@@ -1600,3 +1600,84 @@ footer .copyright {
   -ms-transform: translateY(-5px);
   transform: translateY(-5px);
 }
+
+#product-detail main {
+  padding: 0 2em;
+  grid-template-columns: 1fr 2fr;
+  grid-template-rows: auto auto;
+  grid-gap: 30px;
+}
+
+#product-detail main .similar {
+  grid-column: 1/3;
+}
+
+.description p {
+  line-height: 1.6;
+  margin-bottom: 1.8em;
+}
+
+.description .title {
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.description .price {
+  margin-top: 0;
+  margin-bottom: 10px;
+  color: #96d019;
+}
+
+.description .price small {
+  color: #3d3b54;
+}
+
+.description .infos {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 2.4em;
+}
+
+.description .infos > div {
+  margin-right: 15px;
+}
+
+.description .infos > div h4 {
+  color: #777;
+  margin: 0;
+}
+
+.description .infos > div p {
+  color: #999;
+  margin: 0;
+  font-size: 12px;
+}
+
+.description .minimum {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.description .minimum span {
+  color: #777;
+}
+
+.description .minimum > div:first-child span {
+  font-size: 2em;
+}
+
+.description .minimum > div:last-child {
+  padding-left: 15px;
+}
+
+.description .category {
+  margin-top: 2.4em;
+}
+
+.description .category a:hover {
+  color: #96d019;
+}

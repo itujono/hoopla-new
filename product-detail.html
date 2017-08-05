@@ -2,53 +2,78 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title>Hoopla - Toys Rent</title>
+        <title>Product Detail - Hoopla Toys Rent</title>
         <link rel="stylesheet" href="/css/main.css">
         <link rel="stylesheet" href="https://npmcdn.com/flickity@2/dist/flickity.css">
+        <link rel="stylesheet" href="https://unpkg.com/tippy.js@1.2.0/dist/tippy.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     </head>
     <body>
         <div class="container" id="product-detail">
 
-            <div class="top-panel">
-                <div>
-                    Contact kami di <span class="coolgreen">+62 778 325 253</span> atau info@hooplatoys.com
-                </div>
-                <div>
-                    <div class="cart">
-                        <a href="#"><i class="fa fa-shopping-cart"></i>&nbsp; Cart</a>
+            <header>
+                <div class="top-panel">
+                    <div>
+                        Contact kami di <span class="coolgreen">+62 778 325 253</span> atau info@hooplatoys.com
+                    </div>
+                    <div>
+                        <div class="cart">
+                            <a href="#"><i class="fa fa-shopping-cart"></i>&nbsp; Cart</a>
+                        </div>
                     </div>
                 </div>
-            </div>
-
-            <header>
                 <div class="main-logo">
                     <img src="../img/logo-web.png" alt="Logo utama">
                 </div>
                 <nav>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#" class="active">Products</a></li>
-                    <li><a href="#">About us</a></li>
-                    <li><a href="#">T &amp; C</a></li>
-                    <li><a href="#">Trivia</a></li>
-                    <li><a href="#">Contact us</a></li>
+                    <li><a href="index.html">Home</a></li>
+                    <li class="has-children">
+                        <a href="product.html">Products</a>
+                        <ul class="children">
+                            <li><a href="#">Boys</a></li>
+                            <li><a href="#">Girls</a></li>
+                            <li><a href="#">Toys</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="about.html">About us</a></li>
+                    <li><a href="tc.html">T &amp; C</a></li>
+                    <li class="has-children">
+                        <a href="trivia.html">Trivia</a>
+                        <ul class="children">
+                            <li><a href="#">Tips Tricks</a></li>
+                            <li><a href="#">Parenting</a></li>
+                            <li><a href="#">Toys</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="contact.html" class="active">Contact us</a></li>
                 </nav>
             </header>
 
             <main>
-                <div class="product-image">
+                <div class="image">
                     <img src="img/toys1.png" alt="Toys sempardak">
                 </div>
-                <div class="product-description">
+                <div class="description">
                     <h2 class="title">Ring basket</h3>
                     <h4 class="price">Rp 340.000,00 <small>/ 4 minggu</small></h4>
-                    <div class="minimum">
-                        <div>
-                            <i class="fa fa-clock-o"></i>
+                    <div class="infos">
+                        <div class="minimum">
+                            <div>
+                                <span><i class="fa fa-clock-o"></i></span>
+                            </div>
+                            <div>
+                                <p>Minimal sewa</p>
+                                <h4>4 minggu</h4>
+                            </div>
                         </div>
-                        <div>
-                            <p>Minimal sewa</p>
-                            <h5>4 minggu</h5>
+                        <div class="minimum">
+                            <div>
+                                <span><i class="fa fa-clock-o"></i></span>
+                            </div>
+                            <div>
+                                <p>Minimal sewa</p>
+                                <h4>4 minggu</h4>
+                            </div>
                         </div>
                     </div>
                     <p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
@@ -60,48 +85,50 @@
                 </div>
                 <div class="similar">
                     <h4>Produk Sejenis</h4>
-                    <div>
-                        <div class="panel-content">
-                            <img src="img/kids10.png" alt="Kiddy">
+                    <div class="wrapper">
+                        <div class="card">
+                            <div class="card-content">
+                                <img src="img/kids7.png" alt="Kiddy">
+                            </div>
+                            <div class="card-bottom">
+                                <a href="product-detail.html">
+                                    <h3>Super sempardak</h3>
+                                    <small>Rp 300k</small>
+                                </a>
+                            </div>
                         </div>
-                        <div class="panel-bottom">
-                            <a href="#">
-                                <h3>Kacang polong</h3>
-                                <small>Rp 200k</small>
-                            </a>
+                        <div class="card">
+                            <div class="card-content softblue">
+                                <img src="img/kids7.png" alt="Kiddy">
+                            </div>
+                            <div class="card-bottom">
+                                <a href="product-detail.html">
+                                    <h3>Super sempardak</h3>
+                                    <small>Rp 300k</small>
+                                </a>
+                            </div>
                         </div>
-                    </div>
-                    <div>
-                        <div class="panel-content softblue">
-                            <img src="img/kids10.png" alt="Kiddy">
+                        <div class="card">
+                            <div class="card-content">
+                                <img src="img/kids7.png" alt="Kiddy">
+                            </div>
+                            <div class="card-bottom">
+                                <a href="product-detail.html">
+                                    <h3>Super sempardak</h3>
+                                    <small>Rp 300k</small>
+                                </a>
+                            </div>
                         </div>
-                        <div class="panel-bottom">
-                            <a href="#">
-                                <h3>Kacang polong</h3>
-                                <small>Rp 200k</small>
-                            </a>
-                        </div>
-                    </div>
-                    <div>
-                        <div class="panel-content softpurple">
-                            <img src="img/kids10.png" alt="Kiddy">
-                        </div>
-                        <div class="panel-bottom">
-                            <a href="#">
-                                <h3>Kacang polong</h3>
-                                <small>Rp 200k</small>
-                            </a>
-                        </div>
-                    </div>
-                    <div>
-                        <div class="panel-content">
-                            <img src="img/kids10.png" alt="Kiddy">
-                        </div>
-                        <div class="panel-bottom">
-                            <a href="#">
-                                <h3>Kacang polong</h3>
-                                <small>Rp 200k</small>
-                            </a>
+                        <div class="card">
+                            <div class="card-content softpurple">
+                                <img src="img/kids7.png" alt="Kiddy">
+                            </div>
+                            <div class="card-bottom">
+                                <a href="product-detail.html">
+                                    <h3>Super sempardak</h3>
+                                    <small>Rp 300k</small>
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -135,16 +162,14 @@
 
             <footer>
                 <div class="main-footer">
-                    <div class="wrapper">
-                        <img src="img/logo-web.png" alt="Logo Footer"width="200">
-                        <h4>Tempat rental mainan paling lengkap di Batam</h4>
-                        <ul class="social">
-                            <li><a href="#" class=""><i class="fa fa-twitter"></i></a></li>
-                            <li><a href="#" class=""><i class="fa fa-facebook"></i></a></li>
-                            <li><a href="#" class=""><i class="fa fa-instagram"></i></a></li>
-                            <li><a href="#" class=""><i class="fa fa-pinterest"></i></a></li>
-                        </ul>
-                    </div>
+                    <img src="img/logo-web.png" alt="Logo Footer" width="200">
+                    <h4>Tempat rental mainan paling lengkap di Batam</h4>
+                    <ul class="social">
+                        <li><a href="#" title="Twitter kami"><i class="fa fa-twitter"></i></a></li>
+                        <li><a href="#" title="Facebook kami"><i class="fa fa-facebook"></i></a></li>
+                        <li><a href="#" title="Instagram kami"><i class="fa fa-instagram"></i></a></li>
+                        <li><a href="#" title="Pinterest kami"><i class="fa fa-pinterest"></i></a></li>
+                    </ul>
                 </div>
                 <div class="copyright">
                     <div>
