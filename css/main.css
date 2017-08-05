@@ -1631,27 +1631,27 @@ footer .copyright {
   top: -15px;
 }
 
-.description p {
+.product-description p {
   line-height: 1.6;
   margin-bottom: 4em;
 }
 
-.description .title {
+.product-description .title {
   margin-top: 0;
   margin-bottom: 10px;
 }
 
-.description .price {
+.product-description .price {
   margin-top: 0;
   margin-bottom: 10px;
   color: #96d019;
 }
 
-.description .price small {
+.product-description .price small {
   color: #3d3b54;
 }
 
-.description .infos {
+.product-description .infos {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1659,44 +1659,44 @@ footer .copyright {
   margin-bottom: 2.4em;
 }
 
-.description .infos > div {
-  margin-right: 15px;
+.product-description .infos > div {
+  margin-right: 20px;
 }
 
-.description .infos > div h4 {
+.product-description .infos > div h4 {
   color: #777;
   margin: 0;
 }
 
-.description .infos > div p {
+.product-description .infos > div p {
   color: #999;
   margin: 0;
   font-size: 12px;
 }
 
-.description .minimum {
+.product-description .minimum {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
 }
 
-.description .minimum span {
+.product-description .minimum span {
   color: #777;
 }
 
-.description .minimum > div:first-child span {
+.product-description .minimum > div:first-child span {
   font-size: 2em;
 }
 
-.description .minimum > div:last-child {
-  padding-left: 15px;
+.product-description .minimum > div:last-child {
+  padding-left: 10px;
 }
 
-.description .category {
+.product-description .category {
   margin-top: 2.4em;
 }
 
-.description .category a:hover {
+.product-description .category a:hover {
   color: #96d019;
 }
