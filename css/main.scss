@@ -494,6 +494,13 @@ footer {
     }
 }
 
+.figure {
+    flex: 1;
+    img {
+        width: 100%;
+    }
+}
+
 .first {
     grid-column: 1/3;
     display: flex;

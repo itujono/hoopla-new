@@ -7,6 +7,7 @@
         <link rel="stylesheet" href="https://npmcdn.com/flickity@2/dist/flickity.css">
         <link rel="stylesheet" href="https://unpkg.com/tippy.js@1.2.0/dist/tippy.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="/css/tingle.min.css">
     </head>
     <body>
         <div class="container" id="discount">
@@ -60,7 +61,7 @@
                             <div class="title">
                                 <h4>Diskon 30% Untuk Item-item Terpilih!</h4>
                                 <p class="valid">Sampai <br> 30 Oktober 2017</p>
-                                <a href="#" class="btn-hoopla">Lihat</a>
+                                <button class="btn-hoopla modaal" id="modaal">Lihat</button>
                             </div>
                         </div>
                         <div>
@@ -224,8 +225,30 @@
             </footer>
         </div>
 
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/modaal/0.3.1/js/modaal.min.js"></script>
+        <div class="tingle-content-wrapper">
+            <div class="modaler" id="first">
+                <div class="image">
+                    <img src="http://unsplash.it/500x500" alt="Modal image">
+                </div>
+                <div class="modal-content">
+                    <h2 class="modal-title">Diskon 40% Semua Produk Nuna!</h2>
+                    <p class="modal-description">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim verentunim.
+                    </p>
+                    <span class="modal-valid">Hingga 20 Oktober 2017</span>
+                </div>
+            </div>
+        </div>
+
+
+        <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
         <script src="js/main.js"></script>
+        <script src="js/tingle.min.js"></script>
+
+
+        <script type="text/javascript">
+
+        </script>
+
     </body>
 </html>
