@@ -468,7 +468,7 @@ main {
 
 aside {
   grid-area: sidebar;
-  padding-right: 20px;
+  padding: 20px;
   overflow: hidden;
 }
 
@@ -484,6 +484,18 @@ aside .sort h4 {
 
 aside .promo-sidebar {
   margin-bottom: 30px;
+  border-radius: 7px;
+  -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+aside .promo-sidebar:hover {
+  -webkit-transform: translateY(-5px);
+  -ms-transform: translateY(-5px);
+  transform: translateY(-5px);
+  -webkit-box-shadow: 0 12px 15px 0 rgba(0, 0, 0, 0.09), 0 17px 50px 0 rgba(0, 0, 0, 0.1);
+  box-shadow: 0 12px 15px 0 rgba(0, 0, 0, 0.09), 0 17px 50px 0 rgba(0, 0, 0, 0.1);
 }
 
 aside .promo-sidebar .bg {
@@ -1449,7 +1461,41 @@ footer .copyright {
 
 #product main {
   grid-template-columns: 1fr;
+  grid-template-rows: auto;
   padding-left: 3em;
+}
+
+#product section {
+  margin-bottom: 3em;
+}
+
+#product section > h4 {
+  margin: 0 0 1.6em 0;
+  font-size: 1.8em;
+  position: relative;
+  padding-left: 1.8em;
+}
+
+#product section > h4:before {
+  content: '';
+  background: url(../img/bird.png) center;
+  background-size: 30px;
+  background-repeat: no-repeat;
+  width: 40px;
+  height: 50px;
+  position: absolute;
+  left: -10px;
+  top: -15px;
+}
+
+#product section > h4 a {
+  font-size: 12px;
+  color: #999;
+}
+
+#product section > h4 a:hover {
+  color: #96d019;
+  text-decoration: underline;
 }
 
 #product .wrapper {
@@ -1498,16 +1544,59 @@ footer .copyright {
   background-repeat: no-repeat;
 }
 
-#product .wrapper .card.continue:hover a {
+#product .wrapper .card.continue:hover p {
   color: #3d3b54;
+  -webkit-transform: translateY(0);
+  -ms-transform: translateY(0);
+  transform: translateY(0);
 }
 
-#product .wrapper .card.continue a {
+#product .wrapper .card.continue:hover .arrow {
+  color: white;
+  opacity: 1;
+  visibility: visible;
+  -webkit-transform: translateX(0);
+  -ms-transform: translateX(0);
+  transform: translateX(0);
+}
+
+#product .wrapper .card.continue p {
   text-align: center;
   width: 75%;
   color: #999;
+  -webkit-transform: translateY(20px);
+  -ms-transform: translateY(20px);
+  transform: translateY(20px);
+  -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
 }
 
-#product .wrapper .card.continue a:hover {
-  color: #96d019;
+#product .wrapper .card.continue .arrow {
+  text-align: center;
+  margin-top: 15px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #96d019;
+  font-size: 1.8em;
+  color: white;
+  line-height: 2;
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transform: translateX(-20px);
+  -ms-transform: translateX(-20px);
+  transform: translateX(-20px);
+  -webkit-transition: all .3s ease;
+  -o-transition: all .3s ease;
+  transition: all .3s ease;
+  -webkit-transition-delay: .2s;
+  -o-transition-delay: .2s;
+  transition-delay: .2s;
+}
+
+#product .wrapper .card.continue .arrow:hover {
+  -webkit-transform: translateY(-5px);
+  -ms-transform: translateY(-5px);
+  transform: translateY(-5px);
 }
