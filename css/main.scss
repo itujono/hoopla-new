@@ -489,11 +489,12 @@ section > h4 {
 
 #about main {
     grid-template-columns: 1fr 1fr;
+    padding-bottom: 0;
     // grid-template-rows: repeat(3, 1fr);
 }
 
 .image { /* Kind of helper class */
-    height: 80px;
+    // height: 80px;
     overflow: hidden;
     @include flexCenter;
     img {
@@ -993,6 +994,7 @@ section > h4 {
         width: 80%;
         margin: 0 auto;
         margin-bottom: 3em;
+        padding-bottom: 0;
         grid-template-columns: 1fr 1fr;
     }
 }
@@ -1204,6 +1206,10 @@ section > h4 {
                 @include beforeH4;
             }
         }
+    }
+
+    .image {
+        align-items: flex-start;
     }
 }
 
@@ -1477,7 +1483,7 @@ section > h4 {
         background-color: transparent;
         .captioner {
             h2 { /*ikon checklist*/
-                font-size: 3em;
+                font-size: 5em;
                 margin-bottom: 0;
                 color: $colorH4;
             }

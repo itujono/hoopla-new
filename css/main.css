@@ -639,11 +639,11 @@ section > h4:before {
 
 #about main {
   grid-template-columns: 1fr 1fr;
+  padding-bottom: 0;
 }
 
 .image {
   /* Kind of helper class */
-  height: 80px;
   overflow: hidden;
   display: -webkit-box;
   display: -webkit-flex;
@@ -1352,6 +1352,7 @@ section > h4:before {
   width: 80%;
   margin: 0 auto;
   margin-bottom: 3em;
+  padding-bottom: 0;
   grid-template-columns: 1fr 1fr;
 }
 
@@ -1675,6 +1676,13 @@ section > h4:before {
   position: absolute;
   left: -10px;
   top: -15px;
+}
+
+#product-detail main .image {
+  -webkit-box-align: start;
+  -webkit-align-items: flex-start;
+  -ms-flex-align: start;
+  align-items: flex-start;
 }
 
 .product-description p {
@@ -2045,7 +2053,7 @@ section > h4:before {
 
 #finished main .fourth .captioner h2 {
   /*ikon checklist*/
-  font-size: 3em;
+  font-size: 5em;
   margin-bottom: 0;
   color: #3d3b54;
 }
