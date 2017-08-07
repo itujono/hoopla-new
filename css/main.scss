@@ -1333,3 +1333,94 @@ footer {
         }
     }
 }
+
+
+
+
+
+
+
+
+// Hell yeaaah udah di Cart boooy! Heheh.
+
+#cart {
+    grid-template-columns: 1fr;
+    grid-template-areas: "header header" "main main" "footer footer";
+}
+
+#cart main {
+    width: 70%;
+    margin: 0 auto;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+}
+
+.cart-table {
+    .cart-list {
+        .image {
+            height: initial;
+            width: 100px;
+        }
+        li {
+            display: flex;
+            border: 1px solid #ddd;
+            &:not(:first-child) {
+                border-top: none;
+            }
+            > div {
+                padding: 15px;
+                @include flexCenter;
+                input {
+                    @include inputForm;
+                    margin-bottom: 0;
+                }
+            }
+            > div:not(:first-child) {
+                flex: 1 0 0;
+            }
+            > div:nth-child(odd) {
+                background-color: #dce5e8;
+            }
+            > div:nth-child(even) {
+                background-color: $softBlue;
+            }
+            > div:first-child {
+                flex: 3 0 0;
+                background-color: white;
+            }
+        }
+    }
+    .cart-footer {
+        display: flex;
+        justify-content: space-around;
+        a {
+            color: $coolGreen;
+        }
+        p {
+            line-height: $lineHeightP;
+            @include marginHeading;
+            flex: 5 0 90%;
+        }
+        div:first-child {
+            display: flex;
+            flex: 1 0 50%;
+            p {
+                flex: 1 0 90%;
+            }
+            input[type="checkbox"] {
+                flex: 1 0 5%;
+            }
+        }
+        .total {
+            flex: 1 0 50%;
+            text-align: right;
+            p {
+                @include marginHeading;
+                color: $coolGreen;
+            }
+            h2 {
+                margin-top: 0;
+            }
+        }
+    }
+}
