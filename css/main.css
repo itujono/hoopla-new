@@ -613,6 +613,25 @@ footer .copyright {
   background-color: #9d6ad8;
 }
 
+section > h4 {
+  margin: 0 0 1.6em 0;
+  font-size: 1.8em;
+  position: relative;
+  padding-left: 1.8em;
+}
+
+section > h4:before {
+  content: '';
+  background: url(../img/bird.png) center;
+  background-size: 30px;
+  background-repeat: no-repeat;
+  width: 40px;
+  height: 50px;
+  position: absolute;
+  left: -10px;
+  top: -15px;
+}
+
 #about {
   grid-template-columns: 1fr;
   grid-template-areas: "header header" "main main" "footer footer";
@@ -1844,10 +1863,14 @@ footer .copyright {
 }
 
 #cart main {
-  width: 70%;
+  width: 80%;
   margin: 0 auto;
   grid-template-columns: 1fr;
   grid-template-rows: auto;
+}
+
+.error-message {
+  color: #EA624C;
 }
 
 .cart-table .cart-list .image {
@@ -1901,11 +1924,11 @@ footer .copyright {
 }
 
 .cart-table .cart-list li > div:nth-child(odd) {
-  background-color: #dce5e8;
+  background-color: #f5f5f5;
 }
 
 .cart-table .cart-list li > div:nth-child(even) {
-  background-color: #dff0f7;
+  background-color: #eee;
 }
 
 .cart-table .cart-list li > div:first-child {
@@ -1924,6 +1947,7 @@ footer .copyright {
   -webkit-justify-content: space-around;
   -ms-flex-pack: distribute;
   justify-content: space-around;
+  margin-bottom: 2em;
 }
 
 .cart-table .cart-footer a {
@@ -1981,4 +2005,8 @@ footer .copyright {
 
 .cart-table .cart-footer .total h2 {
   margin-top: 0;
+}
+
+.cart-table .btn-hoopla {
+  float: right;
 }
