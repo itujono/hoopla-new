@@ -1369,6 +1369,7 @@ section > h4 {
 
 .cart-table {
     .cart-list {
+        text-align: center;
         .image {
             height: initial;
             width: 100px;
@@ -1399,6 +1400,9 @@ section > h4 {
             > div:first-child {
                 flex: 3 0 0;
                 background-color: white;
+            }
+            p {
+                line-height: $lineHeightP;
             }
         }
     }
@@ -1472,6 +1476,11 @@ section > h4 {
         min-height: 340px;
         background-color: transparent;
         .captioner {
+            h2 { /*ikon checklist*/
+                font-size: 3em;
+                margin-bottom: 0;
+                color: $colorH4;
+            }
             h3 {
                 color: #69e46d;
             }
@@ -1491,17 +1500,17 @@ section > h4 {
     top: 30%;
     right: initial;
     left: 50px;
-    animation: flying 5s ease .5s infinite;
+    animation: flying 5s linear .5s infinite;
     animation-direction: alternate;
 }
 
 @keyframes flying {
     0% {
-        transform: rotate(0) scale(1);
+        transform: rotate(0) scale(.8);
     }
 
     100% {
-        transform: rotate(360deg) scale(1.4);
+        transform: rotate(360deg) scale(1.6);
     }
 
 }

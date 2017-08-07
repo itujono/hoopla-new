@@ -7,6 +7,7 @@
         <link rel="stylesheet" href="https://npmcdn.com/flickity@2/dist/flickity.css">
         <link rel="stylesheet" href="https://unpkg.com/tippy.js@1.2.0/dist/tippy.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
         <link rel="stylesheet" href="/css/tingle.min.css">
     </head>
     <body class="nobg">
@@ -56,10 +57,11 @@
                     <div class="satelite two"></div>
                     <div class="spaceman"></div>
                     <div class="captioner">
-                        <h3>That's it!</h3>
+                        <h2 class="wow bounceInUp" data-wow-delay="1s"><i class="fa fa-check-circle"></i></h2>
+                        <h3 class="wow zoomIn">That's it!</h3>
                         <p class="mb10">Orderan kamu sudah masuk, dan akan kami proses segera. Sebelumnya, silakan cek inbox email kamu. Di situ terdapat semua informasi yang kamu butuhkan untuk merampungkan orderan ini.</p>
                         <p>Anyway, terima kasih banyak sudah berbelanja di Hoopla Toys Rent. Semoga kamu suka dengan pelayanan kami.</p>
-                        <a href="#" class="btn-hoopla">Browsing lagi barang lainnya</a>
+                        <a href="index.html" class="btn-hoopla">Browsing lagi barang lainnya</a>
                     </div>
                 </section>
             </main>
@@ -89,12 +91,17 @@
 
         <script src="js/main.js"></script>
         <script src="https://unpkg.com/tippy.js@1.2.0/dist/tippy.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
 
         <script type="text/javascript">
             tippy('.social a', {
                 followCursor: true,
                 position: 'bottom'
             });
+        </script>
+
+        <script>
+            new WOW().init();
         </script>
     </body>
 </html>

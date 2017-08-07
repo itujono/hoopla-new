@@ -1873,6 +1873,10 @@ section > h4:before {
   color: #EA624C;
 }
 
+.cart-table .cart-list {
+  text-align: center;
+}
+
 .cart-table .cart-list .image {
   height: initial;
   width: 100px;
@@ -1937,6 +1941,10 @@ section > h4:before {
   -ms-flex: 3 0 0px;
   flex: 3 0 0;
   background-color: white;
+}
+
+.cart-table .cart-list li p {
+  line-height: 1.6;
 }
 
 .cart-table .cart-footer {
@@ -2035,6 +2043,13 @@ section > h4:before {
   background-color: transparent;
 }
 
+#finished main .fourth .captioner h2 {
+  /*ikon checklist*/
+  font-size: 3em;
+  margin-bottom: 0;
+  color: #3d3b54;
+}
+
 #finished main .fourth .captioner h3 {
   color: #69e46d;
 }
@@ -2052,30 +2067,30 @@ section > h4:before {
   top: 30%;
   right: initial;
   left: 50px;
-  -webkit-animation: flying 5s ease .5s infinite;
-  animation: flying 5s ease .5s infinite;
+  -webkit-animation: flying 5s linear .5s infinite;
+  animation: flying 5s linear .5s infinite;
   -webkit-animation-direction: alternate;
   animation-direction: alternate;
 }
 
 @-webkit-keyframes flying {
   0% {
-    -webkit-transform: rotate(0) scale(1);
-    transform: rotate(0) scale(1);
+    -webkit-transform: rotate(0) scale(0.8);
+    transform: rotate(0) scale(0.8);
   }
   100% {
-    -webkit-transform: rotate(360deg) scale(1.4);
-    transform: rotate(360deg) scale(1.4);
+    -webkit-transform: rotate(360deg) scale(1.6);
+    transform: rotate(360deg) scale(1.6);
   }
 }
 
 @keyframes flying {
   0% {
-    -webkit-transform: rotate(0) scale(1);
-    transform: rotate(0) scale(1);
+    -webkit-transform: rotate(0) scale(0.8);
+    transform: rotate(0) scale(0.8);
   }
   100% {
-    -webkit-transform: rotate(360deg) scale(1.4);
-    transform: rotate(360deg) scale(1.4);
+    -webkit-transform: rotate(360deg) scale(1.6);
+    transform: rotate(360deg) scale(1.6);
   }
 }
