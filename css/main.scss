@@ -1440,3 +1440,68 @@ section > h4 {
         float: right;
     }
 }
+
+
+
+
+
+
+
+
+// Oreeet tampkanya sudah sampai ke Finished Order heheh
+
+.nobg {
+    background: none;
+}
+
+#finished {
+    grid-template-columns: 1fr;
+    grid-template-areas: "header header" "main main" "footer footer";
+    background: none;
+    header {
+        .main-logo {
+            border-bottom: none;
+        }
+    }
+}
+
+#finished main {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    .fourth {
+        min-height: 340px;
+        background-color: transparent;
+        .captioner {
+            h3 {
+                color: #69e46d;
+            }
+            p.mb10 {
+                margin-bottom: 10px;
+            }
+        }
+    }
+}
+
+.spaceman {
+    background: url('../img/spaceman.png') center;
+    background-size: cover;
+    position: absolute;
+    width: 60px;
+    height: 100px;
+    top: 30%;
+    right: initial;
+    left: 50px;
+    animation: flying 5s ease .5s infinite;
+    animation-direction: alternate;
+}
+
+@keyframes flying {
+    0% {
+        transform: rotate(0) scale(1);
+    }
+
+    100% {
+        transform: rotate(360deg) scale(1.4);
+    }
+
+}
