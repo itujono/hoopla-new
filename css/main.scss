@@ -1315,3 +1315,21 @@ footer {
         }
     }
 }
+
+.modaler .modal-description {
+    display: flex;
+    justify-content: space-between;
+    p {
+        flex: 3;
+        line-height: $lineHeightP;
+        margin: 0 15px 15px 0;
+    }
+    .valid {
+        flex: 1;
+        p {
+            font-size: 12px;
+            margin: 0;
+            color: $coolGreen;
+        }
+    }
+}

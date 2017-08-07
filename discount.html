@@ -232,10 +232,12 @@
                 </div>
                 <div class="modal-content">
                     <h2 class="modal-title">Diskon 40% Semua Produk Nuna!</h2>
-                    <p class="modal-description">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim verentunim.
-                    </p>
-                    <span class="modal-valid">Hingga 20 Oktober 2017</span>
+                    <div class="modal-description">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                        <div class="valid">
+                            <p>Valid hingga</p> 20 Oktober 2019
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -245,19 +247,19 @@
                     <img src="http://unsplash.it/500x500" alt="Modal image">
                 </div>
                 <div class="modal-content">
-                    <h2 class="modal-title">Diskon 40% Semua Produk Nano Nano!</h2>
+                    <h2 class="modal-title">Diskon 100% Semua Produk Nano Nano!</h2>
                     <p class="modal-description">
                         Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim verentunim.
                     </p>
-                    <span class="modal-valid">Hingga 20 Oktober 2018</span>
+                    <span class="modal-valid">Hingga 20 April 2018</span>
                 </div>
             </div>
         </div>
 
 
         <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
-        <script src="js/main.js"></script>
         <script src="js/tingle.min.js"></script>
+        <script src="js/main.js"></script>
 
 
         <script type="text/javascript">
@@ -278,7 +280,7 @@
             });
 
             modal.setContent(document.querySelector('#first').innerHTML);
-            modal.setContent(document.querySelector('#second').innerHTML);
+            modalSecond.setContent(document.querySelector('#second').innerHTML);
 
             document.querySelector('#modaal').addEventListener('click', function() {
                 modal.open();
