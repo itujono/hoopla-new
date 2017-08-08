@@ -2219,3 +2219,7 @@ section > h4:before {
 #not-found main .fourth {
   background: none;
 }
+
+#not-found main .captioner h3 {
+  color: #96d019;
+}
