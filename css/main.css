@@ -82,6 +82,7 @@ header {
 }
 
 header .top-panel {
+  position: relative;
   font-size: 12px;
   padding: 10px 20px;
   display: -webkit-box;
@@ -95,14 +96,20 @@ header .top-panel {
 }
 
 header .top-panel .cart {
-  position: relative;
-  padding: 15px;
+  position: absolute;
+  right: 20px;
+  top: 10px;
+  z-index: 20;
+  padding: 15px 25px;
   background-color: white;
   border: 3px solid #ddd;
   border-radius: 8px;
   -webkit-transform: translateY(-320px);
   -ms-transform: translateY(-320px);
   transform: translateY(-320px);
+  -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 header .top-panel .cart.clicked {
@@ -588,19 +595,19 @@ aside .promo-sidebar .bg h3 {
 }
 
 aside .cta-sidebar {
-  overflow: hidden;
+  position: relative;
+  padding: 15px;
   background: url(../img/baby-calling.png);
   background-position: -40px;
   background-size: cover;
   background-repeat: no-repeat;
+  overflow: hidden;
   border-radius: 7px;
   min-height: 140px;
-  position: relative;
 }
 
 aside .cta-sidebar > div {
   float: right;
-  padding-top: 20px;
   width: 70%;
 }
 
@@ -1429,6 +1436,12 @@ section > h4:before {
   grid-template-columns: 1fr 1fr;
 }
 
+.error {
+  color: #EA624C;
+  margin: 0 0 20px 0;
+  display: none;
+}
+
 .left > h2 {
   position: relative;
   padding-left: 2em;
@@ -1532,6 +1545,7 @@ section > h4:before {
   display: block;
   margin-bottom: 25px;
   width: 100%;
+  margin-bottom: 5px;
 }
 
 .right .form-control textarea {
@@ -1549,6 +1563,10 @@ section > h4:before {
   -o-transition: all 0.3s ease;
   transition: all 0.3s ease;
   font-family: "GothamRoundedMedium", Helvetica, sans-serif;
+}
+
+.right .form-control input.has-error, .right .form-control textarea.has-error {
+  border: 1px solid #EA624C;
 }
 
 .right .form-control input::-webkit-input-placeholder, .right .form-control textarea::-webkit-input-placeholder {

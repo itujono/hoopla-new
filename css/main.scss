@@ -87,17 +87,22 @@ header {
     grid-area: header;
     margin-bottom: 3em;
     .top-panel {
+        position: relative;
         font-size: 12px;
         padding: 10px 20px;
         display: flex;
         justify-content: space-between;
         .cart {
-            position: relative;
-            padding: 15px;
+            position: absolute;
+            right: 20px;
+            top: 10px;
+            z-index: 20;
+            padding: 15px 25px;
             background-color: white;
             border: 3px solid #ddd;
             border-radius: 8px;
             transform: translateY(-320px);
+            transition: $transitionEase;
             &.clicked {
                 transform: translateY(0);
                 box-shadow: $boxShadow;
@@ -445,17 +450,17 @@ aside {
         }
     }
     .cta-sidebar {
-        overflow: hidden;
+        position: relative;
+        padding: 15px;
         background: url(../img/baby-calling.png);
         background-position: -40px;
         background-size: cover;
         background-repeat: no-repeat;
+        overflow: hidden;
         border-radius: 7px;
         min-height: 140px;
-        position: relative;
         > div {
             float: right;
-            padding-top: 20px;
             width: 70%;
             h3 {
                 margin: 0;
@@ -1055,6 +1060,12 @@ section > h4 {
     }
 }
 
+.error{
+    color: $coolRed;
+    margin: 0 0 20px 0;
+    display: none;
+}
+
 .left {
     > h2 {
         position: relative;
@@ -1117,6 +1128,7 @@ section > h4 {
         input {
             display: block;
             @include inputForm;
+            margin-bottom: 5px;
         }
         textarea {
             @include inputForm;
@@ -1125,6 +1137,9 @@ section > h4 {
             margin-top: 10px;
             transition: $transitionEase;
             font-family: $fontDefault;
+            &.has-error {
+                border: 1px solid $coolRed;
+            }
             &::placeholder {
                 color: #ddd;
             }
