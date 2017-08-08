@@ -118,8 +118,9 @@
                         </ul>
                         <div class="cart-footer">
                             <div>
-                                <input type="checkbox" value="agree">
-                                <p>Saya sudah membaca <a href="#">Syarat &amp; Ketentuan</a> yang telah dibuat oleh pihak Hoopla Rent Toys, dan saya memahami keseluruhan isinya.</p>
+                                <input type="checkbox" value="agree" id="tc-check">
+                                <p id="tc-read">Saya sudah membaca <a href="#">Syarat &amp; Ketentuan</a> yang telah dibuat oleh pihak Hoopla Rent Toys, dan saya memahami keseluruhan isinya.</p>
+                                <span class="error-message"><i class="fa fa-times-circle"></i> Oops! Silakan checklist dulu pilihan di atas.</span>
                             </div>
                             <div class="total">
                                 <p>Total pesanan kamu: </p>
@@ -127,7 +128,6 @@
                             </div>
                         </div>
                         <a href="finished.html" class="btn-hoopla">Pesan sekarang</a>
-                        <span class="error-message"><i class="fa fa-times-circle"></i> Oops! Silakan checklist dulu pilihan di atas.</span>
                     </div>
                 </section>
             </main>
@@ -163,6 +163,26 @@
                 followCursor: true,
                 position: 'bottom'
             });
+        </script>
+
+        <script>
+
+        var input = document.querySelector("#tc-check");
+        var par = document.querySelector("#tc-read");
+        var error = document.querySelector(".error-message");
+
+        function changeColor() {
+            if (input.checked === false) {
+                par.style.color = "#999";
+                error.style.display = "block";
+            } else {
+                par.style.color = "#3d3b54";
+                error.style.display = "none";
+            }
+        }
+
+        input.addEventListener("click", changeColor);
+
         </script>
     </body>
 </html>

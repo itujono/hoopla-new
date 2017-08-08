@@ -1879,6 +1879,10 @@ section > h4:before {
 
 .error-message {
   color: #EA624C;
+  display: none;
+  position: absolute;
+  bottom: -20px;
+  left: 35px;
 }
 
 .cart-table .cart-list {
@@ -1989,6 +1993,7 @@ section > h4:before {
   -webkit-flex: 1 0 50%;
   -ms-flex: 1 0 50%;
   flex: 1 0 50%;
+  position: relative;
 }
 
 .cart-table .cart-footer div:first-child p {
@@ -1996,6 +2001,7 @@ section > h4:before {
   -webkit-flex: 1 0 90%;
   -ms-flex: 1 0 90%;
   flex: 1 0 90%;
+  color: #999;
 }
 
 .cart-table .cart-footer div:first-child input[type="checkbox"] {
@@ -2049,6 +2055,7 @@ section > h4:before {
 #finished main .fourth {
   min-height: 340px;
   background-color: transparent;
+  top: -50px;
 }
 
 #finished main .fourth .captioner h2 {

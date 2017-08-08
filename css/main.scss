@@ -1371,6 +1371,10 @@ section > h4 {
 
 .error-message {
     color: $coolRed;
+    display: none;
+    position: absolute;
+    bottom: -20px;
+    left: 35px;
 }
 
 .cart-table {
@@ -1427,8 +1431,10 @@ section > h4 {
         div:first-child {
             display: flex;
             flex: 1 0 50%;
+            position: relative;
             p {
                 flex: 1 0 90%;
+                color: #999;
             }
             input[type="checkbox"] {
                 flex: 1 0 5%;
@@ -1481,6 +1487,7 @@ section > h4 {
     .fourth {
         min-height: 340px;
         background-color: transparent;
+        top: -50px;
         .captioner {
             h2 { /*ikon checklist*/
                 font-size: 5em;
