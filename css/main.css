@@ -94,6 +94,47 @@ header .top-panel {
   justify-content: space-between;
 }
 
+header .top-panel .cart {
+  position: relative;
+  padding: 15px;
+  background-color: #9d6ad8;
+  border-radius: 0 0 7px 7px;
+  color: white;
+}
+
+header .top-panel .cart #btn-cart {
+  position: absolute;
+  right: 0;
+  bottom: -20px;
+  border-radius: 0 0 5px 5px;
+  padding: 5px 10px;
+  color: white;
+  background-color: #9d6ad8;
+}
+
+header .top-panel .cart-small li {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+header .top-panel .cart-small li .image {
+  width: 60px;
+}
+
+header .top-panel .cart-small li .image img {
+  min-height: initial;
+}
+
+header .top-panel .cart-small li div span {
+  color: #96d019;
+}
+
 header .main-logo {
   display: -webkit-box;
   display: -webkit-flex;

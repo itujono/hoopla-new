@@ -91,6 +91,39 @@ header {
         padding: 10px 20px;
         display: flex;
         justify-content: space-between;
+        .cart {
+            position: relative;
+            padding: 15px;
+            background-color: $coolPurple;
+            border-radius: 0 0 7px 7px;
+            color: white;
+            #btn-cart {
+                position: absolute;
+                right: 0;
+                bottom: -20px;
+                border-radius: 0 0 5px 5px;
+                padding: 5px 10px;
+                color: white;
+                background-color: $coolPurple;
+            }
+        }
+        .cart-small {
+            li {
+                display: flex;
+                align-items: center;
+                .image {
+                    width: 60px;
+                    img {
+                        min-height: initial;
+                    }
+                }
+                div {
+                    span {
+                        color: $coolGreen;
+                    }
+                }
+            }
+        }
     }
     .main-logo {
         @include flexCenter;
