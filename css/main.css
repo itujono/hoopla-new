@@ -2205,3 +2205,17 @@ section > h4:before {
     transform: rotate(360deg) scale(1.6);
   }
 }
+
+#not-found {
+  grid-template-columns: 1fr;
+  grid-template-areas: "header header" "main main" "footer footer";
+  background-color: transparent;
+}
+
+#not-found main {
+  grid-template-columns: 1fr;
+}
+
+#not-found main .fourth {
+  background: none;
+}

@@ -1603,3 +1603,22 @@ section > h4 {
     }
 
 }
+
+
+
+
+
+// Waaah ini bagian Not Found ternyata ya. Duh!
+
+#not-found {
+    grid-template-columns: 1fr;
+    grid-template-areas: "header header" "main main" "footer footer";
+    background-color: transparent;
+}
+
+#not-found main {
+    grid-template-columns: 1fr;
+    .fourth {
+        background: none;
+    }
+}

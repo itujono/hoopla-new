@@ -1,8 +1,8 @@
+var carousel = document.querySelector('.carousel');
 var cart = document.querySelector(".cart");
 var btn = document.querySelector("#btn-cart");
-var carousel = document.querySelector('.carousel');
 
-
+////////////////////////////////////
 
 
 tippy('.social a', {
