@@ -161,6 +161,10 @@ main {
     padding-bottom: 5em;
 }
 
+#home main {
+    padding-bottom: 0;
+}
+
 .main-news {
     grid-row: 1/2;
     padding: 0 2em;
@@ -557,6 +561,7 @@ section > h4 {
                 }
                 p {
                     line-height: $lineHeightP;
+                    margin-bottom: 0;
                 }
             }
         }
@@ -725,7 +730,7 @@ section > h4 {
         transform: initial;
     }
     .card-content {
-        height: auto;
+        height: 120px;
         img {
             max-width: initial;
         }

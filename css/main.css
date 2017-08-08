@@ -196,6 +196,10 @@ main {
   padding-bottom: 5em;
 }
 
+#home main {
+  padding-bottom: 0;
+}
+
 .main-news {
   grid-row: 1/2;
   padding: 0 2em;
@@ -750,6 +754,7 @@ section > h4:before {
 
 .first > div:first-child .why-us > div p {
   line-height: 1.6;
+  margin-bottom: 0;
 }
 
 .first > div:first-child h2 {
@@ -1000,7 +1005,7 @@ section > h4:before {
 }
 
 #trivia .card .card-content {
-  height: auto;
+  height: 120px;
 }
 
 #trivia .card .card-content img {

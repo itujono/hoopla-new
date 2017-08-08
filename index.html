@@ -7,6 +7,7 @@
         <link rel="stylesheet" href="https://npmcdn.com/flickity@2/dist/flickity.css">
         <link rel="stylesheet" href="https://unpkg.com/tippy.js@1.2.0/dist/tippy.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
     </head>
     <body>
         <div class="container" id="home">
@@ -50,40 +51,40 @@
 
             <main>
                 <section class="main-news">
-                    <div class="carousel">
+                    <div class="carousel wow bounceInUp" data-wow-delay=".2s">
                         <div class="carousel-cell">
                             <img src="img/kids.jpg" alt="orange tree" />
                             <div class="caption">
                                 <h3>Kalo bisa rental, <br> ngapain beli?</h3>
-                                <a href="#" class="btn-hoopla">Lihat lagi</a>
+                                <a href="discount.html" class="btn-hoopla">Lihat lagi</a>
                             </div>
                         </div>
                         <div class="carousel-cell">
                             <img src="img/kids1.png" alt="One World Trade" />
                             <div class="caption">
                                 <h3>Kalo bisa rental, <br> ngapain beli?</h3>
-                                <a href="#" class="btn-hoopla">Lihat lagi</a>
+                                <a href="discount.html" class="btn-hoopla">Lihat lagi</a>
                             </div>
                         </div>
                         <div class="carousel-cell">
                             <img src="img/kids3.png" alt="drizzle" />
                             <div class="caption">
                                 <h3>Kalo bisa rental, <br> ngapain beli?</h3>
-                                <a href="#" class="btn-hoopla">Lihat lagi</a>
+                                <a href="discount.html" class="btn-hoopla">Lihat lagi</a>
                             </div>
                         </div>
                         <div class="carousel-cell">
                             <img src="img/kids4.png" alt="cat nose" />
                             <div class="caption">
                                 <h3>Kalo bisa rental, <br> ngapain beli?</h3>
-                                <a href="#" class="btn-hoopla">Lihat lagi</a>
+                                <a href="discount.html" class="btn-hoopla">Lihat lagi</a>
                             </div>
                         </div>
                         <div class="carousel-cell">
                             <img src="img/tilt.jpg" alt="contrail" />
                             <div class="caption">
                                 <h3>Kalo bisa rental, <br> ngapain beli?</h3>
-                                <a href="#" class="btn-hoopla">Lihat lagi</a>
+                                <a href="discount.html" class="btn-hoopla">Lihat lagi</a>
                             </div>
                         </div>
                     </div>
@@ -96,15 +97,15 @@
                     </div>
                 </section>
                 <section class="main-news_small">
-                    <div>
+                    <div class="wow bounceInUp">
                         <h3>Puasa syawal bikin sehat, kan?</h3>
                         <a href="trivia.html" class="btn-hoopla">Lihat</a>
                     </div>
-                    <div style="background: url('../img/kid-laughing.jpg')">
+                    <div style="background: url('../img/kid-laughing.jpg')" class="wow bounceInUp" data-wow-delay="1s">
                         <h3>Nuna baru dateng lagi nih, guys!</h3>
                         <a href="trivia.html" class="btn-hoopla">Lihat</a>
                     </div>
-                    <div style="background: url('../img/bg1.jpg')">
+                    <div style="background: url('../img/bg1.jpg')" class="wow bounceInUp" data-wow-delay="1s">
                         <h3>Makanan yang Mantap untuk Hiking</h3>
                         <a href="trivia.html" class="btn-hoopla">Lihat</a>
                     </div>
@@ -220,19 +221,19 @@
                     </select>
                     <a href="#" class="btn-hoopla">Submit</a>
                 </div>
-                <div class="promo-sidebar">
+                <div class="promo-sidebar wow bounceInUp" data-wow-delay="1.3s">
                     <div class="bg">
                         <h3>Summer Sale!</h3>
                         <a href="discount.html" class="btn-hoopla">Rent now</a>
                     </div>
                 </div>
-                <div class="promo-sidebar">
+                <div class="promo-sidebar wow bounceInRight">
                     <div class="bg" style="background: url(../img/kids.jpg)">
                         <h3>How to order?</h3>
                         <a href="discount.html" class="btn-hoopla">Rent now</a>
                     </div>
                 </div>
-                <div class="cta-sidebar">
+                <div class="cta-sidebar wow bounceInLeft" data-wow-delay="1.3s">
                     <div>
                         <h3><small class="coolgreen">Masih bingung?</small> Halo-in kami aja.</h3>
                         <i class="fa fa-phone-square"></i> 0778 325 253
@@ -264,6 +265,8 @@
         <script type="text/javascript" src="js/vanilla-tilt.min.js"></script>
         <script src="https://npmcdn.com/flickity@2/dist/flickity.pkgd.js"></script>
         <script src="https://unpkg.com/tippy.js@1.2.0/dist/tippy.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+        <script> new WOW().init(); </script>
         <script src="js/main.js"></script>
     </body>
 </html>
