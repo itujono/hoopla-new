@@ -1873,6 +1873,11 @@ section > h4:before {
   top: -15px;
 }
 
+#discount .image {
+  overflow: hidden;
+  height: 80px;
+}
+
 #discount .wrapper {
   display: -webkit-box;
   display: -webkit-flex;

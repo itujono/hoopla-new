@@ -1366,6 +1366,11 @@ section > h4 {
     }
 }
 
+#discount .image {
+    overflow: hidden;
+    height: 80px;
+}
+
 #discount .wrapper {
     display: flex;
     flex-wrap: wrap;
