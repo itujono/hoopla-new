@@ -4,7 +4,6 @@
         <meta charset="utf-8">
         <title>Package &amp; Discounts  - Hoopla Toys Rent</title>
         <link rel="stylesheet" href="/css/main.css">
-        <link rel="stylesheet" href="https://npmcdn.com/flickity@2/dist/flickity.css">
         <link rel="stylesheet" href="https://unpkg.com/tippy.js@1.2.0/dist/tippy.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="/css/tingle.min.css">
@@ -287,26 +286,28 @@
         </div>
 
 
-        <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
-        <script src="js/tingle.min.js"></script>
+
+
+
         <script src="js/main.js"></script>
+        <script src="js/tingle.min.js"></script>
 
+        <!-- <script>
+            var cart = document.querySelector(".cart");
+            var btn = document.querySelector("#btn-cart");
 
-        <script>
+            function showCart() {
+                if (!cart.classList.contains("clicked")) {
+                    cart.classList.add("clicked");
+                    btn.classList.add("moved");
+                    console.log("Sempardak cart");
+                } else {
+                    cart.classList.remove("clicked");
+                    btn.classList.remove("moved");
+                }
+            }
 
-            // Declare vars
-            var modal = new tingle.modal({ cssClass: ['modaler'] });
-            var modalSecond = new tingle.modal({ cssClass: ['modaler'] });
-
-            // setContent
-            modal.setContent(document.querySelector('#first').innerHTML);
-            modalSecond.setContent(document.querySelector('#second').innerHTML);
-
-            // Event Listeners
-            document.querySelector('#modaal').addEventListener('click', function() { modal.open(); });
-            document.querySelector('#modaal-second').addEventListener('click', function() { modalSecond.open(); });
-
-        </script>
-
+            btn.addEventListener("click", showCart);
+        </script> -->
     </body>
 </html>
