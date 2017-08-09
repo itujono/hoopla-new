@@ -6,6 +6,7 @@
         <link rel="stylesheet" href="css/main.css">
         <link rel="stylesheet" href="https://unpkg.com/tippy.js@1.2.0/dist/tippy.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
     </head>
     <body>
         <div class="container" id="sale">
@@ -404,28 +405,40 @@
 
             <aside class="sidebar">
                 <div class="sort">
-                    <h4>Sort by:</h4>
+                    <h4>Filter by:</h4>
                     <select>
-                        <option value="trending">Trending</option>
-                        <option value="high-low">Price (high to low)</option>
-                        <option value="low-high">Price (low to high)</option>
-                        <option value="date">Date added</option>
+                        <option value="az">Brand (A-Z)</option>
+                        <option value="za">Brand (Z-A)</option>
+                        <option value="category">Kategori</option>
+                        <option value="age1">Umur (0-2)</option>
+                        <option value="age2">Umur (3-6)</option>
+                        <option value="age3">Umur 7-10)</option>
                     </select>
                     <a href="#" class="btn-hoopla">Submit</a>
                 </div>
-                <div class="promo-sidebar">
+                <div class="sort">
+                    <h4>Sort by:</h4>
+                    <select>
+                        <option value="trending">Trending</option>
+                        <option value="high-low">Harga (tinggi ke rendah)</option>
+                        <option value="low-high">Harga (rendah ke tinggi)</option>
+                        <option value="date">Tanggal dimasukkan</option>
+                    </select>
+                    <a href="#" class="btn-hoopla">Submit</a>
+                </div>
+                <div class="promo-sidebar wow bounceInUp" data-wow-delay="1.3s">
                     <div class="bg">
-                        <h3>Summer Sale!</h3>
-                        <a href="#" class="btn-hoopla">Rent now</a>
-                    </div>
-                </div>
-                <div class="promo-sidebar">
-                    <div class="bg" style="background: url(img/kids.jpg)">
                         <h3>How to order?</h3>
-                        <a href="#" class="btn-hoopla">Rent now</a>
+                        <a href="#" class="btn-hoopla" id="btn-order">Read here</a>
                     </div>
                 </div>
-                <div class="cta-sidebar">
+                <div class="promo-sidebar wow bounceInRight">
+                    <div class="bg" style="background: url(img/kids.jpg)">
+                        <h3>Mau titip sewa?</h3>
+                        <a href="discount.html" class="btn-hoopla">Klik di sini</a>
+                    </div>
+                </div>
+                <div class="cta-sidebar wow bounceInLeft" data-wow-delay="1.3s">
                     <div>
                         <h3><small class="coolgreen">Masih bingung?</small> Halo-in kami aja.</h3>
                         <i class="fa fa-phone-square"></i> 0778 325 253
@@ -457,6 +470,8 @@
 
 
         <script src="https://unpkg.com/tippy.js@1.2.0/dist/tippy.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+        <script> new WOW().init(); </script>
         <script src="js/main.js"></script>
 
         <script>
