@@ -1,13 +1,15 @@
 var carousel = document.querySelector('.carousel');
-
 var cart = document.querySelector(".cart");
 var btn = document.querySelector("#btn-cart");
 
-function showCart() {
+
+
+function showCart(e) {
     if (!cart.classList.contains("clicked")) {
+        e.preventDefault();
         cart.classList.add("clicked");
         btn.classList.add("moved");
-        console.log("Sempardak cart");
+        btn.setAttribute('href', 'cart.html');
     } else {
         cart.classList.remove("clicked");
         btn.classList.remove("moved");
