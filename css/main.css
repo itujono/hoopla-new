@@ -712,6 +712,93 @@ section > h4:before {
   top: -15px;
 }
 
+.ordering {
+  display: none;
+}
+
+.ordering .tingle-modal-box__content {
+  padding: 10px 15px;
+  text-align: center;
+}
+
+.ordering .tingle-modal-box__content > h3 {
+  color: #96d019;
+  margin-bottom: 5px;
+  font-size: 1.8em;
+}
+
+.ordering .order-steps {
+  margin-bottom: 3em;
+  margin-top: 0;
+  color: #999;
+}
+
+.ordering .steps {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  color: #999;
+}
+
+.ordering .steps > li {
+  margin-right: 15px;
+  padding: 12px;
+  text-align: center;
+  line-height: 1.6;
+}
+
+.ordering .steps > li > div {
+  display: inline-block;
+  background-color: #EA624C;
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.ordering .steps > li > div:hover {
+  -webkit-transform: translateY(3px);
+  -ms-transform: translateY(3px);
+  transform: translateY(3px);
+}
+
+.ordering .steps > li > div:hover img {
+  -webkit-transform: translateY(10px);
+  -ms-transform: translateY(10px);
+  transform: translateY(10px);
+}
+
+.ordering .steps > li > div.softblue {
+  background-color: #dff0f7;
+}
+
+.ordering .steps > li > div.softpurple {
+  background-color: #e0d0e2;
+}
+
+.ordering .steps > li > div.softpink {
+  background-color: #fbdfdb;
+}
+
+.ordering .steps > li > div img {
+  width: 80px;
+  -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.ordering .steps > li a {
+  color: #96d019;
+}
+
+.ordering .steps > li h3 {
+  margin-bottom: 8px;
+  line-height: normal;
+}
+
 #about {
   grid-template-columns: 1fr;
   grid-template-areas: "header header" "main main" "footer footer";
