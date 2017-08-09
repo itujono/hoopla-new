@@ -45,7 +45,7 @@
                                     </div>
                                 </li>
                             </ul>
-                            <a href="cart.html" id="btn-cart"><i class="fa fa-shopping-cart"></i>&nbsp; Cart</a>
+                            <a href="#" id="btn-cart"><i class="fa fa-shopping-cart"></i>&nbsp; Cart</a>
                         </div>
                     </div>
                 </div>
@@ -57,14 +57,23 @@
                     <li class="has-children">
                         <a href="product.html">Products</a>
                         <ul class="children">
-                            <li><a href="#">Boys</a></li>
-                            <li><a href="#">Girls</a></li>
-                            <li><a href="#">Toys</a></li>
+                            <li><a href="#">Brands</a></li>
+                            <li><a href="#">Kategori</a></li>
+                            <li><a href="#">Umur</a></li>
                         </ul>
                     </li>
                     <li><a href="about.html">About us</a></li>
-                    <li><a href="tc.html">T &amp; C</a></li>
                     <li><a href="discount.html">Discounts</a></li>
+                    <li class="has-children">
+                        <a href="sale.html">For Sale</a>
+                        <ul class="children">
+                            <li><a href="#">For mom</a></li>
+                            <li><a href="#">For baby</a></li>
+                            <li><a href="#">Toys</a></li>
+                            <li><a href="#">Snacks &amp; foods</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="tc.html">T &amp; C</a></li>
                     <li class="has-children">
                         <a href="trivia.html">Trivia</a>
                         <ul class="children">
@@ -240,25 +249,37 @@
 
             <aside class="sidebar">
                 <div class="sort">
+                    <h4>Filter by:</h4>
+                    <select>
+                        <option value="az">Brand (A-Z)</option>
+                        <option value="za">Brand (Z-A)</option>
+                        <option value="category">Kategori</option>
+                        <option value="age1">Umur (0-2)</option>
+                        <option value="age2">Umur (3-6)</option>
+                        <option value="age3">Umur 7-10)</option>
+                    </select>
+                    <a href="#" class="btn-hoopla">Submit</a>
+                </div>
+                <div class="sort">
                     <h4>Sort by:</h4>
                     <select>
                         <option value="trending">Trending</option>
-                        <option value="high-low">Price (high to low)</option>
-                        <option value="low-high">Price (low to high)</option>
-                        <option value="date">Date added</option>
+                        <option value="high-low">Harga (tinggi ke rendah)</option>
+                        <option value="low-high">Harga (rendah ke tinggi)</option>
+                        <option value="date">Tanggal dimasukkan</option>
                     </select>
                     <a href="#" class="btn-hoopla">Submit</a>
                 </div>
                 <div class="promo-sidebar wow bounceInUp" data-wow-delay="1.3s">
                     <div class="bg">
-                        <h3>Summer Sale!</h3>
+                        <h3>How to order?</h3>
                         <a href="discount.html" class="btn-hoopla">Rent now</a>
                     </div>
                 </div>
                 <div class="promo-sidebar wow bounceInRight">
                     <div class="bg" style="background: url(img/kids.jpg)">
-                        <h3>How to order?</h3>
-                        <a href="discount.html" class="btn-hoopla">Rent now</a>
+                        <h3>Mau titip sewa?</h3>
+                        <a href="discount.html" class="btn-hoopla">Klik di sini</a>
                     </div>
                 </div>
                 <div class="cta-sidebar wow bounceInLeft" data-wow-delay="1.3s">

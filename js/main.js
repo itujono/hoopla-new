@@ -23,13 +23,15 @@ btn.addEventListener("click", showCart);
 
 tippy('.social a', {
     followCursor: true,
-    position: 'bottom'
+    position: 'bottom',
+    arrow: true
 });
 
 tippy('section > h4', {
     position: 'top',
     followCursor: true,
     size: 'small',
+    arrow: true,
     inertia: true
 });
 
