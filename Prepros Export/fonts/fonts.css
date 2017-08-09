@@ -1,0 +1,16 @@
+@font-face {
+    font-family: 'GothamRoundedBold';
+    src: url('gothamrnd-bold.eot');
+    src: url('gothamrnd-bold.eot') format('embedded-opentype'),
+         url('gothamrnd-bold.woff') format('woff'),
+         url('gothamrnd-bold.ttf') format('truetype'),
+         url('gothamrnd-bold.svg#GothamRoundedBold') format('svg');
+}
+@font-face {
+    font-family: 'GothamRoundedMedium';
+    src: url('gothamrnd-medium.eot');
+    src: url('gothamrnd-medium.eot') format('embedded-opentype'),
+         url('gothamrnd-medium.woff') format('woff'),
+         url('gothamrnd-medium.ttf') format('truetype'),
+         url('gothamrnd-medium.svg#GothamRoundedMedium') format('svg');
+}
