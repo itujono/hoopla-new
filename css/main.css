@@ -2671,34 +2671,6 @@ section > h4:before {
   line-height: normal;
 }
 
-#titip-sewa .titip .disclaimer {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  position: relative;
-  margin-bottom: 2em;
-}
-
-#titip-sewa .titip .disclaimer input[type="checkbox"] {
-  -webkit-box-flex: 1;
-  -webkit-flex: 1 0 5%;
-  -ms-flex: 1 0 5%;
-  flex: 1 0 5%;
-  font-size: 12px;
-  margin: 5px 10px 0 0;
-}
-
-#titip-sewa .titip .disclaimer p {
-  line-height: 1.6;
-  margin-top: 0;
-  margin-bottom: 10px;
-  -webkit-box-flex: 5;
-  -webkit-flex: 5 0 90%;
-  -ms-flex: 5 0 90%;
-  flex: 5 0 90%;
-}
-
 #titip-sewa .titip .titip-sewa {
   text-align: left;
   margin: 0 auto;
@@ -2738,6 +2710,35 @@ section > h4:before {
 
 #titip-sewa .titip .titip-sewa .inline .form-group:last-child {
   margin-right: 0;
+}
+
+#titip-sewa .titip .titip-sewa .disclaimer {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  margin-bottom: 2em;
+}
+
+#titip-sewa .titip .titip-sewa .disclaimer input[type="checkbox"] {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1 0 5%;
+  -ms-flex: 1 0 5%;
+  flex: 1 0 5%;
+  font-size: 12px;
+  margin: 5px 10px 0 0;
+}
+
+#titip-sewa .titip .titip-sewa .disclaimer p {
+  line-height: 1.6;
+  margin-top: 0;
+  margin-bottom: 10px;
+  -webkit-box-flex: 5;
+  -webkit-flex: 5 0 90%;
+  -ms-flex: 5 0 90%;
+  flex: 5 0 90%;
+  color: #999;
 }
 
 .titip-succeed {
