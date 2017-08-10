@@ -537,7 +537,7 @@ section > h4 {
     }
 }
 
-.ordering {
+.ordering, .titip {
     display: none;
     .tingle-modal-box__content {
         padding: 10px 15px;
@@ -556,11 +556,13 @@ section > h4 {
     .steps {
         display: flex;
         color: #999;
+        margin-bottom: 2.4em;
         > li {
             margin-right: 15px;
             padding: 12px;
             text-align: center;
             line-height: $lineHeightP;
+            flex-basis: 23%;
             > div {
                 display: inline-block;
                 background-color: $coolRed;
@@ -596,6 +598,9 @@ section > h4 {
                 line-height: normal;
             }
         }
+    }
+    .disclaimer {
+        font-size: 12px;
     }
 }
 

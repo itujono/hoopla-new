@@ -280,7 +280,7 @@
                 <div class="promo-sidebar wow bounceInRight">
                     <div class="bg" style="background: url(img/kids.jpg)">
                         <h3>Mau titip sewa?</h3>
-                        <a href="discount.html" class="btn-hoopla">Klik di sini</a>
+                        <a href="#" class="btn-hoopla" id="btn-titip">Klik di sini</a>
                     </div>
                 </div>
                 <div class="cta-sidebar wow bounceInLeft" data-wow-delay="1.3s">
@@ -353,6 +353,47 @@
                 </ul>
             </div>
         </div>
+        <div class="tingle-content-wrapper">
+            <div class="titip" id="titip">
+                <h3>Mau titip barang kamu di Hoopla?</h3>
+                <p class="order-steps">Well, it's quite simple, actually. Cuma butuh 4 proses yang, seperti kami katakan, simpel.</p>
+                <ul class="steps">
+                    <li>
+                        <div class="softpurple">
+                            <img src="img/icon-modal-02.png" alt="Tata cara">
+                        </div>
+                        <h3>Isi <a href="#">form pemesanan</a> nya</h3>
+                        Isi dulu data diri kamu sebagai pembeli. This is the most important part.
+                    </li>
+                    <li>
+                        <div>
+                            <img src="img/icon-modal-01.png" alt="Tata cara">
+                        </div>
+                        <h3>Hubungi kami</h3>
+                        <ul>
+                            <li>Whatsapp 082113111699</li>
+                            <li>Line 082113111670</li>
+                            <li>SMS 082113111633</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <div class="softblue">
+                            <img src="img/icon-modal-03.png" alt="Tata cara">
+                        </div>
+                        <h3>Lakukan pembayaran</h3>
+                        Detail info rekening akan kami beritahu via email begitu kamu berhasil melakukan order
+                    </li>
+                    <li>
+                        <div class="softpink">
+                            <img src="img/icon-modal-04.png" alt="Tata cara">
+                        </div>
+                        <h3>Voila! Kami jemput barangnya!</h3>
+                        Yup, benar! Sesimpel itu. Nggak ada yang lain.
+                    </li>
+                </ul>
+                <p class="disclaimer">Baca tentang <a href="tc.html" class="coolgreen">Syarat &amp; Ketentuan</a> tentang menitipkan barang di Hoopla terlebih dulu.</p>
+            </div>
+        </div>
 
         <script type="text/javascript" src="js/vanilla-tilt.min.js"></script>
         <script src="https://npmcdn.com/flickity@2/dist/flickity.pkgd.js"></script>
@@ -362,11 +403,17 @@
         <script src="js/tingle.min.js"></script>
         <script>
             var modal = new tingle.modal({ cssClass: ['ordering'] });
-            modal.setContent(document.querySelector('#ordering').innerHTML);
+            var modalTitip = new tingle.modal({ cssClass: ['titip'] });
+            var btnTitip = document.querySelector('#btn-titip');
 
-            document.querySelector('#btn-order').addEventListener('click', function() {
-                modal.open();
+
+            modal.setContent(document.querySelector('#ordering').innerHTML);
+            document.querySelector('#btn-order').addEventListener('click', function(e) {
+                modal.open(); e.preventDefault();
             });
+
+            modalTitip.setContent(document.querySelector('#titip').innerHTML);
+            btnTitip.addEventListener('click', function(e) { modalTitip.open(); e.preventDefault(); });
         </script>
         <script src="js/main.js"></script>
     </body>
