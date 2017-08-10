@@ -203,35 +203,33 @@
         </script>
 
         <script>
+            var input = document.querySelector("#tc-check");
+            var par = document.querySelector("#tc-read");
+            var error = document.querySelector(".error-message");
+            var proceed = document.querySelector("#proceed");
 
-        var input = document.querySelector("#tc-check");
-        var par = document.querySelector("#tc-read");
-        var error = document.querySelector(".error-message");
-        var proceed = document.querySelector("#proceed");
-
-        function changeColor() {
-            if (input.checked === false) {
-                par.style.color = "#999";
-                error.style.display = "block";
-            } else {
-                par.style.color = "#3d3b54";
-                error.style.display = "none";
+            function changeColor() {
+                if (input.checked === false) {
+                    par.style.color = "#999";
+                    error.style.display = "block";
+                } else {
+                    par.style.color = "#3d3b54";
+                    error.style.display = "none";
+                }
             }
-        }
 
-        function goNextPage(e) {
-            if (!input.checked) {
-                e.preventDefault();
-                error.style.display = "block";
-                return false;
-            } else {
-                return true;
+            function goNextPage(e) {
+                if (!input.checked) {
+                    e.preventDefault();
+                    error.style.display = "block";
+                    return false;
+                } else {
+                    return true;
+                }
             }
-        }
 
-        input.addEventListener("click", changeColor);
-        proceed.addEventListener("click", goNextPage);
-
+            input.addEventListener("click", changeColor);
+            proceed.addEventListener("click", goNextPage);
         </script>
     </body>
 </html>
