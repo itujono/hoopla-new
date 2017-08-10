@@ -807,6 +807,46 @@ section > h4:before {
   font-size: 12px;
 }
 
+.ordering .titip-sewa, .titip .titip-sewa {
+  text-align: left;
+  margin: 0 auto;
+  width: 60%;
+}
+
+.ordering .titip-sewa .title, .titip .titip-sewa .title {
+  margin-bottom: 2em;
+  color: #96d019;
+}
+
+.ordering .titip-sewa .title h4, .titip .titip-sewa .title h4 {
+  font-size: 2em;
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.ordering .titip-sewa .form-group input, .titip .titip-sewa .form-group input {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  display: block;
+  margin-bottom: 25px;
+  width: 100%;
+}
+
+.ordering .titip-sewa .form-group label, .titip .titip-sewa .form-group label {
+  color: #3d3b54;
+}
+
+.ordering .titip-sewa .inline > .form-group, .titip .titip-sewa .inline > .form-group {
+  display: inline-block;
+  width: 48%;
+  margin-right: 12px;
+}
+
+.ordering .titip-sewa .inline .form-group:last-child, .titip .titip-sewa .inline .form-group:last-child {
+  margin-right: 0;
+}
+
 #about {
   grid-template-columns: 1fr;
   grid-template-areas: "header header" "main main" "footer footer";
@@ -1625,15 +1665,15 @@ section > h4:before {
   top: -15px;
 }
 
-.right .form-control label {
+.form-control label {
   color: #96d019;
 }
 
-.right .form-control label span {
+.form-control label span {
   color: #EA624C;
 }
 
-.right .form-control input {
+.form-control input {
   display: block;
   padding: 10px;
   border-radius: 5px;
@@ -1644,7 +1684,7 @@ section > h4:before {
   margin-bottom: 5px;
 }
 
-.right .form-control textarea {
+.form-control textarea {
   padding: 10px;
   border-radius: 5px;
   border: 1px solid #ddd;
@@ -1653,7 +1693,7 @@ section > h4:before {
   width: 100%;
 }
 
-.right .form-control input, .right .form-control textarea {
+.form-control input, .form-control textarea {
   margin-top: 10px;
   -webkit-transition: all 0.3s ease;
   -o-transition: all 0.3s ease;
@@ -1661,33 +1701,33 @@ section > h4:before {
   font-family: "GothamRoundedMedium", Helvetica, sans-serif;
 }
 
-.right .form-control input.has-error, .right .form-control textarea.has-error {
+.form-control input.has-error, .form-control textarea.has-error {
   border: 1px solid #EA624C;
 }
 
-.right .form-control input::-webkit-input-placeholder, .right .form-control textarea::-webkit-input-placeholder {
+.form-control input::-webkit-input-placeholder, .form-control textarea::-webkit-input-placeholder {
   color: #ddd;
 }
 
-.right .form-control input::-moz-placeholder, .right .form-control textarea::-moz-placeholder {
+.form-control input::-moz-placeholder, .form-control textarea::-moz-placeholder {
   color: #ddd;
 }
 
-.right .form-control input:-ms-input-placeholder, .right .form-control textarea:-ms-input-placeholder {
+.form-control input:-ms-input-placeholder, .form-control textarea:-ms-input-placeholder {
   color: #ddd;
 }
 
-.right .form-control input::placeholder, .right .form-control textarea::placeholder {
+.form-control input::placeholder, .form-control textarea::placeholder {
   color: #ddd;
 }
 
-.right .form-control input:focus, .right .form-control textarea:focus {
+.form-control input:focus, .form-control textarea:focus {
   outline: none;
   -webkit-box-shadow: 0 12px 15px 0 rgba(0, 0, 0, 0.09), 0 17px 50px 0 rgba(0, 0, 0, 0.1);
   box-shadow: 0 12px 15px 0 rgba(0, 0, 0, 0.09), 0 17px 50px 0 rgba(0, 0, 0, 0.1);
 }
 
-.right .form-control button {
+.form-control button {
   border: none;
   font-family: "GothamRoundedMedium", Helvetica, sans-serif;
   cursor: pointer;
