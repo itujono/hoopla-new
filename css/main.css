@@ -2056,17 +2056,17 @@ section > h4:before {
   grid-template-rows: auto;
 }
 
-#discount main section {
-  padding: 0 3em;
+#discount main > section {
+  padding: 3em;
 }
 
-#discount main section > h4 {
+#discount main > section > h4 {
   position: relative;
   padding-left: 1.4em;
   font-size: 2em;
 }
 
-#discount main section > h4:before {
+#discount main > section > h4:before {
   content: '';
   background: url(../img/bird.png) center;
   background-size: 30px;
@@ -2738,6 +2738,10 @@ section > h4:before {
 
 #titip-sewa .titip .titip-sewa .inline .form-group:last-child {
   margin-right: 0;
+}
+
+.titip-succeed {
+  display: none;
 }
 
 #proceed {

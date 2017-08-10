@@ -127,7 +127,7 @@
                                 Yup, benar! Sesimpel itu. Nggak ada yang lain.
                             </li>
                         </ul>
-                        <form class="titip-sewa form-control" action="index.html" method="post" id="form-titip_sewa">
+                        <form class="titip-sewa form-control" action="" method="post" id="form-titip_sewa">
                             <div class="title">
                                 <h4>Formulir Titip Sewa</h4>
                                 Harap diisi dan dibaca kembali dengan seksama setiap info yang diinput.
@@ -260,6 +260,13 @@
                 </ul>
             </div>
         </div>
+        <div class="tingle-content-wrapper">
+            <div class="titip-succeed">
+                <h2 class="wow bounceInUp" data-wow-delay="1s"><i class="fa fa-check-circle"></i></h2>
+                <h3 class="wow zoomIn">That's it!</h3>
+                <p>Data kamu akan kami review dulu ya. Selanjutnya, silakan tunggu telepon dari kami. =)</p>
+            </div>
+        </div>
 
 
         <script src="https://unpkg.com/tippy.js@1.2.0/dist/tippy.min.js"></script>
@@ -268,6 +275,9 @@
         <script src="js/tingle.min.js"></script>
         <script>
             var modal = new tingle.modal({ cssClass: ['ordering'] });
+
+
+
             modal.setContent(document.querySelector('#ordering').innerHTML);
 
             document.querySelector('#btn-order').addEventListener('click', function() {
@@ -279,6 +289,10 @@
             var par = document.querySelector("#tc-read");
             var error = document.querySelector(".error-message");
             var proceed = document.querySelector("#proceed");
+            var modalSucceed = new tingle.modal({ cssClass: ['titip-succeed'] });
+
+            modalSucceed.setContent(document.querySelector('.titip-succeed').innerHTML);
+
 
             function changeColor() {
                 if (input.checked === false) {
@@ -296,9 +310,9 @@
                 if (!input.checked) {
                     e.preventDefault();
                     error.style.display = "block";
-                    return false;
                 } else {
-                    return true;
+                    modalSucceed.open();
+                    return false;
                 }
             }
 
