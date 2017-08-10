@@ -8,6 +8,7 @@
         <link rel="stylesheet" href="https://unpkg.com/tippy.js@1.2.0/dist/tippy.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+        <link rel="stylesheet" href="css/tingle.min.css">
     </head>
     <body>
         <div class="container" id="product-detail">
@@ -237,10 +238,59 @@
             </footer>
         </div>
 
+        <div class="tingle-content-wrapper">
+            <div class="ordering" id="ordering">
+                <h3>Gimana cara order di Hoopla?</h3>
+                <p class="order-steps">Well, it's quite simple, actually. Cuma butuh 4 proses yang, seperti kami katakan, simpel.</p>
+                <ul class="steps">
+                    <li>
+                        <div>
+                            <img src="img/icon-modal-01.png" alt="Tata cara">
+                        </div>
+                        <h3>Whatsapp/Line/SMS kami</h3>
+                        <ul>
+                            <li>Whatsapp 082113111699</li>
+                            <li>Line 082113111670</li>
+                            <li>SMS 082113111633</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <div class="softpurple">
+                            <img src="img/icon-modal-02.png" alt="Tata cara">
+                        </div>
+                        <h3>Isi <a href="#">form pemesanan</a> nya</h3>
+                        Isi dulu data diri kamu sebagai pembeli. This is the most important part.
+                    </li>
+                    <li>
+                        <div class="softblue">
+                            <img src="img/icon-modal-03.png" alt="Tata cara">
+                        </div>
+                        <h3>Lakukan pembayaran</h3>
+                        Detail info rekening akan kami beritahu via email begitu kamu berhasil melakukan order
+                    </li>
+                    <li>
+                        <div class="softpink">
+                            <img src="img/icon-modal-04.png" alt="Tata cara">
+                        </div>
+                        <h3>Voila! Kami antar barangnya!</h3>
+                        Yup, benar! Sesimpel itu. Nggak ada yang lain.
+                    </li>
+                </ul>
+            </div>
+        </div>
 
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
         <script> new WOW().init(); </script>
+        <script src="js/tingle.min.js"></script>
+        <script>
+            var modal = new tingle.modal({ cssClass: ['ordering'] });
+            modal.setContent(document.querySelector('#ordering').innerHTML);
+
+            document.querySelector('#btn-order').addEventListener('click', function() {
+                modal.open();
+            });
+        </script>
         <script src="js/main.js"></script>
     </body>
 </html>
