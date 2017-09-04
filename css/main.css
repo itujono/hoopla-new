@@ -1392,6 +1392,23 @@ section > h4:before {
   top: -10px;
 }
 
+.no-content {
+  padding: 2em;
+  background-color: #eee;
+  border-radius: 7px;
+}
+
+.no-content h2 {
+  color: #bbb;
+  margin: 0;
+}
+
+.no-content p {
+  margin-bottom: 2em;
+  color: #bbb;
+  line-height: 1.6;
+}
+
 #trivia-post {
   grid-template-columns: 1fr;
 }

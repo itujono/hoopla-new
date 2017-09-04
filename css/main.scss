@@ -1019,6 +1019,23 @@ section > h4 {
     }
 }
 
+.no-content {
+    padding: 2em;
+    background-color: #eee;
+    border-radius: 7px;
+    h2 {
+        color: #bbb;
+        margin: 0;
+    }
+    p {
+        margin-bottom: 2em;
+        color: #bbb;
+        line-height: $lineHeightP;
+    }
+}
+
+
+
 
 
 
