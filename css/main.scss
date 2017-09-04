@@ -1589,16 +1589,18 @@ section > h4 {
 // Ini untuk Discount Update sementara
 
 table {
-    padding: 1em 2em;
+    border-radius: 7px;
+    // border: 1px solid $coolBlue;
+    padding: 0;
     background-color: #fff;
 }
 
 thead {
     border-bottom: 1px solid #ddd;
     tr {
+        background-color: #fcfcfc;
         th {
-            vertical-align: bottom;
-            border-bottom: 1px solid #ddd;
+            // border-bottom: 1px solid #ddd;
             padding: 10px;
             color: $coolGreen;
             font-weight: normal;
@@ -1608,14 +1610,14 @@ thead {
 
 tbody tr {
     text-align: center;
-    border: 1px solid #ddd;
     td {
-        vertical-align: top;
         padding: 10px;
+        border-bottom: 1px solid #ddd;
     }
     &.total {
         td {
             font-weight: bold;
+            border: none;
         }
     }
 }

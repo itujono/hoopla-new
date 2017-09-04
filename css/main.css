@@ -2179,7 +2179,8 @@ section > h4:before {
 }
 
 table {
-  padding: 1em 2em;
+  border-radius: 7px;
+  padding: 0;
   background-color: #fff;
 }
 
@@ -2187,9 +2188,11 @@ thead {
   border-bottom: 1px solid #ddd;
 }
 
+thead tr {
+  background-color: #fcfcfc;
+}
+
 thead tr th {
-  vertical-align: bottom;
-  border-bottom: 1px solid #ddd;
   padding: 10px;
   color: #96d019;
   font-weight: normal;
@@ -2197,16 +2200,16 @@ thead tr th {
 
 tbody tr {
   text-align: center;
-  border: 1px solid #ddd;
 }
 
 tbody tr td {
-  vertical-align: top;
   padding: 10px;
+  border-bottom: 1px solid #ddd;
 }
 
 tbody tr.total td {
   font-weight: bold;
+  border: none;
 }
 
 #cart {
