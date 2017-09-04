@@ -2170,6 +2170,44 @@ section > h4 {
 }
 
 .conclusion {
-    display: flex;
     padding: 0 3em;
+    .reasons {
+        display: flex;
+        > div {
+            display: flex;
+            flex: 1 0 48%;
+            margin-right: 10px;
+            border: 1px solid $coolBlue;
+            border-radius: 7px;
+            .texts {
+                background-color: #fff;
+                border-radius: 0 7px 7px 0;
+                padding: 1em 2em;
+                line-height: $lineHeightP;
+                h3 {
+                    @include marginHeading;
+                    color: $coolGreen;
+                }
+                a {
+                    color: $coolGreen;
+                    &:hover {
+                        text-decoration: underline;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.figs {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    background-color: $coolBlue;
+    min-width: 140px;
+    border-radius: 7px 0 0 7px;
+    overflow: hidden;
+    img {
+        width: 190%;
+    }
 }

@@ -2956,9 +2956,70 @@ section > h4:before {
 }
 
 .conclusion {
+  padding: 0 3em;
+}
+
+.conclusion .reasons {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  padding: 0 3em;
+}
+
+.conclusion .reasons > div {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1 0 48%;
+  -ms-flex: 1 0 48%;
+  flex: 1 0 48%;
+  margin-right: 10px;
+  border: 1px solid #c3e8ff;
+  border-radius: 7px;
+}
+
+.conclusion .reasons > div .texts {
+  background-color: #fff;
+  border-radius: 0 7px 7px 0;
+  padding: 1em 2em;
+  line-height: 1.6;
+}
+
+.conclusion .reasons > div .texts h3 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  color: #96d019;
+}
+
+.conclusion .reasons > div .texts a {
+  color: #96d019;
+}
+
+.conclusion .reasons > div .texts a:hover {
+  text-decoration: underline;
+}
+
+.figs {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+  -webkit-align-items: flex-end;
+  -ms-flex-align: end;
+  align-items: flex-end;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  background-color: #c3e8ff;
+  min-width: 140px;
+  border-radius: 7px 0 0 7px;
+  overflow: hidden;
+}
+
+.figs img {
+  width: 190%;
 }
