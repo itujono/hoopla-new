@@ -239,28 +239,34 @@ main {
 .main-news {
     grid-row: 1/2;
     padding: 0 2em;
-    .carousel {
+    overflow: hidden;
+    .owl-carousel {
         background: transparent;
-        .flickity-viewport {
-            border-radius: 8px;
-            box-shadow: $boxShadow;
-        }
+        margin-bottom: 4em;
         .carousel-cell {
             position: relative;
             width: 100%;
-            height: 350px;
+            height: 250px;
             margin-right: 10px;
             background: $coolPurple;
             border-radius: 5px;
+            overflow: hidden;
             .caption {
                 position: absolute;
                 bottom: 10%;
-                left: 10%;
+                left: 5%;
                 h3 {
                     color: white;
-                    font-size: 3em;
+                    font-size: 2.2em;
+                    margin-bottom: 0;
                     letter-spacing: 1px;
                     text-shadow: 0 2px 15px rgba(0,0,0,.8);
+                }
+                p {
+                    color: #fff;
+                    margin-bottom: 30px;
+                    margin-top: 5px;
+                    line-height: $lineHeightP;
                 }
             }
         }
@@ -825,6 +831,11 @@ section > h4 {
             transform: rotate(24deg);
         }
     }
+    > div p {
+        color: #fff;
+        line-height: $lineHeightP;
+        margin-bottom: 2em;
+    }
     > div:last-child {
         flex: 3;
         li {
@@ -865,7 +876,7 @@ section > h4 {
     .captioner {
         width: 50%;
         h3 {
-            color: aliceblue;
+            color: #fff;
             @include marginHeading;
         }
         p {
@@ -2131,7 +2142,7 @@ tbody tr {
     }
 }
 
-.fourth {
+#coming-soon .fourth {
     .captioner {
         h4 {
             font-size: 20px;

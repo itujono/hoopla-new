@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <title>Hoopla - Toys Rent</title>
         <link rel="stylesheet" href="css/main.css">
-        <link rel="stylesheet" href="https://npmcdn.com/flickity@2/dist/flickity.css">
+        <link rel="stylesheet" href="css/owl.carousel.css">
         <link rel="stylesheet" href="https://unpkg.com/tippy.js@1.2.0/dist/tippy.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
@@ -59,7 +59,7 @@
 
             <main>
                 <section class="main-news">
-                    <div class="carousel wow bounceInUp" data-wow-delay=".2s">
+                    <div class="owl-carousel wow bounceInUp" data-wow-delay=".2s">
                         <div class="carousel-cell">
                             <img src="img/kids.jpg" alt="orange tree" />
                             <div class="caption">
@@ -71,29 +71,32 @@
                         <div class="carousel-cell">
                             <img src="img/kids1.png" alt="One World Trade" />
                             <div class="caption">
-                                <h3>Follow Instagram kami <br> @hoopla_rentalmainan</h3>
+                                <h3>Don't be strangers<br></h3>
+                                <p>Follow IG kami @hoopla_rentalmainan dan mari berteman</p>
                                 <a href="discount.html" class="btn-hoopla">Lihat</a>
                             </div>
                         </div>
                         <div class="carousel-cell">
-                            <img src="img/kids3.png" alt="drizzle" />
+                            <img src="img/colorful-hands.png" alt="drizzle" />
                             <div class="caption">
-                                <h3>Kalo bisa rental, <br> ngapain beli?</h3>
+                                <h3>Kalo bisa sewa, <br> kenapa harus beli?</h3>
+                                <p>Temukan kenapa menyewa adalah pilihan terbaik saat ini</p>
                                 <a href="why.html" class="btn-hoopla">Lihat</a>
                             </div>
                         </div>
                         <div class="carousel-cell">
-                            <img src="img/kids4.png" alt="cat nose" />
+                            <img src="img/babies.png" alt="cat nose" />
                             <div class="caption">
                                 <h3>Tidak ada di list kami?</h3>
-                                <p>Well, beritahu kami dan akan kami sediakan untuk kamu</p>
+                                <p>Well, silakan beritahu kami, dan akan kami sediakan untuk kamu</p>
                                 <a href="#" class="btn-hoopla">Selanjutnya</a>
                             </div>
                         </div>
                         <div class="carousel-cell">
-                            <img src="img/tilt.jpg" alt="contrail" />
+                            <img src="img/green-baby.png" alt="Green Baby" />
                             <div class="caption">
                                 <h3>Cara pemesanan gampang.</h3>
+                                <p>Cukup dengan 4 langkah mudah, dan kamu sudah bisa menyewa semuanya di Hoopla.</p>
                                 <a href="tc.html" class="btn-hoopla">Selengkapnya</a>
                             </div>
                         </div>
@@ -375,8 +378,18 @@
             </div>
         </div>
 
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script type="text/javascript" src="js/vanilla-tilt.min.js"></script>
-        <script src="https://npmcdn.com/flickity@2/dist/flickity.pkgd.js"></script>
+        <script src="js/owl.carousel.min.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function(){
+                $(".owl-carousel").owlCarousel({
+                    items: 1,
+                    loop: true,
+                    autoplay: true
+                });
+            });
+        </script>
         <script src="https://unpkg.com/tippy.js@1.2.0/dist/tippy.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
         <script> new WOW().init(); </script>
