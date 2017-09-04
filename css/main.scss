@@ -1586,6 +1586,42 @@ section > h4 {
 
 
 
+// Ini untuk Discount Update sementara
+
+table {
+    padding: 1em 2em;
+    background-color: #fff;
+}
+
+thead {
+    border-bottom: 1px solid #ddd;
+    tr {
+        th {
+            vertical-align: bottom;
+            border-bottom: 1px solid #ddd;
+            padding: 10px;
+            color: $coolGreen;
+            font-weight: normal;
+        }
+    }
+}
+
+tbody tr {
+    text-align: center;
+    border: 1px solid #ddd;
+    td {
+        vertical-align: top;
+        padding: 10px;
+    }
+    &.total {
+        td {
+            font-weight: bold;
+        }
+    }
+}
+
+
+
 
 
 

@@ -294,8 +294,14 @@
             modalSecond.setContent(document.querySelector('#second').innerHTML);
 
             // Tingle's Event Listeners
-            document.querySelector('#modaal').addEventListener('click', function() { modal.open(); });
-            document.querySelector('#modaal-second').addEventListener('click', function() { modalSecond.open(); });
+            document.querySelector('#modaal').addEventListener('click', function(e) {
+                e.preventDefault();
+                modal.open();
+            });
+            document.querySelector('#modaal-second').addEventListener('click', function(e) {
+                e.preventDefault();
+                modalSecond.open();
+            });
         </script>
         <script src="js/main.js"></script>
     </body>
