@@ -2178,14 +2178,47 @@ section > h4:before {
   color: #96d019;
 }
 
-table {
+.discount-item .figure {
+  float: left;
+  margin-right: 15px;
+  width: 30%;
+}
+
+.discount-item .figure img {
+  width: 100%;
+  border-radius: 7px;
+}
+
+.discount-item p {
+  line-height: 1.6;
+}
+
+.discount-item h2 {
+  color: #96d019;
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.discount-item h5 {
+  color: #999;
+  font-weight: normal;
+  margin-top: 0;
+}
+
+.table-comparison {
+  margin-bottom: 3em;
+}
+
+.table-comparison table {
   border-radius: 7px;
   padding: 0;
   background-color: #fff;
+  -webkit-box-shadow: 0 1px 12px rgba(0, 0, 0, 0.09);
+  box-shadow: 0 1px 12px rgba(0, 0, 0, 0.09);
 }
 
 thead {
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid #eee;
 }
 
 thead tr {
@@ -2193,9 +2226,15 @@ thead tr {
 }
 
 thead tr th {
+  width: 140px;
   padding: 10px;
   color: #96d019;
   font-weight: normal;
+}
+
+thead tr th span {
+  color: #bbb;
+  font-size: 12px;
 }
 
 tbody tr {
@@ -2204,12 +2243,30 @@ tbody tr {
 
 tbody tr td {
   padding: 10px;
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid #eee;
 }
 
 tbody tr.total td {
+  padding: 20px 0;
+  color: #96d019;
   font-weight: bold;
   border: none;
+}
+
+.benefits {
+  margin-bottom: 3em;
+}
+
+.benefits dl dt {
+  color: #96d019;
+  margin-bottom: 5px;
+}
+
+.benefits dl dd {
+  line-height: 1.6;
+  padding: 0;
+  margin-bottom: 20px;
+  margin-left: 0;
 }
 
 #cart {

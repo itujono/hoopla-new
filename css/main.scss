@@ -1588,22 +1588,53 @@ section > h4 {
 
 // Ini untuk Discount Update sementara
 
-table {
-    border-radius: 7px;
-    // border: 1px solid $coolBlue;
-    padding: 0;
-    background-color: #fff;
+.discount-item {
+    .figure {
+        float: left;
+        margin-right: 15px;
+        width: 30%;
+        img {
+            width: 100%;
+            border-radius: 7px;
+        }
+    }
+    p {
+        line-height: $lineHeightP;
+    }
+    h2 {
+        color: $coolGreen;
+        @include marginHeading;
+    }
+    h5 {
+        color: #999;
+        font-weight: normal;
+        margin-top: 0;
+    }
+}
+
+.table-comparison {
+    margin-bottom: 3em;
+    table {
+        border-radius: 7px;
+        padding: 0;
+        background-color: #fff;
+        box-shadow: 0 1px 12px rgba(0, 0, 0, 0.09);
+    }
 }
 
 thead {
-    border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid #eee;
     tr {
         background-color: #fcfcfc;
         th {
-            // border-bottom: 1px solid #ddd;
+            width: 140px;
             padding: 10px;
             color: $coolGreen;
             font-weight: normal;
+            span {
+                color: #bbb;
+                font-size: 12px;
+            }
         }
     }
 }
@@ -1612,12 +1643,30 @@ tbody tr {
     text-align: center;
     td {
         padding: 10px;
-        border-bottom: 1px solid #ddd;
+        border-bottom: 1px solid #eee;
     }
     &.total {
         td {
+            padding: 20px 0;
+            color: $coolGreen;
             font-weight: bold;
             border: none;
+        }
+    }
+}
+
+.benefits {
+    margin-bottom: 3em;
+    dl {
+        dt {
+            color: $coolGreen;
+            margin-bottom: 5px;
+        }
+        dd {
+            line-height: $lineHeightP;
+            padding: 0;
+            margin-bottom: 20px;
+            margin-left: 0;
         }
     }
 }
