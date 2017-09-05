@@ -1243,7 +1243,7 @@ p.par-heading {
     margin-bottom: 3em;
 }
 
-.order-steps {
+#tc .order-steps {
     display: flex;
     flex-wrap: wrap;
     > div {
@@ -1258,11 +1258,16 @@ p.par-heading {
         border-radius: 7px;
         span {
             position: absolute;
+            width: 200px;
             left: -20px;
-            bottom: -40px;
+            bottom: -90px;
             font-size: 9rem;
             z-index: 0;
-            color: rgba(0, 0, 0, 0.03);
+            opacity: .1;
+            filter: brightness(.7);
+            img {
+                width: 100%;
+            }
         }
         h4 {
             @include marginHeading;

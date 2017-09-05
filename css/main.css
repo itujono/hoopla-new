@@ -1679,7 +1679,7 @@ p.par-heading {
   margin-bottom: 3em;
 }
 
-.order-steps {
+#tc .order-steps {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1689,7 +1689,7 @@ p.par-heading {
   flex-wrap: wrap;
 }
 
-.order-steps > div {
+#tc .order-steps > div {
   position: relative;
   overflow: hidden;
   -webkit-box-flex: 1;
@@ -1704,23 +1704,30 @@ p.par-heading {
   border-radius: 7px;
 }
 
-.order-steps > div span {
+#tc .order-steps > div span {
   position: absolute;
+  width: 200px;
   left: -20px;
-  bottom: -40px;
+  bottom: -90px;
   font-size: 9rem;
   z-index: 0;
-  color: rgba(0, 0, 0, 0.03);
+  opacity: .1;
+  -webkit-filter: brightness(0.7);
+  filter: brightness(0.7);
 }
 
-.order-steps > div h4 {
+#tc .order-steps > div span img {
+  width: 100%;
+}
+
+#tc .order-steps > div h4 {
   margin-top: 0;
   margin-bottom: 10px;
   color: #96d019;
   font-size: 20px;
 }
 
-.order-steps > div p {
+#tc .order-steps > div p {
   line-height: 1.6;
 }
 
