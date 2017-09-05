@@ -1614,6 +1614,25 @@ section > h4:before {
   padding-bottom: 4em;
 }
 
+#tc .links {
+  position: fixed;
+}
+
+#tc .links li {
+  position: relative;
+  margin-bottom: 15px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #ddd;
+}
+
+#tc .links li a:hover {
+  color: #96d019;
+}
+
+#tc aside {
+  padding: 0 2em 3em 0;
+}
+
 section#pemesanan {
   padding-bottom: 4em;
   margin-bottom: 4em;
@@ -1744,6 +1763,7 @@ p.par-heading {
   margin: 0;
   margin-bottom: 1.4em;
   color: #999;
+  line-height: 1.6;
 }
 
 #contact {

@@ -1182,6 +1182,21 @@ section > h4 {
     .wrapper {
         padding-bottom: 4em;
     }
+    .links {
+        position: fixed;
+        li {
+            position: relative;
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #ddd;
+            a:hover {
+                color: $coolGreen;
+            }
+        }
+    }
+    aside {
+        padding: 0 2em 3em 0;
+    }
 }
 
 section#pemesanan {
@@ -1293,6 +1308,7 @@ p.par-heading {
             margin: 0;
             margin-bottom: 1.4em;
             color: #999;
+            line-height: $lineHeightP;
         }
     }
 }
