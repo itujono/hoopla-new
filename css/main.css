@@ -1837,6 +1837,10 @@ p.par-heading {
   color: white;
 }
 
+.left > div#line span {
+  font-size: 1em;
+}
+
 .left > div > div:last-child h5 {
   margin-top: 0;
   margin-bottom: 10px;

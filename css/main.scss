@@ -1360,6 +1360,9 @@ p.par-heading {
                 color: white;
             }
         }
+        &#line span {
+            font-size: 1em;
+        }
         > div:last-child {
             h5 {
                 @include marginHeading;
