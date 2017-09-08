@@ -1616,6 +1616,18 @@ section > h4:before {
 
 #tc .links {
   position: fixed;
+  -webkit-transition: all .4s ease;
+  -o-transition: all .4s ease;
+  transition: all .4s ease;
+}
+
+#tc .links.gotop {
+  -webkit-transform: translateY(-300px);
+  -ms-transform: translateY(-300px);
+  transform: translateY(-300px);
+  -webkit-transition: all .4s ease;
+  -o-transition: all .4s ease;
+  transition: all .4s ease;
 }
 
 #tc .links li {
@@ -1623,6 +1635,10 @@ section > h4:before {
   margin-bottom: 15px;
   padding-bottom: 15px;
   border-bottom: 1px solid #ddd;
+}
+
+#tc .links li a {
+  color: #999;
 }
 
 #tc .links li a:hover {

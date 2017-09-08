@@ -163,6 +163,7 @@
             <aside class="">
                 <div class="links">
                     <ul>
+                        <h3>Go to:</h3>
                         <li><a href="#pemesanan">Cara Pemesanan</a></li>
                         <li><a href="#titip">Titip Sewa</a></li>
                     </ul>
@@ -191,7 +192,7 @@
             </footer>
         </div>
 
-
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script src="https://unpkg.com/tippy.js@1.2.0/dist/tippy.min.js"></script>
         <script src="js/main.js"></script>
 
@@ -199,6 +200,16 @@
             tippy('.social a', {
                 followCursor: true,
                 position: 'bottom'
+            });
+        </script>
+
+        <script>
+            $(window).scroll(function() {
+                if ($(window).scrollTop() > 320 ) {
+                    $(".links").addClass("gotop");
+                } else {
+                    $(".links").removeClass("gotop");
+                }
             });
         </script>
     </body>

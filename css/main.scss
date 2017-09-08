@@ -1184,11 +1184,19 @@ section > h4 {
     }
     .links {
         position: fixed;
+        transition: all .4s ease;
+        &.gotop {
+            transform: translateY(-300px);
+            transition: all .4s ease;
+        }
         li {
             position: relative;
             margin-bottom: 15px;
             padding-bottom: 15px;
             border-bottom: 1px solid #ddd;
+            a {
+                color: #999;
+            }
             a:hover {
                 color: $coolGreen;
             }
