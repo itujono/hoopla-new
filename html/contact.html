@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Hoopla - Toys Rent</title>
+        <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="https://npmcdn.com/flickity@2/dist/flickity.css">
+        <link rel="stylesheet" href="https://unpkg.com/tippy.js@1.2.0/dist/tippy.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+    <body>
+        <div class="container" id="contact">
+
+            <header>
+                <div class="top-panel">
+                    <div>
+                        Contact kami di <span class="coolgreen">+62 856 6765 1688</span> atau <a href="mailto:info@hooplatoys.com?subject=feedback" class="coolgreen">info@hooplatoys.com</a>
+                    </div>
+                </div>
+                <div class="main-logo">
+                    <img src="img/logo-web.png" alt="Logo utama">
+                </div>
+                <nav>
+                    <li><a href="index.html"><i class="fa fa-home"></i></a></li>
+                    <li><a href="about.html">Tentang Hoopla</a></li>
+                    <li><a href="why.html">Kenapa Hoopla</a></li>
+                    <li class="has-children">
+                        <a href="product.html">Produk</a>
+                        <ul class="children">
+                            <li><a href="#">Brands</a></li>
+                            <li><a href="#">Kategori</a></li>
+                            <li><a href="#">Umur</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="tc.html">Cara Pemesanan</a></li>
+                    <li class="has-children">
+                        <a href="sale.html">For Sale</a>
+                        <ul class="children">
+                            <li><a href="#">For mom</a></li>
+                            <li><a href="#">For baby</a></li>
+                            <li><a href="#">Toys</a></li>
+                            <li><a href="#">Snacks &amp; foods</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="form-titip.html">Titip Sewa</a></li>
+                    <li class="has-children">
+                        <a href="trivia.html">Trivia</a>
+                        <ul class="children">
+                            <li><a href="#">Tips Tricks</a></li>
+                            <li><a href="#">Parenting</a></li>
+                            <li><a href="#">Toys</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="contact.html">Hubungi Kami</a></li>
+                </nav>
+            </header>
+
+            <main>
+                <section class="left">
+                    <h2>Simpan kontak kami. <br>Ntar pasti butuh. =)</h2>
+                    <!-- <div id="address">
+                        <div>
+                            <span><i class="fa fa-location-arrow"></i></span>
+                        </div>
+                        <div>
+                            <h5>Alamat</h5>
+                            <p>Jalan Kepodang Raya Blok C #99, Sukajadi, <br> Teluk Tering</p>
+                        </div>
+                    </div> -->
+                    <div id="phone">
+                        <div>
+                            <span><i class="fa fa-mobile"></i></span>
+                        </div>
+                        <div>
+                            <h5>Whatsapp/SMS</h5>
+                            <p>085667651688</p>
+                        </div>
+                    </div>
+                    <div id="line">
+                        <div>
+                            <span>LINE</span>
+                        </div>
+                        <div>
+                            <h5>Line</h5>
+                            <p>hoopla_rentalmainan</p>
+                        </div>
+                    </div>
+                    <div id="ig">
+                        <div>
+                            <span><i class="fa fa-instagram"></i></span>
+                        </div>
+                        <div>
+                            <h5>Instagram</h5>
+                            <p>hoopla_rentalmainan</p>
+                        </div>
+                    </div>
+                    <div id="email">
+                        <div>
+                            <span><i class="fa fa-envelope"></i></span>
+                        </div>
+                        <div>
+                            <h5>Email</h5>
+                            <p><a href="mailto:order@hooplatoysrent.com">order@hooplatoyrental.com</a> <br>
+                                <a href="#">info@hooplatoyrental.com</a></p>
+                        </div>
+                    </div>
+                    <div class="cta-contact">
+                        <img src="img/baby-calling.png" alt="On the phone">
+                    </div>
+                </section>
+
+                <section class="right">
+                    <h2>Atau hubungi kami langsung di sini...</h2>
+                    <form class="form-control" action="" method="post" name="contactForm" onsubmit="return validateForm()">
+                        <label for="name">Nama kamu <span>*</span></label>
+                        <input type="text" id="name" placeholder="John Smith..." name="Name">
+                        <p class="error" id="name-error">Nama diisi dulu dong ah.</p>
+
+                        <label for="email">Email kamu <span>*</span></label>
+                        <input type="text" id="email" placeholder="namaemail@email.com" name="Email" >
+                        <p class="error" id="email-error">Emailnya juga, diisi dulu dong ah.</p>
+
+                        <label for="message">Apa yang mau kamu sampaikan? <span>*</span></label>
+                        <textarea rows="10" id="message" placeholder="Isi apapun pesan yang ingin kamu sampaikan..." name="Message" ></textarea>
+                        <p class="error" id="message-error">Kok pesannya nggak diisi sekalian?</p>
+
+                        <button type="submit" class="btn-hoopla" id="submit">Okay, let's submit!</button>
+                    </form>
+                </section>
+            </main>
+
+            <footer>
+                <div class="main-footer">
+                    <img src="img/logo-web.png" alt="Logo Footer" width="200">
+                    <h4>We bring <span class="coolgreen">happiness</span> to your home</h4>
+                    <ul class="social">
+                        <li class="wow bounceInUp"><a href="#" title="Twitter kami"><i class="fa fa-twitter"></i></a></li>
+                        <li class="wow bounceInUp" data-wow-delay=".2s"><a href="#" title="Facebook kami"><i class="fa fa-facebook"></i></a></li>
+                        <li class="wow bounceInUp" data-wow-delay=".3s"><a href="#" title="Instagram kami"><i class="fa fa-instagram"></i></a></li>
+                        <li class="wow bounceInUp" data-wow-delay=".6s"><a href="#" title="Pinterest kami"><i class="fa fa-pinterest"></i></a></li>
+                    </ul>
+                </div>
+                <div class="copyright">
+                    <div>
+                        Copyright &copy; Sempardak 2017
+                    </div>
+                    <div>
+                        <i class="fa fa-phone"></i> 0778 325 253
+                    </div>
+                </div>
+            </footer>
+        </div>
+
+
+        <script src="https://unpkg.com/tippy.js@1.2.0/dist/tippy.min.js"></script>
+        <script src="js/main.js"></script>
+
+        <script type="text/javascript">
+            tippy('.social a', {
+                followCursor: true,
+                position: 'bottom'
+            });
+        </script>
+
+        <script>
+
+            function validateForm() {
+                var inputName = document.contactForm.Name;
+                var inputEmail = document.contactForm.Email;
+                var inputMessage = document.contactForm.Message;
+                var errorMessage = document.querySelector(".error");
+                var submit = document.querySelector("#submit");
+
+                if (inputName.value == "") {
+                    errorMessage.style.display = "block";
+                    document.contactForm.Name.focus();
+                    console.log("Waduh error tuh!");
+                    return false;
+                }
+
+                if (inputEmail.value == "") {
+                    errorMessage.style.display = "block";
+                    document.contactForm.Name.focus();
+                    return false;
+                }
+
+                if (inputMessage.value == "") {
+                    errorMessage.style.display = "block";
+                    document.contactForm.Name.focus();
+                    return false;
+                }
+
+                return true;
+            }
+            // submit.addEventListener("submit", validateForm);
+        </script>
+    </body>
+</html>
