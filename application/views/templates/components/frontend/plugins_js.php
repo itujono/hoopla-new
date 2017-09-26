@@ -55,4 +55,24 @@ if ($plugins == 'home') { ?>
     position: 'bottom'
   });
 </script>
+<?php
+} elseif ($plugins == 'terms') {
+?>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript">
+  tippy('.social a', {
+    followCursor: true,
+    position: 'bottom'
+  });
+</script>
+
+<script>
+  $(window).scroll(function() {
+    if ($(window).scrollTop() > 320 ) {
+      $(".links").addClass("gotop");
+    } else {
+      $(".links").removeClass("gotop");
+    }
+  });
+</script>
 <?php } ?>
