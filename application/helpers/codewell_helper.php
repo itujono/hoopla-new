@@ -26,6 +26,26 @@ function folderENCRYPT($id,$type=0){
     return base64_encode($id);
 }
 
+function selectall_menu_active(){
+    $CI =& get_instance();
+    $CI->db->select('*');
+    $CI->db->from('menu_admin');
+    $CI->db->where('statusMENU', 1);
+
+    $data = $CI->db->get()->result();
+    return $data;
+}
+
+function check_filename($idcol=NULL, $col=NULL, $tablename=NULL, $idname=NULL){
+    $CI =& get_instance();
+    $CI->db->select($col);
+    $CI->db->from($tablename);
+    $CI->db->where($idname, $idcol);
+
+    $data = $CI->db->get()->row();
+    return $data;
+}
+
 function count_notif(){
 	$CI =& get_instance();
     $CI->db->select('isreadORDER, idPARTNER');

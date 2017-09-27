@@ -18,9 +18,9 @@
         </div>
     </div>
 </footer>
-
+</div>
 <?php 
-if($addONS == 'home' OR $addONS == 'product'){
+if($addONS == 'home' OR $addONS == 'product' OR $addONS == 'sale' OR $addONS == 'form'){
 ?>
 
 <div class="tingle-content-wrapper">

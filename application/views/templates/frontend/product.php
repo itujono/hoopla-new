@@ -11,7 +11,7 @@
                     <img src="<?php echo base_url().$this->data['asfront'];?>img/kids7.png" alt="Kiddy">
                 </div>
                 <div class="card-bottom">
-                    <a href="product-detail.html">
+                    <a href="<?php echo base_url();?>product/detail">
                         <h3>Super sempardak</h3>
                         <small>Rp 300k</small>
                     </a>
@@ -22,7 +22,7 @@
                     <img src="<?php echo base_url().$this->data['asfront'];?>img/kids7.png" alt="Kiddy">
                 </div>
                 <div class="card-bottom">
-                    <a href="product-detail.html">
+                    <a href="<?php echo base_url();?>product/detail">
                         <h3>Super sempardak</h3>
                         <small>Rp 300k</small>
                     </a>
@@ -33,7 +33,7 @@
                     <img src="<?php echo base_url().$this->data['asfront'];?>img/kids7.png" alt="Kiddy">
                 </div>
                 <div class="card-bottom">
-                    <a href="product-detail.html">
+                    <a href="<?php echo base_url();?>product/detail">
                         <h3>Super sempardak</h3>
                         <small>Rp 300k</small>
                     </a>
@@ -44,7 +44,7 @@
                     <img src="<?php echo base_url().$this->data['asfront'];?>img/kids7.png" alt="Kiddy">
                 </div>
                 <div class="card-bottom">
-                    <a href="product-detail.html">
+                    <a href="<?php echo base_url();?>product/detail">
                         <h3>Super sempardak</h3>
                         <small>Rp 300k</small>
                     </a>
@@ -55,7 +55,7 @@
                     <img src="<?php echo base_url().$this->data['asfront'];?>img/kids7.png" alt="Kiddy">
                 </div>
                 <div class="card-bottom">
-                    <a href="product-detail.html">
+                    <a href="<?php echo base_url();?>product/detail">
                         <h3>Super sempardak</h3>
                         <small>Rp 300k</small>
                     </a>
@@ -66,7 +66,7 @@
                     <img src="<?php echo base_url().$this->data['asfront'];?>img/kids7.png" alt="Kiddy">
                 </div>
                 <div class="card-bottom">
-                    <a href="product-detail.html">
+                    <a href="<?php echo base_url();?>product/detail">
                         <h3>Super sempardak</h3>
                         <small>Rp 300k</small>
                     </a>
@@ -77,7 +77,7 @@
                     <img src="<?php echo base_url().$this->data['asfront'];?>img/kids7.png" alt="Kiddy">
                 </div>
                 <div class="card-bottom">
-                    <a href="product-detail.html">
+                    <a href="<?php echo base_url();?>product/detail">
                         <h3>Super sempardak</h3>
                         <small>Rp 300k</small>
                     </a>
@@ -100,7 +100,7 @@
                     <img src="<?php echo base_url().$this->data['asfront'];?>img/kids7.png" alt="Kiddy">
                 </div>
                 <div class="card-bottom">
-                    <a href="product-detail.html">
+                    <a href="<?php echo base_url();?>product/detail">
                         <h3>Super sempardak</h3>
                         <small>Rp 300k</small>
                     </a>
@@ -111,7 +111,7 @@
                     <img src="<?php echo base_url().$this->data['asfront'];?>img/kids7.png" alt="Kiddy">
                 </div>
                 <div class="card-bottom">
-                    <a href="product-detail.html">
+                    <a href="<?php echo base_url();?>product/detail">
                         <h3>Super sempardak</h3>
                         <small>Rp 300k</small>
                     </a>
@@ -122,7 +122,7 @@
                     <img src="<?php echo base_url().$this->data['asfront'];?>img/kids7.png" alt="Kiddy">
                 </div>
                 <div class="card-bottom">
-                    <a href="product-detail.html">
+                    <a href="<?php echo base_url();?>product/detail">
                         <h3>Super sempardak</h3>
                         <small>Rp 300k</small>
                     </a>
@@ -133,7 +133,7 @@
                     <img src="<?php echo base_url().$this->data['asfront'];?>img/kids7.png" alt="Kiddy">
                 </div>
                 <div class="card-bottom">
-                    <a href="product-detail.html">
+                    <a href="<?php echo base_url();?>product/detail">
                         <h3>Super sempardak</h3>
                         <small>Rp 300k</small>
                     </a>
@@ -144,7 +144,7 @@
                     <img src="<?php echo base_url().$this->data['asfront'];?>img/kids7.png" alt="Kiddy">
                 </div>
                 <div class="card-bottom">
-                    <a href="product-detail.html">
+                    <a href="<?php echo base_url();?>product/detail">
                         <h3>Super sempardak</h3>
                         <small>Rp 300k</small>
                     </a>
@@ -155,7 +155,7 @@
                     <img src="<?php echo base_url().$this->data['asfront'];?>img/kids7.png" alt="Kiddy">
                 </div>
                 <div class="card-bottom">
-                    <a href="product-detail.html">
+                    <a href="<?php echo base_url();?>product/detail">
                         <h3>Super sempardak</h3>
                         <small>Rp 300k</small>
                     </a>
@@ -166,7 +166,7 @@
                     <img src="<?php echo base_url().$this->data['asfront'];?>img/kids7.png" alt="Kiddy">
                 </div>
                 <div class="card-bottom">
-                    <a href="product-detail.html">
+                    <a href="<?php echo base_url();?>product/detail">
                         <h3>Super sempardak</h3>
                         <small>Rp 300k</small>
                     </a>
@@ -189,7 +189,7 @@
                     <img src="<?php echo base_url().$this->data['asfront'];?>img/kids7.png" alt="Kiddy">
                 </div>
                 <div class="card-bottom">
-                    <a href="product-detail.html">
+                    <a href="<?php echo base_url();?>product/detail">
                         <h3>Super sempardak</h3>
                         <small>Rp 300k</small>
                     </a>
@@ -200,7 +200,7 @@
                     <img src="<?php echo base_url().$this->data['asfront'];?>img/kids7.png" alt="Kiddy">
                 </div>
                 <div class="card-bottom">
-                    <a href="product-detail.html">
+                    <a href="<?php echo base_url();?>product/detail">
                         <h3>Super sempardak</h3>
                         <small>Rp 300k</small>
                     </a>
@@ -211,7 +211,7 @@
                     <img src="<?php echo base_url().$this->data['asfront'];?>img/kids7.png" alt="Kiddy">
                 </div>
                 <div class="card-bottom">
-                    <a href="product-detail.html">
+                    <a href="<?php echo base_url();?>product/detail">
                         <h3>Super sempardak</h3>
                         <small>Rp 300k</small>
                     </a>
@@ -222,7 +222,7 @@
                     <img src="<?php echo base_url().$this->data['asfront'];?>img/kids7.png" alt="Kiddy">
                 </div>
                 <div class="card-bottom">
-                    <a href="product-detail.html">
+                    <a href="<?php echo base_url();?>product/detail">
                         <h3>Super sempardak</h3>
                         <small>Rp 300k</small>
                     </a>
@@ -233,7 +233,7 @@
                     <img src="<?php echo base_url().$this->data['asfront'];?>img/kids7.png" alt="Kiddy">
                 </div>
                 <div class="card-bottom">
-                    <a href="product-detail.html">
+                    <a href="<?php echo base_url();?>product/detail">
                         <h3>Super sempardak</h3>
                         <small>Rp 300k</small>
                     </a>
@@ -244,7 +244,7 @@
                     <img src="<?php echo base_url().$this->data['asfront'];?>img/kids7.png" alt="Kiddy">
                 </div>
                 <div class="card-bottom">
-                    <a href="product-detail.html">
+                    <a href="<?php echo base_url();?>product/detail">
                         <h3>Super sempardak</h3>
                         <small>Rp 300k</small>
                     </a>
@@ -255,7 +255,7 @@
                     <img src="<?php echo base_url().$this->data['asfront'];?>img/kids7.png" alt="Kiddy">
                 </div>
                 <div class="card-bottom">
-                    <a href="product-detail.html">
+                    <a href="<?php echo base_url();?>product/detail">
                         <h3>Super sempardak</h3>
                         <small>Rp 300k</small>
                     </a>

@@ -80,7 +80,7 @@ $db['default'] = array(
 	'password' => '',
 	'database' => 'codewell_hoopla',
 	'dbdriver' => 'mysqli',
-	'dbprefix' => '',
+	'dbprefix' => 'hoopla_',
 	'pconnect' => FALSE,
 	'db_debug' => (ENVIRONMENT !== 'production'),
 	'cache_on' => FALSE,

@@ -7,10 +7,20 @@ class Admin_Controller extends MY_Controller{
 		parent::__construct();
 		$this->load->helper('codewell');
 
-		$this->data['folBACKEND'] = $data['folder_admin'];
+		$this->data['folBACKEND'] = $this->data['folder_admin'];
 		$this->data['backendDIR'] = 'templates/backend/';
-		$this->data['asback'] = 'assets/backend/';
+        $this->data['asback'] = 'assets/backend/templates/';
+		$this->data['asbackbower'] = 'assets/backend/bower_components/';
 		$this->data['rootDIR'] = 'templates/';
+        if($this->session->userdata('loggedin') != TRUE OR $this->session->userdata('akses') != 'admin') {
+            $data = array(
+                'title' => 'Warning',
+                'type' => 'danger',
+                'text' => 'You should login first!'
+            );
+            $this->session->set_flashdata('message',$data);
+            redirect('login');
+        }
 	}
 
 	function mail_config(){

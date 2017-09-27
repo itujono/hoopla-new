@@ -10,4 +10,12 @@ class Product extends Frontend_Controller {
 		$data['subview'] = $this->load->view($this->data['frontendDIR'].'product', $data, TRUE);
         $this->load->view($this->data['rootDIR'].'_layout_base_frontend',$data);
 	}
+
+	public function detail(){
+		$data['addONS'] = 'product';
+		$data['title'] = 'Product Detail - Toys Rent';
+		$data['idbody'] = 'product-detail';
+		$data['subview'] = $this->load->view($this->data['frontendDIR'].'product_detail', $data, TRUE);
+        $this->load->view($this->data['rootDIR'].'_layout_base_frontend',$data);
+	}
 }

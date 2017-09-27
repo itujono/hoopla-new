@@ -39,7 +39,7 @@
                         <li><a href="#">Snacks &amp; foods</a></li>
                     </ul>
                 </li>
-                <li><a href="<?php echo base_url();?>entrust">Titip Sewa</a></li>
+                <li><a href="<?php echo base_url();?>form">Titip Sewa</a></li>
                 <li class="has-children">
                     <a href="<?php echo base_url();?>trivia">Trivia</a>
                     <ul class="children">
