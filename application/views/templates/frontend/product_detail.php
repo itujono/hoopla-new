@@ -1,11 +1,13 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
 <main>
     <div class="image">
-        <img src="<?php echo base_url().$this->data['asfront'];?>img/toys1.png" alt="Toys sempardak">
+        <img src="<?php echo $getrental->imageRENTAL;?>" alt="<?php echo $getrental->namaRENTAL;?>">
     </div>
     <div class="product-description">
-        <h2 class="title">Ring basket</h3>
-            <h4 class="price">Rp 340.000,00 <small>/ 4 minggu</small></h4>
+        <h2 class="title"><?php echo $getrental->namaRENTAL;?></h3>
+            <h4 class="price">Rp. <?php echo number_format($getrental->hargaRENTAL, 0,',','.'); ?>
+            <small>/ <?php echo $getrental->durasiRENTAL;?></small>
+            </h4>
             <div class="infos">
                 <div class="minimum">
                     <div>
@@ -13,7 +15,7 @@
                     </div>
                     <div>
                         <p>Minimal sewa</p>
-                        <h4>4 minggu</h4>
+                        <h4><?php echo $getrental->durasiRENTAL;?></h4>
                     </div>
                 </div>
                 <div class="minimum">
@@ -22,64 +24,35 @@
                     </div>
                     <div>
                         <p>Minimal sewa</p>
-                        <h4>4 minggu</h4>
+                        <h4><?php echo $getrental->durasiRENTAL;?></h4>
                     </div>
                 </div>
             </div>
-            <p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-                incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-                exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+            <p class="description"><?php echo $getrental->descriptionRENTAL;?>
             </p>
             <a href="#" class="btn-hoopla"><i class="fa fa-shopping-cart"></i> &nbsp; Tambahkan ke keranjang</a>
-            <p class="category">Category: <a href="#">Newborn</a></p>
+            <p class="category">Kategori: <a href="#"><?php echo $getrental->namaCATEGORY;?></a></p>
         </div>
         <section class="similar">
             <h4>Produk Sejenis</h4>
             <div class="wrapper">
+            <?php
+                if(!empty($similarental)){
+                    foreach ($similarental as $key => $similar) {
+            ?>
                 <div class="card">
                     <div class="card-content">
-                        <img src="<?php echo base_url().$this->data['asfront'];?>img/kids7.png" alt="Kiddy">
+                        <img src="<?php echo $similar->imageRENTAL;?>" alt="<?php echo $similar->namaRENTAL;?>">
                     </div>
                     <div class="card-bottom">
-                        <a href="<?php echo base_url();?>product/detail">
-                            <h3>Super sempardak</h3>
-                            <small>Rp 300k</small>
+                        <a href="<?php echo base_url();?>product/detail/<?php echo base64_encode($similar->idRENTAL).'-'.seo_url($similar->namaRENTAL);?>">
+                            <h3><?php echo $similar->namaRENTAL;?></h3>
+                            <small>Rp. <?php echo number_format($similar->hargaRENTAL, 0,',','.'); ?></small>
                         </a>
                     </div>
                 </div>
-                <div class="card">
-                    <div class="card-content softblue">
-                        <img src="<?php echo base_url().$this->data['asfront'];?>img/kids7.png" alt="Kiddy">
-                    </div>
-                    <div class="card-bottom">
-                        <a href="<?php echo base_url();?>product/detail">
-                            <h3>Super sempardak</h3>
-                            <small>Rp 300k</small>
-                        </a>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-content">
-                        <img src="<?php echo base_url().$this->data['asfront'];?>img/kids7.png" alt="Kiddy">
-                    </div>
-                    <div class="card-bottom">
-                        <a href="<?php echo base_url();?>product/detail">
-                            <h3>Super sempardak</h3>
-                            <small>Rp 300k</small>
-                        </a>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-content softpurple">
-                        <img src="<?php echo base_url().$this->data['asfront'];?>img/kids7.png" alt="Kiddy">
-                    </div>
-                    <div class="card-bottom">
-                        <a href="<?php echo base_url();?>product/detail">
-                            <h3>Super sempardak</h3>
-                            <small>Rp 300k</small>
-                        </a>
-                    </div>
-                </div>
+            <?php } ?>
+            <?php } ?>
             </div>
         </section>
     </main>

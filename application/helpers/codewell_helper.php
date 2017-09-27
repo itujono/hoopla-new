@@ -36,14 +36,29 @@ function selectall_menu_active(){
     return $data;
 }
 
-function check_filename($idcol=NULL, $col=NULL, $tablename=NULL, $idname=NULL){
+function selectall_category_active(){
     $CI =& get_instance();
-    $CI->db->select($col);
-    $CI->db->from($tablename);
-    $CI->db->where($idname, $idcol);
+    $CI->db->select('namaCATEGORY, statusCATEGORY');
+    $CI->db->from('category_rental');
+    $CI->db->where('statusCATEGORY', 1);
 
-    $data = $CI->db->get()->row();
+    $data = $CI->db->get()->result();
     return $data;
+}
+
+function selectall_category_sale_active(){
+    $CI =& get_instance();
+    $CI->db->select('namaCATSALE, statusCATSALE');
+    $CI->db->from('category_sale');
+    $CI->db->where('statusCATSALE', 1);
+
+    $data = $CI->db->get()->result();
+    return $data;
+}
+
+function folenc($id){
+    $folenc = base64_encode($id);
+    return strtolower($folenc);
 }
 
 function count_notif(){
@@ -127,4 +142,10 @@ function replacesymbol($string){
 function seo_url($string){
     $change = str_replace([' ','&',',','.','(',')','!','?'], ['-','-','-','-','-','-','-','-'], $string);
     return strtolower($change);
+}
+
+function cutting($string=NULL){
+    $replace = str_replace('-',' ', $string);
+    $cut = substr($replace, 0, 4);
+    return $cut;
 }

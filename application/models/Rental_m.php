@@ -13,6 +13,11 @@ class Rental_m extends MY_Model{
 			'label' => 'Nama Barang Rental', 
 			'rules' => 'trim|required'
 		),
+		'brandRENTAL' => array(
+			'field' => 'brandRENTAL', 
+			'label' => 'Brand Barang Rental', 
+			'rules' => 'trim|required'
+		),
 		'hargaRENTAL' => array(
 			'field' => 'hargaRENTAL', 
 			'label' => 'Harga Barang Rental', 
@@ -40,18 +45,19 @@ class Rental_m extends MY_Model{
 	}
 	
 	public function get_new(){
-		$province = new stdClass();
-		$province->idRENTAL = '';
-		$province->namaRENTAL = '';
-		$province->hargaRENTAL = '';
-		$province->durasiRENTAL = '';
-		$province->descriptionRENTAL = '';
-		$province->idCATEGORY = '';
-		$province->statusRENTAL = '';
-		return $province;
+		$rental = new stdClass();
+		$rental->idRENTAL = '';
+		$rental->namaRENTAL = '';
+		$rental->brandRENTAL = '';
+		$rental->hargaRENTAL = '';
+		$rental->durasiRENTAL = '';
+		$rental->descriptionRENTAL = '';
+		$rental->idCATEGORY = '';
+		$rental->statusRENTAL = '';
+		return $rental;
 	}
 
-	public function selectall_rental($id = NULL, $status = NULL) {
+	public function selectall_rental($id = NULL, $status = NULL,$bybrand=NULL, $bycat=NULL, $random=NULL) {
 		$this->db->select('*');
 		$this->db->select('category_rental.namaCATEGORY');
 		$this->db->from('barang_rental');
@@ -59,11 +65,18 @@ class Rental_m extends MY_Model{
 		if ($id != NULL) {
 			$this->db->where('idRENTAL',$id);
 		}
-
 		if ($status != NULL) {
 			$this->db->where('statusRENTAL',$status);
 		}
-		
+		if ($bybrand != NULL) {
+			$this->db->order_by('brandRENTAL', 'desc');
+		}
+		if ($bycat != NULL) {
+			$this->db->order_by('namaCATEGORY', 'asc');
+		}
+		if ($bycat != NULL) {
+			$this->db->order_by('RAND()');
+		}
 		return $this->db->get();
 	}
 
@@ -79,5 +92,12 @@ class Rental_m extends MY_Model{
 		}else{
 			return $this->db->get();
 		}
+	}
+
+	public function selectall_random_rental() {
+		$this->db->select('*');
+		$this->db->from('barang_rental');
+		$this->db->order_by('RAND()');
+		return $this->db->get();
 	}
 }

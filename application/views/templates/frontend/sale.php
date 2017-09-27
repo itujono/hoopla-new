@@ -1,79 +1,39 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed');?>
 <main>
+	<?php 
+	if(!empty($getcatsale)){
+		foreach ($getcatsale as $key => $cat) {
+	?>
 	<section class="section" id="mom">
-		<h4 title="Barang-barang untuk dijual - untuk mama">
-			Buat <span class="coolgreen">mama</span>
+		<h4 title="Barang-barang untuk dijual - <?php echo strtolower($cat->namaCATSALE); ?>">
+			<!-- Buat <span class="coolgreen">mama</span> -->
+			<span class="coolgreen"><?php echo strtolower($cat->namaCATSALE); ?></span>
 		</h4>
 		<div class="wrapper">
+			<?php
+			if(!empty($listsale)){
+				foreach ($listsale as $key => $sale) {
+					if($cat->idCATSALE == $sale->idCATSALE){
+			?>
 			<div class="card">
 				<div class="card-content">
-					<img src="<?php echo base_url().$this->data['asfront'];?>img/kids7.png" alt="Kiddy">
+					<img src="<?php echo $sale->imageSALE;?>" alt="<?php echo $sale->namaSALE;?>">
 				</div>
 				<div class="card-bottom">
-					<a href="product-detail.html">
-						<h3>Super sempardak</h3>
-						<small>Rp 300k</small>
+					<a href="<?php echo base_url();?>product/detail">
+						<h3><?php echo $sale->namaSALE;?></h3>
+						<small>Rp. <?php echo number_format($sale->hargaSALE, 0,',','.'); ?></small>
 					</a>
 				</div>
 			</div>
-			<div class="card">
-				<div class="card-content softblue">
-					<img src="<?php echo base_url().$this->data['asfront'];?>img/kids7.png" alt="Kiddy">
-				</div>
-				<div class="card-bottom">
-					<a href="product-detail.html">
-						<h3>Super sempardak</h3>
-						<small>Rp 300k</small>
-					</a>
-				</div>
-			</div>
-			<div class="card">
-				<div class="card-content">
-					<img src="<?php echo base_url().$this->data['asfront'];?>img/kids7.png" alt="Kiddy">
-				</div>
-				<div class="card-bottom">
-					<a href="product-detail.html">
-						<h3>Super sempardak</h3>
-						<small>Rp 300k</small>
-					</a>
-				</div>
-			</div>
-			<div class="card">
-				<div class="card-content softpurple">
-					<img src="<?php echo base_url().$this->data['asfront'];?>img/kids7.png" alt="Kiddy">
-				</div>
-				<div class="card-bottom">
-					<a href="product-detail.html">
-						<h3>Super sempardak</h3>
-						<small>Rp 300k</small>
-					</a>
-				</div>
-			</div>
-			<div class="card">
-				<div class="card-content softpurple">
-					<img src="<?php echo base_url().$this->data['asfront'];?>img/kids7.png" alt="Kiddy">
-				</div>
-				<div class="card-bottom">
-					<a href="product-detail.html">
-						<h3>Super sempardak</h3>
-						<small>Rp 300k</small>
-					</a>
-				</div>
-			</div>
-			<div class="card">
-				<div class="card-content">
-					<img src="<?php echo base_url().$this->data['asfront'];?>img/kids7.png" alt="Kiddy">
-				</div>
-				<div class="card-bottom">
-					<a href="product-detail.html">
-						<h3>Super sempardak</h3>
-						<small>Rp 300k</small>
-					</a>
-				</div>
-			</div>
+			<?php } ?>
+			<?php } ?>
+			<?php } ?>
 		</div>
 	</section>
-	<section class="section" id="baby">
+	<?php } ?>
+	<?php } ?>
+	<!-- <section class="section" id="baby">
 		<h4 title="Barang-barang untuk dijual - untuk si kecil">
 			Untuk <span class="coolgreen">baby</span>
 		</h4>
@@ -313,7 +273,7 @@
 				</div>
 			</div>
 		</div>
-	</section>
+	</section> -->
 </main>
 
 <aside class="sidebar">

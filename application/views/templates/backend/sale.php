@@ -1,11 +1,11 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-    $title1 = 'Buat Data Barang Rental Baru';
-    $actions = 'saverental';
-    $controller = 'rental';
-    if($getrental->idRENTAL != NULL){
-       $title1 = 'Perbaharui Data Barang Rental';
+    $title1 = 'Buat Data Barang Sale Baru';
+    $actions = 'savesale';
+    $controller = 'sale';
+    if($getsale->idSALE != NULL){
+       $title1 = 'Perbaharui Data Barang Sale';
     } 
     $url = base_url().'hooplaadmin/'.$controller.'/'.$actions;
 ?>
@@ -23,8 +23,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   <div class="md-card">
     <div class="md-card-content">
       <ul class="uk-tab uk-tab-grid" data-uk-tab="{connect:'#tabs_4'}">
-        <li class="uk-width-1-2 <?php echo $tab['data-tab']?>>"><a href="#">Daftar Barang Rental</a></li>
-        <li class="uk-width-1-2 <?php echo $tab['form-tab']?>"><a href="#">Form Barang Rental</a></li>
+        <li class="uk-width-1-2 <?php echo $tab['data-tab']?>>"><a href="#">Daftar Barang Sale</a></li>
+        <li class="uk-width-1-2 <?php echo $tab['form-tab']?>"><a href="#">Form Barang Sale</a></li>
       </ul>
       <ul id="tabs_4" class="uk-switcher uk-margin">
         <li>
@@ -37,7 +37,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                   <th>Brand Barang</th>
                   <th>Kategori</th>
                   <th>Harga</th>
-                  <th>Durasi</th>
                   <th>Created</th>
                   <th>Action</th>
               </tr>
@@ -50,32 +49,30 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 <th>Brand Barang</th>
                 <th>Kategori</th>
                 <th>Harga</th>
-                <th>Durasi</th>
                 <th>Created</th>
                 <th>Action</th>
               </tr>
             </tfoot>
             <tbody>
             <?php 
-            if(!empty($listrental)){
-              foreach ($listrental  as $key => $rental) { 
-              $id = encode($rental->idRENTAL);
+            if(!empty($listsale)){
+              foreach ($listsale  as $key => $sale) { 
+              $id = encode($sale->idSALE);
             ?>
              <tr>
                 <td><?php echo $key+1; ?></td>
-                <td><img class="img_thumb" src="<?php echo $rental->imageRENTAL;?>" alt="<?php echo $rental->namaRENTAL;?>"/></td>
-                <td><?php echo $rental->namaRENTAL; ?></td>
-                <td><?php echo $rental->brandRENTAL; ?></td>
-                <td><?php echo $rental->namaCATEGORY; ?></td>
-                <td>Rp. <?php echo number_format($rental->hargaRENTAL, 0,',','.'); ?></td>
-                <td><?php echo $rental->durasiRENTAL;?></td>
-                <td><?php echo date('d F Y', strtotime($rental->createdateRENTAL));?></td>
+                <td><img class="img_thumb" src="<?php echo $sale->imageSALE;?>" alt="<?php echo $sale->namaSALE;?>"/></td>
+                <td><?php echo $sale->namaSALE; ?></td>
+                <td><?php echo $sale->brandSALE; ?></td>
+                <td><?php echo $sale->namaCATSALE; ?></td>
+                <td>Rp. <?php echo number_format($sale->hargaSALE, 0,',','.'); ?></td>
+                <td><?php echo date('d F Y', strtotime($sale->createdateSALE));?></td>
                 <?php
                  $icndel = '&#xE16C;';
-                  $msg1 = 'Are you sure want to delete this data <b>'.$rental->namaRENTAL.'</b> ?';
-                  $msg2 = 'Are you sure want to change this data ' . ' <b>'.$rental->namaRENTAL.'</b> ?';
+                  $msg1 = 'Are you sure want to delete this data <b>'.$sale->namaSALE.'</b> ?';
+                  $msg2 = 'Are you sure want to change this data ' . ' <b>'.$sale->namaSALE.'</b> ?';
                   $url1 = 'hooplaadmin/'.$controller.'/actiondelete/'.urlencode($id);
-                  $url2 = 'hooplaadmin/'.$controller.'/rentallist/'.urlencode($id);
+                  $url2 = 'hooplaadmin/'.$controller.'/salelist/'.urlencode($id);
                 ?>
                 <td class="uk-text-center">
                   <a href="#" onclick="UIkit.modal.confirm('<?php echo $msg1; ?>', function(){ document.location.href='<?php echo site_url($url1);?>'; });"><i class="md-icon material-icons"><?php echo $icndel; ?></i></a>
@@ -93,20 +90,20 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <li>
           <h3 class="heading_a uk-margin-bottom">Buat data baru atau Perbaharui data</h3>
           <form method="post" name="formrental" action="<?php echo $url;?>" enctype="multipart/form-data" id="form_validation">
-          <?php echo form_hidden('idRENTAL',encode($getrental->idRENTAL),'hidden'); ?>
+          <?php echo form_hidden('idSALE',encode($getsale->idSALE),'hidden'); ?>
             <div class="uk-grid" data-uk-grid-margin>
               <div class="uk-width-medium-1-1">
                 <div class="md-card">
                   <div class="md-card-content">
                     <?php
-                      if(!empty($getrental->imageRENTAL)){
+                      if(!empty($getsale->imageSALE)){
                     ?>
                     <div class="uk-margin-bottom uk-text-center uk-position-relative">
-                        <a href="#" class="uk-modal-close uk-close uk-close-alt uk-position-absolute" onclick="UIkit.modal.confirm('Are you sure want to delete this picture?', function(){ document.location.href='<?php echo base_url().'hooplaadmin/'.$controller."/deleteimgrental/".encode($getrental->idRENTAL); ?>'; });"></a>
-                        <img src="<?php echo $getrental->imageRENTAL;?>" alt="<?php echo $getrental->namaRENTAL;?>" class="img_medium"/>
+                        <a href="#" class="uk-modal-close uk-close uk-close-alt uk-position-absolute" onclick="UIkit.modal.confirm('Are you sure want to delete this picture?', function(){ document.location.href='<?php echo base_url().'hooplaadmin/'.$controller."/deleteimgsale/".encode($getsale->idSALE); ?>'; });"></a>
+                        <img src="<?php echo $getsale->imageSALE;?>" alt="<?php echo $getsale->namaSALE;?>" class="img_medium"/>
                     </div>
                     <?php } else { ?>
-                      <?php echo form_upload('imgRENTAL','','class="md-input" required'); ?>
+                      <?php echo form_upload('imgSALE','','class="md-input" required'); ?>
                     <?php } ?>
                   </div>
                 </div>
@@ -116,46 +113,40 @@ defined('BASEPATH') OR exit('No direct script access allowed');
               <div class="uk-width-medium-1-3 uk-margin-top">
                   <label>Nama Barang</label>
                   <br>
-                  <input type="text" class="md-input label-fixed" name="namaRENTAL" autocomplete value="<?php echo $getrental->namaRENTAL;?>"/>
-                  <p class="text-red"><?php echo form_error('namaRENTAL'); ?></p>
+                  <input type="text" class="md-input label-fixed" name="namaSALE" autocomplete value="<?php echo $getsale->namaSALE;?>"/>
+                  <p class="text-red"><?php echo form_error('namaSALE'); ?></p>
               </div>
               <div class="uk-width-medium-1-3 uk-margin-top">
                   <label>Brand Barang</label>
                   <br>
-                  <input type="text" class="md-input label-fixed" name="brandRENTAL" autocomplete value="<?php echo $getrental->brandRENTAL;?>"/>
-                  <p class="text-red"><?php echo form_error('brandRENTAL'); ?></p>
+                  <input type="text" class="md-input label-fixed" name="brandSALE" autocomplete value="<?php echo $getsale->brandSALE;?>"/>
+                  <p class="text-red"><?php echo form_error('brandSALE'); ?></p>
               </div>
               <div class="uk-width-medium-1-3 uk-margin-top">
                 <label>Kategori Barang</label>
                 <br>
-                  <?php echo form_dropdown('idCATEGORY', $getcategory, $getrental->idCATEGORY,'required id="select_demo_5" data-md-selectize data-md-selectize-bottom'); ?>
-                  <p class="text-red"><?php echo form_error('idCATEGORY'); ?></p>
+                  <?php echo form_dropdown('idCATSALE', $getcatsale, $getsale->idCATSALE,'required id="select_demo_5" data-md-selectize data-md-selectize-bottom'); ?>
+                  <p class="text-red"><?php echo form_error('idCATSALE'); ?></p>
               </div>
             </div>
             <div class="uk-grid" data-uk-grid-margin>
-              <div class="uk-width-medium-1-2 uk-margin-top">
+              <div class="uk-width-medium-1-1 uk-margin-top">
                   <label>Harga</label>
                   <br>
                   <?php
                         $price = '';
-                        if(!empty($getrental->hargaRENTAL))$price = $getrental->hargaRENTAL;
+                        if(!empty($getsale->hargaSALE))$price = $getsale->hargaSALE;
                     ?>
-                    <input class="md-input masked_input label-fixed" id="masked_currency" type="text" data-inputmask="'alias': 'currency', 'groupSeparator': '.', 'autoGroup': true, 'digits': 0, 'digitsOptional': false, 'prefix': 'Rp. ', 'placeholder': '0'" data-inputmask-showmaskonhover="false" name="hargaRENTAL" value="<?php echo $price;?>" required>
-                  <p class="text-red"><?php echo form_error('hargaRENTAL'); ?></p>
-              </div>
-              <div class="uk-width-medium-1-2 uk-margin-top">
-                  <label>Durasi Rental</label>
-                  <br>
-                  <input type="text" class="md-input label-fixed" name="durasiRENTAL" autocomplete value="<?php echo $getrental->durasiRENTAL;?>" required/>
-                  <p class="text-red"><?php echo form_error('durasiRENTAL'); ?></p>
+                    <input class="md-input masked_input label-fixed" id="masked_currency" type="text" data-inputmask="'alias': 'currency', 'groupSeparator': '.', 'autoGroup': true, 'digits': 0, 'digitsOptional': false, 'prefix': 'Rp. ', 'placeholder': '0'" data-inputmask-showmaskonhover="false" name="hargaSALE" value="<?php echo $price;?>" required>
+                  <p class="text-red"><?php echo form_error('hargaSALE'); ?></p>
               </div>
             </div>
             <div class="uk-grid" data-uk-grid-margin>
               <div class="uk-width-medium-1-1 uk-margin-top">
                 <label>Deskripsi Barang</label>
                 <br>
-                <textarea cols="30" rows="4" name="descriptionRENTAL" class="md-input label-fixed"  required><?php echo $getrental->descriptionRENTAL;?></textarea>
-                <p class="text-red"><?php echo form_error('descriptionRENTAL'); ?></p>
+                <textarea cols="30" rows="4" name="descriptionSALE" class="md-input label-fixed"  required><?php echo $getsale->descriptionSALE;?></textarea>
+                <p class="text-red"><?php echo form_error('descriptionSALE'); ?></p>
               </div>
             </div>
               <div class="uk-width-medium-1-1 uk-margin-top">

@@ -1,30 +1,30 @@
 <?php
 if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Rental extends Admin_Controller{
+class Sale extends Admin_Controller{
 
 	public function __construct (){
 		parent::__construct();
-		$this->load->model('Rental_m');
+		$this->load->model('Sale_m');
 	}
 
 	public function index (){
-		$this->rentallist();
+		$this->salelist();
 	}
 
-	public function rentallist($id = NULL){
+	public function salelist($id = NULL){
 		$data['addONS'] = 'plugins_datatables';
 		$id = decode(urldecode($id));
 		
-		$data['listrental'] = $this->Rental_m->selectall_rental()->result();
+		$data['listsale'] = $this->Sale_m->selectall_sale()->result();
 
-		foreach ($data['listrental'] as $key => $value) {
-			$map = directory_map('assets/upload/rental/pic-rental-'.folenc($data['listrental'][$key]->idRENTAL), FALSE, TRUE);
+		foreach ($data['listsale'] as $key => $value) {
+			$map = directory_map('assets/upload/sale/pic-sale-'.folenc($data['listsale'][$key]->idSALE), FALSE, TRUE);
 			
 			if (empty($map)) {
-				$data['listrental'][$key]->imageRENTAL = base_url() . 'assets/upload/no-image-available.png';
+				$data['listsale'][$key]->imageSALE = base_url() . 'assets/upload/no-image-available.png';
 			} else {
-				$data['listrental'][$key]->imageRENTAL = base_url() . 'assets/upload/rental/pic-rental-'.folenc($data['listrental'][$key]->idRENTAL).'/'.$map[0];
+				$data['listsale'][$key]->imageSALE = base_url() . 'assets/upload/sale/pic-sale-'.folenc($data['listsale'][$key]->idSALE).'/'.$map[0];
 			}
 		}
 
@@ -33,7 +33,7 @@ class Rental extends Admin_Controller{
 	            'data-tab' => 'uk-active',
 	            'form-tab' => '',
 	        );
-			$data['getrental'] = $this->Rental_m->get_new();
+			$data['getsale'] = $this->Sale_m->get_new();
 		} else {
 			
 			//conf tab (optional)
@@ -41,59 +41,59 @@ class Rental extends Admin_Controller{
 	            'data-tab' => '',
 	            'form-tab' => 'uk-active',
 	        );
-			$data['getrental'] = $this->Rental_m->selectall_rental($id)->row();
-			$map = directory_map('assets/upload/rental/pic-rental-'.folenc($data['getrental']->idRENTAL), FALSE, TRUE);
+			$data['getsale'] = $this->Sale_m->selectall_sale($id)->row();
+			$map = directory_map('assets/upload/sale/pic-sale-'.folenc($data['getsale']->idSALE), FALSE, TRUE);
 			
 			if (empty($map)) {
-				$data['getrental']->imageRENTAL = '';
+				$data['getsale']->imageSALE = '';
 			} else {
-				$data['getrental']->imageRENTAL = base_url() . 'assets/upload/rental/pic-rental-'.folenc($data['getrental']->idRENTAL).'/'.$map[0];
+				$data['getsale']->imageSALE = base_url() . 'assets/upload/sale/pic-sale-'.folenc($data['getsale']->idSALE).'/'.$map[0];
 			}
 		}
 
 		if(!empty($this->session->flashdata('message'))) {
             $data['message'] = $this->session->flashdata('message');
         }
-        $data['getcategory'] = $this->Rental_m->dropdown_getcategory(1);
-		$data['subview'] = $this->load->view($this->data['backendDIR'].'rental', $data, TRUE);
+        $data['getcatsale'] = $this->Sale_m->dropdown_getcatsale(1);
+		$data['subview'] = $this->load->view($this->data['backendDIR'].'sale', $data, TRUE);
 		$this->load->view('templates/_layout_base',$data);
 	}
 
-	public function saverental() {
-		$rules = $this->Rental_m->rules_rental;
+	public function savesale() {
+		$rules = $this->Sale_m->rules_sale;
 		$this->form_validation->set_rules($rules);
 		$this->form_validation->set_message('required', 'Form %s tidak boleh dikosongkan');
         $this->form_validation->set_message('trim', 'Form %s adalah Trim');
         $this->form_validation->set_message('numeric', 'Silakan masukan hanya berupa angka');
 
 		if ($this->form_validation->run() == TRUE) {
-			$data = $this->Rental_m->array_from_post(array('namaRENTAL','brandRENTAL','hargaRENTAL','statusRENTAL','durasiRENTAL','descriptionRENTAL','idCATEGORY'));
-			$data['statusRENTAL']=1;
-			$data['hargaRENTAL'] = str_replace(['Rp.',' ',','], ['','',''], $data['hargaRENTAL']);
-			$id = decode(urldecode($this->input->post('idRENTAL')));
+			$data = $this->Sale_m->array_from_post(array('namaSALE','brandSALE','hargaSALE','statusSALE','descriptionSALE','idCATSALE'));
+			$data['statusSALE']=1;
+			$data['hargaSALE'] = str_replace(['Rp.',' ',','], ['','',''], $data['hargaSALE']);
+			$id = decode(urldecode($this->input->post('idSALE')));
 
 			if(empty($id))$id=NULL;
 			
 			$data = $this->security->xss_clean($data);
-			$idsave = $this->Rental_m->save($data, $id);
+			$idsave = $this->Sale_m->save($data, $id);
 
 			$subject = $idsave;
-			$filenamesubject = 'pic-rental-'.folenc($subject);
+			$filenamesubject = 'pic-sale-'.folenc($subject);
 
-			$path = 'assets/upload/rental/'.$filenamesubject;
+			$path = 'assets/upload/sale/'.$filenamesubject;
 			$map = directory_map($path, FALSE, TRUE);
 
 			if (!file_exists( $path )){
             	mkdir($path, 0777, true);
         	}
-        	if(isset($_FILES['imgRENTAL']['tmp_name'])){
+        	if(isset($_FILES['imgSALE']['tmp_name'])){
 				$config['upload_path']          = $path;
 		      	$config['allowed_types']        = 'jpg|png|jpeg';
 		      	$config['overwrite']             = TRUE;
 		      	$config['file_name']             = $this->security->sanitize_filename($filenamesubject);
 
 		      	$this->upload->initialize($config);
-		      	$this->upload->do_upload('imgRENTAL');
+		      	$this->upload->do_upload('imgSALE');
 	  		}
 	  		$data = array(
             	'title' => 'Sukses',
@@ -101,7 +101,7 @@ class Rental extends Admin_Controller{
                 'type' => 'success'
           	);
 	    	$this->session->set_flashdata('message', $data);
-	  		redirect('hooplaadmin/rental');
+	  		redirect('hooplaadmin/sale');
 		} else {
 				$data = array(
 		            'title' => 'Terjadi Kesalahan',
@@ -109,21 +109,21 @@ class Rental extends Admin_Controller{
 		            'type' => 'warning'
 		        );
 	        $this->session->set_flashdata('message',$data);
-	        $this->rentallist();
+	        $this->salelist();
 		}
 	}
 
 	public function actiondelete($id=NULL){
 		$id = decode(urldecode($id));
 		if($id != 0){
-			$this->Rental_m->delete($id);
+			$this->Sale_m->delete($id);
 			$data = array(
                     'title' => 'Sukses',
                     'text' => 'Penghapusan Data berhasil dilakukan',
                     'type' => 'success'
                 );
                 $this->session->set_flashdata('message',$data);
-                redirect('hooplaadmin/rental');
+                redirect('hooplaadmin/sale');
 		}else{
 			$data = array(
 	            'title' => 'Terjadi Kesalahan',
@@ -131,22 +131,22 @@ class Rental extends Admin_Controller{
 	            'type' => 'error'
 		        );
 		        $this->session->set_flashdata('message',$data);
-		        redirect('hooplaadmin/rental');
+		        redirect('hooplaadmin/sale');
 		}
 	}
 
-	public function deleteimgrental($id1=NULL){
+	public function deleteimgsale($id1=NULL){
 		if($id1 != NULL){
 			$id = decode(urldecode($id1));
-			$map = directory_map('assets/upload/rental/pic-rental-'.folenc($id), FALSE, TRUE);
-			$path = 'assets/upload/rental/pic-rental-'.folenc($id);
+			$map = directory_map('assets/upload/sale/pic-sale-'.folenc($id), FALSE, TRUE);
+			$path = 'assets/upload/sale/pic-sale-'.folenc($id);
 			foreach ($map as $value) {
-				unlink('assets/upload/rental/pic-rental-'.folenc($id).'/'.$value);
+				unlink('assets/upload/sale/pic-sale-'.folenc($id).'/'.$value);
 			}
 			if(is_dir($path)){
 				rmdir($path);
 			}
 		}
-		redirect('hooplaadmin/rental/rentallist/'.$id1);
+		redirect('hooplaadmin/sale/salelist/'.$id1);
 	}
 }
