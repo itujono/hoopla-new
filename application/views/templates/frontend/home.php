@@ -69,99 +69,45 @@
 	<section class="most-recent">
 		<h4 title="Barang-barang paling fresh di website ini">Most <span class="coolgreen">recent</span></h4>
 		<div class="wrapper">
+		<?php
+			if(!empty($listrentalmostrecent)){
+				foreach ($listrentalmostrecent as $key => $mr) {
+		?>
 			<div class="card">
 				<div class="card-content">
-				<img src="<?php echo base_url().$this->data['asfront'];?>img/kids7.png" alt="Kiddy">
+				<img src="<?php echo $mr->imageRENTAL ?>" alt="<?php echo $mr->namaRENTAL ?>">
 				</div>
 				<div class="card-bottom">
-					<a href="product-detail.html">
-						<h3>Super sempardak</h3>
-						<small>Rp 300k</small>
+					<a href="<?php echo base_url();?>product/detail/<?php echo base64_encode($mr->idRENTAL).'-'.seo_url($mr->namaRENTAL);?>">
+						<h3><?php echo $mr->namaRENTAL ?></h3>
+						<small>Rp. <?php echo number_format($mr->hargaRENTAL, 0,',','.'); ?></small>
 					</a>
 				</div>
 			</div>
-			<div class="card">
-				<div class="card-content softblue">
-				<img src="<?php echo base_url().$this->data['asfront'];?>img/kids7.png" alt="Kiddy">
-				</div>
-				<div class="card-bottom">
-					<a href="product-detail.html">
-						<h3>Super sempardak</h3>
-						<small>Rp 300k</small>
-					</a>
-				</div>
-			</div>
-			<div class="card">
-				<div class="card-content">
-				<img src="<?php echo base_url().$this->data['asfront'];?>img/kids7.png" alt="Kiddy">
-				</div>
-				<div class="card-bottom">
-					<a href="product-detail.html">
-						<h3>Super sempardak</h3>
-						<small>Rp 300k</small>
-					</a>
-				</div>
-			</div>
-			<div class="card">
-				<div class="card-content softpurple">
-				<img src="<?php echo base_url().$this->data['asfront'];?>img/kids7.png" alt="Kiddy">
-				</div>
-				<div class="card-bottom">
-					<a href="product-detail.html">
-						<h3>Super sempardak</h3>
-						<small>Rp 300k</small>
-					</a>
-				</div>
-			</div>
+		<?php } ?>
+		<?php } ?>
 		</div>
 	</section>
 	<section class="most-popular">
 		<h4 title="Barang-barang paling populer di website ini">Most <span class="coolgreen">popular</span></h4>
 		<div class="wrapper">
-			<div class="card">
-				<div class="card-content softpurple">
-				<img src="<?php echo base_url().$this->data['asfront'];?>img/toys1.png" alt="Toys">
-				</div>
-				<div class="card-bottom">
-					<a href="product-detail.html">
-						<h3>Super sempardak</h3>
-						<small>Rp 300k</small>
-					</a>
-				</div>
-			</div>
+		<?php
+			if(!empty($listrentalmostpopular)){
+				foreach ($listrentalmostpopular as $key => $mp) {
+		?>
 			<div class="card">
 				<div class="card-content">
-				<img src="<?php echo base_url().$this->data['asfront'];?>img/toys2.png" alt="Toys">
+				<img src="<?php echo $mp->imageRENTAL ?>" alt="<?php echo $mp->namaRENTAL ?>">
 				</div>
 				<div class="card-bottom">
-					<a href="product-detail.html">
-						<h3>Super sempardak</h3>
-						<small>Rp 300k</small>
+					<a href="<?php echo base_url();?>product/detail/<?php echo base64_encode($mp->idRENTAL).'-'.seo_url($mp->namaRENTAL);?>">
+						<h3><?php echo $mp->namaRENTAL ?></h3>
+						<small>Rp. <?php echo number_format($mp->hargaRENTAL, 0,',','.'); ?></small>
 					</a>
 				</div>
 			</div>
-			<div class="card">
-				<div class="card-content softblue">
-				<img src="<?php echo base_url().$this->data['asfront'];?>img/toys3.png" alt="Toys">
-				</div>
-				<div class="card-bottom">
-					<a href="product-detail.html">
-						<h3>Super sempardak</h3>
-						<small>Rp 300k</small>
-					</a>
-				</div>
-			</div>
-			<div class="card">
-				<div class="card-content">
-				<img src="<?php echo base_url().$this->data['asfront'];?>img/toys4.png" alt="Toys">
-				</div>
-				<div class="card-bottom">
-					<a href="product-detail.html">
-						<h3>Super sempardak</h3>
-						<small>Rp 300k</small>
-					</a>
-				</div>
-			</div>
+		<?php } ?>
+		<?php } ?>
 		</div>
 	</section>
 </main>

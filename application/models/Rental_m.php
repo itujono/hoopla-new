@@ -57,7 +57,7 @@ class Rental_m extends MY_Model{
 		return $rental;
 	}
 
-	public function selectall_rental($id = NULL, $status = NULL,$bybrand=NULL, $bycat=NULL, $random=NULL) {
+	public function selectall_rental($id = NULL, $status = NULL,$bybrand=NULL, $bycat=NULL, $random=NULL, $mostrecent=NULL) {
 		$this->db->select('*');
 		$this->db->select('category_rental.namaCATEGORY');
 		$this->db->from('barang_rental');
@@ -76,6 +76,9 @@ class Rental_m extends MY_Model{
 		}
 		if ($bycat != NULL) {
 			$this->db->order_by('RAND()');
+		}
+		if($mostrecent != NULL){
+			$this->db->order_by('idRENTAL', 'desc');
 		}
 		return $this->db->get();
 	}
