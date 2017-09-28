@@ -24,22 +24,31 @@
                 <li class="has-children">
                     <a href="<?php echo base_url();?>product">Produk</a>
                     <ul class="children">
-                        <li><a href="#">Brands</a></li>
-                        <li><a href="#">Kategori</a></li>
-                        <li><a href="#">Umur</a></li>
+                        <?php
+                        $category_active = selectall_category_active();
+                        if(!empty($category_active)){
+                        foreach ($category_active as $key => $cat) {
+                        ?>
+                        <li><a href="#"><?php echo $cat->namaCATEGORY;?></a></li>
+                        <?php } ?>
+                        <?php } ?>
                     </ul>
                 </li>
                 <li><a href="<?php echo base_url();?>terms">Cara Pemesanan</a></li>
                 <li class="has-children">
                     <a href="<?php echo base_url();?>sale">For Sale</a>
                     <ul class="children">
-                        <li><a href="#">For mom</a></li>
-                        <li><a href="#">For baby</a></li>
-                        <li><a href="#">Toys</a></li>
-                        <li><a href="#">Snacks &amp; foods</a></li>
+                        <?php
+                        $category_sale_active = selectall_category_sale_active();
+                        if(!empty($category_sale_active)){
+                        foreach ($category_sale_active as $key => $catsale) {
+                        ?>
+                        <li><a href="#"><?php echo $catsale->namaCATSALE;?></a></li>
+                        <?php } ?>
+                        <?php } ?>
                     </ul>
                 </li>
-                <li><a href="<?php echo base_url();?>entrust">Titip Sewa</a></li>
+                <li><a href="<?php echo base_url();?>form">Titip Sewa</a></li>
                 <li class="has-children">
                     <a href="<?php echo base_url();?>trivia">Trivia</a>
                     <ul class="children">

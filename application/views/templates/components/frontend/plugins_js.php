@@ -43,11 +43,15 @@ if ($plugins == 'home') { ?>
 <script src="<?php echo base_url().$this->data['asfront'];?>js/tingle.min.js"></script>
 <script>
   var modal = new tingle.modal({ cssClass: ['ordering'] });
+  var modalTitip = new tingle.modal({ cssClass: ['titip'] });
+  var btnTitip = document.querySelector('#btn-titip');
   modal.setContent(document.querySelector('#ordering').innerHTML);
+    document.querySelector('#btn-order').addEventListener('click', function(e) {
+        modal.open(); e.preventDefault();
+    });
 
-  document.querySelector('#btn-order').addEventListener('click', function() {
-    modal.open();
-  });
+    modalTitip.setContent(document.querySelector('#titip').innerHTML);
+    btnTitip.addEventListener('click', function(e) { modalTitip.open(); e.preventDefault(); });
 </script>
 <script>
   tippy('.social a', {
@@ -74,5 +78,46 @@ if ($plugins == 'home') { ?>
       $(".links").removeClass("gotop");
     }
   });
+</script>
+<?php
+} elseif ($plugins == 'sale') {
+?>
+<script src="<?php echo base_url().$this->data['asfront'];?>js/tingle.min.js"></script>
+<script>
+  var modal = new tingle.modal({ cssClass: ['ordering'] });
+  var modalTitip = new tingle.modal({ cssClass: ['titip'] });
+  var btnTitip = document.querySelector('#btn-titip');
+  modal.setContent(document.querySelector('#ordering').innerHTML);
+    document.querySelector('#btn-order').addEventListener('click', function(e) {
+        modal.open(); e.preventDefault();
+    });
+
+    modalTitip.setContent(document.querySelector('#titip').innerHTML);
+    btnTitip.addEventListener('click', function(e) { modalTitip.open(); e.preventDefault(); });
+</script>
+<?php
+} elseif ($plugins == 'form') {
+?>
+<script src="<?php echo base_url().$this->data['asfront'];?>js/tingle.min.js"></script>
+<script>
+  var modal = new tingle.modal({ cssClass: ['ordering'] });
+  var modalTitip = new tingle.modal({ cssClass: ['titip'] });
+  var btnTitip = document.querySelector('#btn-titip');
+  modal.setContent(document.querySelector('#ordering').innerHTML);
+    document.querySelector('#btn-order').addEventListener('click', function(e) {
+        modal.open(); e.preventDefault();
+    });
+
+    modalTitip.setContent(document.querySelector('#titip').innerHTML);
+    btnTitip.addEventListener('click', function(e) { modalTitip.open(); e.preventDefault(); });
+</script>
+<?php
+} elseif ($plugins == 'contact') {
+?>
+<script type="text/javascript">
+    tippy('.social a', {
+        followCursor: true,
+        position: 'bottom'
+    });
 </script>
 <?php } ?>

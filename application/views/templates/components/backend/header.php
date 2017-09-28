@@ -8,9 +8,9 @@
     <meta name="description" content="">
     <meta name="author" content="Codewell Team">
 
-    <link rel="icon" type="image/png" href="<?php echo base_url(); ?>assets/backend/img/favicon.png" sizes="16x16">
+    <link rel="icon" type="image/png" href="<?php echo base_url().$this->data['asback'];?>img/favicon.png" sizes="16x16">
 
-    <title>i-Laundry</title>
+    <title>Hoopla - Toys Rental</title>
 
     <?php echo $addons; ?>
 

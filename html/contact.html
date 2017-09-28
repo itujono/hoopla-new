@@ -161,38 +161,5 @@
                 position: 'bottom'
             });
         </script>
-
-        <script>
-
-            function validateForm() {
-                var inputName = document.contactForm.Name;
-                var inputEmail = document.contactForm.Email;
-                var inputMessage = document.contactForm.Message;
-                var errorMessage = document.querySelector(".error");
-                var submit = document.querySelector("#submit");
-
-                if (inputName.value == "") {
-                    errorMessage.style.display = "block";
-                    document.contactForm.Name.focus();
-                    console.log("Waduh error tuh!");
-                    return false;
-                }
-
-                if (inputEmail.value == "") {
-                    errorMessage.style.display = "block";
-                    document.contactForm.Name.focus();
-                    return false;
-                }
-
-                if (inputMessage.value == "") {
-                    errorMessage.style.display = "block";
-                    document.contactForm.Name.focus();
-                    return false;
-                }
-
-                return true;
-            }
-            // submit.addEventListener("submit", validateForm);
-        </script>
     </body>
 </html>
