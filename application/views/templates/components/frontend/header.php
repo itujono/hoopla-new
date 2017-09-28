@@ -18,8 +18,8 @@
                 <img src="<?php echo base_url().$this->data['asfront'];?>img/logo-web.png" alt="Logo utama">
             </div>
             <nav>
-                <li><a href="<?php echo base_url();?>"><i class="fa fa-home"></i></a></li>
-                <li><a href="<?php echo base_url();?>about">Tentang Hoopla</a></li>
+                <li><a href="<?php echo base_url();?>" class="active"><i class="fa fa-home"></i></a></li>
+                <li><a href="<?php echo base_url();?>about" class="active">Tentang Hoopla</a></li>
                 <li><a href="<?php echo base_url();?>why">Kenapa Hoopla</a></li>
                 <li class="has-children">
                     <a href="<?php echo base_url();?>product">Produk</a>
