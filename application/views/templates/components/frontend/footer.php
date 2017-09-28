@@ -3,10 +3,13 @@
         <img src="<?php echo base_url().$this->data['asfront'];?>img/logo-web.png" alt="Logo Footer"width="200">
         <h4>We bring <span class="coolgreen">happiness</span> to your home</h4>
         <ul class="social">
-            <li class="wow bounceInUp"><a href="#" title="Twitter kami"><i class="fa fa-twitter"></i></a></li>
-            <li class="wow bounceInUp" data-wow-delay=".2s"><a href="#" title="Facebook kami"><i class="fa fa-facebook"></i></a></li>
-            <li class="wow bounceInUp" data-wow-delay=".3s"><a href="#" title="Instagram kami"><i class="fa fa-instagram"></i></a></li>
-            <li class="wow bounceInUp" data-wow-delay=".6s"><a href="#" title="Pinterest kami"><i class="fa fa-pinterest"></i></a></li>
+            <li class="wow bounceInUp"><a href="#" title="085667651688">WA</a></li>
+            <li class="wow bounceInUp" data-wow-delay=".2s">
+                <a href="#" title="hoopla_rentalmainan">LINE</a>
+            </li>
+            <li class="wow bounceInUp" data-wow-delay=".3s">
+                <a href="http://instagram.com/hoopla_rentalmainan/" title="hoopla_rentalmainan">IG</a>
+            </li>
         </ul>
     </div>
     <div class="copyright">
@@ -19,7 +22,7 @@
     </div>
 </footer>
 </div>
-<?php 
+<?php
 if($addONS == 'home' OR $addONS == 'product' OR $addONS == 'sale' OR $addONS == 'form'){
 ?>
 
