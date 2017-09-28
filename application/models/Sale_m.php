@@ -78,4 +78,12 @@ class Sale_m extends MY_Model{
 			return $this->db->get();
 		}
 	}
+
+	public function selectall_random_sale($id=NULL) {
+		$this->db->select('*');
+		$this->db->from('barang_sale');
+		$this->db->where('idCATSALE', $id);
+		$this->db->order_by('RAND()');
+		return $this->db->get();
+	}
 }

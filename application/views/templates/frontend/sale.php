@@ -20,7 +20,7 @@
 					<img src="<?php echo $sale->imageSALE;?>" alt="<?php echo $sale->namaSALE;?>">
 				</div>
 				<div class="card-bottom">
-					<a href="<?php echo base_url();?>product/detail">
+					<a href="<?php echo base_url();?>sale/detail/<?php echo base64_encode($sale->idSALE).'-'.seo_url($sale->namaSALE);?>">
 						<h3><?php echo $sale->namaSALE;?></h3>
 						<small>Rp. <?php echo number_format($sale->hargaSALE, 0,',','.'); ?></small>
 					</a>

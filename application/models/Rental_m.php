@@ -94,9 +94,10 @@ class Rental_m extends MY_Model{
 		}
 	}
 
-	public function selectall_random_rental() {
+	public function selectall_random_rental($id=NULL) {
 		$this->db->select('*');
 		$this->db->from('barang_rental');
+		$this->db->where('idCATEGORY', $id);
 		$this->db->order_by('RAND()');
 		return $this->db->get();
 	}
