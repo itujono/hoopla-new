@@ -1,5 +1,4 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
-
 <main>
 	<section class="main-news">
 		<div class="owl-carousel wow bounceInUp" data-wow-delay=".2s">

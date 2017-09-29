@@ -2,6 +2,15 @@
 <html>
 <head>
 <meta charset="utf-8">
+<?php 
+    if($title == 'Trivia Post - Toys Rent'){
+?>
+<meta property="og:url"                content="<?php echo base_url(uri_string());?>" />
+<meta property="og:type"               content="article" />
+<meta property="og:title"              content="<?php echo $gettrivia->titleTRIVIA;?>" />
+<meta property="og:description"        content="<?php echo word_limiter($gettrivia->descriptionTRIVIA,8);?>" />
+<meta property="og:image"              content="<?php echo base_url().$this->data['asfront'];?>img/logo-web.png" />
+<?php } ?>
 <title><?php echo $title;?></title>
 <?php echo $addons; ?>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">

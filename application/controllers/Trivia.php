@@ -22,8 +22,8 @@ class Trivia extends Frontend_Controller {
 	}
 
 	public function detail($id){
-		$data['addONS'] = '';
-		$data['title'] = 'Titip Sewa - Toys Rent';
+		$data['addONS'] = 'trivia_post';
+		$data['title'] = 'Trivia Post - Toys Rent';
 		$data['idbody'] = 'trivia-post';
 
 		$id = base64_decode(cutting($id));

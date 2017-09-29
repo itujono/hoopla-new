@@ -21,9 +21,9 @@
                 <h4>Suka artikel ini?</h4>
                 <p>Bagikan ke teman-teman kamu.</p>
                 <ul>
-                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                    <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                    <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                    <li><a href="javascript:void(0)" onclick="javascript:genericSocialShare('http://twitter.com/share?text=<?php echo $gettrivia->titleTRIVIA;?>&url=<?php echo base_url(uri_string());?>')"><i class="fa fa-twitter"></i></a></li>
+                    <li><a href="#" class="ShareFB"><i class="fa fa-facebook"></i></a></li>
+                    <li><a href="javascript:void(0)" onclick="javascript:genericSocialShare('https://plus.google.com/share?url=<?php echo base_url(uri_string());?>')"><i class="fa fa-google-plus"></i></a></li>
                 </ul>
             </div>
         </div>
@@ -46,3 +46,30 @@
         </div>
     </section>
 </main>
+<script
+  src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+  integrity="sha256-k2WSCIexGzOj3Euiig+TlR8gA0EmPjuc79OEeY5L45g="
+  crossorigin="anonymous"></script>
+<script type="text/javascript">
+    function genericSocialShare(url){
+        window.open(url,'sharer','toolbar=0,status=0,width=648,height=395');
+        return true;
+    }
+
+function createFBShareLink(FBVars) {
+    // FBVars is app_id
+    var url = 'http://www.facebook.com/dialog/feed?app_id='+FBVars+
+    '&link=' + '<?php echo base_url(uri_string());?>' +
+    '&picture=' + '<?php echo base_url().$this->data['asfront'];?>img/logo-web.png' +
+    '&name=' + encodeURIComponent('<?php echo $gettrivia->titleTRIVIA;?>') +
+    '&description=' + encodeURIComponent('<?php echo word_limiter($gettrivia->descriptionTRIVIA,8);?>') +
+    '&redirect_uri=' + '<?php echo base_url(uri_string());?>' +
+    '&display=popup';
+    window.open(url,'feedDialog','toolbar=0,status=0,width=626,height=436');
+}
+
+$(".ShareFB").click(function(e) {
+    e.preventDefault();
+    createFBShareLink('1400972743334993');
+});
+</script>
