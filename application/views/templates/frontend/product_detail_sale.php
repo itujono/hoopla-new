@@ -8,7 +8,6 @@
             <h4 class="price">Rp. <?php echo number_format($getsale->hargaSALE, 0,',','.'); ?></h4>
             <p class="description"><?php echo $getsale->descriptionSALE;?>
             </p>
-            <a href="#" class="btn-hoopla"><i class="fa fa-shopping-cart"></i> &nbsp; Tambahkan ke keranjang</a>
             <p class="category">Kategori: <a href="#"><?php echo $getsale->namaCATSALE;?></a></p>
         </div>
         <section class="similar">
@@ -36,28 +35,6 @@
     </main>
 
     <aside class="sidebar">
-        <div class="sort">
-            <h4>Filter by:</h4>
-            <select>
-                <option value="az">Brand (A-Z)</option>
-                <option value="za">Brand (Z-A)</option>
-                <option value="category">Kategori</option>
-                <option value="age1">Umur (0-2)</option>
-                <option value="age2">Umur (3-6)</option>
-                <option value="age3">Umur 7-10)</option>
-            </select>
-            <a href="#" class="btn-hoopla">Submit</a>
-        </div>
-        <div class="sort">
-            <h4>Sort by:</h4>
-            <select>
-                <option value="trending">Trending</option>
-                <option value="high-low">Harga (tinggi ke rendah)</option>
-                <option value="low-high">Harga (rendah ke tinggi)</option>
-                <option value="date">Tanggal dimasukkan</option>
-            </select>
-            <a href="#" class="btn-hoopla">Submit</a>
-        </div>
         <div class="promo-sidebar wow bounceInUp" data-wow-delay="1.3s">
             <div class="bg">
                 <h3>Mau order sekarang?</h3>

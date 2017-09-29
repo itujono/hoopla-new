@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="utf-8">
-<?php 
+<?php
     if($title == 'Trivia Post - Toys Rent'){
 ?>
 <meta property="og:url"                content="<?php echo base_url(uri_string());?>" />
@@ -30,47 +30,9 @@
             <li><a href="<?php echo base_url();?>" class=""><i class="fa fa-home"></i></a></li>
             <li><a href="<?php echo base_url();?>about" class="">Tentang Hoopla</a></li>
             <li><a href="<?php echo base_url();?>why" class="">Kenapa Hoopla</a></li>
-            <li class="has-children">
-                <a href="<?php echo base_url();?>product" class="">Produk</a>
-                <ul class="children">
-                    <?php
-                    $category_active = selectall_category_active();
-                    if(!empty($category_active)){
-                        foreach ($category_active as $key => $cat) {
-                            ?>
-                            <li><a href="#"><?php echo $cat->namaCATEGORY;?></a></li>
-                            <?php } ?>
-                            <?php } ?>
-                        </ul>
-                    </li>
-                    <li><a href="<?php echo base_url();?>terms" class="">Cara Pemesanan</a></li>
-                    <li class="has-children">
-                        <a href="<?php echo base_url();?>sale" class="">For Sale</a>
-                        <ul class="children">
-                            <?php
-                            $category_sale_active = selectall_category_sale_active();
-                            if(!empty($category_sale_active)){
-                                foreach ($category_sale_active as $key => $catsale) {
-                                    ?>
-                                    <li><a href="#"><?php echo $catsale->namaCATSALE;?></a></li>
-                                    <?php } ?>
-                                    <?php } ?>
-                                </ul>
-                            </li>
-                            <li><a href="<?php echo base_url();?>form" class="">Titip Sewa</a></li>
-                            <li class="has-children">
-                                <a href="<?php echo base_url();?>trivia" class="">Trivia</a>
-                                <ul class="children">
-                                    <?php
-                                    $category_trivia_active = selectall_category_trivia_active();
-                                    if(!empty($category_trivia_active)){
-                                        foreach ($category_trivia_active as $key => $trivia) {
-                                    ?>
-                                    <li><a href="#"><?php echo $trivia->namaCATTRIVIA;?></a></li>
-                                    <?php } ?>
-                                    <?php } ?>
-                                </ul>
-                            </li>
-                            <li><a href="<?php echo base_url();?>contact" class="">Hubungi Kami</a></li>
-                        </nav>
-                    </header>
+            <li><a href="<?php echo base_url();?>product" class="">Produk</a></li>
+            <li><a href="<?php echo base_url();?>terms" class="">Cara Pemesanan</a></li>
+            <li><a href="<?php echo base_url();?>sale" class="">For Sale</a></li>
+            <li><a href="<?php echo base_url();?>contact" class="">Hubungi Kami</a></li>
+        </nav>
+    </header>

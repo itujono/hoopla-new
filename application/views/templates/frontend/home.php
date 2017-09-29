@@ -45,7 +45,7 @@
 		</div>
 		<div class="cta">
 			<div class="image">
-			<img src="<?php echo base_url().$this->data['asfront'];?>img/logo-text.png" alt="Logo CTA">
+				<img src="<?php echo base_url().$this->data['asfront'];?>img/logo-text.png" alt="Logo CTA">
 			</div>
 			<h4>We bring <span class="coolgreen">happiness</span> to your home</h4>
 			<img class="absolutely" src="<?php echo base_url().$this->data['asfront'];?>img/logo-image.png" alt="Logo image">
