@@ -46,6 +46,16 @@ function selectall_category_active(){
     return $data;
 }
 
+function selectall_category_trivia_active(){
+    $CI =& get_instance();
+    $CI->db->select('namaCATTRIVIA, statusCATTRIVIA');
+    $CI->db->from('category_trivia');
+    $CI->db->where('statusCATTRIVIA', 1);
+
+    $data = $CI->db->get()->result();
+    return $data;
+}
+
 function selectall_category_sale_active(){
     $CI =& get_instance();
     $CI->db->select('namaCATSALE, statusCATSALE');
@@ -148,4 +158,7 @@ function cutting($string=NULL){
     $replace = str_replace('-',' ', $string);
     $cut = substr($replace, 0, 4);
     return $cut;
+}
+function cetak($str){
+    echo htmlentities($str, ENT_QUOTES, 'UTF-8');
 }

@@ -5,25 +5,17 @@
             <div class="image">
                 <img src="<?php echo base_url().$this->data['asfront'];?>img/user.jpg" alt="Admin">
             </div>
-            <p class="author">by <a href="#">Admin 2</a></p>
-            <div class="tags">
-                <li><a href="#" class="tag">#girls</a></li>
-                <li><a href="#" class="tag">#toys</a></li>
-                <li><a href="#" class="tag">#new</a></li>
-                <li><a href="#" class="tag">#keren</a></li>
-                <li><a href="#" class="tag">#flex</a></li>
-            </div>
+            <p class="author">by <a href="#">Administrator</a></p>
         </div>
         <div class="post">
-            <h2>Makan Apa Supaya Kenyang Banget Besok Lusa?</h2>
+            <h2><?php echo $gettrivia->titleTRIVIA;?></h2>
             <span class="date">
-                <i class="fa fa-clock-o"></i> 16th, June 2017
+                <i class="fa fa-clock-o"></i> <?php echo date('d F Y', strtotime($gettrivia->createdateTRIVIA));?>
             </span>/ &nbsp;
             <span class="cat">
-                <i class="fa fa-file-text-o"></i> Toys &amp; Kids
+                <i class="fa fa-file-text-o"></i> <?php echo $gettrivia->namaCATTRIVIA;?>
             </span>
-            <p class="main-post">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. <br><br>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            <p class="main-post"><?php echo $gettrivia->descriptionTRIVIA;?>
             </p>
             <div class="share-post">
                 <h4>Suka artikel ini?</h4>
@@ -38,24 +30,18 @@
         <div class="similar-post">
             <h4>Postingan Sejenis</h4>
             <div class="wrapper">
+            <?php
+                if(!empty($similartrivia)){
+                    foreach ($similartrivia as $key => $sim) {
+            ?>
                 <div class="card">
-                    <h4>Kenapa Kalo Begadang Badan Linu?</h4>
-                    <span><i class="fa fa-clock-o"></i> August 15, 2017</span>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut...</p>
-                    <a href="#" class="btn-hoopla">Baca sekarang</a>
+                    <h4><?php echo $sim->titleTRIVIA;?></h4>
+                    <span><i class="fa fa-clock-o"></i> <?php echo date('d F Y', strtotime($sim->createdateTRIVIA));?></span>
+                    <p><?php echo word_limiter($sim->descriptionTRIVIA, 14);?></p>
+                    <a href="<?php echo base_url();?>trivia/detail/<?php echo base64_encode($sim->idTRIVIA).'-'.seo_url($sim->titleTRIVIA);?>" class="btn-hoopla">Baca sekarang</a>
                 </div>
-                <div class="card">
-                    <h4>Kenapa Anak Nggak Mau Minum Susu di Rumah Tetangga?</h4>
-                    <span><i class="fa fa-clock-o"></i> August 15, 2017</span>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut...</p>
-                    <a href="#" class="btn-hoopla">Baca sekarang</a>
-                </div>
-                <div class="card">
-                    <h4>Pasti Susah Kalo Mau Beli Tapi Gak Punya Dana.</h4>
-                    <span><i class="fa fa-clock-o"></i> August 15, 2017</span>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut...</p>
-                    <a href="#" class="btn-hoopla">Baca sekarang</a>
-                </div>
+            <?php } ?>
+            <?php } ?>
             </div>
         </div>
     </section>

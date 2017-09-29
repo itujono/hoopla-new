@@ -5,7 +5,7 @@ class Frontend_Controller extends MY_Controller{
 
 	function __construct (){
     	parent::__construct();
-    	
+
     	$this->data['folBACKEND'] = $this->data['folder_admin'];
     	$this->data['frontendDIR'] = 'templates/frontend/';
     	$this->data['asfront'] = 'assets/frontend/';

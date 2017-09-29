@@ -49,7 +49,7 @@
       <?php
       $menus = selectall_menu_active();
       foreach ($menus as $values) {
-        if(!empty($this->uri->segment(3))){
+        if(!empty($this->uri->segment(3))) {
           $url = $this->uri->segment(3);
         } else {
           $url = $this->uri->segment(2);
