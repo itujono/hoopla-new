@@ -46,18 +46,21 @@
         <section class="right">
             <h2>Atau hubungi kami langsung di sini...</h2>
             <form class="form-control" action="<?php echo base_url();?>contact/savecontact" method="post">
-                <label for="name">Nama kamu <span>*</span></label>
-                <input type="text" placeholder="John Smith..." name="namaCONTACT" required="required">
-                <p class="error"><?php echo form_error('namaCONTACT'); ?></p>
-
-                <label for="email">Email kamu <span>*</span></label>
-                <input type="text" placeholder="namaemail@email.com" name="emailCONTACT" required="required">
-                <p class="error"><?php echo form_error('emailCONTACT'); ?></p>
-
-                <label for="message">Apa yang mau kamu sampaikan? <span>*</span></label>
-                <textarea rows="10" placeholder="Isi apapun pesan yang ingin kamu sampaikan..." name="descriptionCONTACT" required="required"></textarea>
-                <p class="error"><?php echo form_error('descriptionCONTACT'); ?></p>
-
+                <div class="form-group">
+                    <label for="name">Nama kamu <span>*</span></label>
+                    <input type="text" placeholder="John Smith..." name="namaCONTACT" required="required">
+                    <p class="error"><?php echo form_error('namaCONTACT'); ?></p>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email kamu <span>*</span></label>
+                    <input type="text" placeholder="namaemail@email.com" name="emailCONTACT" required="required">
+                    <p class="error"><?php echo form_error('emailCONTACT'); ?></p>
+                </div>
+                <div class="form-group">
+                    <label for="message">Apa yang mau kamu sampaikan? <span>*</span></label>
+                    <textarea rows="10" placeholder="Isi apapun pesan yang ingin kamu sampaikan..." name="descriptionCONTACT" required="required"></textarea>
+                    <p class="error"><?php echo form_error('descriptionCONTACT'); ?></p>
+                </div>
                 <button type="submit" class="btn-hoopla">Okay, let's submit!</button>
             </form>
         </section>
