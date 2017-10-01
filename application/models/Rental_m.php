@@ -110,4 +110,44 @@ class Rental_m extends MY_Model{
 		$this->db->order_by('RAND()');
 		return $this->db->get();
 	}
+
+	public function searching_filter($filter){
+    	
+    	$this->db->select('*');
+    	$this->db->select('category_rental.namaCATEGORY');
+		$this->db->from('barang_rental');
+		$this->db->join('category_rental', 'category_rental.idCATEGORY = barang_rental.idCATEGORY');
+		if($filter == 'az'){
+			$this->db->order_by('namaRENTAL', 'asc');
+		} else if($filter == 'za'){
+			$this->db->order_by('namaRENTAL', 'desc');
+		} else if($filter == 'category'){
+			$this->db->order_by('namaCATEGORY', 'asc');
+		} else if($filter == 'age1'){
+			$this->db->where('umurRENTAL', 'Umur (0-2)');
+		} else if($filter == 'age2'){
+			$this->db->where('umurRENTAL', 'Umur (3-6)');
+		} else if($filter == 'age3'){
+			$this->db->where('umurRENTAL', 'Umur (7-10)');
+		}
+
+		return $this->db->get();
+    }
+
+    public function searching_sortby($sortby){
+    	
+    	$this->db->select('*');
+		$this->db->from('barang_rental');
+		if($sortby == 'trending'){
+			$this->db->order_by('RAND()');
+		} else if($sortby == 'high-low'){
+			$this->db->order_by('hargaRENTAL', 'desc');
+		} else if($sortby == 'low-high'){
+			$this->db->order_by('hargaRENTAL', 'asc');
+		} else if($sortby == 'date'){
+			$this->db->order_by('createdateRENTAL', 'desc');
+		}
+
+		return $this->db->get();
+    }
 }

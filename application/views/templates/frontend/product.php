@@ -1,4 +1,61 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
+<?php
+    if(!empty($searching)){
+?>
+<main>
+    <section class="section" id="brands">
+        <h4 title="Barang-barang fresh buat si kecil - Pencarian">
+            Pencarian
+        </h4>
+        <div class="wrapper">
+            <?php 
+            if(!empty($searching)){
+                foreach ($searching as $key => $src) {
+            ?>
+            <div class="card">
+                <div class="card-content">
+                    <img src="<?php echo $src->imageRENTAL;?>" alt="<?php echo $src->namaRENTAL;?>">
+                </div>
+                <div class="card-bottom">
+                    <a href="<?php echo base_url();?>product/detail/<?php echo base64_encode($src->idRENTAL).'-'.seo_url($src->namaRENTAL);?>">
+                        <h3><?php echo $src->namaRENTAL;?></h3>
+                        <small>Rp. <?php echo number_format($src->hargaRENTAL, 0,',','.'); ?></small>
+                    </a>
+                </div>
+            </div>
+            <?php } ?>
+            <?php } ?>
+        </div>
+    </section>
+</main>
+<?php } else if(!empty($searchsortby)) { ?>
+<main>
+    <section class="section" id="brands">
+        <h4 title="Barang-barang fresh buat si kecil - Pencarian">
+            Pencarian
+        </h4>
+        <div class="wrapper">
+            <?php 
+            if(!empty($searchsortby)){
+                foreach ($searchsortby as $key => $sort) {
+            ?>
+            <div class="card">
+                <div class="card-content">
+                    <img src="<?php echo $sort->imageRENTAL;?>" alt="<?php echo $sort->namaRENTAL;?>">
+                </div>
+                <div class="card-bottom">
+                    <a href="<?php echo base_url();?>product/detail/<?php echo base64_encode($sort->idRENTAL).'-'.seo_url($sort->namaRENTAL);?>">
+                        <h3><?php echo $sort->namaRENTAL;?></h3>
+                        <small>Rp. <?php echo number_format($sort->hargaRENTAL, 0,',','.'); ?></small>
+                    </a>
+                </div>
+            </div>
+            <?php } ?>
+            <?php } ?>
+        </div>
+    </section>
+</main>
+<?php } else { ?>
 <main>
     <section class="section" id="brands">
         <h4 title="Barang-barang fresh buat si kecil - berdasarkan nama brand">
@@ -76,11 +133,11 @@
         </div>
     </section>
 </main>
-
+<?php } ?>
 <aside class="sidebar">
     <div class="sort">
         <h4>Filter by:</h4>
-        <form method="post" name="formfiler" action="<?php echo base_url();?>product/filterby">
+        <form method="get" name="formfiler" action="<?php echo base_url();?>product/filterby">
         <select name="filter" required="required">
             <option value="az">Brand (A-Z)</option>
             <option value="za">Brand (Z-A)</option>
@@ -94,13 +151,14 @@
     </div>
     <div class="sort">
         <h4>Sort by:</h4>
-        <select>
+        <form method="get" name="formsortby" action="<?php echo base_url();?>product/sortby">
+        <select name="sortby" required="required">
             <option value="trending">Trending</option>
             <option value="high-low">Harga (tinggi ke rendah)</option>
             <option value="low-high">Harga (rendah ke tinggi)</option>
             <option value="date">Tanggal dimasukkan</option>
         </select>
-        <a href="#" class="btn-hoopla">Submit</a>
+        <button type="submit" class="btn-hoopla">Okay, Sortir!</button>
     </div>
     <div class="promo-sidebar wow bounceInUp" data-wow-delay="1.3s">
         <div class="bg">

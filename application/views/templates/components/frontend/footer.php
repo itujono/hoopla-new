@@ -25,7 +25,6 @@
 <?php
 if($addONS == 'home' OR $addONS == 'product' OR $addONS == 'sale' OR $addONS == 'form'){
 ?>
-
 <div class="tingle-content-wrapper">
     <div class="ordering" id="ordering">
         <h3>Gimana cara order di Hoopla?</h3>
