@@ -15,6 +15,7 @@
                   <th>Nama</th>
                   <th>Email</th>
                   <th>Isi Pesan</th>
+                  <th>Waktu Kirim</th>
               </tr>
             </thead>
             <tfoot>
@@ -23,6 +24,7 @@
                 <th>Nama</th>
                 <th>Email</th>
                 <th>Isi Pesan</th>
+                <th>Waktu Kirim</th>
               </tr>
             </tfoot>
             <tbody>
@@ -33,6 +35,7 @@
                 <td><?php echo $contact->namaCONTACT; ?></td>
                 <td><?php echo $contact->emailCONTACT; ?></td>
                 <td><?php echo $contact->descriptionCONTACT; ?></td>
+                <td><b><?php echo indonesian_date($contact->createdateCONTACT); ?></b></td>
               </tr>
             <?php } ?>
             </tbody>
