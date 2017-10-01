@@ -78,4 +78,54 @@ class Product extends Frontend_Controller {
 		$data['subview'] = $this->load->view($this->data['frontendDIR'].'product_detail', $data, TRUE);
         $this->load->view($this->data['rootDIR'].'_layout_base_frontend',$data);
 	}
+
+	public function filterby() {
+		$data['addONS'] = 'product';
+		$data['title'] = 'Product - Hoopla Toys Rent';
+		$data['idbody'] = 'product';
+
+		$filter = $this->input->get('filter');
+
+		$Searching = $this->Rental_m->searching_filter($filter)->result();
+        if(!empty($Searching)){
+			$data['searching'] = $Searching;
+			foreach ($data['searching'] as $key => $value) {
+				$map = directory_map('assets/upload/rental/pic-rental-'.folenc($data['searching'][$key]->idRENTAL), FALSE, TRUE);
+				
+				if (empty($map)) {
+					$data['searching'][$key]->imageRENTAL = base_url() . 'assets/upload/no-image-available.png';
+				} else {
+					$data['searching'][$key]->imageRENTAL = base_url() . 'assets/upload/rental/pic-rental-'.folenc($data['searching'][$key]->idRENTAL).'/'.$map[0];
+				}
+			}
+		}
+
+		$data['subview'] = $this->load->view($this->data['frontendDIR'].'product', $data, TRUE);
+        $this->load->view($this->data['rootDIR'].'_layout_base_frontend',$data);
+	}
+
+	public function sortby() {
+		$data['addONS'] = 'product';
+		$data['title'] = 'Product - Hoopla Toys Rent';
+		$data['idbody'] = 'product';
+		
+		$sortby = $this->input->get('sortby');
+
+		$Searching = $this->Rental_m->searching_sortby($sortby)->result();
+        if(!empty($Searching)){
+			$data['searchsortby'] = $Searching;
+			foreach ($data['searchsortby'] as $key => $value) {
+				$map = directory_map('assets/upload/rental/pic-rental-'.folenc($data['searchsortby'][$key]->idRENTAL), FALSE, TRUE);
+				
+				if (empty($map)) {
+					$data['searchsortby'][$key]->imageRENTAL = base_url() . 'assets/upload/no-image-available.png';
+				} else {
+					$data['searchsortby'][$key]->imageRENTAL = base_url() . 'assets/upload/rental/pic-rental-'.folenc($data['searchsortby'][$key]->idRENTAL).'/'.$map[0];
+				}
+			}
+		}
+
+		$data['subview'] = $this->load->view($this->data['frontendDIR'].'product', $data, TRUE);
+        $this->load->view($this->data['rootDIR'].'_layout_base_frontend',$data);
+	}
 }
