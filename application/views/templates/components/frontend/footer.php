@@ -103,6 +103,84 @@ if($addONS == 'home' OR $addONS == 'product' OR $addONS == 'sale' OR $addONS == 
         <a href="form-titip.html" class="btn-hoopla">Baca selengkapnya</a>
     </div>
 </div>
+<div class="tingle-content-wrapper">
+    <div id="form-order">
+        <form class="form-control" action="" method="post" id="form-pemesanan">
+            <div class="title">
+                <h4>Formulir Titip Sewa</h4>
+                Harap diisi dan dibaca kembali dengan seksama setiap info yang diinput.
+            </div>
+            <div class="form-group">
+                <label for="name">Nama kamu</label>
+                <input type="text" name="" value="" placeholder="Nama lengkap kamu">
+            </div>
+            <div class="form-group">
+                <label for="email">Alamat lengkap kamu</label>
+                <input type="text" name="" value="" placeholder="Jalan Indah Sari Blok A no. 12">
+            </div>
+            <div class="form-group">
+                <label for="brand">Biaya antar jemput</label>
+                <select class="mt10">
+                    <option value="Batam Kota">Kecamatan Batam Kota <strong>Rp 10.000,00</strong></option>
+                    <option value="Batu Aji">Kecamatan Batu Aji <strong>Rp 20.000,00</strong></option>
+                    <option value="Batu Ampar">Kecamatan Batu Ampar <strong>Rp 20.000,00</strong></option>
+                    <option value="Bengkong">Kecamatan Bengkong <strong>Rp 20.000,00</strong></option>
+                    <option value="Lubuk Baja">Kecamatan Lubuk Baja <strong>Rp 15.000,00</strong></option>
+                    <option value="Nongsa">Kecamatan Nongsa <strong>Rp 25.000,00</strong></option>
+                    <option value="Sagulung">Kecamatan Sagulung <strong>Rp 20.000,00</strong></option>
+                    <option value="Sei Beduk">Kecamatan Sei Beduk <strong>Rp 20.000,00</strong></option>
+                    <option value="Sekupang">Kecamatan Sekupang <strong>Rp 20.000,00</strong></option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="phone">Nomor handphone</label>
+                <input type="text" name="" value="" placeholder="08123456789">
+            </div>
+            <div class="form-group">
+                <label for="brand">Instagram</label>
+                <input type="text" name="" value="" placeholder="hooplarentalmainan">
+            </div>
+            <div class="form-group mb30">
+                <label for="brand">Barang yang disewa</label>
+                <p>Ergobaby Baby Carrier V2</p>
+            </div>
+            <div class="form-group">
+                <label for="brand">Periode sewa</label>
+                <select class="mt10">
+                    <option value="2 minggu">2 minggu</option>
+                    <option value="4 minggu">4 minggu</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="brand">Tanggal pengiriman</label>
+                <input type="text" name="" value="" placeholder="30/09/2017">
+            </div>
+            <div class="form-group">
+                <label for="brand">Kamu telah direkomendasikan oleh</label>
+                <input type="text" name="" value="" placeholder="Teman saya: Firza Tiara">
+            </div>
+            <div class="form-group">
+                <label for="brand">Darimana kamu mengetahui Hoopla?</label>
+                <select class="mt10">
+                    <option value="Instagram">Instagram</option>
+                    <option value="Website">Website</option>
+                    <option value="Facebook">Facebook</option>
+                    <option value="Teman">Teman</option>
+                    <option value="Lainnya">Lainnya</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="brand">Permintaan khusus</label>
+                <textarea rows="8" cols="80" placeholder="Saya ingin dibungkus serapi mungkin"></textarea>
+            </div>
+            <div class="disclaimer">
+                <input type="checkbox" value="agree" id="tc-check">
+                <p id="tc-read">Saya sudah membaca <a href="tc.html" class="coolgreen">Syarat &amp; Ketentuan</a> yang telah dibuat oleh pihak Hoopla Rental Mainan, dan saya memahami sekaligus menyetujui keseluruhan isinya.</p>
+            </div>
+            <button type="submit" name="button" class="btn-hoopla" id="proceed">Pesan sekarang</button>
+        </form>
+    </div>
+</div>
 <?php } ?>
 
 <?php echo $plugins; ?>

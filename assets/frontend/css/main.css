@@ -965,6 +965,14 @@ section > h4:before {
   margin-top: 20px !important;
 }
 
+.mt10 {
+  margin-top: 10px !important;
+}
+
+.mb30 {
+  margin-bottom: 30px !important;
+}
+
 .figure {
   -webkit-box-flex: 1;
   -webkit-flex: 1;
@@ -2135,6 +2143,13 @@ p.par-heading {
   align-items: flex-start;
 }
 
+.title {
+  margin-top: 0;
+  margin-bottom: 10px;
+  line-height: 1.6;
+  margin-bottom: 2em;
+}
+
 .product-description p {
   line-height: 1.6;
   margin-bottom: 4em;
@@ -2143,6 +2158,7 @@ p.par-heading {
 .product-description .title {
   margin-top: 0;
   margin-bottom: 10px;
+  line-height: 1.6;
 }
 
 .product-description .price {
@@ -3300,4 +3316,43 @@ tbody tr.total td {
 
 .figs img {
   width: 190%;
+}
+
+#form-pemesanan {
+  max-width: 70%;
+}
+
+#form-pemesanan .title h4 {
+  font-size: 2em;
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+#form-pemesanan .form-group {
+  margin-bottom: 15px;
+}
+
+#form-pemesanan .radio-periode {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+#form-pemesanan .disclaimer {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+#form-pemesanan .disclaimer #tc-check {
+  -webkit-flex-basis: 10%;
+  -ms-flex-preferred-size: 10%;
+  flex-basis: 10%;
+}
+
+#form-pemesanan .disclaimer #tc-read {
+  margin-top: 5px;
+  line-height: 1.6;
 }

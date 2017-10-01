@@ -11,7 +11,7 @@
             <div class="infos">
                 <div class="minimum">
                     <div>
-                        <span><i class="fa fa-dollar"></i></span>
+                        <span><i class="fa fa-clock-o"></i></span>
                     </div>
                     <div>
                         <p>Per 2 minggu</p>
@@ -20,7 +20,7 @@
                 </div>
                 <div class="minimum">
                     <div>
-                        <span><i class="fa fa-dollar"></i></span>
+                        <span><i class="fa fa-clock-o"></i></span>
                     </div>
                     <div>
                         <p>Per 4 minggu</p>
@@ -28,37 +28,8 @@
                     </div>
                 </div>
             </div>
-            <p class="description"><?php echo $getrental->descriptionRENTAL;?>
-            </p>
-            <a href="#" class="btn-hoopla"><i class="fa fa-shopping-cart"></i> &nbsp; Saya mau rental ini</a>
-            <form class="order form-control" action="" method="post" id="form-order">
-                <div class="title">
-                    <h4>Formulir Titip Sewa</h4>
-                    Harap diisi dan dibaca kembali dengan seksama setiap info yang diinput.
-                </div>
-                <div class="form-group">
-                    <label for="name">Nama kamu</label>
-                    <input type="text" name="" value="" placeholder="Nama lengkap kamu">
-                </div>
-                <div class="form-group">
-                    <label for="email">Email kamu</label>
-                    <input type="text" name="" value="" placeholder="Email address kamu">
-                </div>
-                <div class="form-group">
-                    <label for="phone">Nomor telepon</label>
-                    <input type="text" name="" value="" placeholder="Atau nomor handphone kamu">
-                </div>
-                <div class="form-group">
-                    <label for="brand">Nama/merk barang</label>
-                    <input type="text" name="" value="" placeholder="Misal: Nuna, Ergobaby, Comotomo, dll...">
-                </div>
-                <div class="disclaimer">
-                    <input type="checkbox" value="agree" id="tc-check">
-                    <p id="tc-read">Saya sudah membaca <a href="tc.html" class="coolgreen">Syarat &amp; Ketentuan</a> yang telah dibuat oleh pihak Hoopla Rent Toys, dan saya memahami keseluruhan isinya.</p>
-                    <span class="error-message"><i class="fa fa-times-circle"></i> Oops! Silakan checklist dulu pilihan di atas.</span>
-                </div>
-                <button type="submit" name="button" class="btn-hoopla" id="proceed">Pesan sekarang</button>
-            </form>
+            <p class="description"><?php echo $getrental->descriptionRENTAL;?></p>
+            <a href="#" class="btn-hoopla" id="rent-now"><i class="fa fa-shopping-cart"></i> &nbsp; Saya mau rental ini</a>
             <p class="category">Kategori: <a href="#"><?php echo $getrental->namaCATEGORY;?></a></p>
         </div>
         <section class="similar">
