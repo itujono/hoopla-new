@@ -71,9 +71,11 @@ if ($plugins == 'home') { ?>
     showSK.addEventListener('click', function(e) {
         if (!tc.classList.contains('active')) {
             tc.classList.add('active');
+            showSK.innerHTML = "Tutup S & K";
             e.preventDefault();
         } else {
             tc.classList.remove('active');
+            showSK.innerHTML = "Lihat S & K";
         }
     });
 </script>

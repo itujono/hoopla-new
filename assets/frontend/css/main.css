@@ -3389,3 +3389,29 @@ tbody tr.total td {
 #form-pemesanan .form-group label sup {
   color: #EA624C;
 }
+
+.sent {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 20px;
+  border-radius: 8px;
+  background-color: #eee;
+}
+
+.sent img {
+  -webkit-filter: grayscale(1);
+  filter: grayscale(1);
+}
+
+.sent h3 {
+  color: #96d019;
+  margin: 0;
+  margin-bottom: 10px;
+}
+
+.sent p {
+  line-height: 1.6;
+  margin-bottom: 25px;
+}

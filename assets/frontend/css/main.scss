@@ -2538,3 +2538,22 @@ tbody tr {
         }
     }
 }
+
+.sent {
+    display: flex;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #eee;
+    img {
+        filter: grayscale(1);
+    }
+    h3 {
+        color: $coolGreen;
+        margin: 0;
+        margin-bottom: 10px;
+    }
+    p {
+        line-height: $lineHeightP;
+        margin-bottom: 25px;
+    }
+}
