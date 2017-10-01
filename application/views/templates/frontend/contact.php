@@ -45,20 +45,20 @@
 
         <section class="right">
             <h2>Atau hubungi kami langsung di sini...</h2>
-            <form class="form-control" action="" method="post" name="contactForm" onsubmit="return validateForm()">
+            <form class="form-control" action="<?php echo base_url();?>contact/savecontact" method="post">
                 <label for="name">Nama kamu <span>*</span></label>
-                <input type="text" id="name" placeholder="John Smith..." name="Name">
-                <p class="error" id="name-error">Nama diisi dulu dong ah.</p>
+                <input type="text" placeholder="John Smith..." name="namaCONTACT" required="required">
+                <p class="error"><?php echo form_error('namaCONTACT'); ?></p>
 
                 <label for="email">Email kamu <span>*</span></label>
-                <input type="text" id="email" placeholder="namaemail@email.com" name="Email" >
-                <p class="error" id="email-error">Emailnya juga, diisi dulu dong ah.</p>
+                <input type="text" placeholder="namaemail@email.com" name="emailCONTACT" required="required">
+                <p class="error"><?php echo form_error('emailCONTACT'); ?></p>
 
                 <label for="message">Apa yang mau kamu sampaikan? <span>*</span></label>
-                <textarea rows="10" id="message" placeholder="Isi apapun pesan yang ingin kamu sampaikan..." name="Message" ></textarea>
-                <p class="error" id="message-error">Kok pesannya nggak diisi sekalian?</p>
+                <textarea rows="10" placeholder="Isi apapun pesan yang ingin kamu sampaikan..." name="descriptionCONTACT" required="required"></textarea>
+                <p class="error"><?php echo form_error('descriptionCONTACT'); ?></p>
 
-                <button type="submit" class="btn-hoopla" id="submit">Okay, let's submit!</button>
+                <button type="submit" class="btn-hoopla">Okay, let's submit!</button>
             </form>
         </section>
     </main>
