@@ -107,8 +107,8 @@ if($addONS == 'home' OR $addONS == 'product' OR $addONS == 'sale' OR $addONS == 
     <div id="form-order">
         <form class="form-control" action="" method="post" id="form-pemesanan">
             <div class="title">
-                <h4>Formulir Titip Sewa</h4>
-                Harap diisi dan dibaca kembali dengan seksama setiap info yang diinput.
+                <h4>Jadi kamu mau sewa barang ini?</h4>
+                Alright, then. Silakan isi form pemesanan di bawah ini, dan baca kembali dengan seksama setiap info yang diinput.
             </div>
             <div class="form-group">
                 <label for="name">Nama kamu</label>
