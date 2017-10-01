@@ -7,8 +7,8 @@
         </h4>
         <div class="wrapper">
             <?php 
-            if(!empty($listrentalbybrand)){
-                foreach ($listrentalbybrand as $key => $rent) {
+            if(!empty($listrentalbybrands)){
+                foreach ($listrentalbybrands as $key => $rent) {
             ?>
             <div class="card">
                 <div class="card-content">
@@ -56,17 +56,23 @@
             <a href="#">Lihat selengkapnya</a>
         </h4>
         <div class="wrapper">
+            <?php 
+            if(!empty($listrentalbyage)){
+                foreach ($listrentalbyage as $key => $age) {
+            ?>
             <div class="card">
                 <div class="card-content">
-                    <img src="<?php echo base_url().$this->data['asfront'];?>img/kids7.png" alt="Kiddy">
+                    <img src="<?php echo $age->imageRENTAL;?>" alt="<?php echo $age->namaRENTAL;?>">
                 </div>
                 <div class="card-bottom">
                     <a href="<?php echo base_url();?>product/detail">
-                        <h3>Super sempardak</h3>
-                        <small>Rp 300k</small>
+                        <h3><?php echo $age->namaRENTAL;?></h3>
+                        <small>Rp. <?php echo number_format($age->hargaRENTAL, 0,',','.'); ?></small>
                     </a>
                 </div>
             </div>
+            <?php } ?>
+            <?php } ?>
         </div>
     </section>
 </main>
@@ -74,15 +80,17 @@
 <aside class="sidebar">
     <div class="sort">
         <h4>Filter by:</h4>
-        <select>
+        <form method="post" name="formfiler" action="<?php echo base_url();?>product/filterby">
+        <select name="filter" required="required">
             <option value="az">Brand (A-Z)</option>
             <option value="za">Brand (Z-A)</option>
             <option value="category">Kategori</option>
             <option value="age1">Umur (0-2)</option>
             <option value="age2">Umur (3-6)</option>
-            <option value="age3">Umur 7-10)</option>
+            <option value="age3">Umur (7-10)</option>
         </select>
-        <a href="#" class="btn-hoopla">Submit</a>
+        <button type="submit" class="btn-hoopla">Okay, Filter!</button>
+        </form>
     </div>
     <div class="sort">
         <h4>Sort by:</h4>

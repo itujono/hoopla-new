@@ -133,7 +133,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
               </div>
             </div>
             <div class="uk-grid" data-uk-grid-margin>
-              <div class="uk-width-medium-1-2 uk-margin-top">
+              <div class="uk-width-medium-1-3 uk-margin-top">
                   <label>Harga</label>
                   <br>
                   <?php
@@ -143,12 +143,36 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     <input class="md-input masked_input label-fixed" id="masked_currency" type="text" data-inputmask="'alias': 'currency', 'groupSeparator': '.', 'autoGroup': true, 'digits': 0, 'digitsOptional': false, 'prefix': 'Rp. ', 'placeholder': '0'" data-inputmask-showmaskonhover="false" name="hargaRENTAL" value="<?php echo $price;?>" required>
                   <p class="text-red"><?php echo form_error('hargaRENTAL'); ?></p>
               </div>
-              <div class="uk-width-medium-1-2 uk-margin-top">
+              <div class="uk-width-medium-1-3 uk-margin-top">
                   <label>Durasi Rental</label>
                   <br>
                   <input type="text" class="md-input label-fixed" name="durasiRENTAL" autocomplete value="<?php echo $getrental->durasiRENTAL;?>" required/>
                   <p class="text-red"><?php echo form_error('durasiRENTAL'); ?></p>
               </div>
+              <div class="uk-width-medium-1-3 uk-margin-top">
+                <label>Umur Anak</label>
+                <br>
+                <select id="select_demo_5" data-md-selectize data-md-selectize-bottom name="umurRENTAL">
+                  <?php if($getrental->umurRENTAL == 'Umur (0-2)'){?>
+                    <option value="Umur (0-2)" selected="selected">Umur (0-2)</option>
+                    <option value="Umur (3-6)">Umur (3-6)</option>
+                    <option value="Umur (7-10)">Umur (7-10)</option>
+                  <?php } else if($getrental->umurRENTAL == 'Umur (3-6)'){ ?>
+                    <option value="Umur (0-2)">Umur (0-2)</option>
+                    <option value="Umur (3-6)" selected="selected">Umur (3-6)</option>
+                    <option value="Umur (7-10)">Umur (7-10)</option>
+                  <?php } else if($getrental->umurRENTAL == 'Umur (7-10)'){ ?>
+                    <option value="Umur (0-2)">Umur (0-2)</option>
+                    <option value="Umur (3-6)">Umur (3-6)</option>
+                    <option value="Umur (7-10)" selected="selected">Umur (7-10)</option>
+                  <?php } else { ?>
+                    <option disabled selected value="">Umur Anak</option>
+                    <option value="Umur (0-2)">Umur (0-2)</option>
+                    <option value="Umur (3-6)">Umur (3-6)</option>
+                    <option value="Umur (7-10)">Umur (7-10)</option>
+                  <?php } ?>
+                </select>
+            </div>
             </div>
             <div class="uk-grid" data-uk-grid-margin>
               <div class="uk-width-medium-1-1 uk-margin-top">

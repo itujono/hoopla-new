@@ -23,16 +23,6 @@ class Product extends Frontend_Controller {
 				$data['listrentalbybrands'][$key]->imageRENTAL = base_url() . 'assets/upload/rental/pic-rental-'.folenc($data['listrentalbybrands'][$key]->idRENTAL).'/'.$map[0];
 			}
 		}
-		$data['listrentalbybrand'] = $this->Rental_m->selectall_rental('','',1)->result();
-		foreach ($data['listrentalbybrand'] as $key => $value) {
-			$map = directory_map('assets/upload/rental/pic-rental-'.folenc($data['listrentalbybrand'][$key]->idRENTAL), FALSE, TRUE);
-			
-			if (empty($map)) {
-				$data['listrentalbybrand'][$key]->imageRENTAL = base_url() . 'assets/upload/no-image-available.png';
-			} else {
-				$data['listrentalbybrand'][$key]->imageRENTAL = base_url() . 'assets/upload/rental/pic-rental-'.folenc($data['listrentalbybrand'][$key]->idRENTAL).'/'.$map[0];
-			}
-		}
 		$data['listrentalbycat'] = $this->Rental_m->selectall_rental('','','',1)->result();
 		foreach ($data['listrentalbycat'] as $key => $value) {
 			$map = directory_map('assets/upload/rental/pic-rental-'.folenc($data['listrentalbycat'][$key]->idRENTAL), FALSE, TRUE);
@@ -41,6 +31,16 @@ class Product extends Frontend_Controller {
 				$data['listrentalbycat'][$key]->imageRENTAL = base_url() . 'assets/upload/no-image-available.png';
 			} else {
 				$data['listrentalbycat'][$key]->imageRENTAL = base_url() . 'assets/upload/rental/pic-rental-'.folenc($data['listrentalbycat'][$key]->idRENTAL).'/'.$map[0];
+			}
+		}
+		$data['listrentalbyage'] = $this->Rental_m->selectall_rental('','','','',1)->result();
+		foreach ($data['listrentalbyage'] as $key => $value) {
+			$map = directory_map('assets/upload/rental/pic-rental-'.folenc($data['listrentalbyage'][$key]->idRENTAL), FALSE, TRUE);
+			
+			if (empty($map)) {
+				$data['listrentalbyage'][$key]->imageRENTAL = base_url() . 'assets/upload/no-image-available.png';
+			} else {
+				$data['listrentalbyage'][$key]->imageRENTAL = base_url() . 'assets/upload/rental/pic-rental-'.folenc($data['listrentalbyage'][$key]->idRENTAL).'/'.$map[0];
 			}
 		}
 

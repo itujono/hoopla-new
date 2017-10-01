@@ -28,6 +28,11 @@ class Rental_m extends MY_Model{
 			'label' => 'Durasi Barang Rental', 
 			'rules' => 'trim|required'
 		),
+		'umurRENTAL' => array(
+			'field' => 'umurRENTAL', 
+			'label' => 'Umur Anak', 
+			'rules' => 'trim|required'
+		),
 		'descriptionRENTAL' => array(
 			'field' => 'descriptionRENTAL', 
 			'label' => 'Deskripsi Barang Rental', 
@@ -51,6 +56,7 @@ class Rental_m extends MY_Model{
 		$rental->brandRENTAL = '';
 		$rental->hargaRENTAL = '';
 		$rental->durasiRENTAL = '';
+		$rental->umurRENTAL = '';
 		$rental->descriptionRENTAL = '';
 		$rental->idCATEGORY = '';
 		$rental->statusRENTAL = '';

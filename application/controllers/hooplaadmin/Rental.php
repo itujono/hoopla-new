@@ -68,7 +68,7 @@ class Rental extends Admin_Controller{
         $this->form_validation->set_message('numeric', 'Silakan masukan hanya berupa angka');
 
 		if ($this->form_validation->run() == TRUE) {
-			$data = $this->Rental_m->array_from_post(array('namaRENTAL','brandRENTAL','hargaRENTAL','statusRENTAL','durasiRENTAL','descriptionRENTAL','idCATEGORY'));
+			$data = $this->Rental_m->array_from_post(array('namaRENTAL','brandRENTAL','hargaRENTAL','statusRENTAL','durasiRENTAL','descriptionRENTAL','idCATEGORY','umurRENTAL'));
 			$data['statusRENTAL']=1;
 			$data['hargaRENTAL'] = str_replace(['Rp.',' ',','], ['','',''], $data['hargaRENTAL']);
 			$id = decode(urldecode($this->input->post('idRENTAL')));
