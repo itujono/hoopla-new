@@ -2489,6 +2489,27 @@ tbody tr {
     margin-bottom: 15px;
 }
 
+#terms-conditions {
+    display: none;
+    padding-bottom: 2em;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 3em;
+    &.active {
+        display: block;
+    }
+    ul {
+        li {
+            list-style: circle;
+            margin-bottom: 15px;
+            line-height: $lineHeightP;
+        }
+    }
+}
+
+.show-tc {
+    margin-bottom: 2em;
+}
+
 #form-pemesanan {
     max-width: 70%;
     .title h4 {

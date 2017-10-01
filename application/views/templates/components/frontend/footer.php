@@ -110,6 +110,27 @@ if($addONS == 'home' OR $addONS == 'product' OR $addONS == 'sale' OR $addONS == 
                 <h4>Jadi kamu mau sewa barang ini?</h4>
                 Alright, then. Silakan isi form pemesanan di bawah ini, dan baca kembali dengan seksama setiap info yang diinput.
             </div>
+            <div class="show-tc">
+                <a href="#terms-conditions" class="btn-hoopla" id="show-tc">Lihat S &amp; K</a>
+            </div>
+            <article id="terms-conditions">
+                <h3>Syarat dan Ketentuan Penyewaan</h3>
+                <ul>
+                    <li>Pemesanan dilakukan melalui WA/Line Hoopla dengan mengirimkan foto KTP asli via WA/Line Hoopla dan mengisi Form Penyewaan yang telah disediakan. Kerahasiaan data Pemesan akan dijaga oleh Hoopla.</li>
+                    <li>Setelah mengisi Form Penyewaan, Penyewa dapat melakukan pembayaran sesuai dengan harga barang yang disewa dengan transfer ke rekening Mandiri 109-00-1626368-3 atas nama Fitriannisa.</li>
+                    <li>Untuk menghindari waiting list, Penyewa dapat melakukan booking/blocking tanggal dengan melakukan DP sebesar 50% atau full payment maksimal 3 hari setelah pemesanan dan pengisian Form Penyewaan.  Dikarenakan tingginya permintaan sewa, jika dalam waktu 3 hari penyewa belum melakukan pembayaran, mohon konfirmasi kembali melalui wa/line terkait ketersediaan barang. Pelunasan dilakukan maksimal H-1 pengiriman. </li>
+                    <li>Barang akan diantar setelah Penyewa melakukan pelunasan.</li>
+                    <li>Keterlambatan pelunasan (termasuk pelunasan ketika hari H) dapat mengakibatkan keterlambatan pengantaran barang (re-schedule hari berikutnya jika jadwal antar jemput hari tersebut sedang padat). Keterlambatan pengantaran barang yang disebabkan oleh keterlambatan pelunasan tidak akan menambah masa sewa barang.</li>
+                    <li>Jika Penyewa melakukan pembatalan (cancellation), maka DP yang telah dibayarkan akan hangus dan tidak dapat dikembalikan.</li>
+                    <li>Penyewa tidak diperkenankan menukar barang yang disewa dan tidak berhak meminta pengembalian dana bila barang dikembalikan sebelum periode sewa berakhir</li>
+                    <li>Hoopla akan mengantar dan menjemput barang sesuai dengan tanggal dan jam yang telah ditentukan. Biaya antar jemput (mulai dari Rp. 10,000 hingga Rp. 20,000) dapat dilihat di bawah sesuai dengan lokasi antar jemput.</li>
+                    <li>Antar jemput akan dilakukan antara jam 14.00 hingga jam 22.00 (disesuaikan dengan jalur antar-jemput barang pada hari tersebut). Konfirmasi detail jam antar jemput barang akan diberitahukan pada hari H antar jemput barang.</li>
+                    <li>Pengantaran Hoopla berlaku untuk satu kali pengantaran dan penjemputan barang. Jika tidak ada orang di kediaman Penyewa saat pengantaran dan penjemputan, maka pengantaran dan penjemputan akan dilakukan di hari yang lain, dengan dikenakan biaya tambahan antar jemput barang sebesar Rp. 10,000, dan tidak menambah masa sewa barang.</li>
+                    <li>Dikarenakan jadwal penyewaan padat, Penyewa dapat memperpanjang masa sewa dengan cara menghubungi WA/Line Hoopla sesegera mungkin selama periode berikutnya barang tersebut belum ada yang akan menyewa.</li>
+                    <li>Ketika barang diterima Penyewa, Hoopla akan menjelaskan cara pemakaian kepada Penyewa dan secara bersama-sama akan mengecek kondisi barang. Apabila terdapat kerusakan ketika barang dikembalikan, maka Hoopla berhak mengenakan denda sesuai tingkat kerusakan barang tersebut.</li>
+                    <li>Penyewa wajib menjaga kebersihan dan keutuhan barang yang disewa.</li>
+                </ul>
+            </article>
             <div class="form-group">
                 <label for="name">Nama kamu <sup>*</sup></label>
                 <input type="text" name="" value="" placeholder="Nama lengkap kamu">

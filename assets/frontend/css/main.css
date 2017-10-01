@@ -3328,6 +3328,27 @@ tbody tr.total td {
   margin-bottom: 15px;
 }
 
+#terms-conditions {
+  display: none;
+  padding-bottom: 2em;
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 3em;
+}
+
+#terms-conditions.active {
+  display: block;
+}
+
+#terms-conditions ul li {
+  list-style: circle;
+  margin-bottom: 15px;
+  line-height: 1.6;
+}
+
+.show-tc {
+  margin-bottom: 2em;
+}
+
 #form-pemesanan {
   max-width: 70%;
 }

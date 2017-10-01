@@ -65,6 +65,20 @@ if ($plugins == 'home') { ?>
 </script>
 
 <script>
+    var showSK = document.querySelector('#show-tc');
+    var tc = document.querySelector('#terms-conditions');
+
+    showSK.addEventListener('click', function(e) {
+        if (!tc.classList.contains('active')) {
+            tc.classList.add('active');
+            e.preventDefault();
+        } else {
+            tc.classList.remove('active');
+        }
+    });
+</script>
+
+<script>
   tippy('.social a', {
     followCursor: true,
     position: 'bottom'
