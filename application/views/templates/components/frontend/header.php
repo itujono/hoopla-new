@@ -27,12 +27,18 @@
             <img src="<?php echo base_url().$this->data['asfront'];?>img/logo-web.png" alt="Logo utama">
         </div>
         <nav>
-            <li><a href="<?php echo base_url();?>" class=""><i class="fa fa-home"></i></a></li>
-            <li><a href="<?php echo base_url();?>about" class="">Tentang Hoopla</a></li>
-            <li><a href="<?php echo base_url();?>why" class="">Kenapa Hoopla</a></li>
-            <li><a href="<?php echo base_url();?>product" class="">Produk</a></li>
-            <li><a href="<?php echo base_url();?>terms" class="">Cara Pemesanan</a></li>
-            <li><a href="<?php echo base_url();?>sale" class="">For Sale</a></li>
-            <li><a href="<?php echo base_url();?>contact" class="">Hubungi Kami</a></li>
+            <?php
+              $menus = array (array('','<i class="fa fa-home"></i>'), array('about','Tentang Hoopla'), array('why','Kenapa Hoopla'), array('product','Produk'), array('terms','Cara Pemesanan'), array('sale','For Sale'), array('contact','Hubungi Kami'));
+              foreach ($menus as $values) {
+                if(!empty($this->uri->segment(3))) {
+                  $url = $this->uri->segment(2);
+                } else {
+                  $url = $this->uri->segment(1);
+                }
+                $class = '';
+                if($url == $values[0])$class = 'active';
+            ?>
+            <li><a href="<?php echo base_url().$values[0];?>" class="<?php echo $class;?>"><?php echo $values[1];?></a></li>
+            <?php } ?>
         </nav>
     </header>
