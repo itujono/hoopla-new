@@ -54,6 +54,12 @@ select:focus {
   box-shadow: 0 12px 15px 0 rgba(0, 0, 0, 0.09), 0 17px 50px 0 rgba(0, 0, 0, 0.1);
 }
 
+button.btn-hoopla {
+  border: none;
+  font-family: "GothamRoundedMedium", Helvetica, sans-serif;
+  cursor: pointer;
+}
+
 ul {
   padding-left: 0;
 }

@@ -53,6 +53,12 @@ select {
     }
 }
 
+button.btn-hoopla {
+    border: none;
+    font-family: $fontDefault;
+    cursor: pointer;
+}
+
 ul {
     padding-left: 0;
 }
@@ -1410,41 +1416,41 @@ p.par-heading {
 }
 
 .form-control {
-        label {
-            color: $coolGreen;
-            span {
-                color: $coolRed;
-            }
-        }
-        input {
-            display: block;
-            @include inputForm;
-            margin-bottom: 5px;
-        }
-        textarea {
-            @include inputForm;
-        }
-        input, textarea {
-            margin-top: 10px;
-            transition: $transitionEase;
-            font-family: $fontDefault;
-            &.has-error {
-                border: 1px solid $coolRed;
-            }
-            &::placeholder {
-                color: #ddd;
-            }
-            &:focus {
-                outline: none;
-                box-shadow: $boxShadow;
-            }
-        }
-        button {
-            border: none;
-            font-family: $fontDefault;
-            cursor: pointer;
+    label {
+        color: $coolGreen;
+        span {
+            color: $coolRed;
         }
     }
+    input {
+        display: block;
+        @include inputForm;
+        margin-bottom: 5px;
+    }
+    textarea {
+        @include inputForm;
+    }
+    input, textarea {
+        margin-top: 10px;
+        transition: $transitionEase;
+        font-family: $fontDefault;
+        &.has-error {
+            border: 1px solid $coolRed;
+        }
+        &::placeholder {
+            color: #ddd;
+        }
+        &:focus {
+            outline: none;
+            box-shadow: $boxShadow;
+        }
+    }
+    button {
+        border: none;
+        font-family: $fontDefault;
+        cursor: pointer;
+    }
+}
 
 
 
