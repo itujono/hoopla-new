@@ -2479,15 +2479,18 @@ tbody tr {
     }
 }
 
+.form-group {
+    margin-bottom: 15px;
+}
+
 #form-pemesanan {
     max-width: 70%;
     .title h4 {
         font-size: 2em;
-        margin-bottom: 0;
-        margin-top: 0;
-    }
-    .form-group {
         margin-bottom: 15px;
+        margin-top: 0;
+        line-height: 1;
+        color: $coolGreen;
     }
     .radio-periode {
         display: flex;
@@ -2500,6 +2503,11 @@ tbody tr {
         #tc-read {
             margin-top: 5px;
             line-height: $lineHeightP;
+        }
+    }
+    .form-group {
+        label sup {
+            color: $coolRed;
         }
     }
 }

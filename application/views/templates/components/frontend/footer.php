@@ -111,15 +111,15 @@ if($addONS == 'home' OR $addONS == 'product' OR $addONS == 'sale' OR $addONS == 
                 Alright, then. Silakan isi form pemesanan di bawah ini, dan baca kembali dengan seksama setiap info yang diinput.
             </div>
             <div class="form-group">
-                <label for="name">Nama kamu</label>
+                <label for="name">Nama kamu <sup>*</sup></label>
                 <input type="text" name="" value="" placeholder="Nama lengkap kamu">
             </div>
             <div class="form-group">
-                <label for="email">Alamat lengkap kamu</label>
+                <label for="email">Alamat lengkap kamu <sup>*</sup></label>
                 <input type="text" name="" value="" placeholder="Jalan Indah Sari Blok A no. 12">
             </div>
             <div class="form-group">
-                <label for="brand">Biaya antar jemput</label>
+                <label for="brand">Biaya antar jemput <sup>*</sup></label>
                 <select class="mt10">
                     <option value="Batam Kota">Kecamatan Batam Kota <strong>Rp 10.000,00</strong></option>
                     <option value="Batu Aji">Kecamatan Batu Aji <strong>Rp 20.000,00</strong></option>
@@ -133,7 +133,7 @@ if($addONS == 'home' OR $addONS == 'product' OR $addONS == 'sale' OR $addONS == 
                 </select>
             </div>
             <div class="form-group">
-                <label for="phone">Nomor handphone</label>
+                <label for="phone">Nomor handphone <sup>*</sup></label>
                 <input type="text" name="" value="" placeholder="08123456789">
             </div>
             <div class="form-group">
@@ -141,18 +141,18 @@ if($addONS == 'home' OR $addONS == 'product' OR $addONS == 'sale' OR $addONS == 
                 <input type="text" name="" value="" placeholder="hooplarentalmainan">
             </div>
             <div class="form-group mb30">
-                <label for="brand">Barang yang disewa</label>
+                <label for="brand">Barang yang disewa <sup>*</sup></label>
                 <p>Ergobaby Baby Carrier V2</p>
             </div>
             <div class="form-group">
-                <label for="brand">Periode sewa</label>
+                <label for="brand">Periode sewa <sup>*</sup></label>
                 <select class="mt10">
                     <option value="2 minggu">2 minggu</option>
                     <option value="4 minggu">4 minggu</option>
                 </select>
             </div>
             <div class="form-group">
-                <label for="brand">Tanggal pengiriman</label>
+                <label for="brand">Tanggal pengiriman <sup>*</sup></label>
                 <input type="text" name="" value="" placeholder="30/09/2017">
             </div>
             <div class="form-group">
@@ -160,7 +160,7 @@ if($addONS == 'home' OR $addONS == 'product' OR $addONS == 'sale' OR $addONS == 
                 <input type="text" name="" value="" placeholder="Teman saya: Firza Tiara">
             </div>
             <div class="form-group">
-                <label for="brand">Darimana kamu mengetahui Hoopla?</label>
+                <label for="brand">Darimana kamu mengetahui Hoopla? <sup>*</sup></label>
                 <select class="mt10">
                     <option value="Instagram">Instagram</option>
                     <option value="Website">Website</option>

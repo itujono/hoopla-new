@@ -3318,18 +3318,20 @@ tbody tr.total td {
   width: 190%;
 }
 
+.form-group {
+  margin-bottom: 15px;
+}
+
 #form-pemesanan {
   max-width: 70%;
 }
 
 #form-pemesanan .title h4 {
   font-size: 2em;
-  margin-bottom: 0;
-  margin-top: 0;
-}
-
-#form-pemesanan .form-group {
   margin-bottom: 15px;
+  margin-top: 0;
+  line-height: 1;
+  color: #96d019;
 }
 
 #form-pemesanan .radio-periode {
@@ -3355,4 +3357,8 @@ tbody tr.total td {
 #form-pemesanan .disclaimer #tc-read {
   margin-top: 5px;
   line-height: 1.6;
+}
+
+#form-pemesanan .form-group label sup {
+  color: #EA624C;
 }
