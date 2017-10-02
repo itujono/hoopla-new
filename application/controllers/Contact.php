@@ -9,7 +9,7 @@ class Contact extends Frontend_Controller {
 	}
 
 	public function index() {
-		$data['addONS'] = 'contact';
+		$data['addONS'] = '';
 		$data['title'] = 'Contact us - Toys Rent';
 		$data['idbody'] = 'contact';
 

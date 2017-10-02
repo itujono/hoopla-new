@@ -12,7 +12,6 @@ if ($plugins == 'home') {
 } elseif ($plugins == 'about') {
 ?>
 <link rel="stylesheet" href="<?php echo base_url().$this->data['asfront'];?>css/responsive.css">
-<link rel="stylesheet" href="https://npmcdn.com/flickity@2/dist/flickity.css">
 <?php
 } elseif ($plugins == 'product') {
 ?>
@@ -26,7 +25,7 @@ if ($plugins == 'home') {
 ?>
 <link rel="stylesheet" href="<?php echo base_url().$this->data['asfront'];?>css/tingle.min.css">
 <?php
-} elseif ($plugins == 'contact') {
+} elseif ($plugins == 'product-detail') {
 ?>
-<link rel="stylesheet" href="https://npmcdn.com/flickity@2/dist/flickity.css">
+<link rel="stylesheet" href="<?php echo base_url().$this->data['asfront'];?>css/tingle.min.css">
 <?php } ?>

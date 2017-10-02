@@ -50,7 +50,7 @@ class Product extends Frontend_Controller {
 	}
 
 	public function detail($id=NULL){
-		$data['addONS'] = 'product';
+		$data['addONS'] = 'product-detail';
 		$data['title'] = 'Product Detail - Toys Rent';
 		$data['idbody'] = 'product-detail';
 	

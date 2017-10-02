@@ -102,6 +102,9 @@ if($addONS == 'home' OR $addONS == 'product' OR $addONS == 'sale' OR $addONS == 
         <a href="form-titip.html" class="btn-hoopla">Baca selengkapnya</a>
     </div>
 </div>
+<?php 
+} else if($addONS == 'product-detail') { 
+?>
 <div class="tingle-content-wrapper">
     <div id="form-order">
         <form class="form-control" action="" method="post" id="form-pemesanan">

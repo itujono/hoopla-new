@@ -148,4 +148,40 @@ if ($plugins == 'home') { ?>
         position: 'bottom'
     });
 </script>
+<?php
+} elseif ($plugins == 'product-detail') {
+?>
+<script src="<?php echo base_url().$this->data['asfront'];?>js/tingle.min.js"></script>
+
+<script>
+    var formOrder = new tingle.modal();
+    
+    formOrder.setContent(document.querySelector('#form-order').innerHTML);
+    document.querySelector('#rent-now').addEventListener('click', function(e) {
+        formOrder.open(); e.preventDefault();
+    });
+</script>
+
+<script>
+    var showSK = document.querySelector('#show-tc');
+    var tc = document.querySelector('#terms-conditions');
+
+    showSK.addEventListener('click', function(e) {
+        if (!tc.classList.contains('active')) {
+            tc.classList.add('active');
+            showSK.innerHTML = "Tutup S & K";
+            e.preventDefault();
+        } else {
+            tc.classList.remove('active');
+            showSK.innerHTML = "Lihat S & K";
+        }
+    });
+</script>
+
+<script>
+  tippy('.social a', {
+    followCursor: true,
+    position: 'bottom'
+  });
+</script>
 <?php } ?>
