@@ -184,7 +184,7 @@
             <table role="presentation" cellspacing="0" cellpadding="0" border="0" align="center" width="100%" style="max-width: 600px;">
                 <tr>
                     <td style="padding: 20px 0; text-align: center">
-                        <img src="http://placehold.it/200x50" width="200" height="50" alt="alt_text" border="0" style="height: auto; background: #dddddd; font-family: sans-serif; font-size: 15px; line-height: 20px; color: #555555;">
+                        <img src="<?php echo base_url().$this->data['asfront'];?>img/logo-web.png" width="300" height="" alt="alt_text" border="0" align="center" style="width: 100%; max-width: 300px; height: auto; font-family: sans-serif; font-size: 15px; line-height: 20px; color: #555555; margin: auto;" class="g-img">
                     </td>
                 </tr>
             </table>
@@ -193,16 +193,8 @@
             <!-- Email Body : BEGIN -->
             <table role="presentation" cellspacing="0" cellpadding="0" border="0" align="center" width="100%" style="max-width: 600px;">
 
-                <!-- Hero Image, Flush : BEGIN -->
-                <tr>
-                    <td bgcolor="#ffffff" align="center">
-                        <img src="<?php echo base_url().$this->data['asfront'];?>img/logo-text.png" width="600" height="" alt="alt_text" border="0" align="center" style="width: 100%; max-width: 600px; height: auto; font-family: sans-serif; font-size: 15px; line-height: 20px; color: #555555; margin: auto;" class="g-img">
-                    </td>
-                </tr>
-                <!-- Hero Image, Flush : END -->
-
                 <!-- 1 Column Text + Button : BEGIN -->
-                <tr>
+                <tr style="padding-bottom: 2em; border-bottom: 2px solid rgba(0, 0, 0, 0.09);">
                     <td bgcolor="#ffffff">
                         <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
                             <tr>
@@ -214,10 +206,10 @@
                             <tr>
                                 <td style="padding: 0 40px; font-family: sans-serif; font-size: 15px; line-height: 20px; color: #555555;">
                                     <!-- Button : BEGIN -->
-                                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" align="center" style="margin: auto;">
+                                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" align="center" style="margin: auto; margin-bottom: 20px !important">
                                         <tr>
                                             <td style="border-radius: 50px; background: #96d019; text-align: center;" class="button-td">
-                                                <a href="http://www.google.com" style="background: #96d019; font-family: sans-serif; font-size: 13px; line-height: 1.1; text-align: center; text-decoration: none; display: block; border-radius: 50px; font-weight: bold;" class="button-a">
+                                                <a href="http://www.google.com" style="background: #96d019; font-family: sans-serif; font-size: 13px; line-height: 2.6; text-align: center; text-decoration: none; display: block; border-radius: 50px; font-weight: bold;" class="button-a">
                                                     <span style="color:#ffffff;" class="button-link">&nbsp;&nbsp;&nbsp;&nbsp;Coba lihat&nbsp;&nbsp;&nbsp;&nbsp;</span>
                                                 </a>
                                             </td>
@@ -240,7 +232,7 @@
                 <!-- Clear Spacer : END -->
 
                 <!-- 1 Column Text : BEGIN -->
-                <tr>
+                <tr style="border-bottom: 2px solid rgba(0, 0, 0, 0.09);">
                     <td bgcolor="#ffffff">
                         <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
                             <tr>
@@ -262,7 +254,7 @@
                     <td style="padding: 40px 10px;width: 100%;font-size: 12px; font-family: sans-serif; line-height:18px; text-align: center; color: #888888;" class="x-gmail-data-detectors">
                         <webversion style="color:#cccccc; text-decoration:underline; font-weight: bold;">View as a Web Page</webversion>
                         <br><br>
-                        Company Name<br>123 Fake Street, SpringField, OR, 97477 US<br>(123) 456-7890
+                        Hoopla Rental Mainan<br>IG: @hoopla_rentalmainan<br>(0856) 6765 1688
                         <br><br>
                         <unsubscribe style="color:#888888; text-decoration:underline;">unsubscribe</unsubscribe>
                     </td>
