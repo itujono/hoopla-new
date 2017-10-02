@@ -46,7 +46,7 @@ if ($plugins == 'home') { ?>
 
 <script>
     var modal = new tingle.modal({ cssClass: ['ordering'] });
-    var formOrder = new tingle.modal();
+    var formOrder = new tingle.modal({ cssClass: ['#form-order'] });
     var modalTitip = new tingle.modal({ cssClass: ['titip'] });
     var btnTitip = document.querySelector('#btn-titip');
 
@@ -155,7 +155,7 @@ if ($plugins == 'home') { ?>
 
 <script>
     var formOrder = new tingle.modal();
-    
+
     formOrder.setContent(document.querySelector('#form-order').innerHTML);
     document.querySelector('#rent-now').addEventListener('click', function(e) {
         formOrder.open(); e.preventDefault();
