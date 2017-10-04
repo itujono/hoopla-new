@@ -124,10 +124,6 @@ class Product extends Frontend_Controller {
 		$sortage = $this->input->get('sortage');
 		
 		$Searching = $this->Rental_m->searching_sortby($sortbrand, $sorttype, $sortage)->result();
-		echo "<pre>";
-		print_r($Searching);
-		echo "</pre>";
-		exit;
         if(!empty($Searching)){
 			$data['searchsortby'] = $Searching;
 			foreach ($data['searchsortby'] as $key => $value) {
