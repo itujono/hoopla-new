@@ -93,6 +93,7 @@ class Product extends Frontend_Controller {
 		$filter = $this->input->get('filter');
 
 		$Searching = $this->Rental_m->searching_filter($filter)->result();
+		
         if(!empty($Searching)){
 			$data['searching'] = $Searching;
 			foreach ($data['searching'] as $key => $value) {

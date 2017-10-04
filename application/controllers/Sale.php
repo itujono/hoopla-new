@@ -10,7 +10,7 @@ class Sale extends Frontend_Controller {
 
 	public function index() {
 		$data['addONS'] = 'sale';
-		$data['title'] = 'For Sale - Toys Rent';
+		$data['title'] = 'For Sale - Hoopla Toys Rent';
 		$data['idbody'] = 'sale';
 
 		$data['listsale'] = $this->Sale_m->selectall_sale()->result();
@@ -31,7 +31,7 @@ class Sale extends Frontend_Controller {
 
 	public function detail($id=NULL){
 		$data['addONS'] = 'product';
-		$data['title'] = 'Product Sale - Toys Rent';
+		$data['title'] = 'Product Sale - Hoopla Toys Rent';
 		$data['idbody'] = 'product-detail';
 	
 		$id = base64_decode(cutting($id));
@@ -56,6 +56,56 @@ class Sale extends Frontend_Controller {
 			}
 		}
 		$data['subview'] = $this->load->view($this->data['frontendDIR'].'product_detail_sale', $data, TRUE);
+        $this->load->view($this->data['rootDIR'].'_layout_base_frontend',$data);
+	}
+
+	public function filterby() {
+		$data['addONS'] = 'sale';
+		$data['title'] = 'Sale - Hoopla Toys Rent';
+		$data['idbody'] = 'sale';
+
+		$filter = $this->input->get('filter');
+
+		$Searching = $this->Sale_m->searching_filter($filter)->result();
+        if(!empty($Searching)){
+			$data['searching'] = $Searching;
+			foreach ($data['searching'] as $key => $value) {
+				$map = directory_map('assets/upload/sale/pic-sale-'.folenc($data['searching'][$key]->idSALE), FALSE, TRUE);
+				
+				if (empty($map)) {
+					$data['searching'][$key]->imageSALE = base_url() . 'assets/upload/no-image-available.png';
+				} else {
+					$data['searching'][$key]->imageSALE = base_url() . 'assets/upload/sale/pic-sale-'.folenc($data['searching'][$key]->idSALE).'/'.$map[0];
+				}
+			}
+		}
+
+		$data['subview'] = $this->load->view($this->data['frontendDIR'].'sale', $data, TRUE);
+        $this->load->view($this->data['rootDIR'].'_layout_base_frontend',$data);
+	}
+
+	public function sortby() {
+		$data['addONS'] = 'sale';
+		$data['title'] = 'Sale - Hoopla Toys Rent';
+		$data['idbody'] = 'sale';
+		
+		$sortby = $this->input->get('sortby');
+		
+		$Searching = $this->Sale_m->searching_sortby($sortby)->result();
+        if(!empty($Searching)){
+			$data['searchsortby'] = $Searching;
+			foreach ($data['searchsortby'] as $key => $value) {
+				$map = directory_map('assets/upload/sale/pic-sale-'.folenc($data['searchsortby'][$key]->idSALE), FALSE, TRUE);
+				
+				if (empty($map)) {
+					$data['searchsortby'][$key]->imageSALE = base_url() . 'assets/upload/no-image-available.png';
+				} else {
+					$data['searchsortby'][$key]->imageSALE = base_url() . 'assets/upload/sale/pic-sale-'.folenc($data['searchsortby'][$key]->idSALE).'/'.$map[0];
+				}
+			}
+		}
+
+		$data['subview'] = $this->load->view($this->data['frontendDIR'].'sale', $data, TRUE);
         $this->load->view($this->data['rootDIR'].'_layout_base_frontend',$data);
 	}
 }

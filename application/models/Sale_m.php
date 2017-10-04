@@ -86,4 +86,40 @@ class Sale_m extends MY_Model{
 		$this->db->order_by('RAND()');
 		return $this->db->get();
 	}
+
+	public function searching_filter($filter){
+    	
+    	$this->db->select('*');
+    	$this->db->select('category_sale.namaCATSALE');
+		$this->db->from('barang_sale');
+		$this->db->join('category_sale', 'category_sale.idCATSALE = barang_sale.idCATSALE');
+		if($filter == 'az'){
+			$this->db->order_by('namaSALE', 'asc');
+		} else if($filter == 'za'){
+			$this->db->order_by('namaSALE', 'desc');
+		} else if($filter == 'category'){
+			$this->db->order_by('namaCATSALE', 'asc');
+		}
+
+		return $this->db->get();
+    }
+
+    public function searching_sortby($sortby){
+    	
+    	$this->db->select('*');
+    	$this->db->select('category_sale.namaCATSALE');
+		$this->db->from('barang_sale');
+		$this->db->join('category_sale', 'category_sale.idCATSALE = barang_sale.idCATSALE');
+		if($sortby == 'trending'){
+			$this->db->order_by('RAND()');
+		} else if($sortby == 'highlow'){
+			$this->db->order_by('hargaSALE', 'asc');
+		} else if($sortby == 'lowhigh'){
+			$this->db->order_by('hargaSALE', 'desc');
+		} else if($sortby == 'date'){
+			$this->db->order_by('createdateSALE', 'asc');
+		}
+
+		return $this->db->get();
+    }
 }

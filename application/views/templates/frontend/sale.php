@@ -1,4 +1,61 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed');?>
+<?php
+    if(!empty($searching)){
+?>
+<main>
+    <section class="section" id="mom">
+        <h4 title="Barang-barang sale buat si kecil - Pencarian">
+            Pencarian
+        </h4>
+        <div class="wrapper">
+            <?php 
+            if(!empty($searching)){
+                foreach ($searching as $key => $src) {
+            ?>
+            <div class="card">
+                <div class="card-content">
+                    <img src="<?php echo $src->imageSALE;?>" alt="<?php echo $src->namaSALE;?>">
+                </div>
+                <div class="card-bottom">
+                    <a href="<?php echo base_url();?>sale/detail/<?php echo base64_encode($src->idSALE).'-'.seo_url($src->namaSALE);?>">
+                        <h3><?php echo $src->namaSALE;?></h3>
+                        <small>Rp. <?php echo number_format($src->hargaSALE, 0,',','.'); ?></small>
+                    </a>
+                </div>
+            </div>
+            <?php } ?>
+            <?php } ?>
+        </div>
+    </section>
+</main>
+<?php } else if(!empty($searchsortby)) { ?>
+<main>
+    <section class="section" id="mom">
+        <h4 title="Barang-barang sale buat si kecil - Pencarian">
+            Pencarian
+        </h4>
+        <div class="wrapper">
+            <?php 
+            if(!empty($searchsortby)){
+                foreach ($searchsortby as $key => $sort) {
+            ?>
+            <div class="card">
+                <div class="card-content">
+                    <img src="<?php echo $sort->imageSALE;?>" alt="<?php echo $sort->namaSALE;?>">
+                </div>
+                <div class="card-bottom">
+                    <a href="<?php echo base_url();?>product/detail/<?php echo base64_encode($sort->idSALE).'-'.seo_url($sort->namaSALE);?>">
+                        <h3><?php echo $sort->namaSALE;?></h3>
+                        <small>Rp. <?php echo number_format($sort->hargaSALE, 0,',','.'); ?></small>
+                    </a>
+                </div>
+            </div>
+            <?php } ?>
+            <?php } ?>
+        </div>
+    </section>
+</main>
+<?php } else { ?>
 <main>
 	<?php 
 	if(!empty($getcatsale)){
@@ -33,271 +90,32 @@
 	</section>
 	<?php } ?>
 	<?php } ?>
-	<!-- <section class="section" id="baby">
-		<h4 title="Barang-barang untuk dijual - untuk si kecil">
-			Untuk <span class="coolgreen">baby</span>
-		</h4>
-		<div class="wrapper">
-			<div class="card">
-				<div class="card-content">
-					<img src="<?php echo base_url().$this->data['asfront'];?>img/kids7.png" alt="Kiddy">
-				</div>
-				<div class="card-bottom">
-					<a href="product-detail.html">
-						<h3>Super sempardak</h3>
-						<small>Rp 300k</small>
-					</a>
-				</div>
-			</div>
-			<div class="card">
-				<div class="card-content softblue">
-					<img src="<?php echo base_url().$this->data['asfront'];?>img/kids7.png" alt="Kiddy">
-				</div>
-				<div class="card-bottom">
-					<a href="product-detail.html">
-						<h3>Super sempardak</h3>
-						<small>Rp 300k</small>
-					</a>
-				</div>
-			</div>
-			<div class="card">
-				<div class="card-content">
-					<img src="<?php echo base_url().$this->data['asfront'];?>img/kids7.png" alt="Kiddy">
-				</div>
-				<div class="card-bottom">
-					<a href="product-detail.html">
-						<h3>Super sempardak</h3>
-						<small>Rp 300k</small>
-					</a>
-				</div>
-			</div>
-			<div class="card">
-				<div class="card-content softpurple">
-					<img src="<?php echo base_url().$this->data['asfront'];?>img/kids7.png" alt="Kiddy">
-				</div>
-				<div class="card-bottom">
-					<a href="product-detail.html">
-						<h3>Super sempardak</h3>
-						<small>Rp 300k</small>
-					</a>
-				</div>
-			</div>
-			<div class="card">
-				<div class="card-content softpurple">
-					<img src="<?php echo base_url().$this->data['asfront'];?>img/kids7.png" alt="Kiddy">
-				</div>
-				<div class="card-bottom">
-					<a href="product-detail.html">
-						<h3>Super sempardak</h3>
-						<small>Rp 300k</small>
-					</a>
-				</div>
-			</div>
-			<div class="card">
-				<div class="card-content">
-					<img src="<?php echo base_url().$this->data['asfront'];?>img/kids7.png" alt="Kiddy">
-				</div>
-				<div class="card-bottom">
-					<a href="product-detail.html">
-						<h3>Super sempardak</h3>
-						<small>Rp 300k</small>
-					</a>
-				</div>
-			</div>
-			<div class="card">
-				<div class="card-content softblue">
-					<img src="<?php echo base_url().$this->data['asfront'];?>img/kids7.png" alt="Kiddy">
-				</div>
-				<div class="card-bottom">
-					<a href="product-detail.html">
-						<h3>Super sempardak</h3>
-						<small>Rp 300k</small>
-					</a>
-				</div>
-			</div>
-		</div>
-	</section>
-	<section class="section" id="toys">
-		<h4 title="Mainan untuk dijual">
-			Mainan untuk <span class="coolgreen">si kecil</span>
-		</h4>
-		<div class="wrapper">
-			<div class="card">
-				<div class="card-content">
-					<img src="<?php echo base_url().$this->data['asfront'];?>img/kids7.png" alt="Kiddy">
-				</div>
-				<div class="card-bottom">
-					<a href="product-detail.html">
-						<h3>Super sempardak</h3>
-						<small>Rp 300k</small>
-					</a>
-				</div>
-			</div>
-			<div class="card">
-				<div class="card-content softblue">
-					<img src="<?php echo base_url().$this->data['asfront'];?>img/kids7.png" alt="Kiddy">
-				</div>
-				<div class="card-bottom">
-					<a href="product-detail.html">
-						<h3>Super sempardak</h3>
-						<small>Rp 300k</small>
-					</a>
-				</div>
-			</div>
-			<div class="card">
-				<div class="card-content">
-					<img src="<?php echo base_url().$this->data['asfront'];?>img/kids7.png" alt="Kiddy">
-				</div>
-				<div class="card-bottom">
-					<a href="product-detail.html">
-						<h3>Super sempardak</h3>
-						<small>Rp 300k</small>
-					</a>
-				</div>
-			</div>
-			<div class="card">
-				<div class="card-content softpurple">
-					<img src="<?php echo base_url().$this->data['asfront'];?>img/kids7.png" alt="Kiddy">
-				</div>
-				<div class="card-bottom">
-					<a href="product-detail.html">
-						<h3>Super sempardak</h3>
-						<small>Rp 300k</small>
-					</a>
-				</div>
-			</div>
-			<div class="card">
-				<div class="card-content softpurple">
-					<img src="<?php echo base_url().$this->data['asfront'];?>img/kids7.png" alt="Kiddy">
-				</div>
-				<div class="card-bottom">
-					<a href="product-detail.html">
-						<h3>Super sempardak</h3>
-						<small>Rp 300k</small>
-					</a>
-				</div>
-			</div>
-			<div class="card">
-				<div class="card-content">
-					<img src="<?php echo base_url().$this->data['asfront'];?>img/kids7.png" alt="Kiddy">
-				</div>
-				<div class="card-bottom">
-					<a href="product-detail.html">
-						<h3>Super sempardak</h3>
-						<small>Rp 300k</small>
-					</a>
-				</div>
-			</div>
-		</div>
-	</section>
-	<section class="section" id="snacks">
-		<h4 title="Snack dan makanan untuk dijual">
-			Snack dan <span class="coolgreen">makanan</span>
-		</h4>
-		<div class="wrapper">
-			<div class="card">
-				<div class="card-content">
-					<img src="<?php echo base_url().$this->data['asfront'];?>img/kids7.png" alt="Kiddy">
-				</div>
-				<div class="card-bottom">
-					<a href="product-detail.html">
-						<h3>Super sempardak</h3>
-						<small>Rp 300k</small>
-					</a>
-				</div>
-			</div>
-			<div class="card">
-				<div class="card-content softblue">
-					<img src="<?php echo base_url().$this->data['asfront'];?>img/kids7.png" alt="Kiddy">
-				</div>
-				<div class="card-bottom">
-					<a href="product-detail.html">
-						<h3>Super sempardak</h3>
-						<small>Rp 300k</small>
-					</a>
-				</div>
-			</div>
-			<div class="card">
-				<div class="card-content">
-					<img src="<?php echo base_url().$this->data['asfront'];?>img/kids7.png" alt="Kiddy">
-				</div>
-				<div class="card-bottom">
-					<a href="product-detail.html">
-						<h3>Super sempardak</h3>
-						<small>Rp 300k</small>
-					</a>
-				</div>
-			</div>
-			<div class="card">
-				<div class="card-content softpurple">
-					<img src="<?php echo base_url().$this->data['asfront'];?>img/kids7.png" alt="Kiddy">
-				</div>
-				<div class="card-bottom">
-					<a href="product-detail.html">
-						<h3>Super sempardak</h3>
-						<small>Rp 300k</small>
-					</a>
-				</div>
-			</div>
-			<div class="card">
-				<div class="card-content softpurple">
-					<img src="<?php echo base_url().$this->data['asfront'];?>img/kids7.png" alt="Kiddy">
-				</div>
-				<div class="card-bottom">
-					<a href="product-detail.html">
-						<h3>Super sempardak</h3>
-						<small>Rp 300k</small>
-					</a>
-				</div>
-			</div>
-			<div class="card">
-				<div class="card-content">
-					<img src="<?php echo base_url().$this->data['asfront'];?>img/kids7.png" alt="Kiddy">
-				</div>
-				<div class="card-bottom">
-					<a href="product-detail.html">
-						<h3>Super sempardak</h3>
-						<small>Rp 300k</small>
-					</a>
-				</div>
-			</div>
-			<div class="card">
-				<div class="card-content softblue">
-					<img src="<?php echo base_url().$this->data['asfront'];?>img/kids7.png" alt="Kiddy">
-				</div>
-				<div class="card-bottom">
-					<a href="product-detail.html">
-						<h3>Super sempardak</h3>
-						<small>Rp 300k</small>
-					</a>
-				</div>
-			</div>
-		</div>
-	</section> -->
 </main>
+<?php } ?>
 
 <aside class="sidebar">
     <div class="sort">
         <h4>Filter by:</h4>
-        <select>
+        <form method="get" name="formfilter" action="<?php echo base_url();?>sale/filterby">
+        <select name="filter" required="required">
             <option value="az">Brand (A-Z)</option>
             <option value="za">Brand (Z-A)</option>
             <option value="category">Kategori</option>
-            <option value="age1">Umur (0-2)</option>
-            <option value="age2">Umur (3-6)</option>
-            <option value="age3">Umur 7-10)</option>
         </select>
-        <a href="#" class="btn-hoopla">Submit</a>
+        <button type="submit" class="btn-hoopla">Okay, Filter!</button>
+        </form>
     </div>
     <div class="sort">
         <h4>Sort by:</h4>
-        <select>
+        <form method="get" name="formsortby" action="<?php echo base_url();?>sale/sortby">
+        <select name="sortby" required="required">
             <option value="trending">Trending</option>
-            <option value="high-low">Harga (tinggi ke rendah)</option>
-            <option value="low-high">Harga (rendah ke tinggi)</option>
+            <option value="highlow">Harga (tinggi ke rendah)</option>
+            <option value="lowhigh">Harga (rendah ke tinggi)</option>
             <option value="date">Tanggal dimasukkan</option>
         </select>
-        <a href="#" class="btn-hoopla">Submit</a>
+        <button type="submit" class="btn-hoopla">Okay, Sortir!</button>
+        </form>
     </div>
     <div class="promo-sidebar wow bounceInUp" data-wow-delay="1.3s">
         <div class="bg">

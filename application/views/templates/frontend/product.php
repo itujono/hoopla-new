@@ -142,9 +142,6 @@
             <option value="az">Brand (A-Z)</option>
             <option value="za">Brand (Z-A)</option>
             <option value="category">Kategori</option>
-            <option value="age1">Umur (0-2)</option>
-            <option value="age2">Umur (3-6)</option>
-            <option value="age3">Umur (7-10)</option>
         </select>
         <button type="submit" class="btn-hoopla">Okay, Filter!</button>
         </form>

@@ -114,14 +114,7 @@ class Rental_m extends MY_Model{
 			$this->db->order_by('namaRENTAL', 'desc');
 		} else if($filter == 'category'){
 			$this->db->order_by('namaBRAND', 'asc');
-		} else if($filter == 'age1'){
-			$this->db->where('umurRENTAL', 'Umur (0-2)');
-		} else if($filter == 'age2'){
-			$this->db->where('umurRENTAL', 'Umur (3-6)');
-		} else if($filter == 'age3'){
-			$this->db->where('umurRENTAL', 'Umur (7-10)');
 		}
-
 		return $this->db->get();
     }
 
