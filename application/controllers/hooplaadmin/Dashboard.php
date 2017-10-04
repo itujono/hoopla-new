@@ -7,7 +7,7 @@ class Dashboard extends Admin_Controller {
 		parent::__construct();
 	}
 
-	public function index() {
+	public function index_dashboard() {
 		$data['addONS'] = '';
 		if(!empty($this->session->flashdata('message'))) {
             $data['message'] = $this->session->flashdata('message');

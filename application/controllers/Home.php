@@ -6,6 +6,9 @@ class Home extends Frontend_Controller {
 	public function __construct (){
 		parent::__construct();
 		$this->load->model('Rental_m');
+		$this->load->model('Brand_rental_m');
+		$this->load->model('Age_rental_m');
+		$this->load->model('Type_rental_m');
 	}
 
 	public function index() {
@@ -35,6 +38,10 @@ class Home extends Frontend_Controller {
 			}
 		}
 		
+		$data['getbrand'] = $this->Brand_rental_m->dropdown_getbrand()->result();
+        $data['getage'] = $this->Age_rental_m->dropdown_getage()->result();
+        $data['gettype'] = $this->Type_rental_m->dropdown_gettype()->result();
+
 		$data['subview'] = $this->load->view($this->data['frontendDIR'].'home', $data, TRUE);
         $this->load->view($this->data['rootDIR'].'_layout_base_frontend',$data);
 	}

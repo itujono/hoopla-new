@@ -9,11 +9,7 @@ class Trivia extends Admin_Controller{
 		$this->load->model('Category_trivia_m');
 	}
 
-	public function index (){
-		$this->trivialist();
-	}
-
-	public function trivialist($id = NULL){
+	public function index_trivia($id = NULL){
 		$data['addONS'] = 'plugins_datatables';
 		$id = decode(urldecode($id));
 		
@@ -62,7 +58,7 @@ class Trivia extends Admin_Controller{
                 'type' => 'success'
           	);
 	    	$this->session->set_flashdata('message', $data);
-	  		redirect('hooplaadmin/trivia');
+	  		redirect('hooplaadmin/trivia/index_trivia');
 		} else {
 				$data = array(
 		            'title' => 'Terjadi Kesalahan',
@@ -70,7 +66,7 @@ class Trivia extends Admin_Controller{
 		            'type' => 'warning'
 		        );
 	        $this->session->set_flashdata('message',$data);
-	        $this->salelist();
+	        $this->index_trivia();
 		}
 	}
 
@@ -84,7 +80,7 @@ class Trivia extends Admin_Controller{
                     'type' => 'success'
                 );
                 $this->session->set_flashdata('message',$data);
-                redirect('hooplaadmin/trivia');
+                redirect('hooplaadmin/trivia/index_trivia');
 		}else{
 			$data = array(
 	            'title' => 'Terjadi Kesalahan',
@@ -92,7 +88,7 @@ class Trivia extends Admin_Controller{
 	            'type' => 'error'
 		        );
 		        $this->session->set_flashdata('message',$data);
-		        redirect('hooplaadmin/trivia');
+		        redirect('hooplaadmin/trivia/index_trivia');
 		}
 	}
 

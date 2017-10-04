@@ -13,8 +13,8 @@ class Rental_m extends MY_Model{
 			'label' => 'Nama Barang Rental', 
 			'rules' => 'trim|required'
 		),
-		'brandRENTAL' => array(
-			'field' => 'brandRENTAL', 
+		'idBRAND' => array(
+			'field' => 'idBRAND', 
 			'label' => 'Brand Barang Rental', 
 			'rules' => 'trim|required'
 		),
@@ -28,8 +28,8 @@ class Rental_m extends MY_Model{
 			'label' => 'Durasi Barang Rental', 
 			'rules' => 'trim|required'
 		),
-		'umurRENTAL' => array(
-			'field' => 'umurRENTAL', 
+		'idAGE' => array(
+			'field' => 'idAGE', 
 			'label' => 'Umur Anak', 
 			'rules' => 'trim|required'
 		),
@@ -38,8 +38,8 @@ class Rental_m extends MY_Model{
 			'label' => 'Deskripsi Barang Rental', 
 			'rules' => 'trim|required'
 		),
-		'idCATEGORY' => array(
-			'field' => 'idCATEGORY', 
+		'idTYPE' => array(
+			'field' => 'idTYPE', 
 			'label' => 'Kategori Barang', 
 			'rules' => 'trim|required'
 		)
@@ -53,21 +53,26 @@ class Rental_m extends MY_Model{
 		$rental = new stdClass();
 		$rental->idRENTAL = '';
 		$rental->namaRENTAL = '';
-		$rental->brandRENTAL = '';
+		$rental->idBRAND = '';
 		$rental->hargaRENTAL = '';
 		$rental->durasiRENTAL = '';
 		$rental->umurRENTAL = '';
 		$rental->descriptionRENTAL = '';
-		$rental->idCATEGORY = '';
+		$rental->idTYPE = '';
+		$rental->idAGE = '';
 		$rental->statusRENTAL = '';
 		return $rental;
 	}
 
 	public function selectall_rental($id = NULL, $status = NULL,$bybrand=NULL, $bycat=NULL, $random=NULL, $mostrecent=NULL) {
 		$this->db->select('*');
-		$this->db->select('category_rental.namaCATEGORY');
+		$this->db->select('brand_rental.namaBRAND');
+		$this->db->select('age_rental.namaAGE');
+		$this->db->select('type_rental.namaTYPE');
 		$this->db->from('barang_rental');
-		$this->db->join('category_rental', 'category_rental.idCATEGORY = barang_rental.idCATEGORY');
+		$this->db->join('brand_rental', 'brand_rental.idBRAND = barang_rental.idBRAND');
+		$this->db->join('age_rental', 'age_rental.idAGE = barang_rental.idAGE');
+		$this->db->join('type_rental', 'type_rental.idTYPE = barang_rental.idTYPE');
 		if ($id != NULL) {
 			$this->db->where('idRENTAL',$id);
 		}
@@ -75,12 +80,12 @@ class Rental_m extends MY_Model{
 			$this->db->where('statusRENTAL',$status);
 		}
 		if ($bybrand != NULL) {
-			$this->db->order_by('brandRENTAL', 'desc');
+			$this->db->order_by('brand_rental.namaBRAND', 'desc');
 		}
 		if ($bycat != NULL) {
-			$this->db->order_by('namaCATEGORY', 'asc');
+			$this->db->order_by('brand_rental.namaBRAND', 'asc');
 		}
-		if ($bycat != NULL) {
+		if ($random != NULL) {
 			$this->db->order_by('RAND()');
 		}
 		if($mostrecent != NULL){
@@ -89,40 +94,26 @@ class Rental_m extends MY_Model{
 		return $this->db->get();
 	}
 
-	public function dropdown_getcategory($dropdown=NULL){
-		$this->db->cache_on();
-		$this->db->from('category_rental');
-		if($dropdown != NULL){
-			$ddown = array();
-			foreach ($this->db->get()->result() as $value) {
-				$ddown[$value->idCATEGORY] = $value->namaCATEGORY;
-			}
-			return $ddown;
-		}else{
-			return $this->db->get();
-		}
-	}
-
-	public function selectall_random_rental($id=NULL) {
-		$this->db->select('*');
-		$this->db->from('barang_rental');
-		$this->db->where('idCATEGORY', $id);
-		$this->db->order_by('RAND()');
-		return $this->db->get();
-	}
+	// public function selectall_random_rental($id=NULL) {
+	// 	$this->db->select('*');
+	// 	$this->db->from('barang_rental');
+	// 	$this->db->where('idCATEGORY', $id);
+	// 	$this->db->order_by('RAND()');
+	// 	return $this->db->get();
+	// }
 
 	public function searching_filter($filter){
     	
     	$this->db->select('*');
-    	$this->db->select('category_rental.namaCATEGORY');
+    	$this->db->select('brand_rental.namaBRAND');
 		$this->db->from('barang_rental');
-		$this->db->join('category_rental', 'category_rental.idCATEGORY = barang_rental.idCATEGORY');
+		$this->db->join('brand_rental', 'brand_rental.idBRAND = barang_rental.idBRAND');
 		if($filter == 'az'){
 			$this->db->order_by('namaRENTAL', 'asc');
 		} else if($filter == 'za'){
 			$this->db->order_by('namaRENTAL', 'desc');
 		} else if($filter == 'category'){
-			$this->db->order_by('namaCATEGORY', 'asc');
+			$this->db->order_by('namaBRAND', 'asc');
 		} else if($filter == 'age1'){
 			$this->db->where('umurRENTAL', 'Umur (0-2)');
 		} else if($filter == 'age2'){
@@ -134,18 +125,32 @@ class Rental_m extends MY_Model{
 		return $this->db->get();
     }
 
-    public function searching_sortby($sortby){
+    public function searching_sortby($sortbrand=NULL, $sorttype=NULL, $sortage=NULL){
     	
     	$this->db->select('*');
+		$this->db->select('brand_rental.namaBRAND');
+		$this->db->select('age_rental.namaAGE');
+		$this->db->select('type_rental.namaTYPE');
 		$this->db->from('barang_rental');
-		if($sortby == 'trending'){
-			$this->db->order_by('RAND()');
-		} else if($sortby == 'high-low'){
-			$this->db->order_by('hargaRENTAL', 'desc');
-		} else if($sortby == 'low-high'){
-			$this->db->order_by('hargaRENTAL', 'asc');
-		} else if($sortby == 'date'){
-			$this->db->order_by('createdateRENTAL', 'desc');
+		$this->db->join('brand_rental', 'brand_rental.idBRAND = barang_rental.idBRAND');
+		$this->db->join('age_rental', 'age_rental.idAGE = barang_rental.idAGE');
+		$this->db->join('type_rental', 'type_rental.idTYPE = barang_rental.idTYPE');
+
+		if($sortbrand != NULL AND $sorttype != NULL){
+			$this->db->where('barang_rental.idBRAND', $sortbrand);
+			$this->db->or_where('barang_rental.idTYPE', $sorttype);
+		}  else if($sorttype != NULL AND $sortage != NULL){
+			$this->db->where('barang_rental.idTYPE', $sorttype);
+			$this->db->or_where('barang_rental.idAGE', $sortage);
+		}  else if($sortbrand != NULL AND $sortage != NULL){
+			$this->db->where('barang_rental.idBRAND', $sorttype);
+			$this->db->or_where('barang_rental.idAGE', $sortage);
+		} else if($sortage != NULL){
+			$this->db->where('barang_rental.idAGE', $sortage);
+		} else if($sortbrand != NULL){
+			$this->db->where('barang_rental.idBRAND', $sortbrand);
+		} else if($sorttype != NULL){
+			$this->db->where('barang_rental.idTYPE', $sorttype);
 		}
 
 		return $this->db->get();

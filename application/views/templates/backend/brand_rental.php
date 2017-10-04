@@ -1,11 +1,11 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-$title1 = 'Buat Data Kategori Barang Rental Baru';
-$actions = 'savecategoryrental';
+$title1 = 'Buat Data Brand Barang Rental Baru';
+$actions = 'savebrandrental';
 $controller = 'rental';
-if($getcategory->idCATEGORY != NULL){
- $title1 = 'Perbaharui Data Kategori Barang Rental';
+if($getbrand->idBRAND != NULL){
+ $title1 = 'Perbaharui Data Brand Barang Rental';
 } 
 $url = base_url().'hooplaadmin/'.$controller.'/'.$actions;
 ?>
@@ -23,8 +23,8 @@ $url = base_url().'hooplaadmin/'.$controller.'/'.$actions;
   <div class="md-card">
     <div class="md-card-content">
       <ul class="uk-tab uk-tab-grid" data-uk-tab="{connect:'#tabs_4'}">
-        <li class="uk-width-1-2 <?php echo $tab['data-tab']?>>"><a href="#">Daftar Kategori Rental</a></li>
-        <li class="uk-width-1-2 <?php echo $tab['form-tab']?>"><a href="#">Form Kategori Rental</a></li>
+        <li class="uk-width-1-2 <?php echo $tab['data-tab']?>>"><a href="#">Daftar Brand Rental</a></li>
+        <li class="uk-width-1-2 <?php echo $tab['form-tab']?>"><a href="#">Form Brand Rental</a></li>
       </ul>
       <ul id="tabs_4" class="uk-switcher uk-margin">
         <li>
@@ -32,7 +32,7 @@ $url = base_url().'hooplaadmin/'.$controller.'/'.$actions;
             <thead>
               <tr>
                 <th>No.</th>
-                <th>Nama Barang</th>
+                <th>Nama Brand</th>
                 <th>Created</th>
                 <th>Action</th>
               </tr>
@@ -40,27 +40,27 @@ $url = base_url().'hooplaadmin/'.$controller.'/'.$actions;
             <tfoot>
               <tr>
                 <th>No.</th>
-                <th>Nama Barang</th>
+                <th>Nama Brand</th>
                 <th>Created</th>
                 <th>Action</th>
               </tr>
             </tfoot>
             <tbody>
               <?php 
-              if(!empty($listcategoryrental)){
-                foreach ($listcategoryrental  as $key => $cat) { 
-                  $id = encode($cat->idCATEGORY);
+              if(!empty($listbrandrental)){
+                foreach ($listbrandrental  as $key => $brand) { 
+                  $id = encode($brand->idBRAND);
                   ?>
                   <tr>
                     <td><?php echo $key+1; ?></td>
-                    <td><?php echo $cat->namaCATEGORY; ?></td>
-                    <td><?php echo date('d F Y', strtotime($cat->createdateCATEGORY));?></td>
+                    <td><?php echo $brand->namaBRAND; ?></td>
+                    <td><?php echo date('d F Y', strtotime($brand->createdateBRAND));?></td>
                     <?php
                     $icndel = '&#xE16C;';
-                    $msg1 = 'Are you sure want to delete this data <b>'.$cat->namaCATEGORY.'</b> ?';
-                    $msg2 = 'Are you sure want to change this data ' . ' <b>'.$cat->namaCATEGORY.'</b> ?';
-                    $url1 = 'hooplaadmin/'.$controller.'/actiondelete_category/'.urlencode($id);
-                    $url2 = 'hooplaadmin/'.$controller.'/category_rental/'.urlencode($id);
+                    $msg1 = 'Are you sure want to delete this data <b>'.$brand->namaBRAND.'</b> ?';
+                    $msg2 = 'Are you sure want to change this data ' . ' <b>'.$brand->namaBRAND.'</b> ?';
+                    $url1 = 'hooplaadmin/'.$controller.'/actiondelete_brand/'.urlencode($id);
+                    $url2 = 'hooplaadmin/'.$controller.'/brand_rental/'.urlencode($id);
                     ?>
                     <td class="uk-text-center">
                       <a href="#" onclick="UIkit.modal.confirm('<?php echo $msg1; ?>', function(){ document.location.href='<?php echo site_url($url1);?>'; });"><i class="md-icon material-icons"><?php echo $icndel; ?></i></a>
@@ -78,13 +78,13 @@ $url = base_url().'hooplaadmin/'.$controller.'/'.$actions;
             <li>
               <h3 class="heading_a uk-margin-bottom">Buat data baru atau Perbaharui data</h3>
               <form method="post" name="formrental" action="<?php echo $url;?>" id="form_validation">
-                <?php echo form_hidden('idCATEGORY',encode($getcategory->idCATEGORY),'hidden'); ?>
+                <?php echo form_hidden('idBRAND',encode($getbrand->idBRAND),'hidden'); ?>
                 <div class="uk-grid" data-uk-grid-margin>
                   <div class="uk-width-medium-1-1 uk-margin-top">
-                    <label>Nama Barang</label>
+                    <label>Nama Brand</label>
                     <br>
-                    <input type="text" class="md-input label-fixed" name="namaCATEGORY" autocomplete value="<?php echo $getcategory->namaCATEGORY;?>"/>
-                    <p class="text-red"><?php echo form_error('namaCATEGORY'); ?></p>
+                    <input type="text" class="md-input label-fixed" name="namaBRAND" autocomplete value="<?php echo $getbrand->namaBRAND;?>"/>
+                    <p class="text-red"><?php echo form_error('namaBRAND'); ?></p>
                   </div>
                 </div>
                 <div class="uk-width-medium-1-1 uk-margin-top">

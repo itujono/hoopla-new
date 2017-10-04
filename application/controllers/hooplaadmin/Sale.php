@@ -9,11 +9,7 @@ class Sale extends Admin_Controller{
 		$this->load->model('Category_sale_m');
 	}
 
-	public function index (){
-		$this->salelist();
-	}
-
-	public function salelist($id = NULL){
+	public function index_sale($id = NULL){
 		$data['addONS'] = 'plugins_datatables';
 		$id = decode(urldecode($id));
 		
@@ -102,7 +98,7 @@ class Sale extends Admin_Controller{
                 'type' => 'success'
           	);
 	    	$this->session->set_flashdata('message', $data);
-	  		redirect('hooplaadmin/sale');
+	  		redirect('hooplaadmin/sale/index_sale');
 		} else {
 				$data = array(
 		            'title' => 'Terjadi Kesalahan',
@@ -110,7 +106,7 @@ class Sale extends Admin_Controller{
 		            'type' => 'warning'
 		        );
 	        $this->session->set_flashdata('message',$data);
-	        $this->salelist();
+	        $this->index_sale();
 		}
 	}
 
@@ -124,7 +120,7 @@ class Sale extends Admin_Controller{
                     'type' => 'success'
                 );
                 $this->session->set_flashdata('message',$data);
-                redirect('hooplaadmin/sale');
+                redirect('hooplaadmin/sale/index_sale');
 		}else{
 			$data = array(
 	            'title' => 'Terjadi Kesalahan',
@@ -132,7 +128,7 @@ class Sale extends Admin_Controller{
 	            'type' => 'error'
 		        );
 		        $this->session->set_flashdata('message',$data);
-		        redirect('hooplaadmin/sale');
+		        redirect('hooplaadmin/sale/index_sale');
 		}
 	}
 
@@ -148,7 +144,7 @@ class Sale extends Admin_Controller{
 				rmdir($path);
 			}
 		}
-		redirect('hooplaadmin/sale/salelist/'.$id1);
+		redirect('hooplaadmin/sale/index_sale/'.$id1);
 	}
 
 	public function category_sale($id = NULL){

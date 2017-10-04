@@ -22,14 +22,17 @@ function dF($date, $format){
 	return date($format, strtotime($date));
 }
 
-function folderENCRYPT($id,$type=0){
-    return base64_encode($id);
-}
-
-function selectall_menu_active(){
+function selectall_menu_active($parent=NULL, $child=NULL){
     $CI =& get_instance();
     $CI->db->select('*');
-    $CI->db->from('menu_admin');
+    $CI->db->from('menus_admin');
+    if($parent != NULL){
+        $CI->db->where('parentMENU', 0);
+    }
+    if($child != NULL){
+        $CI->db->where('parentMENU !=', 0);
+    }
+    
     $CI->db->where('statusMENU', 1);
 
     $data = $CI->db->get()->result();

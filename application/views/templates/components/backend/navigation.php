@@ -43,27 +43,39 @@
       <a href="index.html" class="sSidebar_show"><img src="<?php echo base_url().$this->data['asback'];?>img/logo_main_small.png" alt="" height="32" width="32"/></a>
     </div>
   </div>
-
+  <?php 
+      $seg1 = strtolower($this->uri->segment(2));
+      $seg2 = strtolower($this->uri->segment(3));
+      
+      $menus = selectall_menu_active(1);
+      $menuschild = selectall_menu_active(NULL,1);
+  ?>
   <div class="menu_section">
     <ul>
-      <?php
-      $menus = selectall_menu_active();
-      foreach ($menus as $values) {
-        if(!empty($this->uri->segment(3))) {
-          $url = $this->uri->segment(3);
-        } else {
-          $url = $this->uri->segment(2);
-        }
-        $class = '';
-        if($url == $values->functionMENU)$class = 'current_section';
-      ?>
-      <li class="<?php echo $class;?>"" title="<?php echo $values->namaMENU;?>">
-      <a href="<?php echo base_url();?>hooplaadmin/<?php echo $values->functionMENU;?>">
-          <span class="menu_icon"><i class="material-icons"><?php echo $values->iconMENU;?></i></span>
-          <span class="menu_title"><?php echo $values->namaMENU;?></span>
+      <?php foreach ($menus as $key => $val1) { ?>
+      <li title="<?php echo $val1->namaMENU;?>">
+        <a href="<?php echo base_url();?>hooplaadmin/<?php echo $val1->functionMENU; ?>">
+          <span class="menu_icon"><i class="material-icons"><?php echo $val1->iconMENU ?></i></span>
+          <span class="menu_title"><?php echo $val1->namaMENU; ?></span>
         </a>
+        <ul>
+        <?php
+          foreach ($menuschild as $key => $val2) { 
+            if($val1->idMENU == $val2->parentMENU){
+              $class = '';
+              if($seg2 == $val2->functionMENU){
+                $class = 'act_item';
+              }
+        ?>
+          <li class="<?php echo $class;?>">
+            <a href="<?php echo base_url();?>hooplaadmin/<?php echo $val1->functionMENU; ?>/<?php echo $val2->functionMENU; ?>"><?php echo $val2->namaMENU; ?>
+            </a>
+          </li>
+            <?php } ?>
+          <?php } ?>
+        </ul>
       </li>
-    <?php } ?>
+      <?php } ?>
     </ul>
   </div>
 </aside><!-- main sidebar end -->

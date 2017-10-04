@@ -35,7 +35,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                   <th>Gambar.</th>
                   <th>Nama Barang</th>
                   <th>Brand Barang</th>
-                  <th>Kategori</th>
+                  <th>Type Barang</th>
+                  <th>Age Barang</th>
                   <th>Harga</th>
                   <th>Durasi</th>
                   <th>Created</th>
@@ -48,7 +49,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 <th>Gambar.</th>
                 <th>Nama Barang</th>
                 <th>Brand Barang</th>
-                <th>Kategori</th>
+                <th>Type Barang</th>
+                <th>Age Barang</th>
                 <th>Harga</th>
                 <th>Durasi</th>
                 <th>Created</th>
@@ -65,8 +67,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 <td><?php echo $key+1; ?></td>
                 <td><img class="img_thumb" src="<?php echo $rental->imageRENTAL;?>" alt="<?php echo $rental->namaRENTAL;?>"/></td>
                 <td><?php echo $rental->namaRENTAL; ?></td>
-                <td><?php echo $rental->brandRENTAL; ?></td>
-                <td><?php echo $rental->namaCATEGORY; ?></td>
+                <td><?php echo $rental->namaBRAND; ?></td>
+                <td><?php echo $rental->namaTYPE; ?></td>
+                <td><?php echo $rental->namaAGE; ?></td>
                 <td>Rp. <?php echo number_format($rental->hargaRENTAL, 0,',','.'); ?></td>
                 <td><?php echo $rental->durasiRENTAL;?></td>
                 <td><?php echo date('d F Y', strtotime($rental->createdateRENTAL));?></td>
@@ -113,27 +116,33 @@ defined('BASEPATH') OR exit('No direct script access allowed');
               </div>
             </div>
             <div class="uk-grid" data-uk-grid-margin>
-              <div class="uk-width-medium-1-3 uk-margin-top">
+              <div class="uk-width-medium-1-4 uk-margin-top">
                   <label>Nama Barang</label>
                   <br>
                   <input type="text" class="md-input label-fixed" name="namaRENTAL" autocomplete value="<?php echo $getrental->namaRENTAL;?>"/>
                   <p class="text-red"><?php echo form_error('namaRENTAL'); ?></p>
               </div>
-              <div class="uk-width-medium-1-3 uk-margin-top">
+              <div class="uk-width-medium-1-4 uk-margin-top">
                   <label>Brand Barang</label>
                   <br>
-                  <input type="text" class="md-input label-fixed" name="brandRENTAL" autocomplete value="<?php echo $getrental->brandRENTAL;?>"/>
-                  <p class="text-red"><?php echo form_error('brandRENTAL'); ?></p>
+                  <?php echo form_dropdown('idBRAND', $getbrand, $getrental->idBRAND,'required id="select_demo_5" data-md-selectize data-md-selectize-bottom'); ?>
+                  <p class="text-red"><?php echo form_error('idBRAND'); ?></p>
               </div>
-              <div class="uk-width-medium-1-3 uk-margin-top">
-                <label>Kategori Barang</label>
+              <div class="uk-width-medium-1-4 uk-margin-top">
+                <label>Type Barang</label>
                 <br>
-                  <?php echo form_dropdown('idCATEGORY', $getcategory, $getrental->idCATEGORY,'required id="select_demo_5" data-md-selectize data-md-selectize-bottom'); ?>
-                  <p class="text-red"><?php echo form_error('idCATEGORY'); ?></p>
+                  <?php echo form_dropdown('idTYPE', $gettype, $getrental->idTYPE,'required id="select_demo_5" data-md-selectize data-md-selectize-bottom'); ?>
+                  <p class="text-red"><?php echo form_error('idTYPE'); ?></p>
+              </div>
+              <div class="uk-width-medium-1-4 uk-margin-top">
+                <label>Age/Umur Anak</label>
+                <br>
+                  <?php echo form_dropdown('idAGE', $getage, $getrental->idAGE,'required id="select_demo_5" data-md-selectize data-md-selectize-bottom'); ?>
+                  <p class="text-red"><?php echo form_error('idAGE'); ?></p>
               </div>
             </div>
             <div class="uk-grid" data-uk-grid-margin>
-              <div class="uk-width-medium-1-3 uk-margin-top">
+              <div class="uk-width-medium-1-2 uk-margin-top">
                   <label>Harga</label>
                   <br>
                   <?php
@@ -143,36 +152,22 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     <input class="md-input masked_input label-fixed" id="masked_currency" type="text" data-inputmask="'alias': 'currency', 'groupSeparator': '.', 'autoGroup': true, 'digits': 0, 'digitsOptional': false, 'prefix': 'Rp. ', 'placeholder': '0'" data-inputmask-showmaskonhover="false" name="hargaRENTAL" value="<?php echo $price;?>" required>
                   <p class="text-red"><?php echo form_error('hargaRENTAL'); ?></p>
               </div>
-              <div class="uk-width-medium-1-3 uk-margin-top">
-                  <label>Durasi Rental</label>
-                  <br>
-                  <input type="text" class="md-input label-fixed" name="durasiRENTAL" autocomplete value="<?php echo $getrental->durasiRENTAL;?>" required/>
-                  <p class="text-red"><?php echo form_error('durasiRENTAL'); ?></p>
-              </div>
-              <div class="uk-width-medium-1-3 uk-margin-top">
-                <label>Umur Anak</label>
+              <div class="uk-width-medium-1-2 uk-margin-top">
+                <label>Durasi Rental</label>
                 <br>
-                <select id="select_demo_5" data-md-selectize data-md-selectize-bottom name="umurRENTAL">
-                  <?php if($getrental->umurRENTAL == 'Umur (0-2)'){?>
-                    <option value="Umur (0-2)" selected="selected">Umur (0-2)</option>
-                    <option value="Umur (3-6)">Umur (3-6)</option>
-                    <option value="Umur (7-10)">Umur (7-10)</option>
-                  <?php } else if($getrental->umurRENTAL == 'Umur (3-6)'){ ?>
-                    <option value="Umur (0-2)">Umur (0-2)</option>
-                    <option value="Umur (3-6)" selected="selected">Umur (3-6)</option>
-                    <option value="Umur (7-10)">Umur (7-10)</option>
-                  <?php } else if($getrental->umurRENTAL == 'Umur (7-10)'){ ?>
-                    <option value="Umur (0-2)">Umur (0-2)</option>
-                    <option value="Umur (3-6)">Umur (3-6)</option>
-                    <option value="Umur (7-10)" selected="selected">Umur (7-10)</option>
-                  <?php } else { ?>
-                    <option disabled selected value="">Umur Anak</option>
-                    <option value="Umur (0-2)">Umur (0-2)</option>
-                    <option value="Umur (3-6)">Umur (3-6)</option>
-                    <option value="Umur (7-10)">Umur (7-10)</option>
-                  <?php } ?>
+                 <select id="select_demo_5" data-md-selectize data-md-selectize-bottom name="durasiRENTAL">
+                <?php if($getrental->durasiRENTAL == '2 Minggu'){?>
+                  <option value="2 Minggu" selected="selected">2 Minggu</option>
+                  <option value="4 Minggu">4 Minggu</option>
+                <?php } else if($getrental->durasiRENTAL == '4 Minggu'){ ?>
+                  <option value="2 Minggu">2 Minggu</option>
+                  <option value="4 Minggu" selected="selected">4 Minggu</option>
+                <?php } else { ?>
+                  <option value="2 Minggu">2 Minggu</option>
+                  <option value="4 Minggu" selected="selected">4 Minggu</option>
+                <?php } ?>
                 </select>
-            </div>
+              </div>
             </div>
             <div class="uk-grid" data-uk-grid-margin>
               <div class="uk-width-medium-1-1 uk-margin-top">

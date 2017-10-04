@@ -6,14 +6,12 @@ class Rental extends Admin_Controller{
 	public function __construct (){
 		parent::__construct();
 		$this->load->model('Rental_m');
-		$this->load->model('Category_rental_m');
+		$this->load->model('Brand_rental_m');
+		$this->load->model('Age_rental_m');
+		$this->load->model('Type_rental_m');
 	}
 
-	public function index (){
-		$this->rentallist();
-	}
-
-	public function rentallist($id = NULL){
+	public function index_product($id = NULL){
 		$data['addONS'] = 'plugins_datatables';
 		$id = decode(urldecode($id));
 		
@@ -55,7 +53,10 @@ class Rental extends Admin_Controller{
 		if(!empty($this->session->flashdata('message'))) {
             $data['message'] = $this->session->flashdata('message');
         }
-        $data['getcategory'] = $this->Rental_m->dropdown_getcategory(1);
+        $data['getbrand'] = $this->Brand_rental_m->dropdown_getbrand(1);
+        $data['getage'] = $this->Age_rental_m->dropdown_getage(1);
+        $data['gettype'] = $this->Type_rental_m->dropdown_gettype(1);
+
 		$data['subview'] = $this->load->view($this->data['backendDIR'].'rental', $data, TRUE);
 		$this->load->view('templates/_layout_base',$data);
 	}
@@ -68,7 +69,7 @@ class Rental extends Admin_Controller{
         $this->form_validation->set_message('numeric', 'Silakan masukan hanya berupa angka');
 
 		if ($this->form_validation->run() == TRUE) {
-			$data = $this->Rental_m->array_from_post(array('namaRENTAL','brandRENTAL','hargaRENTAL','statusRENTAL','durasiRENTAL','descriptionRENTAL','idCATEGORY','umurRENTAL'));
+			$data = $this->Rental_m->array_from_post(array('namaRENTAL','idBRAND','hargaRENTAL','statusRENTAL','durasiRENTAL','descriptionRENTAL','idTYPE','idAGE'));
 			$data['statusRENTAL']=1;
 			$data['hargaRENTAL'] = str_replace(['Rp.',' ',','], ['','',''], $data['hargaRENTAL']);
 			$id = decode(urldecode($this->input->post('idRENTAL')));
@@ -102,7 +103,7 @@ class Rental extends Admin_Controller{
                 'type' => 'success'
           	);
 	    	$this->session->set_flashdata('message', $data);
-	  		redirect('hooplaadmin/rental');
+	  		redirect('hooplaadmin/rental/index_product');
 		} else {
 				$data = array(
 		            'title' => 'Terjadi Kesalahan',
@@ -110,7 +111,7 @@ class Rental extends Admin_Controller{
 		            'type' => 'warning'
 		        );
 	        $this->session->set_flashdata('message',$data);
-	        $this->rentallist();
+	        $this->index_product();
 		}
 	}
 
@@ -124,7 +125,7 @@ class Rental extends Admin_Controller{
                     'type' => 'success'
                 );
                 $this->session->set_flashdata('message',$data);
-                redirect('hooplaadmin/rental');
+                redirect('hooplaadmin/rental/index_product');
 		}else{
 			$data = array(
 	            'title' => 'Terjadi Kesalahan',
@@ -132,7 +133,7 @@ class Rental extends Admin_Controller{
 	            'type' => 'error'
 		        );
 		        $this->session->set_flashdata('message',$data);
-		        redirect('hooplaadmin/rental');
+		        redirect('hooplaadmin/rental/index_product');
 		}
 	}
 
@@ -148,21 +149,21 @@ class Rental extends Admin_Controller{
 				rmdir($path);
 			}
 		}
-		redirect('hooplaadmin/rental/rentallist/'.$id1);
+		redirect('hooplaadmin/rental/index_product/'.$id1);
 	}
 
-	public function category_rental($id = NULL){
+	public function brand_rental($id = NULL){
 		$data['addONS'] = 'plugins_datatables';
 		$id = decode(urldecode($id));
 		
-		$data['listcategoryrental'] = $this->Category_rental_m->selectall_category_rental()->result();
+		$data['listbrandrental'] = $this->Brand_rental_m->selectall_brand_rental()->result();
 		
 		if($id == NULL){
 	        $data['tab'] = array(
 	            'data-tab' => 'uk-active',
 	            'form-tab' => '',
 	        );
-			$data['getcategory'] = $this->Category_rental_m->get_new();
+			$data['getbrand'] = $this->Brand_rental_m->get_new();
 		} else {
 			
 			//conf tab (optional)
@@ -170,38 +171,38 @@ class Rental extends Admin_Controller{
 	            'data-tab' => '',
 	            'form-tab' => 'uk-active',
 	        );
-			$data['getcategory'] = $this->Category_rental_m->selectall_category_rental($id)->row();
+			$data['getbrand'] = $this->Brand_rental_m->selectall_brand_rental($id)->row();
 		}
 
 		if(!empty($this->session->flashdata('message'))) {
             $data['message'] = $this->session->flashdata('message');
         }
 
-		$data['subview'] = $this->load->view($this->data['backendDIR'].'category_rental', $data, TRUE);
+		$data['subview'] = $this->load->view($this->data['backendDIR'].'brand_rental', $data, TRUE);
 		$this->load->view('templates/_layout_base',$data);
 	}
 
-	public function savecategoryrental() {
-		$rules = $this->Category_rental_m->rules_category_rental;
+	public function savebrandrental() {
+		$rules = $this->Brand_rental_m->rules_brand_rental;
 		$this->form_validation->set_rules($rules);
 		$this->form_validation->set_message('required', 'Form %s tidak boleh dikosongkan');
         $this->form_validation->set_message('trim', 'Form %s adalah Trim');
 
 		if ($this->form_validation->run() == TRUE) {
-			$data = $this->Category_rental_m->array_from_post(array('namaCATEGORY','statusCATEGORY'));
-			$data['statusCATEGORY']=1;
-			$id = decode(urldecode($this->input->post('idCATEGORY')));
+			$data = $this->Brand_rental_m->array_from_post(array('namaBRAND','statusBRAND'));
+			$data['statusBRAND']=1;
+			$id = decode(urldecode($this->input->post('idBRAND')));
 			if(empty($id))$id=NULL;
 			
 			$data = $this->security->xss_clean($data);
-			$idsave = $this->Category_rental_m->save($data, $id);
+			$idsave = $this->Brand_rental_m->save($data, $id);
 	  		$data = array(
             	'title' => 'Sukses',
                 'text' => 'Penyimpanan Data berhasil dilakukan',
                 'type' => 'success'
           	);
 	    	$this->session->set_flashdata('message', $data);
-	  		redirect('hooplaadmin/rental/category_rental');
+	  		redirect('hooplaadmin/rental/brand_rental');
 
 		} else {
 				$data = array(
@@ -210,21 +211,21 @@ class Rental extends Admin_Controller{
 		            'type' => 'warning'
 		        );
 	        $this->session->set_flashdata('message',$data);
-	        $this->category_rental();
+	        $this->brand_rental();
 		}
 	}
 
-	public function actiondelete_category($id=NULL){
+	public function actiondelete_brand($id=NULL){
 		$id = decode(urldecode($id));
 		if($id != 0){
-			$this->Category_rental_m->delete($id);
+			$this->Brand_rental_m->delete($id);
 			$data = array(
                     'title' => 'Sukses',
                     'text' => 'Penghapusan Data berhasil dilakukan',
                     'type' => 'success'
                 );
                 $this->session->set_flashdata('message',$data);
-                redirect('hooplaadmin/rental/category_rental');
+                redirect('hooplaadmin/rental/brand_rental');
 		}else{
 			$data = array(
 	            'title' => 'Terjadi Kesalahan',
@@ -232,7 +233,177 @@ class Rental extends Admin_Controller{
 	            'type' => 'error'
 		        );
 		        $this->session->set_flashdata('message',$data);
-		        $this->category_rental();
+		        $this->brand_rental();
+		}
+	}
+
+	public function age_rental($id = NULL){
+		$data['addONS'] = 'plugins_datatables';
+		$id = decode(urldecode($id));
+		
+		$data['listagerental'] = $this->Age_rental_m->selectall_age_rental()->result();
+		
+		if($id == NULL){
+	        $data['tab'] = array(
+	            'data-tab' => 'uk-active',
+	            'form-tab' => '',
+	        );
+			$data['getage'] = $this->Age_rental_m->get_new();
+		} else {
+			
+			//conf tab (optional)
+	        $data['tab'] = array(
+	            'data-tab' => '',
+	            'form-tab' => 'uk-active',
+	        );
+			$data['getage'] = $this->Age_rental_m->selectall_age_rental($id)->row();
+		}
+
+		if(!empty($this->session->flashdata('message'))) {
+            $data['message'] = $this->session->flashdata('message');
+        }
+
+		$data['subview'] = $this->load->view($this->data['backendDIR'].'age_rental', $data, TRUE);
+		$this->load->view('templates/_layout_base',$data);
+	}
+
+	public function saveagerental() {
+		$rules = $this->Age_rental_m->rules_age_rental;
+		$this->form_validation->set_rules($rules);
+		$this->form_validation->set_message('required', 'Form %s tidak boleh dikosongkan');
+        $this->form_validation->set_message('trim', 'Form %s adalah Trim');
+
+		if ($this->form_validation->run() == TRUE) {
+			$data = $this->Age_rental_m->array_from_post(array('namaAGE','statusAGE'));
+			$data['statusAGE']=1;
+			$id = decode(urldecode($this->input->post('idAGE')));
+			if(empty($id))$id=NULL;
+			
+			$data = $this->security->xss_clean($data);
+			$idsave = $this->Age_rental_m->save($data, $id);
+	  		$data = array(
+            	'title' => 'Sukses',
+                'text' => 'Penyimpanan Data berhasil dilakukan',
+                'type' => 'success'
+          	);
+	    	$this->session->set_flashdata('message', $data);
+	  		redirect('hooplaadmin/rental/age_rental');
+
+		} else {
+				$data = array(
+		            'title' => 'Terjadi Kesalahan',
+		            'text' => 'mohon ulangi inputan form anda dibawah.',
+		            'type' => 'warning'
+		        );
+	        $this->session->set_flashdata('message',$data);
+	        $this->age_rental();
+		}
+	}
+
+	public function actiondelete_age($id=NULL){
+		$id = decode(urldecode($id));
+		if($id != 0){
+			$this->Age_rental_m->delete($id);
+			$data = array(
+                    'title' => 'Sukses',
+                    'text' => 'Penghapusan Data berhasil dilakukan',
+                    'type' => 'success'
+                );
+                $this->session->set_flashdata('message',$data);
+                redirect('hooplaadmin/rental/age_rental');
+		}else{
+			$data = array(
+	            'title' => 'Terjadi Kesalahan',
+	            'text' => 'Maaf, data tidak berhasil dihapus silakan coba beberapa saat kembali',
+	            'type' => 'error'
+		        );
+		        $this->session->set_flashdata('message',$data);
+		        $this->age_rental();
+		}
+	}
+
+	public function type_rental($id = NULL){
+		$data['addONS'] = 'plugins_datatables';
+		$id = decode(urldecode($id));
+		
+		$data['listtyperental'] = $this->Type_rental_m->selectall_type_rental()->result();
+		
+		if($id == NULL){
+	        $data['tab'] = array(
+	            'data-tab' => 'uk-active',
+	            'form-tab' => '',
+	        );
+			$data['gettype'] = $this->Type_rental_m->get_new();
+		} else {
+			
+			//conf tab (optional)
+	        $data['tab'] = array(
+	            'data-tab' => '',
+	            'form-tab' => 'uk-active',
+	        );
+			$data['gettype'] = $this->Type_rental_m->selectall_type_rental($id)->row();
+		}
+
+		if(!empty($this->session->flashdata('message'))) {
+            $data['message'] = $this->session->flashdata('message');
+        }
+
+		$data['subview'] = $this->load->view($this->data['backendDIR'].'type_rental', $data, TRUE);
+		$this->load->view('templates/_layout_base',$data);
+	}
+
+	public function savetyperental() {
+		$rules = $this->Type_rental_m->rules_type_rental;
+		$this->form_validation->set_rules($rules);
+		$this->form_validation->set_message('required', 'Form %s tidak boleh dikosongkan');
+        $this->form_validation->set_message('trim', 'Form %s adalah Trim');
+
+		if ($this->form_validation->run() == TRUE) {
+			$data = $this->Type_rental_m->array_from_post(array('namaTYPE','statusTYPE'));
+			$data['statusTYPE']=1;
+			$id = decode(urldecode($this->input->post('idTYPE')));
+			if(empty($id))$id=NULL;
+			
+			$data = $this->security->xss_clean($data);
+			$idsave = $this->Type_rental_m->save($data, $id);
+	  		$data = array(
+            	'title' => 'Sukses',
+                'text' => 'Penyimpanan Data berhasil dilakukan',
+                'type' => 'success'
+          	);
+	    	$this->session->set_flashdata('message', $data);
+	  		redirect('hooplaadmin/rental/type_rental');
+
+		} else {
+				$data = array(
+		            'title' => 'Terjadi Kesalahan',
+		            'text' => 'mohon ulangi inputan form anda dibawah.',
+		            'type' => 'warning'
+		        );
+	        $this->session->set_flashdata('message',$data);
+	        $this->type_rental();
+		}
+	}
+
+	public function actiondelete_type($id=NULL){
+		$id = decode(urldecode($id));
+		if($id != 0){
+			$this->Type_rental_m->delete($id);
+			$data = array(
+                    'title' => 'Sukses',
+                    'text' => 'Penghapusan Data berhasil dilakukan',
+                    'type' => 'success'
+                );
+                $this->session->set_flashdata('message',$data);
+                redirect('hooplaadmin/rental/type_rental');
+		}else{
+			$data = array(
+	            'title' => 'Terjadi Kesalahan',
+	            'text' => 'Maaf, data tidak berhasil dihapus silakan coba beberapa saat kembali',
+	            'type' => 'error'
+		        );
+		        $this->session->set_flashdata('message',$data);
+		        $this->type_rental();
 		}
 	}
 }

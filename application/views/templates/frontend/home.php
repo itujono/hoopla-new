@@ -126,25 +126,39 @@
 	</div>
 	<div class="sort">
 		<h4>Sort by:</h4>
-		<select>
-			<option value="trending">Brand</option>
-			<option value="high-low">Harga (tinggi ke rendah)</option>
-			<option value="low-high">Harga (rendah ke tinggi)</option>
-			<option value="date">Tanggal dimasukkan</option>
+		<form method="get" name="formsortby" action="<?php echo base_url();?>product/sortby">
+		<select name="sortbrand">
+			<option value="" selected="selected" disabled="disabled">Pilih Brand</option>
+			<?php 
+			if(!empty($getbrand)){ 
+				foreach ($getbrand as $brand) {
+			?>
+			<option value="<?php echo $brand->idBRAND;?>"><?php echo $brand->namaBRAND;?></option>
+				<?php } ?>
+			<?php } ?>
 		</select>
-		<select>
-			<option value="trending">Type</option>
-			<option value="high-low">Harga (tinggi ke rendah)</option>
-			<option value="low-high">Harga (rendah ke tinggi)</option>
-			<option value="date">Tanggal dimasukkan</option>
+		<select name="sorttype">
+			<option value="" selected="selected" disabled="disabled">Pilih Type</option>
+			<?php 
+			if(!empty($gettype)){ 
+				foreach ($gettype as $type) {
+			?>
+			<option value="<?php echo $type->idTYPE;?>"><?php echo $type->namaTYPE;?></option>
+				<?php } ?>
+			<?php } ?>
 		</select>
-		<select>
-			<option value="trending">Age</option>
-			<option value="high-low">Harga (tinggi ke rendah)</option>
-			<option value="low-high">Harga (rendah ke tinggi)</option>
-			<option value="date">Tanggal dimasukkan</option>
+		<select name="sortage">
+			<option value="" selected="selected" disabled="disabled">Pilih Umur</option>
+			<?php 
+			if(!empty($getage)){ 
+				foreach ($getage as $age) {
+			?>
+			<option value="<?php echo $age->idAGE;?>"><?php echo $age->namaAGE;?></option>
+				<?php } ?>
+			<?php } ?>
 		</select>
-		<a href="#" class="btn-hoopla">Submit</a>
+		<button type="submit" class="btn-hoopla">Okay, Sortir!</button>
+		</form>
 	</div>
 	<div class="promo-sidebar wow bounceInUp" data-wow-delay="1.3s">
 		<div class="bg">

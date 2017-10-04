@@ -8,7 +8,7 @@ class Contact extends Admin_Controller {
 		$this->load->model('Contact_m');
 	}
 
-	public function index(){
+	public function index_contact(){
 		$data['addONS'] = 'plugins_datatables';
 		$data['contactlist'] = $this->Contact_m->selectall_contact()->result();
 

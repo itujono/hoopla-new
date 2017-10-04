@@ -6,6 +6,9 @@ class Product extends Frontend_Controller {
 	public function __construct (){
 		parent::__construct();
 		$this->load->model('Rental_m');
+		$this->load->model('Brand_rental_m');
+		$this->load->model('Age_rental_m');
+		$this->load->model('Type_rental_m');
 	}
 
 	public function index() {
@@ -44,7 +47,10 @@ class Product extends Frontend_Controller {
 			}
 		}
 
-		$data['getcategory'] = $this->Rental_m->dropdown_getcategory()->result();
+		$data['getbrand'] = $this->Brand_rental_m->dropdown_getbrand()->result();
+        $data['getage'] = $this->Age_rental_m->dropdown_getage()->result();
+        $data['gettype'] = $this->Type_rental_m->dropdown_gettype()->result();
+
 		$data['subview'] = $this->load->view($this->data['frontendDIR'].'product', $data, TRUE);
         $this->load->view($this->data['rootDIR'].'_layout_base_frontend',$data);
 	}
@@ -100,6 +106,10 @@ class Product extends Frontend_Controller {
 			}
 		}
 
+		$data['getbrand'] = $this->Brand_rental_m->dropdown_getbrand()->result();
+        $data['getage'] = $this->Age_rental_m->dropdown_getage()->result();
+        $data['gettype'] = $this->Type_rental_m->dropdown_gettype()->result();
+
 		$data['subview'] = $this->load->view($this->data['frontendDIR'].'product', $data, TRUE);
         $this->load->view($this->data['rootDIR'].'_layout_base_frontend',$data);
 	}
@@ -109,9 +119,15 @@ class Product extends Frontend_Controller {
 		$data['title'] = 'Product - Hoopla Toys Rent';
 		$data['idbody'] = 'product';
 		
-		$sortby = $this->input->get('sortby');
-
-		$Searching = $this->Rental_m->searching_sortby($sortby)->result();
+		$sortbrand = $this->input->get('sortbrand');
+		$sorttype = $this->input->get('sorttype');
+		$sortage = $this->input->get('sortage');
+		
+		$Searching = $this->Rental_m->searching_sortby($sortbrand, $sorttype, $sortage)->result();
+		echo "<pre>";
+		print_r($Searching);
+		echo "</pre>";
+		exit;
         if(!empty($Searching)){
 			$data['searchsortby'] = $Searching;
 			foreach ($data['searchsortby'] as $key => $value) {
@@ -124,6 +140,10 @@ class Product extends Frontend_Controller {
 				}
 			}
 		}
+
+		$data['getbrand'] = $this->Brand_rental_m->dropdown_getbrand()->result();
+        $data['getage'] = $this->Age_rental_m->dropdown_getage()->result();
+        $data['gettype'] = $this->Type_rental_m->dropdown_gettype()->result();
 
 		$data['subview'] = $this->load->view($this->data['frontendDIR'].'product', $data, TRUE);
         $this->load->view($this->data['rootDIR'].'_layout_base_frontend',$data);
