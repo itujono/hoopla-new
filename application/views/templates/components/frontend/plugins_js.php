@@ -161,6 +161,18 @@ if ($plugins == 'home') { ?>
         formOrder.open(); e.preventDefault();
     });
 </script>
+<script>
+    var modal = new tingle.modal({ cssClass: ['ordering'] });
+    var modalTitip = new tingle.modal({ cssClass: ['titip'] });
+    var btnTitip = document.querySelector('#btn-titip');
+    modal.setContent(document.querySelector('#ordering').innerHTML);
+    document.querySelector('#btn-order').addEventListener('click', function(e) {
+        modal.open(); e.preventDefault();
+    });
+
+    modalTitip.setContent(document.querySelector('#titip').innerHTML);
+    btnTitip.addEventListener('click', function(e) { modalTitip.open(); e.preventDefault(); });
+</script>
 
 <script>
     var showSK = document.querySelector('#show-tc');

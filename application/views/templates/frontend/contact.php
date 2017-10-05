@@ -45,34 +45,37 @@
 
         <section class="right">
             <h2>Atau hubungi kami langsung di sini...</h2>
-            <!-- <form class="form-control" action="<?php //echo base_url();?>contact/savecontact" method="post">
+            <?php if (!empty($message)){ ?>
+                <div class="sent wow fadeIn">
+                    <img
+                        src="<?php echo base_url().$this->data['asfront'];?>img/spaceman.png"
+                        alt="Form has been submitted"
+                        class="wow bounceInUp" data-wow-delay=".5s">
+                    <div class="wow bounceInUp">
+                        <h3><?php echo $message['title']; ?></h3>
+                        <p><?php echo $message['text']; ?></p>
+                        <a href="<?php echo base_url();?>" class="btn-hoopla wow bounceInUp" data-wow-delay="1s">Kembali ke Home</a>
+                    </div>
+                </div>
+            <?php } else { ?>
+            <form class="form-control" action="<?php echo base_url();?>contact/savecontact" method="post">
                 <div class="form-group">
                     <label for="name">Nama kamu <span>*</span></label>
                     <input type="text" placeholder="John Smith..." name="namaCONTACT" required="required">
-                    <p class="error"><?php //echo form_error('namaCONTACT'); ?></p>
+                    <p class="error"><?php echo form_error('namaCONTACT'); ?></p>
                 </div>
                 <div class="form-group">
                     <label for="email">Email kamu <span>*</span></label>
                     <input type="text" placeholder="namaemail@email.com" name="emailCONTACT" required="required">
-                    <p class="error"><?php //echo form_error('emailCONTACT'); ?></p>
+                    <p class="error"><?php echo form_error('emailCONTACT'); ?></p>
                 </div>
                 <div class="form-group">
                     <label for="message">Apa yang mau kamu sampaikan? <span>*</span></label>
                     <textarea rows="10" placeholder="Isi apapun pesan yang ingin kamu sampaikan..." name="descriptionCONTACT" required="required"></textarea>
-                    <p class="error"><?php //echo form_error('descriptionCONTACT'); ?></p>
+                    <p class="error"><?php echo form_error('descriptionCONTACT'); ?></p>
                 </div>
                 <button type="submit" class="btn-hoopla">Okay, let's submit!</button>
-            </form> -->
-            <div class="sent wow fadeIn">
-                <img
-                    src="<?php echo base_url().$this->data['asfront'];?>img/spaceman.png"
-                    alt="Form has been submitted"
-                    class="wow bounceInUp" data-wow-delay=".5s">
-                <div class="wow bounceInUp">
-                    <h3>Terima kasih banyak!</h3>
-                    <p>Form sudah berhasil disubmit. Akan kami lihat dan proses secepatnya, ya.</p>
-                    <a href="#" class="btn-hoopla wow bounceInUp" data-wow-delay="1s">Kembali ke Home</a>
-                </div>
-            </div>
+            </form>
+            <?php } ?>
         </section>
     </main>

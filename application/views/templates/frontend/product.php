@@ -19,7 +19,7 @@
                 <div class="card-bottom">
                     <a href="<?php echo base_url();?>product/detail/<?php echo base64_encode($src->idRENTAL).'-'.seo_url($src->namaRENTAL);?>">
                         <h3><?php echo $src->namaRENTAL;?></h3>
-                        <small>Rp. <?php echo number_format($src->hargaRENTAL, 0,',','.'); ?></small>
+                        <small>Rp. <?php echo number_format($src->harga2RENTAL, 0,',','.'); ?></small>
                     </a>
                 </div>
             </div>
@@ -46,7 +46,7 @@
                 <div class="card-bottom">
                     <a href="<?php echo base_url();?>product/detail/<?php echo base64_encode($sort->idRENTAL).'-'.seo_url($sort->namaRENTAL);?>">
                         <h3><?php echo $sort->namaRENTAL;?></h3>
-                        <small>Rp. <?php echo number_format($sort->hargaRENTAL, 0,',','.'); ?></small>
+                        <small>Rp. <?php echo number_format($sort->harga2RENTAL, 0,',','.'); ?></small>
                     </a>
                 </div>
             </div>
@@ -74,7 +74,7 @@
                 <div class="card-bottom">
                     <a href="<?php echo base_url();?>product/detail/<?php echo base64_encode($rent->idRENTAL).'-'.seo_url($rent->namaRENTAL);?>">
                         <h3><?php echo $rent->namaRENTAL;?></h3>
-                        <small>Rp. <?php echo number_format($rent->hargaRENTAL, 0,',','.'); ?></small>
+                        <small>Rp. <?php echo number_format($rent->harga2RENTAL, 0,',','.'); ?></small>
                     </a>
                 </div>
             </div>
@@ -99,7 +99,7 @@
                 <div class="card-bottom">
                     <a href="<?php echo base_url();?>product/detail">
                         <h3><?php echo $rentcat->namaRENTAL;?></h3>
-                        <small>Rp. <?php echo number_format($rentcat->hargaRENTAL, 0,',','.'); ?></small>
+                        <small>Rp. <?php echo number_format($rentcat->harga2RENTAL, 0,',','.'); ?></small>
                     </a>
                 </div>
             </div>
@@ -124,7 +124,7 @@
                 <div class="card-bottom">
                     <a href="<?php echo base_url();?>product/detail">
                         <h3><?php echo $age->namaRENTAL;?></h3>
-                        <small>Rp. <?php echo number_format($age->hargaRENTAL, 0,',','.'); ?></small>
+                        <small>Rp. <?php echo number_format($age->harga2RENTAL, 0,',','.'); ?></small>
                     </a>
                 </div>
             </div>

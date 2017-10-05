@@ -18,14 +18,14 @@ class Rental_m extends MY_Model{
 			'label' => 'Brand Barang Rental', 
 			'rules' => 'trim|required'
 		),
-		'hargaRENTAL' => array(
-			'field' => 'hargaRENTAL', 
-			'label' => 'Harga Barang Rental', 
+		'harga2RENTAL' => array(
+			'field' => 'harga2RENTAL', 
+			'label' => 'Harga Per 2 Minggu Rental', 
 			'rules' => 'trim|required'
 		),
-		'durasiRENTAL' => array(
-			'field' => 'durasiRENTAL', 
-			'label' => 'Durasi Barang Rental', 
+		'harga4RENTAL' => array(
+			'field' => 'harga4RENTAL', 
+			'label' => 'Harga Per 4 Minggu Rental', 
 			'rules' => 'trim|required'
 		),
 		'idAGE' => array(
@@ -54,8 +54,8 @@ class Rental_m extends MY_Model{
 		$rental->idRENTAL = '';
 		$rental->namaRENTAL = '';
 		$rental->idBRAND = '';
-		$rental->hargaRENTAL = '';
-		$rental->durasiRENTAL = '';
+		$rental->harga2RENTAL = '';
+		$rental->harga4RENTAL = '';
 		$rental->umurRENTAL = '';
 		$rental->descriptionRENTAL = '';
 		$rental->idTYPE = '';
@@ -94,13 +94,14 @@ class Rental_m extends MY_Model{
 		return $this->db->get();
 	}
 
-	// public function selectall_random_rental($id=NULL) {
-	// 	$this->db->select('*');
-	// 	$this->db->from('barang_rental');
-	// 	$this->db->where('idCATEGORY', $id);
-	// 	$this->db->order_by('RAND()');
-	// 	return $this->db->get();
-	// }
+	public function selectall_random_rental($id=NULL) {
+		$this->db->select('*');
+		$this->db->from('barang_rental');
+		$this->db->where('idBRAND', $id);
+		$this->db->order_by('RAND()');
+		$this->db->limit(4);
+		return $this->db->get();
+	}
 
 	public function searching_filter($filter){
     	

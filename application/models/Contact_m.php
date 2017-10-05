@@ -21,7 +21,7 @@ class Contact_m extends MY_Model{
 		'emailCONTACT' => array(
 			'field' => 'emailCONTACT', 
 			'label' => 'Email', 
-			'rules' => 'required'
+			'rules' => 'required|valid_email'
 		)		  
 	);
 
@@ -29,9 +29,12 @@ class Contact_m extends MY_Model{
 		parent::__construct();
 	}
 
-	public function selectall_contact(){
+	public function selectall_contact($id=NULL){
         $this->db->select('*');
         $this->db->from('contact');
+        if($id != NULL){
+        	$this->db->where('idCONTACT', $id);
+        }
         return $this->db->get();
     }
 }

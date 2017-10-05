@@ -72,7 +72,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                   $msg1 = 'Are you sure want to delete this data <b>'.$sale->namaSALE.'</b> ?';
                   $msg2 = 'Are you sure want to change this data ' . ' <b>'.$sale->namaSALE.'</b> ?';
                   $url1 = 'hooplaadmin/'.$controller.'/actiondelete/'.urlencode($id);
-                  $url2 = 'hooplaadmin/'.$controller.'/salelist/'.urlencode($id);
+                  $url2 = 'hooplaadmin/'.$controller.'/index_sale/'.urlencode($id);
                 ?>
                 <td class="uk-text-center">
                   <a href="#" onclick="UIkit.modal.confirm('<?php echo $msg1; ?>', function(){ document.location.href='<?php echo site_url($url1);?>'; });"><i class="md-icon material-icons"><?php echo $icndel; ?></i></a>

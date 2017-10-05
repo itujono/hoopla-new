@@ -37,8 +37,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                   <th>Brand Barang</th>
                   <th>Type Barang</th>
                   <th>Age Barang</th>
-                  <th>Harga</th>
-                  <th>Durasi</th>
+                  <th>Harga per 2 Minggu</th>
+                  <th>Harga per 4 Minggu</th>
                   <th>Created</th>
                   <th>Action</th>
               </tr>
@@ -51,8 +51,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 <th>Brand Barang</th>
                 <th>Type Barang</th>
                 <th>Age Barang</th>
-                <th>Harga</th>
-                <th>Durasi</th>
+                <th>Harga per 2 Minggu</th>
+                <th>Harga per 4 Minggu</th>
                 <th>Created</th>
                 <th>Action</th>
               </tr>
@@ -70,15 +70,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 <td><?php echo $rental->namaBRAND; ?></td>
                 <td><?php echo $rental->namaTYPE; ?></td>
                 <td><?php echo $rental->namaAGE; ?></td>
-                <td>Rp. <?php echo number_format($rental->hargaRENTAL, 0,',','.'); ?></td>
-                <td><?php echo $rental->durasiRENTAL;?></td>
+                <td>Rp. <?php echo number_format($rental->harga2RENTAL, 0,',','.'); ?></td>
+                <td>Rp. <?php echo number_format($rental->harga4RENTAL, 0,',','.'); ?></td>
                 <td><?php echo date('d F Y', strtotime($rental->createdateRENTAL));?></td>
                 <?php
                  $icndel = '&#xE16C;';
                   $msg1 = 'Are you sure want to delete this data <b>'.$rental->namaRENTAL.'</b> ?';
                   $msg2 = 'Are you sure want to change this data ' . ' <b>'.$rental->namaRENTAL.'</b> ?';
                   $url1 = 'hooplaadmin/'.$controller.'/actiondelete/'.urlencode($id);
-                  $url2 = 'hooplaadmin/'.$controller.'/rentallist/'.urlencode($id);
+                  $url2 = 'hooplaadmin/'.$controller.'/index_product/'.urlencode($id);
                 ?>
                 <td class="uk-text-center">
                   <a href="#" onclick="UIkit.modal.confirm('<?php echo $msg1; ?>', function(){ document.location.href='<?php echo site_url($url1);?>'; });"><i class="md-icon material-icons"><?php echo $icndel; ?></i></a>
@@ -143,30 +143,24 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             </div>
             <div class="uk-grid" data-uk-grid-margin>
               <div class="uk-width-medium-1-2 uk-margin-top">
-                  <label>Harga</label>
+                  <label>Harga per 2 Minggu</label>
                   <br>
                   <?php
                         $price = '';
-                        if(!empty($getrental->hargaRENTAL))$price = $getrental->hargaRENTAL;
+                        if(!empty($getrental->harga2RENTAL))$price = $getrental->harga2RENTAL;
                     ?>
-                    <input class="md-input masked_input label-fixed" id="masked_currency" type="text" data-inputmask="'alias': 'currency', 'groupSeparator': '.', 'autoGroup': true, 'digits': 0, 'digitsOptional': false, 'prefix': 'Rp. ', 'placeholder': '0'" data-inputmask-showmaskonhover="false" name="hargaRENTAL" value="<?php echo $price;?>" required>
-                  <p class="text-red"><?php echo form_error('hargaRENTAL'); ?></p>
+                    <input class="md-input masked_input label-fixed" id="masked_currency" type="text" data-inputmask="'alias': 'currency', 'groupSeparator': '.', 'autoGroup': true, 'digits': 0, 'digitsOptional': false, 'prefix': 'Rp. ', 'placeholder': '0'" data-inputmask-showmaskonhover="false" name="harga2RENTAL" value="<?php echo $price;?>" required>
+                  <p class="text-red"><?php echo form_error('harga2RENTAL'); ?></p>
               </div>
               <div class="uk-width-medium-1-2 uk-margin-top">
-                <label>Durasi Rental</label>
-                <br>
-                 <select id="select_demo_5" data-md-selectize data-md-selectize-bottom name="durasiRENTAL">
-                <?php if($getrental->durasiRENTAL == '2 Minggu'){?>
-                  <option value="2 Minggu" selected="selected">2 Minggu</option>
-                  <option value="4 Minggu">4 Minggu</option>
-                <?php } else if($getrental->durasiRENTAL == '4 Minggu'){ ?>
-                  <option value="2 Minggu">2 Minggu</option>
-                  <option value="4 Minggu" selected="selected">4 Minggu</option>
-                <?php } else { ?>
-                  <option value="2 Minggu">2 Minggu</option>
-                  <option value="4 Minggu" selected="selected">4 Minggu</option>
-                <?php } ?>
-                </select>
+                  <label>Harga per 4 Minggu</label>
+                  <br>
+                  <?php
+                        $price = '';
+                        if(!empty($getrental->harga4RENTAL))$price = $getrental->harga4RENTAL;
+                    ?>
+                    <input class="md-input masked_input label-fixed" id="masked_currency" type="text" data-inputmask="'alias': 'currency', 'groupSeparator': '.', 'autoGroup': true, 'digits': 0, 'digitsOptional': false, 'prefix': 'Rp. ', 'placeholder': '0'" data-inputmask-showmaskonhover="false" name="harga4RENTAL" value="<?php echo $price;?>" required>
+                  <p class="text-red"><?php echo form_error('harga4RENTAL'); ?></p>
               </div>
             </div>
             <div class="uk-grid" data-uk-grid-margin>

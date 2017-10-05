@@ -29,51 +29,57 @@
                     <li>Jika dalam waktu 3 (tiga) bulan barang yang dititip tidak tersewa, maka Hoopla akan mengevaluasi dan berhak mengembalikan barang tersebut kepada Anda sebelum jangka waktu Kontrak berakhir.</li>
                 </ul>
             </div>
-            <form class="titip-sewa form-control" action="" method="post" id="form-titip_sewa">
+            <form class="titip-sewa form-control" action="<?php echo base_url();?>form/submit_titipsewa" method="post" id="form-titip_sewa">
                 <div class="title">
                     <h4>Formulir Titip Sewa</h4>
                     Harap diisi dan dibaca kembali dengan seksama setiap info yang diinput.
                 </div>
                 <div class="form-group">
                     <label for="name">Nama kamu</label>
-                    <input type="text" name="" value="" placeholder="Nama lengkap kamu">
+                    <input type="text" name="namaTITIP" value="" placeholder="Nama lengkap kamu" required>
+                    <span style="color: red;"><?php echo form_error('namaTITIP'); ?></span>
                 </div>
                 <div class="form-group">
                     <label for="email">Email kamu</label>
-                    <input type="text" name="" value="" placeholder="Email address kamu">
+                    <input type="email" name="emailTITIP" value="" placeholder="Email address kamu" required>
+                    <span style="color: red;"><?php echo form_error('emailTITIP'); ?></span>
                 </div>
                 <div class="form-group">
                     <label for="phone">Nomor telepon</label>
-                    <input type="text" name="" value="" placeholder="Atau nomor handphone kamu">
+                    <input type="tel" name="telpTITIP" value="" placeholder="Atau nomor handphone kamu" required>
+                    <span style="color: red;"><?php echo form_error('telpTITIP'); ?></span>
                 </div>
                 <div class="form-group">
                     <label for="brand">Nama/merk barang</label>
-                    <input type="text" name="" value="" placeholder="Misal: Nuna, Ergobaby, Comotomo, dll...">
+                    <input type="text" name="merekTITIP" value="" placeholder="Misal: Nuna, Ergobaby, Comotomo, dll..." required>
+                    <span style="color: red;"><?php echo form_error('merekTITIP'); ?></span>
                 </div>
                 <div class="inline">
                     <div class="form-group">
                         <label for="condition">Kondisi</label>
-                        <select name="">
-                            <option value="new">Baru</option>
-                            <option value="second">Bekas</option>
+                        <select name="kondisiTITIP" required="required">
+                            <option value="Baru">Baru</option>
+                            <option value="Bekas">Bekas</option>
                         </select>
+                        <span style="color: red;"><?php echo form_error('kondisiTITIP'); ?></span>
                     </div>
                     <div class="form-group">
-                        <select name="">
-                            <option value="toys">Mainan</option>
-                            <option value="accessories">Accessories</option>
-                            <option value="equipment">Perlengkapan</option>
-                            <option value="equipment">Pakaian/fashion</option>
-                            <option value="none">Tidak tau</option>
+                        <select name="tipeTITIP" required="required">
+                            <option value="Mainan">Mainan</option>
+                            <option value="Accessories">Accessories</option>
+                            <option value="Perlengkapan">Perlengkapan</option>
+                            <option value="Pakaian/Fashion">Pakaian/Fashion</option>
+                            <option value="Tidak tahu">Tidak tau</option>
+                            <span style="color: red;"><?php echo form_error('tipeTITIP'); ?></span>
                         </select>
                     </div>
                 </div>
                 <div class="disclaimer">
-                    <input type="checkbox" value="agree" id="tc-check">
-                    <p id="tc-read">Saya sudah membaca <a href="tc.html" class="coolgreen">Syarat &amp; Ketentuan</a> yang telah dibuat oleh pihak Hoopla Rent Toys, dan saya memahami keseluruhan isinya.</p>
-                    <span class="error-message"><i class="fa fa-times-circle"></i> Oops! Silakan checklist dulu pilihan di atas.</span>
+                    <input type="checkbox" name="syaratTITIP" value="agree" id="tc-check" required="required">
+                    <p id="tc-read">Saya sudah membaca <a href="<?php echo base_url();?>terms" class="coolgreen">Syarat &amp; Ketentuan</a> yang telah dibuat oleh pihak Hoopla Rent Toys, dan saya memahami keseluruhan isinya.</p>
+                    <span style="color: red;"><?php echo form_error('syaratTITIP'); ?></span>
                 </div>
-                <button type="submit" name="button" class="btn-hoopla" id="proceed">Oke, submit</button>
+                <button type="submit" name="button" class="btn-hoopla">Oke, submit</button>
             </form>
         </div>
     </section>

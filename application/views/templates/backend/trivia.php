@@ -66,7 +66,7 @@ $url = base_url().'hooplaadmin/'.$controller.'/'.$actions;
                     $msg1 = 'Are you sure want to delete this data ?';
                     $msg2 = 'Are you sure want to change this data ?';
                     $url1 = 'hooplaadmin/'.$controller.'/actiondelete/'.urlencode($id);
-                    $url2 = 'hooplaadmin/'.$controller.'/trivialist/'.urlencode($id);
+                    $url2 = 'hooplaadmin/'.$controller.'/index_trivia/'.urlencode($id);
                     ?>
                     <td class="uk-text-center">
                       <a href="#" onclick="UIkit.modal.confirm('<?php echo $msg1; ?>', function(){ document.location.href='<?php echo site_url($url1);?>'; });"><i class="md-icon material-icons"><?php echo $icndel; ?></i></a>
