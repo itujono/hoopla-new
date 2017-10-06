@@ -7,7 +7,7 @@
 				<div class="caption">
 					<h3>Selamat datang di dunia Hoopla!</h3>
 					<p>Pusatnya sewa perlengkapan dan mainan bayi dan anak di kota Batam</p>
-					<a href="discount.html" class="btn-hoopla">Lihat lagi</a>
+					<a href="<?php echo base_url();?>product" class="btn-hoopla">Lihat lagi</a>
 				</div>
 			</div>
 			<div class="carousel-cell">
@@ -15,7 +15,7 @@
 				<div class="caption">
 					<h3>Don't be strangers<br></h3>
 					<p>Follow IG kami @hoopla_rentalmainan dan mari berteman</p>
-					<a href="discount.html" class="btn-hoopla">Lihat</a>
+					<a href="#" class="btn-hoopla">Lihat</a>
 				</div>
 			</div>
 			<div class="carousel-cell">
@@ -23,7 +23,7 @@
 				<div class="caption">
 					<h3>Kalo bisa sewa, <br> kenapa harus beli?</h3>
 					<p>Temukan kenapa menyewa adalah pilihan terbaik saat ini</p>
-					<a href="why.html" class="btn-hoopla">Lihat</a>
+					<a href="<?php echo base_url();?>form" class="btn-hoopla">Lihat</a>
 				</div>
 			</div>
 			<div class="carousel-cell">
@@ -31,7 +31,7 @@
 				<div class="caption">
 					<h3>Tidak ada di list kami?</h3>
 					<p>Well, silakan beritahu kami, dan akan kami sediakan untuk kamu</p>
-					<a href="#" class="btn-hoopla">Selanjutnya</a>
+					<a href="<?php echo base_url();?>contact" class="btn-hoopla">Selanjutnya</a>
 				</div>
 			</div>
 			<div class="carousel-cell">
@@ -39,7 +39,7 @@
 				<div class="caption">
 					<h3>Cara pemesanan gampang.</h3>
 					<p>Cukup dengan 4 langkah mudah, dan kamu sudah bisa menyewa semuanya di Hoopla.</p>
-					<a href="tc.html" class="btn-hoopla">Selengkapnya</a>
+					<a href="<?php echo base_url();?>terms" class="btn-hoopla">Selengkapnya</a>
 				</div>
 			</div>
 		</div>
@@ -79,7 +79,7 @@
 				<div class="card-bottom">
 					<a href="<?php echo base_url();?>product/detail/<?php echo base64_encode($mr->idRENTAL).'-'.seo_url($mr->namaRENTAL);?>">
 						<h3><?php echo $mr->namaRENTAL ?></h3>
-						<small>Rp. <?php echo number_format($mr->hargaRENTAL, 0,',','.'); ?></small>
+						<small>Rp. <?php echo number_format($mr->harga2RENTAL, 0,',','.'); ?></small>
 					</a>
 				</div>
 			</div>
@@ -101,7 +101,7 @@
 				<div class="card-bottom">
 					<a href="<?php echo base_url();?>product/detail/<?php echo base64_encode($mp->idRENTAL).'-'.seo_url($mp->namaRENTAL);?>">
 						<h3><?php echo $mp->namaRENTAL ?></h3>
-						<small>Rp. <?php echo number_format($mp->hargaRENTAL, 0,',','.'); ?></small>
+						<small>Rp. <?php echo number_format($mp->harga2RENTAL, 0,',','.'); ?></small>
 					</a>
 				</div>
 			</div>

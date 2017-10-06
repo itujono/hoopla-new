@@ -16,8 +16,12 @@
                   <th>Alamat</th>
                   <th>No. Telp</th>
                   <th>Barang Sewa</th>
+                  <th>Antar &amp; Jemput</th>
+                  <th>Instagram</th>
                   <th>Periode</th>
                   <th>Pengiriman</th>
+                  <th>Rekomendasi oleh</th>
+                  <th>Ketahui dari</th>
                   <th>Permintaan Khusus</th>
                   <th>Dibuat</th>
               </tr>
@@ -29,8 +33,12 @@
                 <th>Alamat</th>
                 <th>No. Telp</th>
                 <th>Barang Sewa</th>
+                <th>Antar &amp; Jemput</th>
+                <th>Instagram</th>
                 <th>Periode</th>
                 <th>Pengiriman</th>
+                <th>Rekomendasi oleh</th>
+                <th>Ketahui dari</th>
                 <th>Permintaan Khusus</th>
                 <th>Dibuat</th>
               </tr>
@@ -46,8 +54,12 @@
                 <td><?php echo $sewa->alamatSEWA; ?></td>
                 <td><?php echo $sewa->telpSEWA; ?></td>
                 <td><?php echo $sewa->barangSEWA; ?></td>
+                <td><?php echo $sewa->antarjemputSEWA; ?></td>
+                <td><?php echo $sewa->instagramSEWA; ?></td>
                 <td><?php echo $sewa->periodeSEWA; ?></td>
                 <td><?php echo $sewa->pengirimanSEWA; ?></td>
+                <td><?php echo $sewa->rekomenSEWA; ?></td>
+                <td><?php echo $sewa->ketahuiSEWA; ?></td>
                 <td><?php echo $sewa->permintaanSEWA; ?></td>
                 <td><b><?php echo indonesian_date($sewa->createdateSEWA); ?></b></td>
               </tr>
