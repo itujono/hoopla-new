@@ -31,18 +31,18 @@ $url = base_url().'hooplaadmin/'.$controller.'/'.$actions;
           <table id="dt_individual_search" class="uk-table" cellspacing="0" width="100%">
             <thead>
               <tr>
-                <th>No.</th>
+                <th class="number-order">No.</th>
                 <th>Nama Type</th>
                 <th>Created</th>
-                <th>Action</th>
+                <th class="action-order">Action</th>
               </tr>
             </thead>
             <tfoot>
               <tr>
-                <th>No.</th>
+                <th class="number-order">No.</th>
                 <th>Nama Type</th>
                 <th>Created</th>
-                <th>Action</th>
+                <th class="action-order">Action</th>
               </tr>
             </tfoot>
             <tbody>
@@ -62,7 +62,7 @@ $url = base_url().'hooplaadmin/'.$controller.'/'.$actions;
                     $url1 = 'hooplaadmin/'.$controller.'/actiondelete_type/'.urlencode($id);
                     $url2 = 'hooplaadmin/'.$controller.'/type_rental/'.urlencode($id);
                     ?>
-                    <td class="uk-text-center">
+                    <td class="">
                       <a href="#" onclick="UIkit.modal.confirm('<?php echo $msg1; ?>', function(){ document.location.href='<?php echo site_url($url1);?>'; });"><i class="md-icon material-icons"><?php echo $icndel; ?></i></a>
                       <a href="#" onclick="UIkit.modal.confirm('<?php echo $msg2; ?>', function(){ document.location.href='<?php echo site_url($url2);?>'; });"><i class="md-icon material-icons">&#xE254;</i></a>
                     </td>

@@ -32,11 +32,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <thead>
               <tr>
                   <th>No.</th>
-                  <th>Gambar.</th>
-                  <th>Nama Barang</th>
-                  <th>Brand Barang</th>
-                  <th>Type Barang</th>
-                  <th>Age Barang</th>
+                  <th>Gambar</th>
+                  <th>Nama</th>
+                  <th>Brand</th>
+                  <th>Type</th>
+                  <th>Age</th>
                   <th>Harga per 2 Minggu</th>
                   <th>Harga per 4 Minggu</th>
                   <th>Created</th>
@@ -46,11 +46,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <tfoot>
               <tr>
                 <th>No.</th>
-                <th>Gambar.</th>
-                <th>Nama Barang</th>
-                <th>Brand Barang</th>
-                <th>Type Barang</th>
-                <th>Age Barang</th>
+                <th>Gambar</th>
+                <th>Nama</th>
+                <th>Brand</th>
+                <th>Type</th>
+                <th>Age</th>
                 <th>Harga per 2 Minggu</th>
                 <th>Harga per 4 Minggu</th>
                 <th>Created</th>
