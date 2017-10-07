@@ -196,4 +196,25 @@ if ($plugins == 'home') { ?>
     position: 'bottom'
   });
 </script>
+<?php } elseif ($plugins == 'discount') { ?>
+<script src="<?php echo base_url().$this->data['asfront'];?>js/tingle.min.js"></script>
+<script>
+    // Declare Tingle's vars
+    var modal = new tingle.modal({ cssClass: ['modaler'] });
+    var modalSecond = new tingle.modal({ cssClass: ['modaler'] });
+
+    // Tingle's setContent
+    modal.setContent(document.querySelector('#first').innerHTML);
+    modalSecond.setContent(document.querySelector('#second').innerHTML);
+
+    // Tingle's Event Listeners
+    document.querySelector('#modaal').addEventListener('click', function(e) {
+        e.preventDefault();
+        modal.open();
+    });
+    document.querySelector('#modaal-second').addEventListener('click', function(e) {
+        e.preventDefault();
+        modalSecond.open();
+    });
+</script>
 <?php } ?>

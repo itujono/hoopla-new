@@ -54,15 +54,15 @@
 	<section class="main-news_small">
 		<div class="wow bounceInUp">
 			<h3>Paket Grow up with Hoopla</h3>
-			<a href="trivia.html" class="btn-hoopla">Lihat</a>
+			<a href="<?php echo base_url();?>discount" class="btn-hoopla">Lihat</a>
 		</div>
 		<div style="background: url('<?php echo base_url().$this->data['asfront'];?>img/kid-laughing.jpg')" class="wow bounceInUp" data-wow-delay="1s">
 			<h3>Paket Happy Moms!</h3>
-			<a href="trivia.html" class="btn-hoopla">Lihat</a>
+			<a href="<?php echo base_url();?>discount" class="btn-hoopla">Lihat</a>
 		</div>
 		<div style="background: url('<?php echo base_url().$this->data['asfront'];?>img/bg1.jpg')" class="wow bounceInUp" data-wow-delay="1s">
 			<h3>Makanan yang Mantap untuk Hiking</h3>
-			<a href="trivia.html" class="btn-hoopla">Lihat</a>
+			<a href="<?php echo base_url();?>trivia" class="btn-hoopla">Lihat</a>
 		</div>
 	</section>
 	<section class="most-recent">

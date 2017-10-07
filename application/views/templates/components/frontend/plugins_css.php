@@ -28,4 +28,8 @@ if ($plugins == 'home') {
 } elseif ($plugins == 'product-detail') {
 ?>
 <link rel="stylesheet" href="<?php echo base_url().$this->data['asfront'];?>css/tingle.min.css">
+<?php
+} elseif ($plugins == 'discount') {
+?>
+<link rel="stylesheet" href="<?php echo base_url().$this->data['asfront'];?>css/tingle.min.css">
 <?php } ?>
