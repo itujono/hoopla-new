@@ -1,3 +1,19 @@
 #form_validation input:required {
-	    background-color: yellow;
-	}
+    background-color: yellow;
+}
+
+#header_main {
+	background: #96d019;
+}
+
+#sidebar_main .sidebar_main_header .sidebar_logo {
+	height: initial;
+    line-height: 48px;
+    overflow: hidden;
+    display: flex;
+}
+
+#sidebar_main .sidebar_main_header .sidebar_logo a {
+    display: block;
+    margin-left: 0;
+}

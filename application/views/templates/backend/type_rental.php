@@ -6,7 +6,7 @@ $actions = 'savetyperental';
 $controller = 'rental';
 if($gettype->idTYPE != NULL){
  $title1 = 'Perbaharui Data Type Barang Rental';
-} 
+}
 $url = base_url().'hooplaadmin/'.$controller.'/'.$actions;
 ?>
 <div class="uk-width-medium-1-1">
@@ -23,8 +23,8 @@ $url = base_url().'hooplaadmin/'.$controller.'/'.$actions;
   <div class="md-card">
     <div class="md-card-content">
       <ul class="uk-tab uk-tab-grid" data-uk-tab="{connect:'#tabs_4'}">
-        <li class="uk-width-1-2 <?php echo $tab['data-tab']?>>"><a href="#">Daftar Type Rental</a></li>
-        <li class="uk-width-1-2 <?php echo $tab['form-tab']?>"><a href="#">Form Type Rental</a></li>
+        <li class="uk-width-1-2 <?php echo $tab['data-tab']?>>"><a href="#">List Type (Rental)</a></li>
+        <li class="uk-width-1-2 <?php echo $tab['form-tab']?>"><a href="#">Form Type (Rental)</a></li>
       </ul>
       <ul id="tabs_4" class="uk-switcher uk-margin">
         <li>
@@ -46,9 +46,9 @@ $url = base_url().'hooplaadmin/'.$controller.'/'.$actions;
               </tr>
             </tfoot>
             <tbody>
-              <?php 
+              <?php
               if(!empty($listtyperental)){
-                foreach ($listtyperental  as $key => $type) { 
+                foreach ($listtyperental  as $key => $type) {
                   $id = encode($type->idTYPE);
                   ?>
                   <tr>

@@ -6,7 +6,7 @@ $actions = 'saveagerental';
 $controller = 'rental';
 if($getage->idAGE != NULL){
  $title1 = 'Perbaharui Data Age Barang Rental';
-} 
+}
 $url = base_url().'hooplaadmin/'.$controller.'/'.$actions;
 ?>
 <div class="uk-width-medium-1-1">
@@ -23,8 +23,8 @@ $url = base_url().'hooplaadmin/'.$controller.'/'.$actions;
   <div class="md-card">
     <div class="md-card-content">
       <ul class="uk-tab uk-tab-grid" data-uk-tab="{connect:'#tabs_4'}">
-        <li class="uk-width-1-2 <?php echo $tab['data-tab']?>>"><a href="#">Daftar Age Rental</a></li>
-        <li class="uk-width-1-2 <?php echo $tab['form-tab']?>"><a href="#">Form Age Rental</a></li>
+        <li class="uk-width-1-2 <?php echo $tab['data-tab']?>>"><a href="#">List Age (Rental)</a></li>
+        <li class="uk-width-1-2 <?php echo $tab['form-tab']?>"><a href="#">Form Age (Rental)</a></li>
       </ul>
       <ul id="tabs_4" class="uk-switcher uk-margin">
         <li>
@@ -46,9 +46,9 @@ $url = base_url().'hooplaadmin/'.$controller.'/'.$actions;
               </tr>
             </tfoot>
             <tbody>
-              <?php 
+              <?php
               if(!empty($listagerental)){
-                foreach ($listagerental  as $key => $age) { 
+                foreach ($listagerental  as $key => $age) {
                   $id = encode($age->idAGE);
                   ?>
                   <tr>

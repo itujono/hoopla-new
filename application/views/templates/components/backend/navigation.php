@@ -19,7 +19,7 @@
           <li><a href="#" id="full_screen_toggle" class="user_action_icon uk-visible-large"><i class="material-icons md-24 md-light">&#xE5D0;</i></a></li>
 
           <li><a href="#" class="user_action_icon uk-visible-large"><i class="material-icons md-24 md-light">toys</i>&nbsp;Hello <?php echo $this->session->userdata('Email');?>!</a></li>
-          
+
           <li data-uk-dropdown="{mode:'click',pos:'bottom-right'}">
             <a href="#" class="user_action_image"><img class="md-user-image" src="<?php echo base_url().$this->data['asback'];?>img/avatars/avatar_11_tn.png" alt=""/></a>
             <div class="uk-dropdown uk-dropdown-small">
@@ -39,14 +39,14 @@
 
   <div class="sidebar_main_header">
     <div class="sidebar_logo">
-      <a href="index.html" class="sSidebar_hide"><img src="<?php echo base_url().$this->data['asback'];?>img/logo_main.png" alt="" height="15" width="71"/></a>
-      <a href="index.html" class="sSidebar_show"><img src="<?php echo base_url().$this->data['asback'];?>img/logo_main_small.png" alt="" height="32" width="32"/></a>
+      <a href="index.html" class="sSidebar_hide"><img src="<?php echo base_url().$this->data['asback'];?>img/logo.png" alt="Main logo"/></a>
+      <a href="index.html" class="sSidebar_show"><img src="<?php echo base_url().$this->data['asback'];?>img/logo-small.png" alt="Small main logo"/></a>
     </div>
   </div>
-  <?php 
+  <?php
       $seg1 = strtolower($this->uri->segment(2));
       $seg2 = strtolower($this->uri->segment(3));
-      
+
       $menus = selectall_menu_active(1);
       $menuschild = selectall_menu_active(NULL,1);
   ?>
@@ -60,7 +60,7 @@
         </a>
         <ul>
         <?php
-          foreach ($menuschild as $key => $val2) { 
+          foreach ($menuschild as $key => $val2) {
             if($val1->idMENU == $val2->parentMENU){
               $class = '';
               if($seg2 == $val2->functionMENU){
