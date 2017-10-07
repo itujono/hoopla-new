@@ -132,27 +132,27 @@
     <!-- Progressive Enhancements : BEGIN -->
     <style>
 
-    /* What it does: Hover styles for buttons */
-    .button-td,
-    .button-a {
-        transition: all 100ms ease-in;
-    }
-    .button-td:hover,
-    .button-a:hover {
-        background: #555555 !important;
-        border-color: #555555 !important;
-    }
-
-    /* Media Queries */
-    @media screen and (max-width: 600px) {
-
-        /* What it does: Adjust typography on small screens to improve readability */
-        .email-container p {
-            font-size: 17px !important;
-            line-height: 22px !important;
+        /* What it does: Hover styles for buttons */
+        .button-td,
+        .button-a {
+            transition: all 100ms ease-in;
+        }
+        .button-td:hover,
+        .button-a:hover {
+            background: #555555 !important;
+            border-color: #555555 !important;
         }
 
-    }
+        /* Media Queries */
+        @media screen and (max-width: 600px) {
+
+            /* What it does: Adjust typography on small screens to improve readability */
+            .email-container p {
+                font-size: 17px !important;
+                line-height: 22px !important;
+            }
+
+        }
 
     </style>
     <!-- Progressive Enhancements : END -->
@@ -173,7 +173,7 @@
 
         <!-- Visually Hidden Preheader Text : BEGIN -->
         <div style="display: none; font-size: 1px; line-height: 1px; max-height: 0px; max-width: 0px; opacity: 0; overflow: hidden; mso-hide: all; font-family: sans-serif;">
-            (Optional) This text will appear in the inbox preview, but not the email body. It can be used to supplement the email subject line or even summarize the email's contents. Extended text preheaders (~490 characters) seems like a better UX for anyone using a screenreader or voice-command apps like Siri to dictate the contents of an email. If this text is not included, email clients will automatically populate it using the text (including image alt text) at the start of the email's body.
+            Ada user yang mau titip sewa nih! Have a look!
         </div>
         <!-- Visually Hidden Preheader Text : END -->
 

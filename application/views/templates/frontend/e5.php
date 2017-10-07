@@ -108,6 +108,15 @@
             border-bottom: transparent;
         }
 
+        #contact-form dl dt, #email-titipsewa dl dt {
+            font-weight: bold;
+        }
+
+        #contact-form dl dd, #email-titipsewa dl dd {
+            margin: 0;
+            margin-bottom: 10px;
+        }
+
         /* What it does: Removes right gutter in Gmail iOS app: https://github.com/TedGoas/Cerberus/issues/89  */
         /* Create one of these media queries for each additional viewport size you'd like to fix */
         /* Thanks to Eric Lepetit (@ericlepetitsf) for help troubleshooting */
@@ -123,27 +132,27 @@
     <!-- Progressive Enhancements : BEGIN -->
     <style>
 
-    /* What it does: Hover styles for buttons */
-    .button-td,
-    .button-a {
-        transition: all 100ms ease-in;
-    }
-    .button-td:hover,
-    .button-a:hover {
-        background: #555555 !important;
-        border-color: #555555 !important;
-    }
-
-    /* Media Queries */
-    @media screen and (max-width: 600px) {
-
-        /* What it does: Adjust typography on small screens to improve readability */
-        .email-container p {
-            font-size: 17px !important;
-            line-height: 22px !important;
+        /* What it does: Hover styles for buttons */
+        .button-td,
+        .button-a {
+            transition: all 100ms ease-in;
+        }
+        .button-td:hover,
+        .button-a:hover {
+            background: #555555 !important;
+            border-color: #555555 !important;
         }
 
-    }
+        /* Media Queries */
+        @media screen and (max-width: 600px) {
+
+            /* What it does: Adjust typography on small screens to improve readability */
+            .email-container p {
+                font-size: 17px !important;
+                line-height: 22px !important;
+            }
+
+        }
 
     </style>
     <!-- Progressive Enhancements : END -->
@@ -159,12 +168,12 @@
     <![endif]-->
 
 </head>
-<body width="100%" bgcolor="#222222" style="margin: 0; mso-line-height-rule: exactly;" id="order-masuk">
+<body width="100%" bgcolor="#222222" style="margin: 0; mso-line-height-rule: exactly;" id="email-pesanan">
     <center style="width: 100%; background: #dff0f7; text-align: left;">
 
         <!-- Visually Hidden Preheader Text : BEGIN -->
         <div style="display: none; font-size: 1px; line-height: 1px; max-height: 0px; max-width: 0px; opacity: 0; overflow: hidden; mso-hide: all; font-family: sans-serif;">
-            Alright, ada order baru nih, Min! Go check it out!
+            Kamu baru aja membuat order di Hoopla Rental Mainan. Which is cool!
         </div>
         <!-- Visually Hidden Preheader Text : END -->
 
@@ -199,8 +208,25 @@
                         <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
                             <tr>
                                 <td style="padding: 40px; padding-bottom: 15px; font-family: sans-serif; font-size: 15px; line-height: 20px; color: #555555;">
-                                    <h1 style="margin: 0 0 10px 0; font-family: sans-serif; font-size: 24px; line-height: 27px; color: #96d019; font-weight: normal;">Hi, Admin! Ada pesanan baru masuk!</h1>
-                                    <p style="margin: 0;">Ada orderan rental baru dari Batam. Silakan klik button di bawah ini untuk take action.</p>
+                                    <h1 style="margin: 0 0 10px 0; font-family: sans-serif; font-size: 24px; line-height: 27px; color: #96d019; font-weight: normal;">Oke, ini summary order kamu:</h1>
+                                    <dl>
+                                        <dt>Nama kamu</dt>
+                                        <dd>Setya Novanto</dd>
+                                        <dt>Email kamu</dt>
+                                        <dd>golkar@golkar.co.id</dd>
+                                        <dt>Nomor telepon kamu</dt>
+                                        <dd>082113111677</dd>
+                                        <dt>Alamat kamu</dt>
+                                        <dd>Jalan Kepodang Indah 1 Indah semua</dd>
+                                        <dt>Nama/merk barang</dt>
+                                        <dd>Nuna Maya V5</dd>
+                                        <dt>Kategori</dt>
+                                        <dd>Mainan</dd>
+                                        <dt>Durasi rental</dt>
+                                        <dd>4 minggu</dd>
+                                        <dt>Jadwal pengantaran</dt>
+                                        <dd>4 Oktober 2020</dd>
+                                    </dl>
                                 </td>
                             </tr>
                             <tr>

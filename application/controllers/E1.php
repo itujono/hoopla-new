@@ -34,4 +34,12 @@ class E1 extends Frontend_Controller {
 		$this->load->view($this->data['frontendDIR'].'e4');
         // $this->load->view($this->data['rootDIR'].'_layout_base_frontend',$data);
 	}
+
+	public function e5() {
+		// $data['addONS'] = 'about';
+		// $data['title'] = 'Pesanan datang!';
+		// $data['idbody'] = 'e1';
+		$this->load->view($this->data['frontendDIR'].'e5');
+        // $this->load->view($this->data['rootDIR'].'_layout_base_frontend',$data);
+	}
 }
