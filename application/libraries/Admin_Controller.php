@@ -12,6 +12,8 @@ class Admin_Controller extends MY_Controller{
         $this->data['asback'] = 'assets/backend/templates/';
 		$this->data['asbackbower'] = 'assets/backend/bower_components/';
 		$this->data['rootDIR'] = 'templates/';
+        $this->data['asfront'] = 'assets/frontend/';
+        $this->data['emailadmin'] = 'magicwarms@gmail.com';
         if($this->session->userdata('loggedin') != TRUE OR $this->session->userdata('akses') != 'admin') {
             $data = array(
                 'title' => 'Warning',
@@ -24,18 +26,17 @@ class Admin_Controller extends MY_Controller{
 	}
 
 	function mail_config(){
-    	$config['protocol'] = 'smtp';
-        $config['smtp_host'] = '';
+        $config['protocol'] = 'smtp';
+        $config['smtp_host'] = 'mail.hooplarentalmainan.com'; 
         $config['smtp_port'] = '587'; 
         $config['smtp_timeout'] = 30;
-        $config['smtp_user'] = '';
-        $config['smtp_pass'] = '';
+        $config['smtp_user'] = 'no-reply@hooplarentalmainan.com';
+        $config['smtp_pass'] = 'HtruU&6dp73?';
         $config['mailtype'] = 'html';
         $config['charset'] = 'iso-8859-1';
         $config['wordwrap'] = TRUE;
-        $config['crlf'] = "\r\n";
+        $config['validate'] = TRUE;
         $config['newline'] = "\r\n";
-        
         return $config;
-	}
+    }
 }

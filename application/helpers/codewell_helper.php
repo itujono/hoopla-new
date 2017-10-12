@@ -198,3 +198,22 @@ function indonesian_date ($timestamp = '', $date_format = 'l, j F Y | H:i', $suf
     $date = "{$date} {$suffix}";
     return $date;
 }
+
+function chart_visitor_labels(){
+    $CI =& get_instance();
+    $CI->db->select('date_format(dateVISITOR, ("%d %b")) as date');
+    $CI->db->from('visitor');
+    $CI->db->group_by('dateVISITOR');
+    $CI->db->limit(12);
+    $data = $CI->db->get()->result();
+    return json_encode($data);
+}
+function chart_visitor_series(){
+    $CI =& get_instance();
+    $CI->db->select('COUNT(ipVISITOR) as jumlah');
+    $CI->db->from('visitor');
+    $CI->db->group_by('dateVISITOR');
+    $CI->db->limit(12);
+    $data = $CI->db->get()->result();
+    return json_encode($data);
+}

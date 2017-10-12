@@ -28,7 +28,7 @@
         </div>
         <nav>
             <?php
-              $menus = array (array('','<i class="fa fa-home"></i>'), array('about','Tentang Hoopla'), array('why','Kenapa Hoopla'), array('product','Produk'), array('terms','Cara Pemesanan'), array('sale','For Sale'), array('contact','Hubungi Kami'));
+              $menus = array (array('','<i class="fa fa-home"></i>'), array('about','Tentang Hoopla'), array('why','Kenapa Hoopla'), array('product','Produk'), array('terms','Cara Pemesanan'), array('sale','For Sale'),array('trivia','Trivia'), array('contact','Hubungi Kami'));
               foreach ($menus as $values) {
                 if(!empty($this->uri->segment(3))) {
                   $url = $this->uri->segment(2);

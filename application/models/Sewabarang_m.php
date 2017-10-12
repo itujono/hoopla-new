@@ -74,11 +74,15 @@ class Sewabarang_m extends MY_Model{
 		parent::__construct();
 	}
 
-	public function selectall_sewabarang($id = NULL) {
+	public function selectall_sewabarang($id = NULL, $dashboard=NULL) {
 		$this->db->select('*');
 		$this->db->from('sewa_barang');
 		if ($id != NULL) {
 			$this->db->where('idSEWA',$id);
+		}
+		if($dashboard != NULL){
+			$this->db->order_by('createdateSEWA', 'desc');
+			$this->db->limit(12);
 		}
 		return $this->db->get();
 	}

@@ -24,7 +24,7 @@
             <a href="#" class="user_action_image"><img class="md-user-image" src="<?php echo base_url().$this->data['asback'];?>img/avatars/avatar_11_tn.png" alt=""/></a>
             <div class="uk-dropdown uk-dropdown-small">
               <ul class="uk-nav js-uk-prevent">
-                <!-- <li><a href="<?php //echo base_url();?>hooplaadmin/login/changepassword">Rubah kata sandi</a></li> -->
+                <li><a href="<?php echo base_url();?>hooplaadmin/changepassword">Rubah kata sandi</a></li>
                 <li><a href="<?php echo base_url(); ?>login/logout">Keluar</a></li>
               </ul>
             </div>

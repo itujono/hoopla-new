@@ -11,10 +11,21 @@ class Frontend_Controller extends MY_Controller{
     	$this->data['asfront'] = 'assets/frontend/';
         $this->data['rootDIR'] = 'templates/';
     	$this->data['emailadmin'] = 'magicwarms@gmail.com';
+
+        $this->load->model('Visitor_m');
+        //UNIQUE VISITOR START HERE
+        $ip = $this->input->ip_address();
+        $time = date("Y-m-d");
+        $visitor = $this->Visitor_m->checkvisitor($ip,$time);
+        if($visitor == 0){
+            $data['ipVISITOR'] = $ip;
+            $data['dateVISITOR'] = $time;
+            $this->Visitor_m->save($data);
+        }
+        //UNIQUE VISITOR END HERE
 	}
 
 	function mail_config(){
-        
         $config['protocol'] = 'smtp';
         $config['smtp_host'] = 'mail.hooplarentalmainan.com'; 
         $config['smtp_port'] = '587'; 

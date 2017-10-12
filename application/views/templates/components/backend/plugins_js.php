@@ -24,9 +24,47 @@ if($plugins == 'plugins_datatables'){
 <!-- inputmask-->
 <script src="<?php echo base_url().$this->data['asbackbower'];?>jquery.inputmask/dist/jquery.inputmask.bundle.js"></script>
 <?php
-}elseif($plugins == ''){
+} elseif($plugins == 'plugins_dashboard') { 
 ?>
 
+<script src="<?php echo base_url().$this->data['asbackbower']; ?>metrics-graphics/dist/metricsgraphics.min.js"></script>
+<script src="<?php echo base_url().$this->data['asbackbower']; ?>chartist/dist/chartist.min.js"></script>
+<script src="<?php echo base_url().$this->data['asbackbower']; ?>peity/jquery.peity.min.js"></script>
+<script src="<?php echo base_url().$this->data['asbackbower']; ?>jquery.easy-pie-chart/dist/jquery.easypiechart.min.js"></script>
+<script src="<?php echo base_url().$this->data['asbackbower']; ?>countUp.js/dist/countUp.min.js"></script>
+<!-- chartist -->
+<script src="<?php echo base_url().$this->data['asbackbower']; ?>chartist/dist/chartist.min.js"></script>
+<?php
+    $charings = chart_visitor_labels();
+    $replacechartlabels = str_replace(['{',':','}','date','""'], ['','','','',''], $charings);
+
+    $charing = chart_visitor_series();
+    $replacechartseries = str_replace(['{','"',':','}','jumlah'], ['','','','',''], $charing);
+?>
+<script type="text/javascript">
+$(function() {
+    // chartist
+    altair_charts.chartist_charts();
+});
+altair_charts = {
+        chartist_charts: function() {
+        // line chart with area
+        var ch_line_area = new Chartist.Line('#chartist_line_area', {
+            labels: <?php echo $replacechartlabels;?>,
+            series: [
+               <?php echo $replacechartseries;?>
+            ]
+        }, {
+            low: 0,
+            showArea: true
+        });
+        $window.on('resize',function() {
+            ch_line_area.update();
+        });
+    }
+};
+</script>
+<script src="<?php echo base_url().$this->data['asback']; ?>js/pages/dashboard.min.js"></script>
 <?php                   
 }
 ?>

@@ -49,11 +49,15 @@ class Titipsewa_m extends MY_Model{
 		parent::__construct();
 	}
 
-	public function selectall_titipsewa($id = NULL) {
+	public function selectall_titipsewa($id = NULL, $dashboard=NULL) {
 		$this->db->select('*');
 		$this->db->from('titip_sewa');
 		if ($id != NULL) {
 			$this->db->where('idTITIP',$id);
+		}
+		if($dashboard != NULL){
+			$this->db->order_by('createdateTITIP', 'desc');
+			$this->db->limit(12);
 		}
 		return $this->db->get();
 	}

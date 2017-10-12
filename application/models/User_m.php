@@ -20,6 +20,24 @@ class User_m extends MY_Model{
 			),
 		);
 
+	public $rules_changepassword = array(
+		'oldpassword' => array(
+			'field' => 'oldpassword',
+			'label' => 'Kata sandi lama',
+			'rules' => 'trim|required|min_length[8]'
+			),
+		'passwordUSER' => array(
+			'field' => 'password',
+			'label' => 'Kata sandi',
+			'rules' => 'trim|required|min_length[8]'
+			),
+		'repasswordUSER' => array(
+			'field' => 'repassword',
+			'label' => 'Ulangi kata sandi',
+			'rules' => 'trim|required|min_length[8]'
+			)
+		);
+
 	function __construct (){
 		parent::__construct();
 	}
@@ -48,7 +66,7 @@ class User_m extends MY_Model{
 			if($Administrator->statusADMIN == 1){
 				$data = array(
 				'Email' => $Administrator->emailADMIN,
-				'idUSER' => $Administrator->idADMIN,
+				'idADMIN' => $Administrator->idADMIN,
 				'akses' => 'admin',
 				'loggedin' => TRUE,
 			);
@@ -63,5 +81,13 @@ class User_m extends MY_Model{
 
 	public function logout(){
 		$this->session->sess_destroy();
+	}
+
+	public function checkoldpassword($id){
+		$this->db->select('idADMIN, passwordADMIN');
+		$this->db->from('users_admin');
+		$this->db->where('idADMIN', $id);
+		$this->db->limit(1);
+		return $this->db->get();
 	}
 }
