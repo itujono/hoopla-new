@@ -14,7 +14,7 @@
     </div>
     <div class="copyright">
         <div>
-            Copyright &copy; Sempardak 2017
+            Copyright &copy; 2017 <a href="http://www.codewell.id/">Codewell Indonesia</a>
         </div>
         <div>
             <i class="fa fa-phone"></i> 0778 325 253

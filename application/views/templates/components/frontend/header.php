@@ -24,7 +24,9 @@
             </div>
         </div>
         <div class="main-logo">
-            <img src="<?php echo base_url().$this->data['asfront'];?>img/logo-web.png" alt="Logo utama">
+            <a href="<?php echo base_url();?>home">
+                <img src="<?php echo base_url().$this->data['asfront'];?>img/logo-web.png" alt="Logo utama">
+            </a>
         </div>
         <nav>
             <?php

@@ -173,6 +173,7 @@ header {
         @include flexCenter;
         padding-bottom: 25px;
         border-bottom: 5px solid $softBlue;
+        background-color: #99ff99;
     }
     nav {
         padding: 0 1em;
@@ -276,23 +277,21 @@ main {
                 }
             }
         }
-        .flickity-prev-next-button {
-            background: $coolPurple;
-            .arrow{
-                fill: white;
-            }
-            &.previous {
-                left: -20px;
-            }
-            &.next {
-                right: -20px;
-            }
-        }
-        .flickity-page-dots {
+        .owl-dots {
             position: absolute;
-            width: auto;
-            bottom: 25px;
-            right: 10px;
+            right: 20px;
+            bottom: 20px;
+            .owl-dot {
+                background: white;
+                width: 8px;
+                height: 8px;
+                border-radius: 50%;
+                display: inline-block;
+                margin-right: 8px;
+                &.active {
+                    background: $coolPurple;
+                }
+            }
         }
     }
 
@@ -411,7 +410,8 @@ main {
         height: 160px;
         overflow: hidden;
         border-radius: 8px 8px 0 0;
-        background-color: $softPink;
+        background-color: white;
+        border: 1px solid #ddd;
         @include flexCenter;
         &.softblue {
             background-color: $softBlue;
@@ -434,6 +434,7 @@ main {
             font-size: 14px;
             margin: 0 0 5px 0;
             color: #999;
+            white-space: nowrap;
         }
         small {
             color: $coolGreen;
@@ -1425,7 +1426,7 @@ p.par-heading {
     input {
         display: block;
         @include inputForm;
-        margin-bottom: 5px;
+        margin-bottom: 20px;
     }
     textarea {
         @include inputForm;

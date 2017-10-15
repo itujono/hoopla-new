@@ -29,7 +29,7 @@
                 </div>
             </div>
             <p class="description"><?php echo $getrental->descriptionRENTAL;?></p>
-            <a href="#" class="btn-hoopla" id="rent-now"><i class="fa fa-shopping-cart"></i> &nbsp; Saya mau rental ini</a>
+            <!-- <a href="#" class="btn-hoopla" id="rent-now"><i class="fa fa-shopping-cart"></i> &nbsp; Saya mau rental ini</a> -->
             <p class="category">Kategori: <a href="#"><?php echo $getrental->namaBRAND;?></a></p>
         </div>
         <section class="similar">
@@ -176,4 +176,3 @@
                     </form>
                 </div>
             </div>
-            

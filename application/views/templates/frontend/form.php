@@ -29,7 +29,7 @@
                     <li>Jika dalam waktu 3 (tiga) bulan barang yang dititip tidak tersewa, maka Hoopla akan mengevaluasi dan berhak mengembalikan barang tersebut kepada Anda sebelum jangka waktu Kontrak berakhir.</li>
                 </ul>
             </div>
-            <form class="titip-sewa form-control" action="<?php echo base_url();?>form/submit_titipsewa" method="post" id="form-titip_sewa">
+            <!-- <form class="titip-sewa form-control" action="<?php // echo base_url();?>form/submit_titipsewa" method="post" id="form-titip_sewa">
                 <div class="title">
                     <h4>Formulir Titip Sewa</h4>
                     Harap diisi dan dibaca kembali dengan seksama setiap info yang diinput.
@@ -80,7 +80,7 @@
                     <span style="color: red;"><?php echo form_error('syaratTITIP'); ?></span>
                 </div>
                 <button type="submit" name="button" class="btn-hoopla">Oke, submit</button>
-            </form>
+            </form> -->
         </div>
     </section>
 </main>

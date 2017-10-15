@@ -113,51 +113,46 @@
 
 <aside class="sidebar">
 	<div class="sort">
-		<h4>Filter by:</h4>
-		<select>
-			<option value="az">Brand (A-Z)</option>
-			<option value="za">Brand (Z-A)</option>
-			<option value="category">Kategori</option>
-			<option value="age1">Umur (0-2)</option>
-			<option value="age2">Umur (3-6)</option>
-			<option value="age3">Umur 7-10)</option>
-		</select>
-		<a href="#" class="btn-hoopla">Submit</a>
+		<h4>Cari yang kamu butuhkan</h4>
+		<form class="form-control" action="" method="post">
+			<input type="search" class="form-group" value="" placeholder="Misal: Ergobaby carrier">
+			<button type="submit" class="btn-hoopla">Cari!</button>
+		</form>
 	</div>
 	<div class="sort">
 		<h4>Sort by:</h4>
 		<form method="get" name="formsortby" action="<?php echo base_url();?>product/sortby">
-		<select name="sortbrand">
-			<option value="" selected="selected" disabled="disabled">Pilih Brand</option>
-			<?php 
-			if(!empty($getbrand)){ 
-				foreach ($getbrand as $brand) {
-			?>
-			<option value="<?php echo $brand->idBRAND;?>"><?php echo $brand->namaBRAND;?></option>
+			<select name="sortbrand">
+				<option value="" selected="selected" disabled="disabled">Pilih Brand</option>
+				<?php
+				if(!empty($getbrand)){
+					foreach ($getbrand as $brand) {
+				?>
+				<option value="<?php echo $brand->idBRAND;?>"><?php echo $brand->namaBRAND;?></option>
+					<?php } ?>
 				<?php } ?>
-			<?php } ?>
-		</select>
-		<select name="sorttype">
-			<option value="" selected="selected" disabled="disabled">Pilih Type</option>
-			<?php 
-			if(!empty($gettype)){ 
-				foreach ($gettype as $type) {
-			?>
-			<option value="<?php echo $type->idTYPE;?>"><?php echo $type->namaTYPE;?></option>
+			</select>
+			<select name="sorttype">
+				<option value="" selected="selected" disabled="disabled">Pilih Type</option>
+				<?php
+				if(!empty($gettype)){
+					foreach ($gettype as $type) {
+				?>
+				<option value="<?php echo $type->idTYPE;?>"><?php echo $type->namaTYPE;?></option>
+					<?php } ?>
 				<?php } ?>
-			<?php } ?>
-		</select>
-		<select name="sortage">
-			<option value="" selected="selected" disabled="disabled">Pilih Umur</option>
-			<?php 
-			if(!empty($getage)){ 
-				foreach ($getage as $age) {
-			?>
-			<option value="<?php echo $age->idAGE;?>"><?php echo $age->namaAGE;?></option>
+			</select>
+			<select name="sortage">
+				<option value="" selected="selected" disabled="disabled">Pilih Umur</option>
+				<?php
+				if(!empty($getage)){
+					foreach ($getage as $age) {
+				?>
+				<option value="<?php echo $age->idAGE;?>"><?php echo $age->namaAGE;?></option>
+					<?php } ?>
 				<?php } ?>
-			<?php } ?>
-		</select>
-		<button type="submit" class="btn-hoopla">Okay, Sortir!</button>
+			</select>
+			<button type="submit" class="btn-hoopla">Okay, Sortir!</button>
 		</form>
 	</div>
 	<div class="promo-sidebar wow bounceInUp" data-wow-delay="1.3s">
