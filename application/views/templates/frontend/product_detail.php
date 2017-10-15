@@ -1,7 +1,18 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
 <main>
     <div class="image">
-        <img src="<?php echo $getrental->imageRENTAL;?>" alt="<?php echo $getrental->namaRENTAL;?>">
+        <!-- <img src="<?php //echo $getrental->imageRENTAL;?>" alt="<?php //echo $getrental->namaRENTAL;?>"> -->
+        <div class="owl-product">
+            <div class="carousel-cell">
+                <img src="<?php echo base_url().$this->data['asfront'];?>img/kids.jpg" alt="">
+            </div>
+            <div class="carousel-cell">
+                <img src="<?php echo base_url().$this->data['asfront'];?>img/kids5.jpg" alt="">
+            </div>
+            <div class="carousel-cell">
+                <img src="<?php echo base_url().$this->data['asfront'];?>img/kids10.png" alt="">
+            </div>
+        </div>
     </div>
     <div class="product-description">
         <h2 class="title"><?php echo $getrental->namaRENTAL;?></h3>

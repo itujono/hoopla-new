@@ -3,7 +3,7 @@
 	<section class="main-news">
 		<div class="owl-carousel wow bounceInUp" data-wow-delay=".2s">
 			<div class="carousel-cell">
-			<img src="<?php echo base_url().$this->data['asfront'];?>img/kids.jpg" alt="orange tree" />
+				<img src="<?php echo base_url().$this->data['asfront'];?>img/kids.jpg" alt="orange tree" />
 				<div class="caption">
 					<h3>Selamat datang di dunia Hoopla!</h3>
 					<p>Pusatnya sewa perlengkapan dan mainan bayi dan anak di kota Batam</p>
@@ -11,7 +11,7 @@
 				</div>
 			</div>
 			<div class="carousel-cell">
-			<img src="<?php echo base_url().$this->data['asfront'];?>img/kids1.png" alt="One World Trade" />
+				<img src="<?php echo base_url().$this->data['asfront'];?>img/kids1.png" alt="One World Trade" />
 				<div class="caption">
 					<h3>Don't be strangers<br></h3>
 					<p>Follow IG kami @hoopla_rentalmainan dan mari berteman</p>
@@ -19,7 +19,7 @@
 				</div>
 			</div>
 			<div class="carousel-cell">
-			<img src="<?php echo base_url().$this->data['asfront'];?>img/colorful-hands.png" alt="drizzle" />
+				<img src="<?php echo base_url().$this->data['asfront'];?>img/colorful-hands.png" alt="drizzle" />
 				<div class="caption">
 					<h3>Kalo bisa sewa, <br> kenapa harus beli?</h3>
 					<p>Temukan kenapa menyewa adalah pilihan terbaik saat ini</p>
@@ -27,7 +27,7 @@
 				</div>
 			</div>
 			<div class="carousel-cell">
-			<img src="<?php echo base_url().$this->data['asfront'];?>img/babies.png" alt="cat nose" />
+				<img src="<?php echo base_url().$this->data['asfront'];?>img/babies.png" alt="cat nose" />
 				<div class="caption">
 					<h3>Tidak ada di list kami?</h3>
 					<p>Well, silakan beritahu kami, dan akan kami sediakan untuk kamu</p>
@@ -35,7 +35,7 @@
 				</div>
 			</div>
 			<div class="carousel-cell">
-			<img src="<?php echo base_url().$this->data['asfront'];?>img/green-baby.png" alt="Green Baby" />
+				<img src="<?php echo base_url().$this->data['asfront'];?>img/green-baby.png" alt="Green Baby" />
 				<div class="caption">
 					<h3>Cara pemesanan gampang.</h3>
 					<p>Cukup dengan 4 langkah mudah, dan kamu sudah bisa menyewa semuanya di Hoopla.</p>

@@ -299,18 +299,12 @@ main {
   padding-bottom: 0;
 }
 
-.main-news {
-  grid-row: 1/2;
-  padding: 0 2em;
-  overflow: hidden;
-}
-
-.main-news .owl-carousel {
+.owl-carousel, .owl-product {
   background: transparent;
   margin-bottom: 4em;
 }
 
-.main-news .owl-carousel .carousel-cell {
+.owl-carousel .carousel-cell, .owl-product .carousel-cell {
   position: relative;
   width: 100%;
   height: 250px;
@@ -320,13 +314,13 @@ main {
   overflow: hidden;
 }
 
-.main-news .owl-carousel .carousel-cell .caption {
+.owl-carousel .carousel-cell .caption, .owl-product .carousel-cell .caption {
   position: absolute;
   bottom: 10%;
   left: 5%;
 }
 
-.main-news .owl-carousel .carousel-cell .caption h3 {
+.owl-carousel .carousel-cell .caption h3, .owl-product .carousel-cell .caption h3 {
   color: white;
   font-size: 2.2em;
   margin-bottom: 0;
@@ -334,20 +328,20 @@ main {
   text-shadow: 0 2px 15px rgba(0, 0, 0, 0.8);
 }
 
-.main-news .owl-carousel .carousel-cell .caption p {
+.owl-carousel .carousel-cell .caption p, .owl-product .carousel-cell .caption p {
   color: #fff;
   margin-bottom: 30px;
   margin-top: 5px;
   line-height: 1.6;
 }
 
-.main-news .owl-carousel .owl-dots {
+.owl-carousel .owl-dots, .owl-product .owl-dots {
   position: absolute;
   right: 20px;
   bottom: 20px;
 }
 
-.main-news .owl-carousel .owl-dots .owl-dot {
+.owl-carousel .owl-dots .owl-dot, .owl-product .owl-dots .owl-dot {
   background: white;
   width: 8px;
   height: 8px;
@@ -356,8 +350,14 @@ main {
   margin-right: 8px;
 }
 
-.main-news .owl-carousel .owl-dots .owl-dot.active {
+.owl-carousel .owl-dots .owl-dot.active, .owl-product .owl-dots .owl-dot.active {
   background: #9d6ad8;
+}
+
+.main-news {
+  grid-row: 1/2;
+  padding: 0 2em;
+  overflow: hidden;
 }
 
 .main-news .cta {

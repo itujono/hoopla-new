@@ -243,57 +243,58 @@ main {
     padding-bottom: 0;
 }
 
+.owl-carousel, .owl-product {
+    background: transparent;
+    margin-bottom: 4em;
+    .carousel-cell {
+        position: relative;
+        width: 100%;
+        height: 250px;
+        margin-right: 10px;
+        background: $coolPurple;
+        border-radius: 5px;
+        overflow: hidden;
+        .caption {
+            position: absolute;
+            bottom: 10%;
+            left: 5%;
+            h3 {
+                color: white;
+                font-size: 2.2em;
+                margin-bottom: 0;
+                letter-spacing: 1px;
+                text-shadow: 0 2px 15px rgba(0,0,0,.8);
+            }
+            p {
+                color: #fff;
+                margin-bottom: 30px;
+                margin-top: 5px;
+                line-height: $lineHeightP;
+            }
+        }
+    }
+    .owl-dots {
+        position: absolute;
+        right: 20px;
+        bottom: 20px;
+        .owl-dot {
+            background: white;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            display: inline-block;
+            margin-right: 8px;
+            &.active {
+                background: $coolPurple;
+            }
+        }
+    }
+}
+
 .main-news {
     grid-row: 1/2;
     padding: 0 2em;
     overflow: hidden;
-    .owl-carousel {
-        background: transparent;
-        margin-bottom: 4em;
-        .carousel-cell {
-            position: relative;
-            width: 100%;
-            height: 250px;
-            margin-right: 10px;
-            background: $coolPurple;
-            border-radius: 5px;
-            overflow: hidden;
-            .caption {
-                position: absolute;
-                bottom: 10%;
-                left: 5%;
-                h3 {
-                    color: white;
-                    font-size: 2.2em;
-                    margin-bottom: 0;
-                    letter-spacing: 1px;
-                    text-shadow: 0 2px 15px rgba(0,0,0,.8);
-                }
-                p {
-                    color: #fff;
-                    margin-bottom: 30px;
-                    margin-top: 5px;
-                    line-height: $lineHeightP;
-                }
-            }
-        }
-        .owl-dots {
-            position: absolute;
-            right: 20px;
-            bottom: 20px;
-            .owl-dot {
-                background: white;
-                width: 8px;
-                height: 8px;
-                border-radius: 50%;
-                display: inline-block;
-                margin-right: 8px;
-                &.active {
-                    background: $coolPurple;
-                }
-            }
-        }
-    }
 
     .cta {
         min-height: 120px;
