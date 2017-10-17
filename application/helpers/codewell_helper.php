@@ -74,46 +74,36 @@ function folenc($id){
     return strtolower($folenc);
 }
 
-function count_notif(){
-	$CI =& get_instance();
-    $CI->db->select('isreadORDER, idPARTNER');
-	$CI->db->from('orders');
-    $partner = $CI->session->userdata('idUSER');
+function selectall_about_only_one(){
+    $CI =& get_instance();
+    $CI->db->select('*');
+    $CI->db->from('about');
+    $CI->db->where('idABOUT', 1);
 
-    if($CI->session->userdata('roleUSER') == 26){
-        $CI->db->where('idPARTNER',$partner);
-         $CI->db->where('isreadORDER',0);
-    } elseif ($CI->session->userdata('roleUSER') == 22) {
-        $CI->db->where('orders.isreadadminORDER', 0);
-    } elseif ($CI->session->userdata('roleUSER') == 24) {
-        $CI->db->where('orders.isreadadminORDER', 0);
-    }
-
-	$data = $CI->db->get()->num_rows();
-	return $data;
+    $data = $CI->db->get()->row();
+    return $data;
 }
 
-function selectunreadorders(){
-	$CI =& get_instance();
-	$CI->db->select('orders.idORDER, orders.idCUSTOMER, kodeORDER, pickuptimeORDER, pickupADDRESSORDERKOTOR, createdateORDER');
-	$CI->db->select('customers.nameCUSTOMER');
-	$CI->db->from('orders');
-	$CI->db->join('customers','customers.idCUSTOMER = orders.idCUSTOMER');
-    $partner = $CI->session->userdata('idUSER');
-    
-    if($CI->session->userdata('roleUSER') == 26){
-        $CI->db->where('orders.idPARTNER',$partner);
-        $CI->db->where('orders.isreadORDER', 0);
-    } elseif ($CI->session->userdata('roleUSER') == 22) {
-        $CI->db->where('orders.isreadadminORDER', 0);
-    } elseif ($CI->session->userdata('roleUSER') == 24) {
-        $CI->db->where('orders.isreadadminORDER', 0);
-    }
-	
-	$CI->db->order_by('createdateORDER', 'DESC');
-	$data = $CI->db->get()->result();
-	return $data;
+function selectall_terms_only_one(){
+    $CI =& get_instance();
+    $CI->db->select('*');
+    $CI->db->from('terms');
+    $CI->db->where('idTERMS', 1);
+
+    $data = $CI->db->get()->row();
+    return $data;
 }
+
+function selectall_terms_caratitip_only_one(){
+    $CI =& get_instance();
+    $CI->db->select('*');
+    $CI->db->from('terms_caratitip');
+    $CI->db->where('idTERMSTITIP', 1);
+
+    $data = $CI->db->get()->row();
+    return $data;
+}
+
 
 function timeAgo($timestamp){
 

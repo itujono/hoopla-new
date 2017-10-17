@@ -65,22 +65,80 @@ altair_charts = {
 };
 </script>
 <script src="<?php echo base_url().$this->data['asback']; ?>js/pages/dashboard.min.js"></script>
+<?php
+} elseif($plugins == 'plugins_terms_titipsewa') { 
+?>
+<?php echo $datatables;?>
+<!--  preloaders functions -->
+<script src="<?php echo base_url().$this->data['asback'];?>js/pages/components_preloaders.min.js"></script>
+
+<?php echo $forms_advanced;?>
+<!-- page specific plugins -->
+<!-- tinymce -->
+<script src="<?php echo base_url().$this->data['asbackbower']; ?>tinymce/tinymce.min.js"></script>
+
+
+<script>
+    $(function() {
+    // tinymce
+    altair_wysiwyg._tinymce();
+    altair_wysiwyg._tinymces();
+});
+
+// wysiwyg editors
+altair_wysiwyg = {
+    _tinymce: function() {
+        var $tinymce = '#wysiwyg_tinymce';
+        if($($tinymce).length) {
+            tinymce.init({
+                skin_url: '<?php echo base_url().$this->data['asback']; ?>skins/tinymce/material_design',
+                selector: "#wysiwyg_tinymce",
+                plugins: [
+                    "advlist autolink lists link image charmap print preview anchor",
+                    "searchreplace visualblocks code fullscreen",
+                    "insertdatetime media table contextmenu paste"
+                ],
+                toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image"
+            });
+            
+        }
+    },
+    _tinymces: function() {
+        var $tinymce = '#wysiwyg_tinymces';
+        if($($tinymce).length) {
+            tinymce.init({
+                skin_url: '<?php echo base_url().$this->data['asback']; ?>skins/tinymce/material_design',
+                selector: "#wysiwyg_tinymces",
+                plugins: [
+                    "advlist autolink lists link image charmap print preview anchor",
+                    "searchreplace visualblocks code fullscreen",
+                    "insertdatetime media table contextmenu paste"
+                ],
+                toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image"
+            });
+            
+        }
+    }
+};
+</script>
 <?php                   
 }
 ?>
 <script>
     $(function() {
-        if(isHighDensity) {
-            // enable hires images
-            altair_helpers.retina_images();
+        if(isHighDensity()) {
+            $.getScript( "<?php echo base_url().$this->data['asback']; ?>js/custom/dense.min.js", function(data) {
+                // enable hires images
+                altair_helpers.retina_images();
+            });
         }
         if(Modernizr.touch) {
             // fastClick (touch devices)
             FastClick.attach(document.body);
         }
     });
-        $window.load(function() {
+    $window.load(function() {
         // ie fixes
-            altair_helpers.ie_fix();
+        altair_helpers.ie_fix();
     });
 </script>
