@@ -37,7 +37,6 @@ class Type_rental_m extends MY_Model{
 	}
 
 	public function dropdown_gettype($dropdown=NULL){
-		$this->db->cache_on();
 		$this->db->from('type_rental');
 		if($dropdown != NULL){
 			$ddown = array();

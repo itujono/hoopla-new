@@ -98,21 +98,19 @@ defined('BASEPATH') OR exit('No direct script access allowed');
           <form method="post" name="formrental" action="<?php echo $url;?>" enctype="multipart/form-data" id="form_validation">
           <?php echo form_hidden('idRENTAL',encode($getrental->idRENTAL),'hidden'); ?>
             <div class="uk-grid" data-uk-grid-margin>
-              <div class="uk-width-medium-1-1">
-                <div class="md-card">
-                  <div class="md-card-content">
-                    <?php
-                      if(!empty($getrental->imageRENTAL)){
-                    ?>
-                    <div class="uk-margin-bottom uk-text-center uk-position-relative">
-                        <a href="#" class="uk-modal-close uk-close uk-close-alt uk-position-absolute" onclick="UIkit.modal.confirm('Are you sure want to delete this picture?', function(){ document.location.href='<?php echo base_url().'hooplaadmin/'.$controller."/deleteimgrental/".encode($getrental->idRENTAL); ?>'; });"></a>
-                        <img src="<?php echo $getrental->imageRENTAL;?>" alt="<?php echo $getrental->namaRENTAL;?>" class="img_medium"/>
-                    </div>
-                    <?php } else { ?>
-                      <?php echo form_upload('imgRENTAL','','class="md-input" required'); ?>
-                    <?php } ?>
-                  </div>
-                </div>
+              <div class="uk-width-medium-1-1">Product Rental Upload
+                <?php echo form_upload('imgRENTAL[]','','class="md-input" multiple');?>
+                <ul class="img-edit clearfix">
+                  <?php 
+                  if(!empty($getrental->map)){
+                  foreach ($getrental->map as $key=> $value_img) { ?>
+                    <li class="uk-position-relative">
+                        <a href="#" class="uk-modal-close uk-close uk-close-alt uk-position-absolute" onclick="UIkit.modal.confirm('Are you sure want to delete this picture?', function(){ document.location.href='<?php echo base_url().'hooplaadmin/'.$controller."/deleteimgrental/".encode($getrental->idRENTAL).'/'.$getrental->imgs[$key]; ?>'; });"></a>
+                          <img src="<?php echo $value_img; ?>" class="img_medium"/>
+                    </li>
+                  <?php } ?>
+                  <?php } ?>
+                </ul>
               </div>
             </div>
             <div class="uk-grid" data-uk-grid-margin>

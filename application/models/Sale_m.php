@@ -47,6 +47,7 @@ class Sale_m extends MY_Model{
 		$sale->hargaSALE = '';
 		$sale->descriptionSALE = '';
 		$sale->idCATSALE = '';
+		$sale->map = '';
 		$sale->statusSALE = '';
 		return $sale;
 	}
@@ -66,7 +67,6 @@ class Sale_m extends MY_Model{
 	}
 
 	public function dropdown_getcatsale($dropdown=NULL){
-		$this->db->cache_on();
 		$this->db->from('category_sale');
 		if($dropdown != NULL){
 			$ddown = array();

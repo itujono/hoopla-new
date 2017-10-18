@@ -37,7 +37,6 @@ class Brand_rental_m extends MY_Model{
 	}
 
 	public function dropdown_getbrand($dropdown=NULL){
-		$this->db->cache_on();
 		$this->db->from('brand_rental');
 		if($dropdown != NULL){
 			$ddown = array();

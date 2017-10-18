@@ -60,7 +60,6 @@ class Trivia_m extends MY_Model{
 	}
 
 	public function dropdown_getcattrivia($dropdown=NULL){
-		$this->db->cache_on();
 		$this->db->from('category_trivia');
 		if($dropdown != NULL){
 			$ddown = array();

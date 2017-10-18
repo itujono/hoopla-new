@@ -1,4 +1,12 @@
- <main>
+<?php 
+$social = selectall_social();
+$wa = $social->waSOCIAL;
+$line = $social->lineSOCIAL;
+$ig = $social->igSOCIAL;
+$emaail1 = $social->email1SOCIAL;
+$emaail2 = $social->email2SOCIAL;
+?>
+<main>
     <section class="left">
         <h2>Simpan kontak kami. <br>Ntar pasti butuh. =)</h2>
         <div id="phone">
@@ -7,7 +15,7 @@
             </div>
             <div>
                 <h5>Whatsapp/SMS</h5>
-                <p>085667651688</p>
+                <p><?php echo $wa;?></p>
             </div>
         </div>
         <div id="line">
@@ -16,7 +24,7 @@
             </div>
             <div>
                 <h5>Line</h5>
-                <p>hoopla_rentalmainan</p>
+                <p><?php echo $line;?></p>
             </div>
         </div>
         <div id="ig">
@@ -25,7 +33,7 @@
             </div>
             <div>
                 <h5>Instagram</h5>
-                <p>hoopla_rentalmainan</p>
+                <p><?php echo $ig;?></p>
             </div>
         </div>
         <div id="email">
@@ -34,8 +42,8 @@
             </div>
             <div>
                 <h5>Email</h5>
-                <p><a href="mailto:order@hooplatoysrent.com">order@hooplatoyrental.com</a> <br>
-                    <a href="#">info@hooplatoyrental.com</a></p>
+                <p><a href="mailto:<?php echo $emaail1;?>"><?php echo $emaail1;?></a> <br>
+                    <a href="mailto:<?php echo $emaail2;?>"><?php echo $emaail2;?></a></p>
                 </div>
             </div>
             <div class="cta-contact">

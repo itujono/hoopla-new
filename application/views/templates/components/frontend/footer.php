@@ -1,14 +1,23 @@
+<?php 
+$social = selectall_social();
+$wa = $social->waSOCIAL;
+$line = $social->lineSOCIAL;
+$ig = $social->igSOCIAL;
+$emaail1 = $social->email1SOCIAL;
+$emaail2 = $social->email2SOCIAL;
+$telp= $social->telpSOCIAL;
+?>
 <footer>
     <div class="main-footer">
         <img src="<?php echo base_url().$this->data['asfront'];?>img/logo-web.png" alt="Logo Footer"width="200">
         <h4>We bring <span class="coolgreen">happiness</span> to your home</h4>
         <ul class="social">
-            <li class="wow bounceInUp"><a href="#" title="085667651688">WA</a></li>
+            <li class="wow bounceInUp"><a href="#" title="<?php echo $wa;?>">WA</a></li>
             <li class="wow bounceInUp" data-wow-delay=".2s">
-                <a href="#" title="hoopla_rentalmainan">LINE</a>
+                <a href="#" title="<?php echo $line;?>">LINE</a>
             </li>
             <li class="wow bounceInUp" data-wow-delay=".3s">
-                <a href="http://instagram.com/hoopla_rentalmainan/" title="hoopla_rentalmainan">IG</a>
+                <a href="http://instagram.com/<?php echo $ig;?>/" title="<?php echo $wa;?>">IG</a>
             </li>
         </ul>
     </div>
@@ -17,7 +26,7 @@
             Copyright &copy; 2017 <a href="http://www.codewell.id/">Codewell Indonesia</a>
         </div>
         <div>
-            <i class="fa fa-phone"></i> 0778 325 253
+            <i class="fa fa-phone"></i> <?php echo $telp;?>
         </div>
     </div>
 </footer>

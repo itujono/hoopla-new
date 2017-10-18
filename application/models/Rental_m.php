@@ -60,6 +60,7 @@ class Rental_m extends MY_Model{
 		$rental->descriptionRENTAL = '';
 		$rental->idTYPE = '';
 		$rental->idAGE = '';
+		$rental->map = '';
 		$rental->statusRENTAL = '';
 		return $rental;
 	}

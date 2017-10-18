@@ -92,21 +92,19 @@ defined('BASEPATH') OR exit('No direct script access allowed');
           <form method="post" name="formrental" action="<?php echo $url;?>" enctype="multipart/form-data" id="form_validation">
           <?php echo form_hidden('idSALE',encode($getsale->idSALE),'hidden'); ?>
             <div class="uk-grid" data-uk-grid-margin>
-              <div class="uk-width-medium-1-1">
-                <div class="md-card">
-                  <div class="md-card-content">
-                    <?php
-                      if(!empty($getsale->imageSALE)){
-                    ?>
-                    <div class="uk-margin-bottom uk-text-center uk-position-relative">
-                        <a href="#" class="uk-modal-close uk-close uk-close-alt uk-position-absolute" onclick="UIkit.modal.confirm('Are you sure want to delete this picture?', function(){ document.location.href='<?php echo base_url().'hooplaadmin/'.$controller."/deleteimgsale/".encode($getsale->idSALE); ?>'; });"></a>
-                        <img src="<?php echo $getsale->imageSALE;?>" alt="<?php echo $getsale->namaSALE;?>" class="img_medium"/>
-                    </div>
-                    <?php } else { ?>
-                      <?php echo form_upload('imgSALE','','class="md-input" required'); ?>
-                    <?php } ?>
-                  </div>
-                </div>
+              <div class="uk-width-medium-1-1">Product Sale Upload
+                <?php echo form_upload('imgSALE[]','','class="md-input" multiple');?>
+                <ul class="img-edit clearfix">
+                  <?php 
+                  if(!empty($getsale->map)){
+                  foreach ($getsale->map as $key=> $value_img) { ?>
+                    <li class="uk-position-relative">
+                        <a href="#" class="uk-modal-close uk-close uk-close-alt uk-position-absolute" onclick="UIkit.modal.confirm('Are you sure want to delete this picture?', function(){ document.location.href='<?php echo base_url().'hooplaadmin/'.$controller."/deleteimgsale/".encode($getsale->idSALE).'/'.$getsale->imgs[$key]; ?>'; });"></a>
+                          <img src="<?php echo $value_img; ?>" class="img_medium"/>
+                    </li>
+                  <?php } ?>
+                  <?php } ?>
+                </ul>
               </div>
             </div>
             <div class="uk-grid" data-uk-grid-margin>

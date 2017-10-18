@@ -40,12 +40,16 @@ class Sale extends Admin_Controller{
 	        );
 			$data['getsale'] = $this->Sale_m->selectall_sale($id)->row();
 			$map = directory_map('assets/upload/sale/pic-sale-'.folenc($data['getsale']->idSALE), FALSE, TRUE);
-			
-			if (empty($map)) {
-				$data['getsale']->imageSALE = '';
-			} else {
-				$data['getsale']->imageSALE = base_url() . 'assets/upload/sale/pic-sale-'.folenc($data['getsale']->idSALE).'/'.$map[0];
+			$maps = array();
+			$imgs = array();
+			if(!empty($map)){
+				foreach ($map  as $key => $value) {
+					$maps[] = base_url().'assets/upload/sale/pic-sale-'.folenc($data['getsale']->idSALE).'/'.$value;
+					$imgs[] = $value;
+				}
 			}
+			$data['getsale']->map = $maps;
+			$data['getsale']->imgs = $imgs;
 		}
 
 		if(!empty($this->session->flashdata('message'))) {
@@ -77,21 +81,32 @@ class Sale extends Admin_Controller{
 			$subject = $idsave;
 			$filenamesubject = 'pic-sale-'.folenc($subject);
 
-			$path = 'assets/upload/sale/'.$filenamesubject;
-			$map = directory_map($path, FALSE, TRUE);
+			if(!empty($_FILES['imgSALE']['name'][0])){
+				$number_of_files = sizeof($_FILES['imgSALE']['tmp_name']);
+				$files = $_FILES['imgSALE'];
+				$path = 'assets/upload/sale/'.$filenamesubject;
+				if (!file_exists($path)){
+	            	mkdir($path, 0777, true);
+	        	}
 
-			if (!file_exists( $path )){
-            	mkdir($path, 0777, true);
-        	}
-        	if(isset($_FILES['imgSALE']['tmp_name'])){
-				$config['upload_path']          = $path;
-		      	$config['allowed_types']        = 'jpg|png|jpeg';
-		      	$config['overwrite']             = TRUE;
-		      	$config['file_name']             = $this->security->sanitize_filename($filenamesubject);
+				$config['upload_path']		= $path;
+	            $config['allowed_types']	= 'jpg|png|jpeg';
+	            $config['file_name']        = $this->security->sanitize_filename($filenamesubject);
 
-		      	$this->upload->initialize($config);
-		      	$this->upload->do_upload('imgSALE');
-	  		}
+	            for ($i = 0; $i < $number_of_files; $i++) {
+			        $_FILES['imgSALE']['name'] = $files['name'][$i];
+			        $_FILES['imgSALE']['type'] = $files['type'][$i];
+			        $_FILES['imgSALE']['tmp_name'] = $files['tmp_name'][$i];
+			        $_FILES['imgSALE']['error'] = $files['error'][$i];
+			        $_FILES['imgSALE']['size'] = $files['size'][$i];
+			        $this->upload->initialize($config);
+			        if ($this->upload->do_upload('imgSALE')){
+			          $data['uploads'][$i] = $this->upload->data();
+			        }else{
+			          $data['upload_errors'][$i] = $this->upload->display_errors();
+			        }
+			    }
+	    	}
 	  		$data = array(
             	'title' => 'Sukses',
                 'text' => 'Penyimpanan Data berhasil dilakukan',
@@ -126,24 +141,23 @@ class Sale extends Admin_Controller{
 	            'title' => 'Terjadi Kesalahan',
 	            'text' => 'Maaf, data tidak berhasil dihapus silakan coba beberapa saat kembali',
 	            'type' => 'error'
-		        );
+		    );
 		        $this->session->set_flashdata('message',$data);
 		        redirect('hooplaadmin/sale/index_sale');
 		}
 	}
 
-	public function deleteimgsale($id1=NULL){
+	public function deleteimgsale($id1=NULL, $id2=NULL){
 		if($id1 != NULL){
 			$id = decode(urldecode($id1));
-			$map = directory_map('assets/upload/sale/pic-sale-'.folenc($id), FALSE, TRUE);
-			$path = 'assets/upload/sale/pic-sale-'.folenc($id);
-			foreach ($map as $value) {
-				unlink('assets/upload/sale/pic-sale-'.folenc($id).'/'.$value);
-			}
-			if(is_dir($path)){
-				rmdir($path);
-			}
+			unlink('assets/upload/sale/pic-sale-'.folenc($id).'/'.$id2);
 		}
+		$data = array(
+            'title' => 'Sukses',
+            'text' => 'Penghapusan Gambar berhasil dilakukan',
+            'type' => 'success'
+        );
+        $this->session->set_flashdata('message',$data);
 		redirect('hooplaadmin/sale/index_sale/'.$id1);
 	}
 

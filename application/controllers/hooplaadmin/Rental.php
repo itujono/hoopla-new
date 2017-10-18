@@ -19,14 +19,12 @@ class Rental extends Admin_Controller{
 
 		foreach ($data['listrental'] as $key => $value) {
 			$map = directory_map('assets/upload/rental/pic-rental-'.folenc($data['listrental'][$key]->idRENTAL), FALSE, TRUE);
-			
-			if (empty($map)) {
-				$data['listrental'][$key]->imageRENTAL = base_url() . 'assets/upload/no-image-available.png';
-			} else {
+			if(!empty($map)){
 				$data['listrental'][$key]->imageRENTAL = base_url() . 'assets/upload/rental/pic-rental-'.folenc($data['listrental'][$key]->idRENTAL).'/'.$map[0];
+			} else {
+				$data['listrental'][$key]->imageRENTAL = base_url() . 'assets/upload/no-image-available.png';
 			}
 		}
-
 		if($id == NULL){
 	        $data['tab'] = array(
 	            'data-tab' => 'uk-active',
@@ -42,12 +40,16 @@ class Rental extends Admin_Controller{
 	        );
 			$data['getrental'] = $this->Rental_m->selectall_rental($id)->row();
 			$map = directory_map('assets/upload/rental/pic-rental-'.folenc($data['getrental']->idRENTAL), FALSE, TRUE);
-			
-			if (empty($map)) {
-				$data['getrental']->imageRENTAL = '';
-			} else {
-				$data['getrental']->imageRENTAL = base_url() . 'assets/upload/rental/pic-rental-'.folenc($data['getrental']->idRENTAL).'/'.$map[0];
+			$maps = array();
+			$imgs = array();
+			if(!empty($map)){
+				foreach ($map  as $key => $value) {
+					$maps[] = base_url().'assets/upload/rental/pic-rental-'.folenc($data['getrental']->idRENTAL).'/'.$value;
+					$imgs[] = $value;
+				}
 			}
+			$data['getrental']->map = $maps;
+			$data['getrental']->imgs = $imgs;
 		}
 
 		if(!empty($this->session->flashdata('message'))) {
@@ -83,21 +85,34 @@ class Rental extends Admin_Controller{
 			$subject = $idsave;
 			$filenamesubject = 'pic-rental-'.folenc($subject);
 
-			$path = 'assets/upload/rental/'.$filenamesubject;
-			$map = directory_map($path, FALSE, TRUE);
+			if(!empty($_FILES['imgRENTAL']['name'][0])){
+				$number_of_files = sizeof($_FILES['imgRENTAL']['tmp_name']);
+				$files = $_FILES['imgRENTAL'];
+				$path = 'assets/upload/rental/'.$filenamesubject;
+				if (!file_exists($path)){
+	            	mkdir($path, 0777, true);
+	        	}
 
-			if (!file_exists( $path )){
-            	mkdir($path, 0777, true);
-        	}
-        	if(isset($_FILES['imgRENTAL']['tmp_name'])){
-				$config['upload_path']          = $path;
-		      	$config['allowed_types']        = 'jpg|png|jpeg';
-		      	$config['overwrite']             = TRUE;
-		      	$config['file_name']             = $this->security->sanitize_filename($filenamesubject);
+				$config['upload_path']		= $path;
+	            $config['allowed_types']	= 'jpg|png|jpeg';
+	            $config['file_name']        = $this->security->sanitize_filename($filenamesubject);
 
-		      	$this->upload->initialize($config);
-		      	$this->upload->do_upload('imgRENTAL');
-	  		}
+	            for ($i = 0; $i < $number_of_files; $i++) {
+			        $_FILES['imgRENTAL']['name'] = $files['name'][$i];
+			        $_FILES['imgRENTAL']['type'] = $files['type'][$i];
+			        $_FILES['imgRENTAL']['tmp_name'] = $files['tmp_name'][$i];
+			        $_FILES['imgRENTAL']['error'] = $files['error'][$i];
+			        $_FILES['imgRENTAL']['size'] = $files['size'][$i];
+			        //now we initialize the upload library
+			        $this->upload->initialize($config);
+			        // we retrieve the number of files that were uploaded
+			        if ($this->upload->do_upload('imgRENTAL')){
+			          $data['uploads'][$i] = $this->upload->data();
+			        }else{
+			          $data['upload_errors'][$i] = $this->upload->display_errors();
+			        }
+			    }
+	    	}
 	  		$data = array(
             	'title' => 'Sukses',
                 'text' => 'Penyimpanan Data berhasil dilakukan',
@@ -138,18 +153,17 @@ class Rental extends Admin_Controller{
 		}
 	}
 
-	public function deleteimgrental($id1=NULL){
+	public function deleteimgrental($id1=NULL, $id2=NULL){
 		if($id1 != NULL){
 			$id = decode(urldecode($id1));
-			$map = directory_map('assets/upload/rental/pic-rental-'.folenc($id), FALSE, TRUE);
-			$path = 'assets/upload/rental/pic-rental-'.folenc($id);
-			foreach ($map as $value) {
-				unlink('assets/upload/rental/pic-rental-'.folenc($id).'/'.$value);
-			}
-			if(is_dir($path)){
-				rmdir($path);
-			}
+			unlink('assets/upload/rental/pic-rental-'.folenc($id).'/'.$id2);
 		}
+		$data = array(
+            'title' => 'Sukses',
+            'text' => 'Penghapusan Gambar berhasil dilakukan',
+            'type' => 'success'
+        );
+        $this->session->set_flashdata('message',$data);
 		redirect('hooplaadmin/rental/index_product/'.$id1);
 	}
 

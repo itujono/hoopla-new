@@ -37,7 +37,6 @@ class Age_rental_m extends MY_Model{
 	}
 
 	public function dropdown_getage($dropdown=NULL){
-		$this->db->cache_on();
 		$this->db->from('age_rental');
 		if($dropdown != NULL){
 			$ddown = array();

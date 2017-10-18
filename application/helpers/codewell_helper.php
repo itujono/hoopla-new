@@ -104,6 +104,16 @@ function selectall_terms_caratitip_only_one(){
     return $data;
 }
 
+function selectall_social(){
+    $CI =& get_instance();
+    $CI->db->select('*');
+    $CI->db->from('social');
+    $CI->db->where('idSOCIAL', 1);
+
+    $data = $CI->db->get()->row();
+    return $data;
+}
+
 
 function timeAgo($timestamp){
 
