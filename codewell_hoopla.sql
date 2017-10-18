@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 12, 2017 at 03:17 AM
+-- Generation Time: Oct 18, 2017 at 03:02 AM
 -- Server version: 10.1.21-MariaDB
 -- PHP Version: 7.1.1
 
@@ -19,6 +19,36 @@ SET time_zone = "+00:00";
 --
 -- Database: `codewell_hoopla`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `hoopla_about`
+--
+
+CREATE TABLE `hoopla_about` (
+  `idABOUT` int(11) NOT NULL,
+  `title1ABOUT` varchar(70) NOT NULL,
+  `desc1ABOUT` text NOT NULL,
+  `title2ABOUT` varchar(70) NOT NULL,
+  `desc2ABOUT` text NOT NULL,
+  `link2ABOUT` varchar(100) NOT NULL,
+  `title3ABOUT` varchar(70) NOT NULL,
+  `desc3ABOUT` text NOT NULL,
+  `link3ABOUT` varchar(100) NOT NULL,
+  `title4ABOUT` varchar(70) NOT NULL,
+  `desc4ABOUT` text NOT NULL,
+  `link4ABOUT` varchar(100) NOT NULL,
+  `createdateABOUT` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updatedateABOUT` timestamp NULL DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `hoopla_about`
+--
+
+INSERT INTO `hoopla_about` (`idABOUT`, `title1ABOUT`, `desc1ABOUT`, `title2ABOUT`, `desc2ABOUT`, `link2ABOUT`, `title3ABOUT`, `desc3ABOUT`, `link3ABOUT`, `title4ABOUT`, `desc4ABOUT`, `link4ABOUT`, `createdateABOUT`, `updatedateABOUT`) VALUES
+(1, 'Kalo bisa rental,  ngapain beli?', 'Hoopla merupakan penyedia jasa rental mainan serta perlengkapan bayi dan anak khusus buat anda yang berada di Kota Batam. Didirikan pada tahun 2016 lalu, Hoopla berkomitmen untuk terus dapat memberikan pelayanan terbaik dengan menyediakan produk-produk unggulan untuk menyenangkan buah hati anda, dan sesuai dengan motto kami: We deliver happiness to your home.', 'Kenapa harus menyewa?', 'Ada banyak alasan bagus kenapa kamu sebaiknya menyewa daripada membeli. Alasan pastinya, silakan ikuti link di bawah ini.', 'http://localhost/codewell/hoopla-new-html/why', 'That\'s all it!', 'Mau sewa mainan di Hoopla? Gampang banget caranya!', 'http://localhost/codewell/hoopla-new-html/terms', 'Masih kurang?', 'Hoopla punya paket-paket menarik yang kami jamin it will save you a lot. Mau tahu paket-paket menarik yang ada di Hoopla?', 'http://localhost/codewell/hoopla-new-html/product', '2017-10-16 13:46:43', '2017-10-16 13:48:56');
 
 -- --------------------------------------------------------
 
@@ -67,7 +97,7 @@ CREATE TABLE `hoopla_barang_rental` (
 --
 
 INSERT INTO `hoopla_barang_rental` (`idRENTAL`, `idBRAND`, `idTYPE`, `idAGE`, `namaRENTAL`, `harga2RENTAL`, `harga4RENTAL`, `descriptionRENTAL`, `createdateRENTAL`, `updatedateRENTAL`, `statusRENTAL`) VALUES
-(1, 1, 1, 1, 'Stroller Babys', '12000', '0', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.', '2017-09-26 13:58:43', '2017-10-04 13:10:16', 0),
+(1, 1, 1, 1, 'Stroller Babys dan Mainan Lain', '12000', '23000', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.', '2017-09-26 13:58:43', '2017-10-17 14:19:09', 1),
 (3, 2, 2, 2, 'Bekal Bayi Minion', '16000', '0', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.', '2017-09-27 13:16:55', '2017-10-04 13:10:18', 0),
 (4, 1, 2, 2, 'Lego Sakti', '64000', '124000', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequato.', '2017-10-04 13:23:34', '2017-10-04 13:26:13', 1);
 
@@ -95,7 +125,7 @@ CREATE TABLE `hoopla_barang_sale` (
 
 INSERT INTO `hoopla_barang_sale` (`idSALE`, `namaSALE`, `brandSALE`, `hargaSALE`, `descriptionSALE`, `idCATSALE`, `createdateSALE`, `updatedateSALE`, `statusSALE`) VALUES
 (2, 'Mainan Mobil Pemadam Kebakaran', 'Hisatmisu', '230000', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.', 3, '2017-09-21 14:31:37', '2017-10-04 01:16:50', 1),
-(3, 'Mainan untuk mama', 'Santoryu', '1600000', 'Mainan untuk mama.', 1, '2017-09-28 14:51:42', '2017-10-04 01:16:16', 1);
+(3, 'Mainan untuk mama dan untuk bapak', 'Santoryu', '1600000', 'Mainan untuk mama dan untuk bapak', 1, '2017-09-28 14:51:42', '2017-10-17 14:39:56', 1);
 
 -- --------------------------------------------------------
 
@@ -195,7 +225,39 @@ INSERT INTO `hoopla_ci_sessions` (`id`, `ip_address`, `timestamp`, `data`) VALUE
 ('1t9i4nhjdf6vk09b0mfrei1fe05anug1', '::1', 1507727585, 0x5f5f63695f6c6173745f726567656e65726174657c693a313530373732373538353b456d61696c7c733a31353a2261646d696e4061646d696e2e636f6d223b6964555345527c733a313a2231223b616b7365737c733a353a2261646d696e223b6c6f67676564696e7c623a313b),
 ('vjjbgjv8i76qlkskc3k2hsfbnmcvle5m', '::1', 1507728056, 0x5f5f63695f6c6173745f726567656e65726174657c693a313530373732383035363b456d61696c7c733a31353a2261646d696e4061646d696e2e636f6d223b6964555345527c733a313a2231223b616b7365737c733a353a2261646d696e223b6c6f67676564696e7c623a313b),
 ('dlnt4l10ii6cma6ia13i0isck8o5ad6e', '::1', 1507728754, 0x5f5f63695f6c6173745f726567656e65726174657c693a313530373732383735343b456d61696c7c733a31353a2261646d696e4061646d696e2e636f6d223b6964555345527c733a313a2231223b616b7365737c733a353a2261646d696e223b6c6f67676564696e7c623a313b),
-('n3rkao4rvj6rvbrdij5ltpto9vrp4502', '::1', 1507729777, 0x5f5f63695f6c6173745f726567656e65726174657c693a313530373732393737373b456d61696c7c733a31353a2261646d696e4061646d696e2e636f6d223b6964555345527c733a313a2231223b616b7365737c733a353a2261646d696e223b6c6f67676564696e7c623a313b);
+('n3rkao4rvj6rvbrdij5ltpto9vrp4502', '::1', 1507729777, 0x5f5f63695f6c6173745f726567656e65726174657c693a313530373732393737373b456d61696c7c733a31353a2261646d696e4061646d696e2e636f6d223b6964555345527c733a313a2231223b616b7365737c733a353a2261646d696e223b6c6f67676564696e7c623a313b),
+('t7vqorm4mckub7lkk21jefpguarfvmah', '::1', 1508115115, 0x5f5f63695f6c6173745f726567656e65726174657c693a313530383131353131353b),
+('qho1vlse3c5saqv9ulm13imsaq8nldbi', '::1', 1508115516, 0x5f5f63695f6c6173745f726567656e65726174657c693a313530383131353531363b),
+('4dabt2a266h5ns7ipvg5im7igaog5g18', '::1', 1508115516, 0x5f5f63695f6c6173745f726567656e65726174657c693a313530383131353531363b),
+('v549ib3jato283j9bf19b7hd8b02ek8s', '::1', 1508158182, 0x5f5f63695f6c6173745f726567656e65726174657c693a313530383135383138323b456d61696c7c733a31353a2261646d696e4061646d696e2e636f6d223b696441444d494e7c733a313a2231223b616b7365737c733a353a2261646d696e223b6c6f67676564696e7c623a313b),
+('m2b2jag4mfflcriarqa3q7jjhto80t3h', '::1', 1508158778, 0x5f5f63695f6c6173745f726567656e65726174657c693a313530383135383737383b456d61696c7c733a31353a2261646d696e4061646d696e2e636f6d223b696441444d494e7c733a313a2231223b616b7365737c733a353a2261646d696e223b6c6f67676564696e7c623a313b),
+('fufnpqqntkarbvr8ise23p77161ll4on', '::1', 1508160882, 0x5f5f63695f6c6173745f726567656e65726174657c693a313530383136303838323b456d61696c7c733a31353a2261646d696e4061646d696e2e636f6d223b696441444d494e7c733a313a2231223b616b7365737c733a353a2261646d696e223b6c6f67676564696e7c623a313b),
+('inai6s3378a8vhdb5esci7bfmll3oa58', '::1', 1508161220, 0x5f5f63695f6c6173745f726567656e65726174657c693a313530383136313232303b456d61696c7c733a31353a2261646d696e4061646d696e2e636f6d223b696441444d494e7c733a313a2231223b616b7365737c733a353a2261646d696e223b6c6f67676564696e7c623a313b),
+('mreba5v2p3lkdpmoc07hi72mpf2g7ieu', '::1', 1508161603, 0x5f5f63695f6c6173745f726567656e65726174657c693a313530383136313630333b456d61696c7c733a31353a2261646d696e4061646d696e2e636f6d223b696441444d494e7c733a313a2231223b616b7365737c733a353a2261646d696e223b6c6f67676564696e7c623a313b6d6573736167657c613a333a7b733a353a227469746c65223b733a31373a225465726a616469204b6573616c6168616e223b733a343a2274657874223b733a33393a226d6f686f6e20756c616e676920696e707574616e20666f726d20616e646120646962617761682e223b733a343a2274797065223b733a373a227761726e696e67223b7d5f5f63695f766172737c613a313a7b733a373a226d657373616765223b733a333a226e6577223b7d),
+('laeot4niruetqf43b8aactc8dp3clbdh', '::1', 1508162043, 0x5f5f63695f6c6173745f726567656e65726174657c693a313530383136323034333b456d61696c7c733a31353a2261646d696e4061646d696e2e636f6d223b696441444d494e7c733a313a2231223b616b7365737c733a353a2261646d696e223b6c6f67676564696e7c623a313b),
+('dostvauppfskp519mkab69mt2tb1qc7g', '::1', 1508162359, 0x5f5f63695f6c6173745f726567656e65726174657c693a313530383136323335393b456d61696c7c733a31353a2261646d696e4061646d696e2e636f6d223b696441444d494e7c733a313a2231223b616b7365737c733a353a2261646d696e223b6c6f67676564696e7c623a313b),
+('vsc0vt1n3do4uhfttt1p7hikovahgcth', '::1', 1508164141, 0x5f5f63695f6c6173745f726567656e65726174657c693a313530383136343134313b456d61696c7c733a31353a2261646d696e4061646d696e2e636f6d223b696441444d494e7c733a313a2231223b616b7365737c733a353a2261646d696e223b6c6f67676564696e7c623a313b),
+('an2auhb9kvt0rcsvttdnfno0fuij98ln', '::1', 1508164755, 0x5f5f63695f6c6173745f726567656e65726174657c693a313530383136343735353b456d61696c7c733a31353a2261646d696e4061646d696e2e636f6d223b696441444d494e7c733a313a2231223b616b7365737c733a353a2261646d696e223b6c6f67676564696e7c623a313b6d6573736167657c613a333a7b733a353a227469746c65223b733a363a2253756b736573223b733a343a2274657874223b733a33353a2250656e79696d70616e616e204461746120626572686173696c2064696c616b756b616e223b733a343a2274797065223b733a373a2273756363657373223b7d5f5f63695f766172737c613a313a7b733a373a226d657373616765223b733a333a226f6c64223b7d),
+('1bqnol19g6u3nsu32bd1v25r1ausuuur', '::1', 1508166708, 0x5f5f63695f6c6173745f726567656e65726174657c693a313530383136363730383b456d61696c7c733a31353a2261646d696e4061646d696e2e636f6d223b696441444d494e7c733a313a2231223b616b7365737c733a353a2261646d696e223b6c6f67676564696e7c623a313b6d6573736167657c613a333a7b733a353a227469746c65223b733a363a2253756b736573223b733a343a2274657874223b733a33353a2250656e79696d70616e616e204461746120626572686173696c2064696c616b756b616e223b733a343a2274797065223b733a373a2273756363657373223b7d5f5f63695f766172737c613a313a7b733a373a226d657373616765223b733a333a226f6c64223b7d),
+('l03039t52irmbrfje7jq30cl4r5bpteb', '::1', 1508167126, 0x5f5f63695f6c6173745f726567656e65726174657c693a313530383136373132363b456d61696c7c733a31353a2261646d696e4061646d696e2e636f6d223b696441444d494e7c733a313a2231223b616b7365737c733a353a2261646d696e223b6c6f67676564696e7c623a313b),
+('7r8q21oora2brooev5us20oit56lv756', '::1', 1508167446, 0x5f5f63695f6c6173745f726567656e65726174657c693a313530383136373434363b456d61696c7c733a31353a2261646d696e4061646d696e2e636f6d223b696441444d494e7c733a313a2231223b616b7365737c733a353a2261646d696e223b6c6f67676564696e7c623a313b),
+('ipa2il2so9iro2aubbqfo4ah86bt6he3', '::1', 1508167941, 0x5f5f63695f6c6173745f726567656e65726174657c693a313530383136373934313b456d61696c7c733a31353a2261646d696e4061646d696e2e636f6d223b696441444d494e7c733a313a2231223b616b7365737c733a353a2261646d696e223b6c6f67676564696e7c623a313b),
+('pla2f6ehrifpk8iaoptgvqbl8vgrgpa8', '::1', 1508168265, 0x5f5f63695f6c6173745f726567656e65726174657c693a313530383136383236353b456d61696c7c733a31353a2261646d696e4061646d696e2e636f6d223b696441444d494e7c733a313a2231223b616b7365737c733a353a2261646d696e223b6c6f67676564696e7c623a313b),
+('jig06vvvc08tu9gdt2iembb0pt5e80mk', '::1', 1508202613, 0x5f5f63695f6c6173745f726567656e65726174657c693a313530383230323631333b),
+('9qdlj2i90ejaq6tndr1f83qb8bv407qj', '::1', 1508246161, 0x5f5f63695f6c6173745f726567656e65726174657c693a313530383234363136313b456d61696c7c733a31353a2261646d696e4061646d696e2e636f6d223b696441444d494e7c733a313a2231223b616b7365737c733a353a2261646d696e223b6c6f67676564696e7c623a313b),
+('tm68sbln9hpi1sln12l8vvu0lqu9e4h8', '::1', 1508246464, 0x5f5f63695f6c6173745f726567656e65726174657c693a313530383234363436343b456d61696c7c733a31353a2261646d696e4061646d696e2e636f6d223b696441444d494e7c733a313a2231223b616b7365737c733a353a2261646d696e223b6c6f67676564696e7c623a313b),
+('leuh6l4dun61ra46sjjh4eai0dv5df0h', '::1', 1508246784, 0x5f5f63695f6c6173745f726567656e65726174657c693a313530383234363738343b456d61696c7c733a31353a2261646d696e4061646d696e2e636f6d223b696441444d494e7c733a313a2231223b616b7365737c733a353a2261646d696e223b6c6f67676564696e7c623a313b),
+('4t8fucakpm4j2fb5lnkecf22ce9lvhrm', '::1', 1508247110, 0x5f5f63695f6c6173745f726567656e65726174657c693a313530383234373131303b456d61696c7c733a31353a2261646d696e4061646d696e2e636f6d223b696441444d494e7c733a313a2231223b616b7365737c733a353a2261646d696e223b6c6f67676564696e7c623a313b),
+('nmsf00pb8ub4rpjq7pnh6r5n6a2c6b7f', '::1', 1508247447, 0x5f5f63695f6c6173745f726567656e65726174657c693a313530383234373434373b456d61696c7c733a31353a2261646d696e4061646d696e2e636f6d223b696441444d494e7c733a313a2231223b616b7365737c733a353a2261646d696e223b6c6f67676564696e7c623a313b),
+('5fo6gag1bn34bsjvoh08u32893kefo9h', '::1', 1508248959, 0x5f5f63695f6c6173745f726567656e65726174657c693a313530383234383935393b456d61696c7c733a31353a2261646d696e4061646d696e2e636f6d223b696441444d494e7c733a313a2231223b616b7365737c733a353a2261646d696e223b6c6f67676564696e7c623a313b),
+('22lve0do2na1d5e73r7h1o293d1fb3vi', '::1', 1508249446, 0x5f5f63695f6c6173745f726567656e65726174657c693a313530383234393434363b456d61696c7c733a31353a2261646d696e4061646d696e2e636f6d223b696441444d494e7c733a313a2231223b616b7365737c733a353a2261646d696e223b6c6f67676564696e7c623a313b),
+('96fach3soerd9l475hocp9bpmc94hq7q', '::1', 1508249890, 0x5f5f63695f6c6173745f726567656e65726174657c693a313530383234393839303b456d61696c7c733a31353a2261646d696e4061646d696e2e636f6d223b696441444d494e7c733a313a2231223b616b7365737c733a353a2261646d696e223b6c6f67676564696e7c623a313b),
+('37rq3ve8ts9l61kfhof9nmac0aos1b1k', '::1', 1508250296, 0x5f5f63695f6c6173745f726567656e65726174657c693a313530383235303239363b456d61696c7c733a31353a2261646d696e4061646d696e2e636f6d223b696441444d494e7c733a313a2231223b616b7365737c733a353a2261646d696e223b6c6f67676564696e7c623a313b),
+('bbkmjpome7tffr70o1agm958kdesjhd8', '::1', 1508250635, 0x5f5f63695f6c6173745f726567656e65726174657c693a313530383235303633353b456d61696c7c733a31353a2261646d696e4061646d696e2e636f6d223b696441444d494e7c733a313a2231223b616b7365737c733a353a2261646d696e223b6c6f67676564696e7c623a313b),
+('vpc19ufn2p0kghg70ggkj8ud1116opkg', '::1', 1508251157, 0x5f5f63695f6c6173745f726567656e65726174657c693a313530383235313135373b456d61696c7c733a31353a2261646d696e4061646d696e2e636f6d223b696441444d494e7c733a313a2231223b616b7365737c733a353a2261646d696e223b6c6f67676564696e7c623a313b),
+('ocoodt310659t1e2qdksdjpfrvl29tee', '::1', 1508254187, 0x5f5f63695f6c6173745f726567656e65726174657c693a313530383235343138373b456d61696c7c733a31353a2261646d696e4061646d696e2e636f6d223b696441444d494e7c733a313a2231223b616b7365737c733a353a2261646d696e223b6c6f67676564696e7c623a313b),
+('uedknctee8gcfq382c3ln9sl4bfuaepr', '::1', 1508255142, 0x5f5f63695f6c6173745f726567656e65726174657c693a313530383235353134323b456d61696c7c733a31353a2261646d696e4061646d696e2e636f6d223b696441444d494e7c733a313a2231223b616b7365737c733a353a2261646d696e223b6c6f67676564696e7c623a313b),
+('d2qrjtdr5ukdmotj4p7lbleainrkl695', '::1', 1508255531, 0x5f5f63695f6c6173745f726567656e65726174657c693a313530383235353533313b456d61696c7c733a31353a2261646d696e4061646d696e2e636f6d223b696441444d494e7c733a313a2231223b616b7365737c733a353a2261646d696e223b6c6f67676564696e7c623a313b6d6573736167657c613a333a7b733a353a227469746c65223b733a363a2253756b736573223b733a343a2274657874223b733a33353a2250656e79696d70616e616e204461746120626572686173696c2064696c616b756b616e223b733a343a2274797065223b733a373a2273756363657373223b7d5f5f63695f766172737c613a313a7b733a373a226d657373616765223b733a333a226f6c64223b7d);
 
 -- --------------------------------------------------------
 
@@ -258,10 +320,13 @@ INSERT INTO `hoopla_menus_admin` (`idMENU`, `namaMENU`, `iconMENU`, `functionMEN
 (13, 'Daftar Trivia', 'library_books', 'index_trivia', 8, '0', 1, 1, '2017-10-02 09:37:12'),
 (14, 'Beranda', 'dashboard', 'index_dashboard', 1, '0', 1, 1, '2017-10-02 13:24:50'),
 (15, 'Daftar Kontak', 'rate_review', 'index_contact', 10, '0', 1, 1, '2017-10-02 13:26:37'),
-(16, 'Titip Sewa', 'supervisor_account', 'titipsewa', 0, '0', 6, 1, '2017-10-04 15:03:12'),
-(17, 'Daftar', 'supervisor_account', 'index_titipsewa', 16, '0', 1, 1, '2017-10-04 15:03:28'),
-(18, 'Sewa Mainan', 'nfc', 'sewabarang', 0, '0', 7, 1, '2017-10-05 00:58:22'),
-(19, 'Daftar', 'nfc', 'index_sewabarang', 18, '0', 1, 1, '2017-10-05 00:58:35');
+(20, 'Tentang', 'textsms', 'about', 0, '0', 1, 1, '2017-10-16 13:15:38'),
+(21, 'Daftar', 'textsms', 'index_about', 20, '0', 1, 1, '2017-10-16 13:16:10'),
+(22, 'Pemesanan', 'book', 'terms', 0, '0', 1, 1, '2017-10-16 14:28:24'),
+(23, 'Cara Pemesanan', 'book', 'index_terms', 22, '0', 1, 1, '2017-10-16 14:28:34'),
+(24, 'Cara Titip Sewa', 'book', 'index_terms_cara_titipsewa', 22, '0', 1, 1, '2017-10-16 14:43:57'),
+(25, 'Social', 'content_paste', 'social', 0, '0', 1, 1, '2017-10-17 15:45:07'),
+(26, 'Daftar', 'content_paste', 'index_social', 25, '', 1, 1, '2017-10-17 15:45:28');
 
 -- --------------------------------------------------------
 
@@ -289,57 +354,83 @@ INSERT INTO `hoopla_post_trivia` (`idTRIVIA`, `titleTRIVIA`, `idCATTRIVIA`, `des
 -- --------------------------------------------------------
 
 --
--- Table structure for table `hoopla_sewa_barang`
+-- Table structure for table `hoopla_social`
 --
 
-CREATE TABLE `hoopla_sewa_barang` (
-  `idSEWA` int(11) NOT NULL,
-  `namaSEWA` varchar(100) NOT NULL,
-  `alamatSEWA` text NOT NULL,
-  `telpSEWA` varchar(20) NOT NULL,
-  `barangSEWA` varchar(80) NOT NULL,
-  `antarjemputSEWA` varchar(100) NOT NULL,
-  `instagramSEWA` varchar(70) NOT NULL,
-  `periodeSEWA` varchar(20) NOT NULL,
-  `pengirimanSEWA` varchar(80) NOT NULL,
-  `rekomenSEWA` varchar(80) NOT NULL,
-  `ketahuiSEWA` varchar(60) NOT NULL,
-  `permintaanSEWA` text NOT NULL,
-  `syaratSEWA` int(1) NOT NULL,
-  `createdateSEWA` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
+CREATE TABLE `hoopla_social` (
+  `idSOCIAL` int(11) NOT NULL,
+  `waSOCIAL` varchar(15) NOT NULL,
+  `lineSOCIAL` varchar(30) NOT NULL,
+  `igSOCIAL` varchar(30) NOT NULL,
+  `email1SOCIAL` varchar(40) NOT NULL,
+  `email2SOCIAL` varchar(40) NOT NULL,
+  `telpSOCIAL` varchar(15) NOT NULL,
+  `createdateSOCIAL` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updatedateSOCIAL` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00' ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `hoopla_sewa_barang`
+-- Dumping data for table `hoopla_social`
 --
 
-INSERT INTO `hoopla_sewa_barang` (`idSEWA`, `namaSEWA`, `alamatSEWA`, `telpSEWA`, `barangSEWA`, `antarjemputSEWA`, `instagramSEWA`, `periodeSEWA`, `pengirimanSEWA`, `rekomenSEWA`, `ketahuiSEWA`, `permintaanSEWA`, `syaratSEWA`, `createdateSEWA`) VALUES
-(1, 'Andhana', 'Tiban mesta blok s', '08566688840', 'Lego Sakti', 'Sekupang', 'andhanautama', '2 minggu', '12 September 2017', 'saya sendiri', 'Instagram', 'Lalala aland', 1, '2017-10-05 00:52:42');
+INSERT INTO `hoopla_social` (`idSOCIAL`, `waSOCIAL`, `lineSOCIAL`, `igSOCIAL`, `email1SOCIAL`, `email2SOCIAL`, `telpSOCIAL`, `createdateSOCIAL`, `updatedateSOCIAL`) VALUES
+(1, '085667651688', 'hoopla_rentalmainan', 'hoopla_rentalmainan', 'order@hooplatoyrental.com', 'info@hooplatoyrental.com', '0778 325 253', '2017-10-17 15:47:20', '2017-10-17 15:47:35');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `hoopla_titip_sewa`
+-- Table structure for table `hoopla_terms`
 --
 
-CREATE TABLE `hoopla_titip_sewa` (
-  `idTITIP` int(11) NOT NULL,
-  `namaTITIP` varchar(100) NOT NULL,
-  `emailTITIP` varchar(120) NOT NULL,
-  `telpTITIP` varchar(20) NOT NULL,
-  `merekTITIP` varchar(150) NOT NULL,
-  `kondisiTITIP` int(1) NOT NULL,
-  `tipeTITIP` varchar(20) NOT NULL,
-  `syaratTITIP` int(1) NOT NULL,
-  `createdateTITIP` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
+CREATE TABLE `hoopla_terms` (
+  `idTERMS` int(11) NOT NULL,
+  `title1TERMS` varchar(70) NOT NULL,
+  `desc1TERMS` text NOT NULL,
+  `title2TERMS` varchar(70) NOT NULL,
+  `desc2TERMS` text NOT NULL,
+  `title3TERMS` varchar(70) NOT NULL,
+  `desc3TERMS` text NOT NULL,
+  `title4TERMS` varchar(70) NOT NULL,
+  `desc4TERMS` text NOT NULL,
+  `harga1TERMS` varchar(20) NOT NULL,
+  `place1TERMS` varchar(80) NOT NULL,
+  `harga2TERMS` varchar(20) NOT NULL,
+  `place2TERMS` varchar(80) NOT NULL,
+  `harga3TERMS` varchar(20) NOT NULL,
+  `place3TERMS` varchar(80) NOT NULL,
+  `createdateTERMS` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updatedateTERMS` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00' ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `hoopla_titip_sewa`
+-- Dumping data for table `hoopla_terms`
 --
 
-INSERT INTO `hoopla_titip_sewa` (`idTITIP`, `namaTITIP`, `emailTITIP`, `telpTITIP`, `merekTITIP`, `kondisiTITIP`, `tipeTITIP`, `syaratTITIP`, `createdateTITIP`) VALUES
-(1, 'Andhana', 'mamatjualtomat@gmail.com', '08566688840', 'Comotomo', 1, 'Pakaian/Fashion', 1, '2017-10-04 14:48:59');
+INSERT INTO `hoopla_terms` (`idTERMS`, `title1TERMS`, `desc1TERMS`, `title2TERMS`, `desc2TERMS`, `title3TERMS`, `desc3TERMS`, `title4TERMS`, `desc4TERMS`, `harga1TERMS`, `place1TERMS`, `harga2TERMS`, `place2TERMS`, `harga3TERMS`, `place3TERMS`, `createdateTERMS`, `updatedateTERMS`) VALUES
+(1, 'Order by Whatsapp/Line/SMS', 'Pemesanan dan pengecekan ketersediaan barang dilakukan dengan mengirimkan chat ke admin Hoopla melalui WA, LINE atau SMS.', 'Mengisi formulir pemesanan', 'Setelah melakukan pemesanan melalui chat, Penyewa akan diminta untuk mengisi Form Penyewaan melalui Link yang dikirimkan oleh Hoopla melalui WA, LINE atau SMS. Di dalam Form tersebut, Penyewa akan mengisi data diri dan tipe mainan yang ingin disewa. Tenang, Cuma butuh 1 (satu) menit kok buat mengisi Form Penyewaan Hoopla :)', 'Bayar', 'Setelah Form Penyewaan di submit, Penyewa akan diberi tenggat waktu untuk membayar mainan yang akan disewa.', 'Kami antar mainannya!', 'Hoopla akan memberikan jadwal pengantaran dan mainan siap diantar!', 'Rp 20.000,00', 'Kecamatan Batu Aji, Batu Ampar, Bengkong, Nongsa, Sagulung, Sei Beduk, Sekupang', 'Rp 15.000,00', 'Kecamatan Lubuk Baja', 'Rp 10.000,00', 'Kecamatan Batam Kota', '2017-10-16 14:31:14', '2017-10-16 14:39:54');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `hoopla_terms_caratitip`
+--
+
+CREATE TABLE `hoopla_terms_caratitip` (
+  `idTERMSTITIP` int(11) NOT NULL,
+  `titleTERMSTITIP` varchar(70) NOT NULL,
+  `textTERMSTITIP` text NOT NULL,
+  `syaratTERMSTITIP` text NOT NULL,
+  `caraTERMSTITIP` text NOT NULL,
+  `createdateTERMSTITIP` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updatedateTERMSTITIP` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00' ON UPDATE CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `hoopla_terms_caratitip`
+--
+
+INSERT INTO `hoopla_terms_caratitip` (`idTERMSTITIP`, `titleTERMSTITIP`, `textTERMSTITIP`, `syaratTERMSTITIP`, `caraTERMSTITIP`, `createdateTERMSTITIP`, `updatedateTERMSTITIP`) VALUES
+(1, 'Mau titip barang kamu di Hoopla?', 'Bingung mainan anak mulai menumpuk dan mulai tidak terawat? Yuuk titip sewa di Hoopla, kami akan merawat barang Anda dan membayar Anda.', '<ul>\r\n<li>Kondisi barang sesuai dengan standar mainan di Hoopla.</li>\r\n<li>Diutamakan merek-merek yang premium dengan kondisi barang setidaknya 90% layak pakai.</li>\r\n<li>Titip sewa dilandaskan dengan asas kepercayaan.</li>\r\n</ul>', '<ul>\r\n<li>Kirim data barang (jenis, merek dan kondisi barang) beserta foto detail mainan melalui WA maupun Line.</li>\r\n<li>Hoopla akan menghubungi anda jika barang yang diajukan sesuai dengan standar dan kriteria Hoopla.</li>\r\n<li>Barang akan diantarkan langsung ke alamat Hoopla dalam keadaan bersih untuk dilakukan cek fisik barang secara langsung.</li>\r\n<li>Anda akan menandatangani Kontrak Titip Sewa dengan Hoopla (ditandatangani di atas materai 6000).</li>\r\n<li>Barang yang dititip akan masuk ke dalam Instagram dan Website Hoopla maksimal 3 hari setelah Kontrak Titip Sewa ditandatangani.</li>\r\n<li>Setelah Kontrak ditandatangani, barang yang di titip sewa akan berada dalam kepemilikan sementara Hoopla.</li>\r\n<li>Hoopla akan merawat barang yang dititip sewakan dengan sebaik-baiknya, namun Hoopla tidak bertanggung jawab jika kerusakan ditimbulkan oleh Penyewa.</li>\r\n<li>Anda akan menerima laporan barang pada tanggal 1 (satu) setiap bulannya.</li>\r\n<li>Jika dalam waktu 3 (tiga) bulan barang yang dititip tidak tersewa, maka Hoopla akan mengevaluasi dan berhak mengembalikan barang tersebut kepada Anda sebelum jangka waktu Kontrak berakhir.</li>\r\n</ul>', '2017-10-16 15:33:06', '2017-10-16 15:37:16');
 
 -- --------------------------------------------------------
 
@@ -401,11 +492,19 @@ CREATE TABLE `hoopla_visitor` (
 --
 
 INSERT INTO `hoopla_visitor` (`idVISITOR`, `ipVISITOR`, `dateVISITOR`) VALUES
-(1, '::1', '2017-10-11');
+(1, '::1', '2017-10-11'),
+(2, '::1', '2017-10-16'),
+(3, '::1', '2017-10-17');
 
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `hoopla_about`
+--
+ALTER TABLE `hoopla_about`
+  ADD PRIMARY KEY (`idABOUT`);
 
 --
 -- Indexes for table `hoopla_age_rental`
@@ -468,16 +567,22 @@ ALTER TABLE `hoopla_post_trivia`
   ADD PRIMARY KEY (`idTRIVIA`);
 
 --
--- Indexes for table `hoopla_sewa_barang`
+-- Indexes for table `hoopla_social`
 --
-ALTER TABLE `hoopla_sewa_barang`
-  ADD PRIMARY KEY (`idSEWA`);
+ALTER TABLE `hoopla_social`
+  ADD PRIMARY KEY (`idSOCIAL`);
 
 --
--- Indexes for table `hoopla_titip_sewa`
+-- Indexes for table `hoopla_terms`
 --
-ALTER TABLE `hoopla_titip_sewa`
-  ADD PRIMARY KEY (`idTITIP`);
+ALTER TABLE `hoopla_terms`
+  ADD PRIMARY KEY (`idTERMS`);
+
+--
+-- Indexes for table `hoopla_terms_caratitip`
+--
+ALTER TABLE `hoopla_terms_caratitip`
+  ADD PRIMARY KEY (`idTERMSTITIP`);
 
 --
 -- Indexes for table `hoopla_type_rental`
@@ -501,6 +606,11 @@ ALTER TABLE `hoopla_visitor`
 -- AUTO_INCREMENT for dumped tables
 --
 
+--
+-- AUTO_INCREMENT for table `hoopla_about`
+--
+ALTER TABLE `hoopla_about`
+  MODIFY `idABOUT` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `hoopla_age_rental`
 --
@@ -540,22 +650,27 @@ ALTER TABLE `hoopla_contact`
 -- AUTO_INCREMENT for table `hoopla_menus_admin`
 --
 ALTER TABLE `hoopla_menus_admin`
-  MODIFY `idMENU` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `idMENU` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 --
 -- AUTO_INCREMENT for table `hoopla_post_trivia`
 --
 ALTER TABLE `hoopla_post_trivia`
   MODIFY `idTRIVIA` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
--- AUTO_INCREMENT for table `hoopla_sewa_barang`
+-- AUTO_INCREMENT for table `hoopla_social`
 --
-ALTER TABLE `hoopla_sewa_barang`
-  MODIFY `idSEWA` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+ALTER TABLE `hoopla_social`
+  MODIFY `idSOCIAL` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
--- AUTO_INCREMENT for table `hoopla_titip_sewa`
+-- AUTO_INCREMENT for table `hoopla_terms`
 --
-ALTER TABLE `hoopla_titip_sewa`
-  MODIFY `idTITIP` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+ALTER TABLE `hoopla_terms`
+  MODIFY `idTERMS` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+--
+-- AUTO_INCREMENT for table `hoopla_terms_caratitip`
+--
+ALTER TABLE `hoopla_terms_caratitip`
+  MODIFY `idTERMSTITIP` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `hoopla_type_rental`
 --
@@ -570,7 +685,7 @@ ALTER TABLE `hoopla_users_admin`
 -- AUTO_INCREMENT for table `hoopla_visitor`
 --
 ALTER TABLE `hoopla_visitor`
-  MODIFY `idVISITOR` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `idVISITOR` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
