@@ -150,4 +150,23 @@ class Rental_m extends MY_Model{
 
 		return $this->db->get();
     }
+
+    public function searching_all_rental($search) {
+    	$this->db->cache_on();
+		$this->db->select('*');
+		$this->db->select('brand_rental.namaBRAND');
+		$this->db->select('age_rental.namaAGE');
+		$this->db->select('type_rental.namaTYPE');
+		$this->db->from('barang_rental');
+		$this->db->join('brand_rental', 'brand_rental.idBRAND = barang_rental.idBRAND');
+		$this->db->join('age_rental', 'age_rental.idAGE = barang_rental.idAGE');
+		$this->db->join('type_rental', 'type_rental.idTYPE = barang_rental.idTYPE');
+
+		$this->db->like('brand_rental.namaBRAND', $search);
+		$this->db->or_like('age_rental.namaAGE', $search);
+		$this->db->or_like('type_rental.namaTYPE', $search);
+		$this->db->or_like('namaRENTAL', $search);
+
+		return $this->db->get();
+	}
 }

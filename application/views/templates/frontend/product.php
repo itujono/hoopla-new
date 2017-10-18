@@ -55,6 +55,53 @@
         </div>
     </section>
 </main>
+<?php } else if(!empty($searching_all_rental)){ ?>
+<main>
+    <section class="section" id="brands">
+        <h4 title="Barang-barang fresh buat si kecil - Pencarian">
+            Pencarian dengan kata kunci <span class="coolgreen"><?php echo $keywords;?></span>
+        </h4>
+        <div class="wrapper">
+            <?php 
+            if(!empty($searching_all_rental)){
+                foreach ($searching_all_rental as $key => $src) {
+            ?>
+            <div class="card">
+                <div class="card-content">
+                    <img src="<?php echo $src->imageRENTAL;?>" alt="<?php echo $src->namaRENTAL;?>">
+                </div>
+                <div class="card-bottom">
+                    <a href="<?php echo base_url();?>product/detail/<?php echo base64_encode($src->idRENTAL).'-'.seo_url($src->namaRENTAL);?>">
+                        <h3><?php echo $src->namaRENTAL;?></h3>
+                        <small>Rp. <?php echo number_format($src->harga2RENTAL, 0,',','.'); ?></small>
+                    </a>
+                </div>
+            </div>
+            <?php } ?>
+            <?php } ?>
+        </div>
+    </section>
+</main>
+<?php } else if(!empty($notif_less_than_3_character)){ ?>
+<main>
+    <section class="section" id="brands">
+        <h4 title="Pencarian anda kurang dari 3 huruf!">
+            <?php echo $notif_less_than_3_character['title']; ?> <span class="coolgreen"><?php echo $notif_less_than_3_character['text']; ?></span>
+            <br>
+            <a href="<?php echo base_url();?>">Silakan melakukan pencarian kembali.</a>
+        </h4>
+    </section>
+</main>
+<?php } else if(empty($searching_all_rental)){ ?>
+<main>
+    <section class="section" id="brands">
+        <h4 title="Pencarian tidak dapat ditemukan!">
+            Maaf, <span class="coolgreen">Barang anda tidak dapat kami temukan!</span>
+            <br>
+            <a href="<?php echo base_url();?>">Silakan melakukan pencarian kembali.</a>
+        </h4>
+    </section>
+</main>
 <?php } else { ?>
 <main>
     <section class="section" id="brands">

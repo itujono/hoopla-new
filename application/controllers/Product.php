@@ -9,7 +9,6 @@ class Product extends Frontend_Controller {
 		$this->load->model('Brand_rental_m');
 		$this->load->model('Age_rental_m');
 		$this->load->model('Type_rental_m');
-		$this->load->model('Sewabarang_m');
 	}
 
 	public function index() {
@@ -51,6 +50,10 @@ class Product extends Frontend_Controller {
 		$data['getbrand'] = $this->Brand_rental_m->dropdown_getbrand()->result();
         $data['getage'] = $this->Age_rental_m->dropdown_getage()->result();
         $data['gettype'] = $this->Type_rental_m->dropdown_gettype()->result();
+
+        if(!empty($this->session->flashdata('notif_less_than_3_character'))) {
+            $data['notif_less_than_3_character'] = $this->session->flashdata('notif_less_than_3_character');
+        }
 
 		$data['subview'] = $this->load->view($this->data['frontendDIR'].'product', $data, TRUE);
         $this->load->view($this->data['rootDIR'].'_layout_base_frontend',$data);
@@ -462,5 +465,41 @@ class Product extends Frontend_Controller {
         $this->email->subject($subject);
         $this->email->message($message);
         return $this->email->send();
+	}
+
+	public function searching(){
+		$search = $this->input->get('search');
+		if(strlen($search) > 3){
+			$Searching = $this->Rental_m->searching_all_rental($search)->result();
+			$data['searching_all_rental'] = $Searching;
+			foreach ($data['searching_all_rental'] as $key => $value) {
+				$map = directory_map('assets/upload/rental/pic-rental-'.folenc($data['searching_all_rental'][$key]->idRENTAL), FALSE, TRUE);
+			
+				if (empty($map)) {
+					$data['searching_all_rental'][$key]->imageRENTAL = base_url() . 'assets/upload/no-image-available.png';
+				} else {
+					$data['searching_all_rental'][$key]->imageRENTAL = base_url() . 'assets/upload/rental/pic-rental-'.folenc($data['searching_all_rental'][$key]->idRENTAL).'/'.$map[0];
+				}
+			}
+			$data['addONS'] = 'product';
+			$data['title'] = 'Product - Hoopla Toys Rent';
+			$data['idbody'] = 'product';
+			$data['keywords'] = strtolower($search);
+
+			$data['getbrand'] = $this->Brand_rental_m->dropdown_getbrand()->result();
+	        $data['getage'] = $this->Age_rental_m->dropdown_getage()->result();
+	        $data['gettype'] = $this->Type_rental_m->dropdown_gettype()->result();
+	        
+			$data['subview'] = $this->load->view($this->data['frontendDIR'].'product', $data, TRUE);
+			$this->load->view($this->data['rootDIR'].'_layout_base_frontend',$data);
+
+		} else {
+			$data = array(
+				'title' => 'Maaf,',
+                'text' => 'pencarian anda kurang dari 3 huruf, silakan melakukan pencarian kembali.'
+          	);
+	    	$this->session->set_flashdata('notif_less_than_3_character', $data);
+	    	redirect('product');
+		}
 	}
 }

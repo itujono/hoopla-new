@@ -114,8 +114,8 @@
 <aside class="sidebar">
 	<div class="sort">
 		<h4>Cari yang kamu butuhkan</h4>
-		<form class="form-control" action="" method="post">
-			<input type="search" class="form-group" value="" placeholder="Misal: Ergobaby carrier">
+		<form class="form-control" action="<?php echo base_url();?>product/searching" method="GET">
+			<input type="search" class="form-group" name="search" placeholder="Misal: Ergobaby carrier" required="required" min="3">
 			<button type="submit" class="btn-hoopla">Cari!</button>
 		</form>
 	</div>
