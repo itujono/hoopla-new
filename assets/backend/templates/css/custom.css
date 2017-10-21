@@ -51,6 +51,7 @@ label, .dataTables_wrapper .uk-table thead .sorting, .selectize-control.single .
 
 .uk-tab > li > a {
     color: #bbb;
+	padding: 14px !important;
 }
 
 .selectize-control.single .selectize-input {
@@ -60,4 +61,28 @@ label, .dataTables_wrapper .uk-table thead .sorting, .selectize-control.single .
 
 input[type=text].md-input {
     padding: 12px 0;
+}
+
+.md-card .md-card-content {
+    padding: 0 0 20px 0;
+}
+
+.md-card .uk-switcher {
+    padding: 20px;
+}
+
+.uk-tab > li {
+	border-right: 1px solid #ddd;
+}
+
+.uk-tab > li:last-child {
+	border-right: none;
+}
+
+.uk-width-1-2.uk-active {
+    background-color: #d575ef;
+}
+
+.uk-tab > li.uk-active > a {
+    color: #fff;
 }
