@@ -6,7 +6,7 @@
 if ($plugins == 'home') { ?>
 <script src="<?php echo base_url().$this->data['asfront'];?>js/owl.carousel.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.9.1/baguetteBox.min.js"></script>
+<script src="https://sachinchoolur.github.io/lightslider/dist/js/lightslider.js"></script>
 <script type="text/javascript" src="<?php echo base_url().$this->data['asfront'];?>js/vanilla-tilt.min.js"></script>
 
 <script type="text/javascript">
@@ -154,9 +154,21 @@ if ($plugins == 'home') { ?>
 } elseif ($plugins == 'product-detail') { /* Plugin dan Script buat Page Product-Detail */
 ?>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://sachinchoolur.github.io/lightslider/dist/js/lightslider.js"></script>
 <script src="<?php echo base_url().$this->data['asfront'];?>js/tingle.min.js"></script>
-<script src="<?php echo base_url().$this->data['asfront'];?>js/owl.carousel.min.js"></script>
+<!-- <script src="<?php //echo base_url().$this->data['asfront'];?>js/owl.carousel.min.js"></script> -->
 
+<script>
+    $('#lightSlider').lightSlider({
+        gallery: true,
+        item: 1,
+        // autoWidth:true,
+        slideMargin: 0,
+        enableDrag: true,
+        enableTouch: true,
+        thumbItem: 6
+    });
+</script>
 
 <script type="text/javascript">
     $(document).ready(function(){
