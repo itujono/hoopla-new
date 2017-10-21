@@ -1,17 +1,21 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
 <main>
     <div class="demooo">
-        <ul id="lightSlider">
-            <li data-thumb="<?php echo base_url().$this->data['asfront'];?>img/kids.jpg">
+        <ul id="product-slider">
+            <li data-thumb="<?php echo base_url().$this->data['asfront'];?>img/kids.jpg"
+                data-src="<?php echo base_url().$this->data['asfront'];?>img/kids.jpg">
                 <img src="<?php echo base_url().$this->data['asfront'];?>img/kids.jpg" />
             </li>
-            <li data-thumb="<?php echo base_url().$this->data['asfront'];?>img/babies.png">
+            <li data-thumb="<?php echo base_url().$this->data['asfront'];?>img/babies.png"
+                data-src="<?php echo base_url().$this->data['asfront'];?>img/babies.png">
                 <img src="<?php echo base_url().$this->data['asfront'];?>img/babies.png" />
             </li>
-            <li data-thumb="<?php echo base_url().$this->data['asfront'];?>img/kids1.png">
+            <li data-thumb="<?php echo base_url().$this->data['asfront'];?>img/kids1.png"
+                data-src="<?php echo base_url().$this->data['asfront'];?>img/kids1.png">
                 <img src="<?php echo base_url().$this->data['asfront'];?>img/kids1.png" />
             </li>
-            <li data-thumb="https://sachinchoolur.github.io/lightslider/img/thumb/cS-4.jpg">
+            <li data-thumb="https://sachinchoolur.github.io/lightslider/img/thumb/cS-4.jpg"
+                data-src="https://sachinchoolur.github.io/lightslider/img/cS-4.jpg">
                 <img src="https://sachinchoolur.github.io/lightslider/img/cS-4.jpg" />
             </li>
         </ul>

@@ -12,27 +12,6 @@ body {
   color: #3d3b54;
 }
 
-.demooo {
-  width: 380px;
-}
-
-.lSSlideOuter .lSPager.lSGallery li {
-  opacity: .7;
-  height: 30px;
-}
-
-.lSSlideOuter .lSPager.lSGallery li:hover {
-  opacity: 1;
-}
-
-.lSSlideOuter .lSPager.lSGallery li.active {
-  opacity: 1;
-}
-
-.lSSlideOuter .lSPager.lSGallery img {
-  height: 100%;
-}
-
 h1, h2, h3, h4, h5, h6, p, a {
   font-family: "GothamRoundedMedium", Helvetica, sans-serif;
   color: #3d3b54;
@@ -2245,6 +2224,46 @@ p.par-heading {
 
 .product-description .category a:hover {
   color: #96d019;
+}
+
+.demooo {
+  width: 380px;
+}
+
+.lSSlideOuter .lSPager.lSGallery li {
+  opacity: .7;
+  height: 30px;
+}
+
+.lSSlideOuter .lSPager.lSGallery li:hover {
+  opacity: 1;
+}
+
+.lSSlideOuter .lSPager.lSGallery li.active {
+  opacity: 1;
+}
+
+.lSSlideOuter .lSPager.lSGallery img {
+  height: 100%;
+}
+
+.lg-outer .lg-thumb-outer {
+  background-color: #fff !important;
+}
+
+.lg-outer .lg-thumb-item.active, .lg-outer .lg-thumb-item:hover {
+  border-color: #9d6ad8 !important;
+}
+
+.lg-actions .lg-next, .lg-actions .lg-prev {
+  background-color: #9d6ad8 !important;
+  border-radius: 50% !important;
+  color: #fff !important;
+  padding: 10px 12px 12px !important;
+}
+
+.lg-progress-bar .lg-progress {
+  background-color: #96d019;
 }
 
 #discount main {

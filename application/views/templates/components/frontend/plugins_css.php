@@ -29,6 +29,7 @@ if ($plugins == 'home') {
 ?>
 <link rel="stylesheet" href="<?php echo base_url().$this->data['asfront'];?>css/tingle.min.css">
 <link rel="stylesheet" href="http://sachinchoolur.github.io/lightslider/dist/css/lightslider.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/1.6.3/css/lightgallery.min.css">
 <?php
 } elseif ($plugins == 'discount') {
 ?>

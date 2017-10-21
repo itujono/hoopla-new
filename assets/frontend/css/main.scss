@@ -14,25 +14,6 @@ body {
     color: $colorH4;
 }
 
-.demooo {
-    width: 380px;
-}
-
-.lSSlideOuter .lSPager.lSGallery li {
-    opacity: .7;
-    height: 30px;
-    &:hover {
-        opacity: 1;
-    }
-    &.active {
-        opacity: 1;
-    }
-}
-
-.lSSlideOuter .lSPager.lSGallery img {
-    height: 100%;
-}
-
 h1, h2, h3, h4, h5, h6, p, a {
     font-family: $fontDefault;
     color: $colorH4;
@@ -1661,6 +1642,50 @@ p.par-heading {
         }
     }
 }
+
+.demooo {
+    width: 380px;
+}
+
+.lSSlideOuter .lSPager.lSGallery li {
+    opacity: .7;
+    height: 30px;
+    &:hover {
+        opacity: 1;
+    }
+    &.active {
+        opacity: 1;
+    }
+}
+
+.lSSlideOuter .lSPager.lSGallery img {
+    height: 100%;
+}
+
+.lg-outer .lg-thumb-outer {
+    background-color: #fff!important;
+}
+
+.lg-outer .lg-thumb-item.active, .lg-outer .lg-thumb-item:hover {
+    border-color: $coolPurple !important;
+}
+
+.lg-actions .lg-next, .lg-actions .lg-prev {
+    background-color: $coolPurple !important;
+    border-radius: 50% !important;
+    color: #fff!important;
+    padding: 10px 12px 12px !important;
+}
+
+.lg-progress-bar .lg-progress {
+    background-color: $coolGreen;
+}
+
+
+
+
+
+
 
 
 

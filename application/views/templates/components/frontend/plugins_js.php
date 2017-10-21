@@ -4,10 +4,9 @@
 <script src="<?php echo base_url().$this->data['asfront'];?>js/main.js"></script>
 <?php
 if ($plugins == 'home') { ?>
-<script src="<?php echo base_url().$this->data['asfront'];?>js/owl.carousel.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://sachinchoolur.github.io/lightslider/dist/js/lightslider.js"></script>
-<script type="text/javascript" src="<?php echo base_url().$this->data['asfront'];?>js/vanilla-tilt.min.js"></script>
+<script src="<?php echo base_url().$this->data['asfront'];?>js/owl.carousel.min.js"></script>
 
 <script type="text/javascript">
     $(document).ready(function(){
@@ -155,11 +154,11 @@ if ($plugins == 'home') { ?>
 ?>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://sachinchoolur.github.io/lightslider/dist/js/lightslider.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/1.6.3/js/lightgallery-all.min.js"></script>
 <script src="<?php echo base_url().$this->data['asfront'];?>js/tingle.min.js"></script>
-<!-- <script src="<?php //echo base_url().$this->data['asfront'];?>js/owl.carousel.min.js"></script> -->
 
 <script>
-    $('#lightSlider').lightSlider({
+    $('#product-slider').lightSlider({
         gallery: true,
         item: 1,
         // autoWidth:true,
@@ -168,16 +167,12 @@ if ($plugins == 'home') { ?>
         enableTouch: true,
         thumbItem: 6
     });
-</script>
 
-<script type="text/javascript">
-    $(document).ready(function(){
-        $(".owl-product").owlCarousel({
-            items: 1,
-            loop: true,
-            autoplay: true,
-            dots: true,
-        });
+    $('#product-slider').lightGallery({
+        share: false,
+        actualSize: false,
+        autoplay: false,
+        autoplayControls: false
     });
 </script>
 
