@@ -1,4 +1,4 @@
-<?php 
+<?php
 $social = selectall_social();
 $wa = $social->waSOCIAL;
 $line = $social->lineSOCIAL;
@@ -12,11 +12,11 @@ $telp= $social->telpSOCIAL;
         <img src="<?php echo base_url().$this->data['asfront'];?>img/logo-web.png" alt="Logo Footer"width="200">
         <h4>We bring <span class="coolgreen">happiness</span> to your home</h4>
         <ul class="social">
-            <li class="wow bounceInUp"><a href="#" title="<?php echo $wa;?>">WA</a></li>
-            <li class="wow bounceInUp" data-wow-delay=".2s">
+            <li class="wow bounceInLeft"><a href="#" title="<?php echo $wa;?>">WA</a></li>
+            <li class="wow bounceInDown" data-wow-delay=".2s">
                 <a href="#" title="<?php echo $line;?>">LINE</a>
             </li>
-            <li class="wow bounceInUp" data-wow-delay=".3s">
+            <li class="wow bounceInRight" data-wow-delay=".3s">
                 <a href="http://instagram.com/<?php echo $ig;?>/" title="<?php echo $wa;?>">IG</a>
             </li>
         </ul>
