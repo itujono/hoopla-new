@@ -67,6 +67,14 @@ input[type=text].md-input {
     padding: 0 0 20px 0;
 }
 
+	.md-card .md-bg-pink-400, .md-card .md-bg-deep-purple-700, .md-card .md-bg-blue-500, .md-card .md-bg-orange-500 {
+	    padding: 16px;
+	}
+
+	.md-card .stats {
+	    padding: 20px;
+	}
+
 .md-card .uk-switcher {
     padding: 20px;
 }
@@ -85,4 +93,8 @@ input[type=text].md-input {
 
 .uk-tab > li.uk-active > a {
     color: #fff;
+}
+
+#sidebar_main .menu_section>ul>li ul a {
+	color: #777;
 }

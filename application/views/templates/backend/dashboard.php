@@ -47,7 +47,7 @@
 <div class="uk-grid" data-uk-grid-margin>
     <div class="uk-width-large-1-1">
         <div class="md-card">
-            <div class="md-card-content">
+            <div class="md-card-content stats">
                 <h4 class="heading_c uk-margin-bottom">Grafik Pengunjung</h4>
                 <div id="chartist_line_area" class="chartist"></div>
             </div>
