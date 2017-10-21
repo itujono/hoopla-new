@@ -132,7 +132,7 @@
     <div class="cta-sidebar wow bounceInLeft" data-wow-delay="1.3s">
         <div>
             <h3><small class="coolgreen">Masih bingung?</small> Halo-in kami aja.</h3>
-            <i class="fa fa-phone-square"></i> 0778 325 253
+            <i class="fa fa-phone-square"></i> 0856 6765 1688
         </div>
     </div>
 </aside>

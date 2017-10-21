@@ -374,7 +374,7 @@ CREATE TABLE `hoopla_social` (
 --
 
 INSERT INTO `hoopla_social` (`idSOCIAL`, `waSOCIAL`, `lineSOCIAL`, `igSOCIAL`, `email1SOCIAL`, `email2SOCIAL`, `telpSOCIAL`, `createdateSOCIAL`, `updatedateSOCIAL`) VALUES
-(1, '085667651688', 'hoopla_rentalmainan', 'hoopla_rentalmainan', 'order@hooplatoyrental.com', 'info@hooplatoyrental.com', '0778 325 253', '2017-10-17 15:47:20', '2017-10-17 15:47:35');
+(1, '085667651688', 'hoopla_rentalmainan', 'hoopla_rentalmainan', 'order@hooplatoyrental.com', 'info@hooplatoyrental.com', '0856 6765 1688', '2017-10-17 15:47:20', '2017-10-17 15:47:35');
 
 -- --------------------------------------------------------
 
