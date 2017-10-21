@@ -84,6 +84,7 @@ li {
   grid-template-columns: 3fr 1fr;
   grid-template-areas: "header header" "main sidebar" "footer footer";
   grid-gap: 0 40px;
+  border-radius: 7px;
 }
 
 header {
@@ -563,9 +564,10 @@ main {
 }
 
 .card .card-bottom h3 {
-  font-size: 14px;
+  font-size: 12px;
   margin: 0 0 5px 0;
   color: #999;
+  overflow: hidden;
   white-space: nowrap;
 }
 
@@ -2260,10 +2262,6 @@ p.par-heading {
   border-radius: 50% !important;
   color: #fff !important;
   padding: 10px 12px 12px !important;
-}
-
-.lg-progress-bar .lg-progress {
-  background-color: #96d019;
 }
 
 #discount main {

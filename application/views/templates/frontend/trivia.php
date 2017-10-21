@@ -1,14 +1,36 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
 <main>
     <div class="wrapper">
-        <?php 
+        <?php
             if(!empty($listtrivia)){
                 foreach ($listtrivia as $key => $triv) {
         ?>
-        <div class="content">
-            <h2>Belum ada post</h2>
-            <p>Well, untuk sekarang belum ada post di page Trivia. Tapi, tenang, sebentar lagi akan banyak postingan-postingan bermanfaat tentang dunia si kecil.</p>
-            <a href="<?php echo base_url();?>trivia/detail/<?php echo base64_encode($triv->idTRIVIA).'-'.seo_url($triv->titleTRIVIA);?>" class="btn-hoopla">ke Post - <?php echo $triv->titleTRIVIA;?></a>
+        <div class="card">
+            <div class="card-content">
+                <img src="<?php echo base_url().$this->data['asfront'];?>img/babies.png" alt="">
+            </div>
+            <div class="card-bottom">
+                <a href="#"><h4>Bagaimana cara menghaluskan makanan bayi hingga tercampur rata?</h4></a>
+                <span>30 Desember 2018</span>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-content">
+                <img src="<?php echo base_url().$this->data['asfront'];?>img/kids1.png" alt="">
+            </div>
+            <div class="card-bottom">
+                <a href="#"><h4>Bagaimana cara menghaluskan makanan bayi hingga tercampur rata?</h4></a>
+                <span>30 Desember 2018</span>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-content">
+                <img src="<?php echo base_url().$this->data['asfront'];?>img/kids.jpg" alt="">
+            </div>
+            <div class="card-bottom">
+                <a href="#"><h4>Bagaimana cara menghaluskan makanan bayi hingga tercampur rata?</h4></a>
+                <span>30 Desember 2018</span>
+            </div>
         </div>
         <?php } ?>
     </div>
