@@ -50,7 +50,7 @@ class About extends Admin_Controller {
 
 				if(empty($id))$id=NULL;
 				$data = $this->security->xss_clean($data);
-				$this->About_m->save($data, $id)
+				$this->About_m->save($data, $id);
 		  		$data = array(
 	            	'title' => 'Sukses',
 	                'text' => 'Penyimpanan Data berhasil dilakukan',

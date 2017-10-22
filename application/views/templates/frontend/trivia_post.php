@@ -3,7 +3,7 @@
     <section class="trivia-post">
         <div class="meta">
             <div class="image">
-                <img src="<?php echo base_url().$this->data['asfront'];?>img/user.jpg" alt="Admin">
+                <img src="<?php echo $gettrivia->imageTRIVIA;?>" alt="Admin">
             </div>
             <p class="author">by <a href="#">Administrator</a></p>
         </div>

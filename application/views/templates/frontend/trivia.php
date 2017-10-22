@@ -7,29 +7,11 @@
         ?>
         <div class="card">
             <div class="card-content">
-                <img src="<?php echo base_url().$this->data['asfront'];?>img/babies.png" alt="">
+                <img src="<?php echo $triv->imageTRIVIA;?>" alt="<?php echo $triv->titleTRIVIA;?>">
             </div>
             <div class="card-bottom">
-                <a href="#"><h4>Bagaimana cara menghaluskan makanan bayi hingga tercampur rata?</h4></a>
-                <span>30 Desember 2018</span>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-content">
-                <img src="<?php echo base_url().$this->data['asfront'];?>img/kids1.png" alt="">
-            </div>
-            <div class="card-bottom">
-                <a href="#"><h4>Bagaimana cara menghaluskan makanan bayi hingga tercampur rata?</h4></a>
-                <span>30 Desember 2018</span>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-content">
-                <img src="<?php echo base_url().$this->data['asfront'];?>img/kids.jpg" alt="">
-            </div>
-            <div class="card-bottom">
-                <a href="#"><h4>Bagaimana cara menghaluskan makanan bayi hingga tercampur rata?</h4></a>
-                <span>30 Desember 2018</span>
+                <a href="<?php echo base_url();?>trivia/detail/<?php echo base64_encode($triv->idTRIVIA).'-'.seo_url($triv->titleTRIVIA);?>"><h4><?php echo $triv->titleTRIVIA;?></h4></a>
+                <span><?php echo date('d F Y', strtotime($triv->createdateTRIVIA));?></span>
             </div>
         </div>
         <?php } ?>

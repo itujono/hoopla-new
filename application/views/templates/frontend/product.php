@@ -92,13 +92,13 @@
         </h4>
     </section>
 </main>
-<?php } else if(empty($searching_all_rental)){ ?>
+<?php } else if(!empty($not_found)){ ?>
 <main>
     <section class="section" id="brands">
         <h4 title="Pencarian tidak dapat ditemukan!">
-            Maaf, <span class="coolgreen">Barang anda tidak dapat kami temukan!</span>
+            <?php echo $not_found['title']; ?><span class="coolgreen"><?php echo $not_found['text']; ?></span>
             <br>
-            <a href="<?php echo base_url();?>">Silakan melakukan pencarian kembali.</a>
+            <a href="<?php echo base_url();?>"><?php echo $not_found['desc']; ?></a>
         </h4>
     </section>
 </main>

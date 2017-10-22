@@ -35,6 +35,7 @@ class Trivia_m extends MY_Model{
 		$trivia->titleTRIVIA = '';
 		$trivia->idCATTRIVIA = '';
 		$trivia->descriptionTRIVIA = '';
+		$trivia->featuredTRIVIA = '';
 		$trivia->statusTRIVIA = '';
 		return $trivia;
 	}
@@ -77,6 +78,13 @@ class Trivia_m extends MY_Model{
 		$this->db->from('post_trivia');
 		$this->db->where('idCATTRIVIA', $id);
 		$this->db->order_by('RAND()');
+		return $this->db->get();
+	}
+
+	public function selectfeatured_trivia() {
+		$this->db->select('idTRIVIA, titleTRIVIA');
+		$this->db->from('post_trivia');
+		$this->db->where('featuredTRIVIA', 1);
 		return $this->db->get();
 	}
 }

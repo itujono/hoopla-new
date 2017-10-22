@@ -1,11 +1,11 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-$title1 = 'Buat Data Trivia Baru';
-$actions = 'savetrivia';
-$controller = 'trivia';
-if($gettrivia->idTRIVIA != NULL){
- $title1 = 'Perbaharui Data Trivia';
+$title1 = 'Buat Data Slider Baru';
+$actions = 'saveslider';
+$controller = 'slider';
+if($getslider->idSLIDER != NULL){
+ $title1 = 'Perbaharui Data Slider';
 } 
 $url = base_url().'hooplaadmin/'.$controller.'/'.$actions;
 ?>
@@ -23,8 +23,8 @@ $url = base_url().'hooplaadmin/'.$controller.'/'.$actions;
   <div class="md-card">
     <div class="md-card-content">
       <ul class="uk-tab uk-tab-grid" data-uk-tab="{connect:'#tabs_4'}">
-        <li class="uk-width-1-2 <?php echo $tab['data-tab']?>>"><a href="#">Daftar Trivia</a></li>
-        <li class="uk-width-1-2 <?php echo $tab['form-tab']?>"><a href="#">Form Trivia</a></li>
+        <li class="uk-width-1-2 <?php echo $tab['data-tab']?>>"><a href="#">Daftar Slider</a></li>
+        <li class="uk-width-1-2 <?php echo $tab['form-tab']?>"><a href="#">Form Slider</a></li>
       </ul>
       <ul id="tabs_4" class="uk-switcher uk-margin">
         <li>
@@ -33,9 +33,7 @@ $url = base_url().'hooplaadmin/'.$controller.'/'.$actions;
               <tr>
                 <th>No.</th>
                 <th>Thumbnail</th>
-                <th>Featured</th>
                 <th>Judul</th>
-                <th>Kategori</th>
                 <th>Deskripsi</th>
                 <th>Created</th>
                 <th>Action</th>
@@ -45,9 +43,7 @@ $url = base_url().'hooplaadmin/'.$controller.'/'.$actions;
               <tr>
                 <th>No.</th>
                 <th>Thumbnail</th>
-                <th>Featured</th>
                 <th>Judul</th>
-                <th>Kategori</th>
                 <th>Deskripsi</th>
                 <th>Created</th>
                 <th>Action</th>
@@ -55,29 +51,22 @@ $url = base_url().'hooplaadmin/'.$controller.'/'.$actions;
             </tfoot>
             <tbody>
               <?php 
-              if(!empty($listtrivia)){
-                foreach ($listtrivia  as $key => $trivia) { 
-                  $id = encode($trivia->idTRIVIA);
-                if($trivia->featuredTRIVIA == 1){
-                  $featured = '<span class="uk-badge uk-badge-notification uk-badge-primary">Featured Post</span>';
-                } else {
-                  $featured = '-';
-                }
-              ?>
+              if(!empty($listslider)){
+                foreach ($listslider  as $key => $slider) { 
+                  $id = encode($slider->idSLIDER);
+                  ?>
                   <tr>
                     <td><?php echo $key+1; ?></td>
-                    <td><img class="img_thumb" src="<?php echo $trivia->imageTRIVIA;?>" alt="<?php echo $trivia->titleTRIVIA;?>"/></td>
-                    <td><?php echo $featured; ?></td>
-                    <td><?php echo $trivia->titleTRIVIA; ?></td>
-                    <td><?php echo $trivia->namaCATTRIVIA; ?></td>
-                    <td><?php echo word_limiter($trivia->descriptionTRIVIA,8); ?></td>
-                    <td><?php echo date('d F Y', strtotime($trivia->createdateTRIVIA));?></td>
+                    <td><img class="img_thumb" src="<?php echo $slider->imageSLIDER;?>" alt="<?php echo $slider->titleSLIDER;?>"/></td>
+                    <td><?php echo $slider->titleSLIDER; ?></td>
+                    <td><?php echo $slider->descSLIDER; ?></td>
+                    <td><?php echo date('d F Y', strtotime($slider->createdateSLIDER));?></td>
                     <?php
                     $icndel = '&#xE16C;';
                     $msg1 = 'Are you sure want to delete this data ?';
                     $msg2 = 'Are you sure want to change this data ?';
-                    $url1 = 'hooplaadmin/'.$controller.'/actiondelete_trivia/'.urlencode($id);
-                    $url2 = 'hooplaadmin/'.$controller.'/index_trivia/'.urlencode($id);
+                    $url1 = 'hooplaadmin/'.$controller.'/actiondelete_slider/'.urlencode($id);
+                    $url2 = 'hooplaadmin/'.$controller.'/index_slider/'.urlencode($id);
                     ?>
                     <td class="uk-text-center">
                       <a href="#" onclick="UIkit.modal.confirm('<?php echo $msg1; ?>', function(){ document.location.href='<?php echo site_url($url1);?>'; });"><i class="md-icon material-icons"><?php echo $icndel; ?></i></a>
@@ -95,55 +84,45 @@ $url = base_url().'hooplaadmin/'.$controller.'/'.$actions;
             <li>
               <h3 class="heading_a uk-margin-bottom">Buat data baru atau Perbaharui data</h3>
               <form method="post" name="formrental" action="<?php echo $url;?>" id="form_validation" enctype="multipart/form-data">
-                <?php echo form_hidden('idTRIVIA',encode($gettrivia->idTRIVIA),'hidden'); ?>
+                <?php echo form_hidden('idSLIDER',encode($getslider->idSLIDER),'hidden'); ?>
                 <div class="uk-grid" data-uk-grid-margin>
                   <div class="uk-width-medium-1-1">
                     <div class="md-card">
                       <div class="md-card-content">
                         <?php
-                          if(!empty($gettrivia->imageTRIVIA)){
+                          if(!empty($getslider->imageSLIDER)){
                         ?>
                         <div class="uk-margin-bottom uk-text-center uk-position-relative">
-                            <a href="#" class="uk-modal-close uk-close uk-close-alt uk-position-absolute" onclick="UIkit.modal.confirm('Apakah anda yakin akan menghapus gambar ini?', function(){ document.location.href='<?php echo base_url().$this->data['folBACKEND'].$controller."/deleteimgtrivia/".encode($gettrivia->idTRIVIA); ?>'; });"></a>
-                            <img src="<?php echo $gettrivia->imageTRIVIA;?>" alt="<?php echo $gettrivia->titleTRIVIA;?>" class="img_medium"/>
+                            <a href="#" class="uk-modal-close uk-close uk-close-alt uk-position-absolute" onclick="UIkit.modal.confirm('Apakah anda yakin akan menghapus gambar ini?', function(){ document.location.href='<?php echo base_url().$this->data['folBACKEND'].$controller."/deleteimgslider/".encode($getslider->idSLIDER); ?>'; });"></a>
+                            <img src="<?php echo $getslider->imageSLIDER;?>" alt="<?php echo $getslider->titleSLIDER;?>" class="img_medium"/>
                         </div>
                         <?php } else { ?>
-                          <?php echo form_upload('imgTRIVIA','','class="md-input" required'); ?>
+                          <?php echo form_upload('imgSLIDER','','class="md-input" required'); ?>
                         <?php } ?>
                       </div>
                     </div>
                   </div>
                 </div>
                 <div class="uk-grid" data-uk-grid-margin>
-                  <div class="uk-width-medium-1-3 uk-margin-top">
+                  <div class="uk-width-medium-1-2 uk-margin-top">
                     <label>Judul</label>
                     <br>
-                    <input type="text" class="md-input label-fixed" name="titleTRIVIA" autocomplete value="<?php echo cetak($gettrivia->titleTRIVIA);?>"/>
-                    <p class="text-red"><?php echo form_error('titleTRIVIA'); ?></p>
+                    <input type="text" class="md-input label-fixed" name="titleSLIDER" autocomplete value="<?php echo cetak($getslider->titleSLIDER);?>" required/>
+                    <p class="text-red"><?php echo form_error('titleSLIDER'); ?></p>
                   </div>
-                  <div class="uk-width-medium-1-3 uk-margin-top">
-                    <label>Kategori</label>
+                  <div class="uk-width-medium-1-2 uk-margin-top">
+                    <label>Link</label>
                     <br>
-                    <?php echo form_dropdown('idCATTRIVIA', $getcattrivia, $gettrivia->idCATTRIVIA,'required id="select_demo_5" data-md-selectize data-md-selectize-bottom'); ?>
-                    <p class="text-red"><?php echo form_error('idCATTRIVIA'); ?></p>
+                    <input type="text" class="md-input label-fixed" name="linkSLIDER" autocomplete value="<?php echo cetak($getslider->linkSLIDER);?>"/>
+                    <p class="text-red"><?php echo form_error('linkSLIDER'); ?></p>
                   </div>
-                  <div class="uk-width-medium-1-3 uk-margin-top">
-                  <div class="parsley-row">
-                    <?php
-                      $checkdis= '';
-                      if($gettrivia->featuredTRIVIA == 1) $checkdis = 'checked';
-                    ?>
-                    <input type="checkbox" data-switchery <?php echo $checkdis; ?> data-switchery-size="large" data-switchery-color="#d32f2f" name="featuredTRIVIA" id="switch_demo_large">
-                    <label for="switch_demo_large" class="inline-label"><b>Featured Post?</b></label>
-                  </div>
-                </div>
                 </div>
                 <div class="uk-grid" data-uk-grid-margin>
                   <div class="uk-width-medium-1-1 uk-margin-top">
                     <label>Deskripsi</label>
                     <br>
-                    <textarea cols="30" rows="4" name="descriptionTRIVIA" class="md-input label-fixed"  required><?php echo cetak($gettrivia->descriptionTRIVIA);?></textarea>
-                    <p class="text-red"><?php echo form_error('descriptionTRIVIA'); ?></p>
+                    <textarea cols="30" rows="4" name="descSLIDER" class="md-input label-fixed"  required><?php echo cetak($getslider->descSLIDER);?></textarea>
+                    <p class="text-red"><?php echo form_error('descSLIDER'); ?></p>
                   </div>
                 </div>
                 <div class="uk-width-medium-1-1 uk-margin-top">

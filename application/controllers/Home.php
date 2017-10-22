@@ -9,6 +9,8 @@ class Home extends Frontend_Controller {
 		$this->load->model('Brand_rental_m');
 		$this->load->model('Age_rental_m');
 		$this->load->model('Type_rental_m');
+		$this->load->model('Slider_m');
+		$this->load->model('Trivia_m');
 	}
 
 	public function index() {
@@ -38,6 +40,18 @@ class Home extends Frontend_Controller {
 			}
 		}
 		
+		$data['listslider'] = $this->Slider_m->selectall_slider()->result();
+		foreach ($data['listslider'] as $key => $value) {
+			$map = directory_map('assets/upload/slider/pic-slider-'.folenc($data['listslider'][$key]->idSLIDER), FALSE, TRUE);
+			if(!empty($map)){
+				$data['listslider'][$key]->imageSLIDER = base_url() . 'assets/upload/slider/pic-slider-'.folenc($data['listslider'][$key]->idSLIDER).'/'.$map[0];
+			} else {
+				$data['listslider'][$key]->imageSLIDER = base_url() . 'assets/upload/no-image-available.png';
+			}
+		}
+
+		$data['featuredtrivia'] = $this->Trivia_m->selectfeatured_trivia()->row();
+
 		$data['getbrand'] = $this->Brand_rental_m->dropdown_getbrand()->result();
         $data['getage'] = $this->Age_rental_m->dropdown_getage()->result();
         $data['gettype'] = $this->Type_rental_m->dropdown_gettype()->result();

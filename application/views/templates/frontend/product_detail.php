@@ -2,22 +2,15 @@
 <main>
     <div class="demooo">
         <ul id="product-slider">
-            <li data-thumb="<?php echo base_url().$this->data['asfront'];?>img/kids.jpg"
-                data-src="<?php echo base_url().$this->data['asfront'];?>img/kids.jpg">
-                <img src="<?php echo base_url().$this->data['asfront'];?>img/kids.jpg" />
+            <?php if(!empty($getrental->map)){ 
+                foreach ($getrental->map as $key => $val_img) {
+            ?>
+            <li data-thumb="<?php echo $val_img; ?>"
+                data-src="<?php echo $val_img; ?>">
+                <img src="<?php echo $val_img; ?>" alt="<?php echo $getrental->namaRENTAL;?>"/>
             </li>
-            <li data-thumb="<?php echo base_url().$this->data['asfront'];?>img/babies.png"
-                data-src="<?php echo base_url().$this->data['asfront'];?>img/babies.png">
-                <img src="<?php echo base_url().$this->data['asfront'];?>img/babies.png" />
-            </li>
-            <li data-thumb="<?php echo base_url().$this->data['asfront'];?>img/kids1.png"
-                data-src="<?php echo base_url().$this->data['asfront'];?>img/kids1.png">
-                <img src="<?php echo base_url().$this->data['asfront'];?>img/kids1.png" />
-            </li>
-            <li data-thumb="https://sachinchoolur.github.io/lightslider/img/thumb/cS-4.jpg"
-                data-src="https://sachinchoolur.github.io/lightslider/img/cS-4.jpg">
-                <img src="https://sachinchoolur.github.io/lightslider/img/cS-4.jpg" />
-            </li>
+                <?php } ?>
+            <?php } ?>
         </ul>
     </div>
     <div class="product-description">

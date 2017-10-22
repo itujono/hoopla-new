@@ -16,11 +16,16 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
+<?php
+$social = selectall_social();
+$email = $social->email2SOCIAL;
+$telp= $social->telpSOCIAL;
+?>
 <div class="container" id="<?php echo $idbody;?>">
     <header>
         <div class="top-panel">
             <div>
-                Contact kami di <span class="coolgreen">+62 856 6765 1688</span> atau <a href="mailto:info@hooplatoys.com?subject=feedback" class="coolgreen">info@hooplatoys.com</a></a>
+                Contact kami di <span class="coolgreen"><?php echo $telp;?></span> atau <a href="mailto:<?php echo $email;?>?subject=feedback" class="coolgreen"><?php echo $email;?></a></a>
             </div>
         </div>
         <div class="main-logo">

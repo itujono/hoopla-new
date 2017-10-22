@@ -2,46 +2,21 @@
 <main>
 	<section class="main-news">
 		<div class="owl-carousel wow bounceInUp" data-wow-delay=".2s">
+		<?php if(!empty($listslider)){ 
+			foreach ($listslider as $key => $slider) {
+			$array_button_name = array('Lihat','lihat lagi','Selanjutnya','Selengkapnya');
+			$but_name = array_rand($array_button_name);
+		?>
 			<div class="carousel-cell">
-				<img src="<?php echo base_url().$this->data['asfront'];?>img/kids.jpg" alt="orange tree" />
+				<img src="<?php echo $slider->imageSLIDER;?>" alt="<?php echo $slider->titleSLIDER;?>" />
 				<div class="caption">
-					<h3>Selamat datang di dunia Hoopla!</h3>
-					<p>Pusatnya sewa perlengkapan dan mainan bayi dan anak di kota Batam</p>
-					<a href="<?php echo base_url();?>product" class="btn-hoopla">Lihat lagi</a>
+					<h3><?php echo $slider->titleSLIDER;?></h3>
+					<p><?php echo $slider->descSLIDER;?></p>
+					<a href="<?php echo $slider->linkSLIDER;?>" class="btn-hoopla"><?php echo $array_button_name[$but_name];?></a>
 				</div>
 			</div>
-			<div class="carousel-cell">
-				<img src="<?php echo base_url().$this->data['asfront'];?>img/kids1.png" alt="One World Trade" />
-				<div class="caption">
-					<h3>Don't be strangers<br></h3>
-					<p>Follow IG kami @hoopla_rentalmainan dan mari berteman</p>
-					<a href="#" class="btn-hoopla">Lihat</a>
-				</div>
-			</div>
-			<div class="carousel-cell">
-				<img src="<?php echo base_url().$this->data['asfront'];?>img/colorful-hands.png" alt="drizzle" />
-				<div class="caption">
-					<h3>Kalo bisa sewa, <br> kenapa harus beli?</h3>
-					<p>Temukan kenapa menyewa adalah pilihan terbaik saat ini</p>
-					<a href="<?php echo base_url();?>form" class="btn-hoopla">Lihat</a>
-				</div>
-			</div>
-			<div class="carousel-cell">
-				<img src="<?php echo base_url().$this->data['asfront'];?>img/babies.png" alt="cat nose" />
-				<div class="caption">
-					<h3>Tidak ada di list kami?</h3>
-					<p>Well, silakan beritahu kami, dan akan kami sediakan untuk kamu</p>
-					<a href="<?php echo base_url();?>contact" class="btn-hoopla">Selanjutnya</a>
-				</div>
-			</div>
-			<div class="carousel-cell">
-				<img src="<?php echo base_url().$this->data['asfront'];?>img/green-baby.png" alt="Green Baby" />
-				<div class="caption">
-					<h3>Cara pemesanan gampang.</h3>
-					<p>Cukup dengan 4 langkah mudah, dan kamu sudah bisa menyewa semuanya di Hoopla.</p>
-					<a href="<?php echo base_url();?>terms" class="btn-hoopla">Selengkapnya</a>
-				</div>
-			</div>
+			<?php } ?>
+		<?php } ?>
 		</div>
 		<div class="cta">
 			<div class="image">
@@ -60,10 +35,12 @@
 			<h3>Paket Happy Moms!</h3>
 			<a href="<?php echo base_url();?>discount" class="btn-hoopla">Lihat</a>
 		</div>
+		<?php if(!empty($featuredtrivia)){ ?>
 		<div style="background: url('<?php echo base_url().$this->data['asfront'];?>img/bg1.jpg')" class="wow bounceInUp" data-wow-delay="1s">
-			<h3>Makanan yang Mantap untuk Hiking</h3>
-			<a href="<?php echo base_url();?>trivia" class="btn-hoopla">Lihat</a>
+			<h3><?php echo $featuredtrivia->titleTRIVIA;?></h3>
+			<a href="<?php echo base_url();?>trivia/detail/<?php echo base64_encode($featuredtrivia->idTRIVIA).'-'.seo_url($featuredtrivia->titleTRIVIA);?>" class="btn-hoopla">Lihat</a>
 		</div>
+		<?php } ?>
 	</section>
 	<section class="most-recent">
 		<h4 title="Barang-barang paling fresh di website ini">Most <span class="coolgreen">recent</span></h4>
