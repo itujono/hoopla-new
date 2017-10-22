@@ -144,7 +144,7 @@
                     <img src="<?php echo $rentcat->imageRENTAL;?>" alt="<?php echo $rentcat->namaRENTAL;?>">
                 </div>
                 <div class="card-bottom">
-                    <a href="<?php echo base_url();?>product/detail">
+                    <a href="<?php echo base_url();?>product/detail/<?php echo base64_encode($rentcat->idRENTAL).'-'.seo_url($rentcat->namaRENTAL);?>">
                         <h3><?php echo $rentcat->namaRENTAL;?></h3>
                         <small>Rp. <?php echo number_format($rentcat->harga2RENTAL, 0,',','.'); ?></small>
                     </a>
@@ -169,7 +169,7 @@
                     <img src="<?php echo $age->imageRENTAL;?>" alt="<?php echo $age->namaRENTAL;?>">
                 </div>
                 <div class="card-bottom">
-                    <a href="<?php echo base_url();?>product/detail">
+                    <a href="<?php echo base_url();?>product/detail/<?php echo base64_encode($age->idRENTAL).'-'.seo_url($age->namaRENTAL);?>">
                         <h3><?php echo $age->namaRENTAL;?></h3>
                         <small>Rp. <?php echo number_format($age->harga2RENTAL, 0,',','.'); ?></small>
                     </a>
