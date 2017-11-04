@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 22, 2017 at 06:46 AM
+-- Generation Time: Nov 04, 2017 at 06:13 AM
 -- Server version: 10.1.21-MariaDB
 -- PHP Version: 7.1.1
 
@@ -89,17 +89,18 @@ CREATE TABLE `hoopla_barang_rental` (
   `descriptionRENTAL` text NOT NULL,
   `createdateRENTAL` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updatedateRENTAL` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00' ON UPDATE CURRENT_TIMESTAMP,
-  `statusRENTAL` int(1) NOT NULL
+  `statusRENTAL` int(1) NOT NULL,
+  `popularRENTAL` int(1) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `hoopla_barang_rental`
 --
 
-INSERT INTO `hoopla_barang_rental` (`idRENTAL`, `idBRAND`, `idTYPE`, `idAGE`, `namaRENTAL`, `harga2RENTAL`, `harga4RENTAL`, `descriptionRENTAL`, `createdateRENTAL`, `updatedateRENTAL`, `statusRENTAL`) VALUES
-(1, 1, 1, 1, 'Stroller Babys dan Mainan Lain', '12000', '23000', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.', '2017-09-26 13:58:43', '2017-10-17 14:19:09', 1),
-(3, 2, 2, 2, 'Bekal Bayi Minion', '16000', '0', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.', '2017-09-27 13:16:55', '2017-10-04 13:10:18', 0),
-(4, 1, 2, 2, 'Lego Sakti', '64000', '124000', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequato.', '2017-10-04 13:23:34', '2017-10-04 13:26:13', 1);
+INSERT INTO `hoopla_barang_rental` (`idRENTAL`, `idBRAND`, `idTYPE`, `idAGE`, `namaRENTAL`, `harga2RENTAL`, `harga4RENTAL`, `descriptionRENTAL`, `createdateRENTAL`, `updatedateRENTAL`, `statusRENTAL`, `popularRENTAL`) VALUES
+(1, 1, 1, 1, 'Stroller Babys dan Mainan Lain', '12000', '23000', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.', '2017-09-26 13:58:43', '2017-11-04 03:36:54', 1, 1),
+(3, 2, 2, 2, 'Bekal Bayi Minion', '16000', '0', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.', '2017-09-27 13:16:55', '2017-11-04 03:37:17', 0, 0),
+(4, 1, 2, 2, 'Lego Sakti', '64000', '124000', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequato.', '2017-10-04 13:23:34', '2017-11-04 03:36:59', 1, 1);
 
 -- --------------------------------------------------------
 
@@ -233,7 +234,12 @@ INSERT INTO `hoopla_ci_sessions` (`id`, `ip_address`, `timestamp`, `data`) VALUE
 ('5u5nsr41fpnss0bjcschkmlgqlp3dnbm', '::1', 1508646244, 0x5f5f63695f6c6173745f726567656e65726174657c693a313530383634363234343b456d61696c7c733a31353a2261646d696e4061646d696e2e636f6d223b696441444d494e7c733a313a2231223b616b7365737c733a353a2261646d696e223b6c6f67676564696e7c623a313b),
 ('p1rpdt4lmg99ve5tjpjhn96q5jga1f42', '::1', 1508646561, 0x5f5f63695f6c6173745f726567656e65726174657c693a313530383634363536313b456d61696c7c733a31353a2261646d696e4061646d696e2e636f6d223b696441444d494e7c733a313a2231223b616b7365737c733a353a2261646d696e223b6c6f67676564696e7c623a313b),
 ('91ht5cgl7njqn1ronu6ju9vqg82qgp8c', '::1', 1508646924, 0x5f5f63695f6c6173745f726567656e65726174657c693a313530383634363932343b456d61696c7c733a31353a2261646d696e4061646d696e2e636f6d223b696441444d494e7c733a313a2231223b616b7365737c733a353a2261646d696e223b6c6f67676564696e7c623a313b),
-('m9m09siq2mug7dgc97k23hj2tqo76npn', '::1', 1508647269, 0x5f5f63695f6c6173745f726567656e65726174657c693a313530383634373236393b456d61696c7c733a31353a2261646d696e4061646d696e2e636f6d223b696441444d494e7c733a313a2231223b616b7365737c733a353a2261646d696e223b6c6f67676564696e7c623a313b);
+('m9m09siq2mug7dgc97k23hj2tqo76npn', '::1', 1508647269, 0x5f5f63695f6c6173745f726567656e65726174657c693a313530383634373236393b456d61696c7c733a31353a2261646d696e4061646d696e2e636f6d223b696441444d494e7c733a313a2231223b616b7365737c733a353a2261646d696e223b6c6f67676564696e7c623a313b),
+('a9o1lo466n8gobvd2q68ujmdobalue2r', '::1', 1509766531, 0x5f5f63695f6c6173745f726567656e65726174657c693a313530393736363533313b456d61696c7c733a31353a2261646d696e4061646d696e2e636f6d223b696441444d494e7c733a313a2231223b616b7365737c733a353a2261646d696e223b6c6f67676564696e7c623a313b),
+('jusg13r5ue0vc8nrgarcei532cvliacr', '::1', 1509766944, 0x5f5f63695f6c6173745f726567656e65726174657c693a313530393736363934343b456d61696c7c733a31353a2261646d696e4061646d696e2e636f6d223b696441444d494e7c733a313a2231223b616b7365737c733a353a2261646d696e223b6c6f67676564696e7c623a313b),
+('gp2th6o97bdo201btf6qfrpk6p57kqfq', '::1', 1509767882, 0x5f5f63695f6c6173745f726567656e65726174657c693a313530393736373838323b456d61696c7c733a31353a2261646d696e4061646d696e2e636f6d223b696441444d494e7c733a313a2231223b616b7365737c733a353a2261646d696e223b6c6f67676564696e7c623a313b),
+('f8htmd4rf38835tunffjg1tjfm5e6896', '::1', 1509771126, 0x5f5f63695f6c6173745f726567656e65726174657c693a313530393737313132363b456d61696c7c733a31353a2261646d696e4061646d696e2e636f6d223b696441444d494e7c733a313a2231223b616b7365737c733a353a2261646d696e223b6c6f67676564696e7c623a313b),
+('587sfsg35lmpdiq63advqmlq6md1udtk', '::1', 1509771126, 0x5f5f63695f6c6173745f726567656e65726174657c693a313530393737313132363b456d61696c7c733a31353a2261646d696e4061646d696e2e636f6d223b696441444d494e7c733a313a2231223b616b7365737c733a353a2261646d696e223b6c6f67676564696e7c623a313b);
 
 -- --------------------------------------------------------
 
@@ -502,7 +508,8 @@ INSERT INTO `hoopla_visitor` (`idVISITOR`, `ipVISITOR`, `dateVISITOR`) VALUES
 (2, '::1', '2017-10-16'),
 (3, '::1', '2017-10-17'),
 (4, '::1', '2017-10-18'),
-(5, '::1', '2017-10-22');
+(5, '::1', '2017-10-22'),
+(6, '::1', '2017-11-04');
 
 --
 -- Indexes for dumped tables
@@ -704,7 +711,7 @@ ALTER TABLE `hoopla_users_admin`
 -- AUTO_INCREMENT for table `hoopla_visitor`
 --
 ALTER TABLE `hoopla_visitor`
-  MODIFY `idVISITOR` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `idVISITOR` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
