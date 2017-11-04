@@ -62,10 +62,11 @@ class Rental_m extends MY_Model{
 		$rental->idAGE = '';
 		$rental->map = '';
 		$rental->statusRENTAL = '';
+		$rental->popularRENTAL = '';
 		return $rental;
 	}
 
-	public function selectall_rental($id = NULL, $status = NULL,$bybrand=NULL, $bycat=NULL, $random=NULL, $mostrecent=NULL) {
+	public function selectall_rental($id = NULL, $status = NULL,$bybrand=NULL, $bycat=NULL, $random=NULL, $mostrecent=NULL, $popular=NULL) {
 		$this->db->select('*');
 		$this->db->select('brand_rental.namaBRAND');
 		$this->db->select('age_rental.namaAGE');
@@ -91,6 +92,9 @@ class Rental_m extends MY_Model{
 		}
 		if($mostrecent != NULL){
 			$this->db->order_by('idRENTAL', 'desc');
+		}
+		if($popular != NULL){
+			$this->db->where('popularRENTAL', 1);
 		}
 		return $this->db->get();
 	}

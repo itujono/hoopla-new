@@ -29,7 +29,7 @@ class Home extends Frontend_Controller {
 			}
 		}
 
-		$data['listrentalmostpopular'] = $this->Rental_m->selectall_rental('','','','',1,'')->result();
+		$data['listrentalmostpopular'] = $this->Rental_m->selectall_rental('','','','','','',1)->result();
 		foreach ($data['listrentalmostpopular'] as $key => $value) {
 			$map = directory_map('assets/upload/rental/pic-rental-'.folenc($data['listrentalmostpopular'][$key]->idRENTAL), FALSE, TRUE);
 			

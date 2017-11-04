@@ -75,12 +75,24 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 <td><?php echo date('d F Y', strtotime($rental->createdateRENTAL));?></td>
                 <?php
                  $icndel = '&#xE16C;';
-                  $msg1 = 'Are you sure want to delete this data <b>'.$rental->namaRENTAL.'</b> ?';
-                  $msg2 = 'Are you sure want to change this data ' . ' <b>'.$rental->namaRENTAL.'</b> ?';
-                  $url1 = 'hooplaadmin/'.$controller.'/actiondelete/'.urlencode($id);
-                  $url2 = 'hooplaadmin/'.$controller.'/index_product/'.urlencode($id);
+                if($rental->popularRENTAL == 1){
+                  $id2 = '';
+                  $icnpopular = '&#xE838;';
+                  $tooltip = 'Popular Product';
+                } else {
+                  $id2 = '/1';
+                  $icnpopular = '&#xE83A;';
+                  $tooltip = 'Not Popular Product';
+                }
+                $msg1 = 'Are you sure want to delete this data <b>'.$rental->namaRENTAL.'</b> ?';
+                $msg2 = 'Are you sure want to change this data ' . ' <b>'.$rental->namaRENTAL.'</b> ?';
+                $msg3 = 'Are you sure want to change this popular item ' . ' <b>'.$rental->namaRENTAL.'</b> ?';
+                $url1 = 'hooplaadmin/'.$controller.'/actiondelete/'.urlencode($id);
+                $url2 = 'hooplaadmin/'.$controller.'/index_product/'.urlencode($id);
+                $url3 = 'hooplaadmin/'.$controller.'/change_popular_product/'.urlencode($id).$id2;
                 ?>
                 <td class="uk-text-center">
+                  <a href="#"  data-uk-tooltip title="<?php echo $tooltip;?>" onclick="UIkit.modal.confirm('<?php echo $msg3; ?>', function(){ document.location.href='<?php echo site_url($url3);?>'; });"><i class="md-icon material-icons"><?php echo $icnpopular; ?></i></a>
                   <a href="#" onclick="UIkit.modal.confirm('<?php echo $msg1; ?>', function(){ document.location.href='<?php echo site_url($url1);?>'; });"><i class="md-icon material-icons"><?php echo $icndel; ?></i></a>
                   <a href="#" onclick="UIkit.modal.confirm('<?php echo $msg2; ?>', function(){ document.location.href='<?php echo site_url($url2);?>'; });"><i class="md-icon material-icons">&#xE254;</i></a>
                 </td>
@@ -140,7 +152,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
               </div>
             </div>
             <div class="uk-grid" data-uk-grid-margin>
-              <div class="uk-width-medium-1-2 uk-margin-top">
+              <div class="uk-width-medium-1-3 uk-margin-top">
                   <label>Harga per 2 Minggu</label>
                   <br>
                   <?php
@@ -150,7 +162,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     <input class="md-input masked_input label-fixed" id="masked_currency" type="text" data-inputmask="'alias': 'currency', 'groupSeparator': '.', 'autoGroup': true, 'digits': 0, 'digitsOptional': false, 'prefix': 'Rp. ', 'placeholder': '0'" data-inputmask-showmaskonhover="false" name="harga2RENTAL" value="<?php echo $price;?>" required>
                   <p class="text-red"><?php echo form_error('harga2RENTAL'); ?></p>
               </div>
-              <div class="uk-width-medium-1-2 uk-margin-top">
+              <div class="uk-width-medium-1-3 uk-margin-top">
                   <label>Harga per 4 Minggu</label>
                   <br>
                   <?php
@@ -159,6 +171,16 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     ?>
                     <input class="md-input masked_input label-fixed" id="masked_currency" type="text" data-inputmask="'alias': 'currency', 'groupSeparator': '.', 'autoGroup': true, 'digits': 0, 'digitsOptional': false, 'prefix': 'Rp. ', 'placeholder': '0'" data-inputmask-showmaskonhover="false" name="harga4RENTAL" value="<?php echo $price;?>" required>
                   <p class="text-red"><?php echo form_error('harga4RENTAL'); ?></p>
+              </div>
+              <div class="uk-width-medium-1-3 uk-margin-top">
+                <div class="parsley-row">
+                  <?php
+                    $checkdis= '';
+                    if($getrental->popularRENTAL == 1) $checkdis = 'checked' ;
+                  ?>
+                  <input type="checkbox" data-switchery <?php echo $checkdis; ?> data-switchery-size="large" data-switchery-color="#7cb342" name="popularRENTAL" id="switch_demo_large">
+                  <label for="switch_demo_large" class="inline-label"><b>Popular Produk</b></label>
+                </div>
               </div>
             </div>
             <div class="uk-grid" data-uk-grid-margin>

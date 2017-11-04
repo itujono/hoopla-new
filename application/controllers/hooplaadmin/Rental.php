@@ -71,8 +71,10 @@ class Rental extends Admin_Controller{
         $this->form_validation->set_message('numeric', 'Silakan masukan hanya berupa angka');
 
 		if ($this->form_validation->run() == TRUE) {
-			$data = $this->Rental_m->array_from_post(array('namaRENTAL','idBRAND','harga2RENTAL','harga4RENTAL','statusRENTAL','descriptionRENTAL','idTYPE','idAGE'));
+			$data = $this->Rental_m->array_from_post(array('namaRENTAL','idBRAND','harga2RENTAL','harga4RENTAL','statusRENTAL','descriptionRENTAL','idTYPE','idAGE','popularRENTAL'));
 			$data['statusRENTAL']=1;
+			if($data['popularRENTAL'] == 'on')$data['popularRENTAL']=1;
+			else $data['popularRENTAL']=0;
 			$data['harga2RENTAL'] = str_replace(['Rp.',' ',','], ['','',''], $data['harga2RENTAL']);
 			$data['harga4RENTAL'] = str_replace(['Rp.',' ',','], ['','',''], $data['harga4RENTAL']);
 			$id = decode(urldecode($this->input->post('idRENTAL')));
@@ -165,6 +167,31 @@ class Rental extends Admin_Controller{
         );
         $this->session->set_flashdata('message',$data);
 		redirect('hooplaadmin/rental/index_product/'.$id1);
+	}
+
+	public function change_popular_product($id=NULL , $id2=NULL){
+		$id = decode(urldecode($id));
+		$ss = 0;
+		if($id2 != NULL)$ss = 1;
+		if($id != 0){
+			$data['popularRENTAL'] = $ss;
+			$this->Rental_m->save($data, $id);
+			$data = array(
+                    'title' => 'Sukses',
+                    'text' => 'Perubahan Data berhasil dilakukan',
+                    'type' => 'success'
+                );
+                $this->session->set_flashdata('message',$data);
+                redirect('hooplaadmin/rental/index_product');
+		}else{
+			$data = array(
+	            'title' => 'Terjadi Kesalahan',
+	            'text' => 'Maaf, Sesuatu telah terjadi',
+	            'type' => 'error'
+		        );
+		        $this->session->set_flashdata('message',$data);
+		        redirect('hooplaadmin/rental/index_product');
+		}
 	}
 
 	public function brand_rental($id = NULL){
