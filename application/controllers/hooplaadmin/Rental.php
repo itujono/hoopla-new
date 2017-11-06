@@ -9,14 +9,15 @@ class Rental extends Admin_Controller{
 		$this->load->model('Brand_rental_m');
 		$this->load->model('Age_rental_m');
 		$this->load->model('Type_rental_m');
+		$this->load->model('Age_join_rental_m');
 	}
 
 	public function index_product($id = NULL){
-		$data['addONS'] = 'plugins_datatables';
+		$data['addONS'] = 'plugins_create_rental_products';
 		$id = decode(urldecode($id));
 		
 		$data['listrental'] = $this->Rental_m->selectall_rental()->result();
-
+		
 		foreach ($data['listrental'] as $key => $value) {
 			$map = directory_map('assets/upload/rental/pic-rental-'.folenc($data['listrental'][$key]->idRENTAL), FALSE, TRUE);
 			if(!empty($map)){
@@ -25,6 +26,7 @@ class Rental extends Admin_Controller{
 				$data['listrental'][$key]->imageRENTAL = base_url() . 'assets/upload/no-image-available.png';
 			}
 		}
+		
 		if($id == NULL){
 	        $data['tab'] = array(
 	            'data-tab' => 'uk-active',
@@ -39,6 +41,9 @@ class Rental extends Admin_Controller{
 	            'form-tab' => 'uk-active',
 	        );
 			$data['getrental'] = $this->Rental_m->selectall_rental($id)->row();
+
+
+
 			$map = directory_map('assets/upload/rental/pic-rental-'.folenc($data['getrental']->idRENTAL), FALSE, TRUE);
 			$maps = array();
 			$imgs = array();
@@ -56,7 +61,6 @@ class Rental extends Admin_Controller{
             $data['message'] = $this->session->flashdata('message');
         }
         $data['getbrand'] = $this->Brand_rental_m->dropdown_getbrand(1);
-        $data['getage'] = $this->Age_rental_m->dropdown_getage(1);
         $data['gettype'] = $this->Type_rental_m->dropdown_gettype(1);
 
 		$data['subview'] = $this->load->view($this->data['backendDIR'].'rental', $data, TRUE);
@@ -69,21 +73,34 @@ class Rental extends Admin_Controller{
 		$this->form_validation->set_message('required', 'Form %s tidak boleh dikosongkan');
         $this->form_validation->set_message('trim', 'Form %s adalah Trim');
         $this->form_validation->set_message('numeric', 'Silakan masukan hanya berupa angka');
-
+        
 		if ($this->form_validation->run() == TRUE) {
-			$data = $this->Rental_m->array_from_post(array('namaRENTAL','idBRAND','harga2RENTAL','harga4RENTAL','statusRENTAL','descriptionRENTAL','idTYPE','idAGE','popularRENTAL'));
+			$data = $this->Rental_m->array_from_post(array('namaRENTAL','idBRAND','harga2RENTAL','harga4RENTAL','statusRENTAL','descriptionRENTAL','idTYPE','popularRENTAL'));
+			
 			$data['statusRENTAL']=1;
 			if($data['popularRENTAL'] == 'on')$data['popularRENTAL']=1;
 			else $data['popularRENTAL']=0;
 			$data['harga2RENTAL'] = str_replace(['Rp.',' ',','], ['','',''], $data['harga2RENTAL']);
 			$data['harga4RENTAL'] = str_replace(['Rp.',' ',','], ['','',''], $data['harga4RENTAL']);
-			$id = decode(urldecode($this->input->post('idRENTAL')));
 
+			$id = decode(urldecode($this->input->post('idRENTAL')));
+			
 			if(empty($id))$id=NULL;
 			
 			$data = $this->security->xss_clean($data);
 			$idsave = $this->Rental_m->save($data, $id);
+			foreach ($this->input->post('idAGE') as $value) {
 
+				$datas['idRENTAL'] = $idsave;
+				$datas['idAGE'] = $value;
+				$checkinginput = $this->Age_join_rental_m->checking_input($datas['idRENTAL'],$datas['idAGE'])->row();
+				if(!empty($checkinginput)){
+					//nothing to do
+				} else {
+					$this->Age_join_rental_m->save($datas);
+				}
+				
+			}
 			$subject = $idsave;
 			$filenamesubject = 'pic-rental-'.folenc($subject);
 
@@ -446,6 +463,28 @@ class Rental extends Admin_Controller{
 		        );
 		        $this->session->set_flashdata('message',$data);
 		        $this->type_rental();
+		}
+	}
+
+	public function delete_join_age_rental($id=NULL){
+		$id = decode(urldecode($id));
+		if($id != 0){
+			$this->Age_join_rental_m->delete($id);
+			$data = array(
+                    'title' => 'Sukses',
+                    'text' => 'Penghapusan Data berhasil dilakukan',
+                    'type' => 'success'
+                );
+                $this->session->set_flashdata('message',$data);
+                redirect('hooplaadmin/rental/index_product');
+		}else{
+			$data = array(
+	            'title' => 'Terjadi Kesalahan',
+	            'text' => 'Maaf, data tidak berhasil dihapus silakan coba beberapa saat kembali',
+	            'type' => 'error'
+		        );
+		        $this->session->set_flashdata('message',$data);
+		        $this->index_product();
 		}
 	}
 }

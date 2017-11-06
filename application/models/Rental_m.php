@@ -28,8 +28,8 @@ class Rental_m extends MY_Model{
 			'label' => 'Harga Per 4 Minggu Rental', 
 			'rules' => 'trim|required'
 		),
-		'idAGE' => array(
-			'field' => 'idAGE', 
+		'idAGE[]' => array(
+			'field' => 'idAGE[]', 
 			'label' => 'Umur Anak', 
 			'rules' => 'trim|required'
 		),
@@ -59,7 +59,6 @@ class Rental_m extends MY_Model{
 		$rental->umurRENTAL = '';
 		$rental->descriptionRENTAL = '';
 		$rental->idTYPE = '';
-		$rental->idAGE = '';
 		$rental->map = '';
 		$rental->statusRENTAL = '';
 		$rental->popularRENTAL = '';
@@ -69,11 +68,9 @@ class Rental_m extends MY_Model{
 	public function selectall_rental($id = NULL, $status = NULL,$bybrand=NULL, $bycat=NULL, $random=NULL, $mostrecent=NULL, $popular=NULL) {
 		$this->db->select('*');
 		$this->db->select('brand_rental.namaBRAND');
-		$this->db->select('age_rental.namaAGE');
 		$this->db->select('type_rental.namaTYPE');
 		$this->db->from('barang_rental');
 		$this->db->join('brand_rental', 'brand_rental.idBRAND = barang_rental.idBRAND');
-		$this->db->join('age_rental', 'age_rental.idAGE = barang_rental.idAGE');
 		$this->db->join('type_rental', 'type_rental.idTYPE = barang_rental.idTYPE');
 		if ($id != NULL) {
 			$this->db->where('idRENTAL',$id);
@@ -126,32 +123,44 @@ class Rental_m extends MY_Model{
 
     public function searching_sortby($sortbrand=NULL, $sorttype=NULL, $sortage=NULL){
     	
-    	$this->db->select('*');
+    	$this->db->select('barang_rental.idRENTAL,barang_rental.namaRENTAL, barang_rental.harga2RENTAL');
 		$this->db->select('brand_rental.namaBRAND');
-		$this->db->select('age_rental.namaAGE');
 		$this->db->select('type_rental.namaTYPE');
 		$this->db->from('barang_rental');
 		$this->db->join('brand_rental', 'brand_rental.idBRAND = barang_rental.idBRAND');
-		$this->db->join('age_rental', 'age_rental.idAGE = barang_rental.idAGE');
 		$this->db->join('type_rental', 'type_rental.idTYPE = barang_rental.idTYPE');
 
-		if($sortbrand != NULL AND $sorttype != NULL){
+		if($sortbrand != NULL AND $sorttype == NULL AND $sortage == NULL){
+			$this->db->where('barang_rental.idBRAND', $sortbrand);
+		} else if($sorttype != NULL AND $sortbrand == NULL AND $sortage == NULL){
+			$this->db->where('barang_rental.idTYPE', $sorttype);
+		} else if($sortage != NULL AND $sortbrand == NULL AND $sorttype == NULL){
+			$this->db->select('age_rental.namaAGE, age_rental.idAGE');
+		    $this->db->select('age_join_rental.idAGEJOINRENTAL');
+		    $this->db->from('age_rental');
+		    $this->db->join('age_join_rental', 'age_join_rental.idRENTAL = barang_rental.idRENTAL');
+			$this->db->where('age_join_rental.idAGE', $sortage);
+		}else if($sortbrand != NULL AND $sorttype != NULL AND $sortage == NULL){
 			$this->db->where('barang_rental.idBRAND', $sortbrand);
 			$this->db->or_where('barang_rental.idTYPE', $sorttype);
-		}  else if($sorttype != NULL AND $sortage != NULL){
-			$this->db->where('barang_rental.idTYPE', $sorttype);
-			$this->db->or_where('barang_rental.idAGE', $sortage);
-		}  else if($sortbrand != NULL AND $sortage != NULL){
-			$this->db->where('barang_rental.idBRAND', $sorttype);
-			$this->db->or_where('barang_rental.idAGE', $sortage);
-		} else if($sortage != NULL){
-			$this->db->where('barang_rental.idAGE', $sortage);
-		} else if($sortbrand != NULL){
+		} else if($sortbrand != NULL AND $sortage != NULL AND $sorttype == NULL ){
 			$this->db->where('barang_rental.idBRAND', $sortbrand);
-		} else if($sorttype != NULL){
-			$this->db->where('barang_rental.idTYPE', $sorttype);
-		}
 
+			$this->db->select('age_rental.namaAGE, age_rental.idAGE');
+		    $this->db->select('age_join_rental.idAGEJOINRENTAL');
+		    $this->db->from('age_rental');
+		    $this->db->join('age_join_rental', 'age_join_rental.idRENTAL = barang_rental.idRENTAL');
+			$this->db->where('age_join_rental.idAGE', $sortage);
+		} else if($sorttype != NULL AND $sortage != NULL AND $sortbrand == NULL ){
+			$this->db->where('barang_rental.idTYPE', $sorttype);
+			
+			$this->db->select('age_rental.namaAGE, age_rental.idAGE');
+		    $this->db->select('age_join_rental.idAGEJOINRENTAL');
+		    $this->db->from('age_rental');
+		    $this->db->join('age_join_rental', 'age_join_rental.idRENTAL = barang_rental.idRENTAL');
+			$this->db->or_where('age_join_rental.idAGE', $sortage);
+		}
+		$this->db->group_by('barang_rental.idRENTAL');
 		return $this->db->get();
     }
 

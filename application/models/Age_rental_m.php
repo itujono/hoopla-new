@@ -48,4 +48,14 @@ class Age_rental_m extends MY_Model{
 			return $this->db->get();
 		}
 	}
+
+	// public function select_all_multiple_age($id=NULL) {
+	// 	$this->db->select('namaAGE');
+	// 	$this->db->from('age_rental');
+	// 	$this->db->join('age_join_rental', 'age_join_rental.idAGE = age_rental.idAGE');
+	// 	if($id != NULL){
+	// 		$this->db->where('age_join_rental.idRENTAL', $id);
+	// 	}
+	// 	return $this->db->get();
+	// }
 }

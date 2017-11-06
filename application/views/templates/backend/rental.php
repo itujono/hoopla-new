@@ -62,6 +62,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             if(!empty($listrental)){
               foreach ($listrental  as $key => $rental) {
               $id = encode($rental->idRENTAL);
+              $multiple_age = select_all_multiple_age($rental->idRENTAL);
             ?>
              <tr>
                 <td><?php echo $key+1; ?></td>
@@ -69,7 +70,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 <td><?php echo $rental->namaRENTAL; ?></td>
                 <td><?php echo $rental->namaBRAND; ?></td>
                 <td><?php echo $rental->namaTYPE; ?></td>
-                <td><?php echo $rental->namaAGE; ?></td>
+                <td>
+                  <?php foreach ($multiple_age as $val) { ?>
+                    (<?php echo $val->namaAGE;?>) - <a href="#" onclick="UIkit.modal.confirm('Are you sure want to delete this data?', function(){ document.location.href='<?php echo base_url().'hooplaadmin/'.$controller."/delete_join_age_rental/".urlencode(encode($val->idAGEJOINRENTAL)); ?>'; });">
+                      <span><i class="fa fa-times">X</i></span>
+                    </a> 
+                  <?php } ?>
+                </td>
                 <td>Rp. <?php echo number_format($rental->harga2RENTAL, 0,',','.'); ?></td>
                 <td>Rp. <?php echo number_format($rental->harga4RENTAL, 0,',','.'); ?></td>
                 <td><?php echo date('d F Y', strtotime($rental->createdateRENTAL));?></td>
@@ -126,29 +133,47 @@ defined('BASEPATH') OR exit('No direct script access allowed');
               </div>
             </div>
             <div class="uk-grid" data-uk-grid-margin>
-              <div class="uk-width-medium-1-4 uk-margin-top">
+              <div class="uk-width-medium-1-3 uk-margin-top">
                   <label>Nama Barang</label>
                   <br>
                   <input type="text" class="md-input label-fixed" name="namaRENTAL" autocomplete value="<?php echo $getrental->namaRENTAL;?>"/>
                   <p class="text-red"><?php echo form_error('namaRENTAL'); ?></p>
               </div>
-              <div class="uk-width-medium-1-4 uk-margin-top">
+              <div class="uk-width-medium-1-3 uk-margin-top">
                   <label>Brand Barang</label>
                   <br>
                   <?php echo form_dropdown('idBRAND', $getbrand, $getrental->idBRAND,'required id="select_demo_5" data-md-selectize data-md-selectize-bottom'); ?>
                   <p class="text-red"><?php echo form_error('idBRAND'); ?></p>
               </div>
-              <div class="uk-width-medium-1-4 uk-margin-top">
+              <div class="uk-width-medium-1-3 uk-margin-top">
                 <label>Type Barang</label>
                 <br>
                   <?php echo form_dropdown('idTYPE', $gettype, $getrental->idTYPE,'required id="select_demo_5" data-md-selectize data-md-selectize-bottom'); ?>
                   <p class="text-red"><?php echo form_error('idTYPE'); ?></p>
               </div>
-              <div class="uk-width-medium-1-4 uk-margin-top">
+              <!-- <div class="uk-width-medium-1-4 uk-margin-top">
                 <label>Age/Umur Anak</label>
                 <br>
-                  <?php echo form_dropdown('idAGE', $getage, $getrental->idAGE,'required id="select_demo_5" data-md-selectize data-md-selectize-bottom'); ?>
-                  <p class="text-red"><?php echo form_error('idAGE'); ?></p>
+                  <?php //echo form_dropdown('idAGE', $getage, $getrental->idAGE,'required id="select_demo_5" data-md-selectize data-md-selectize-bottom'); ?>
+                  <p class="text-red"><?php //echo form_error('idAGE'); ?></p>
+              </div> -->
+            </div>
+            <div class="uk-grid" data-uk-grid-margin>
+              <div class="uk-width-medium-1-1 uk-margin-top">
+              <label>Age/Umur Anak (Multiple)</label>
+              <br>
+                <select id="select_age" name="idAGE[]" multiple required="required">
+                <?php
+                $getage = select_all_multiple_age($getrental->idRENTAL);
+                
+                if(!empty($getage)){
+                  foreach ($getage as $key => $age) {
+                ?>
+                  <option value="<?php echo $age->idAGE;?>" selected><?php echo $age->namaAGE;?></option>
+                  <?php } ?>
+                <?php } ?>
+                </select>
+                <p class="text-red"><?php echo form_error('idAGE'); ?></p>
               </div>
             </div>
             <div class="uk-grid" data-uk-grid-margin>
