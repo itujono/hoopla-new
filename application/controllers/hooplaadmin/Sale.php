@@ -10,7 +10,7 @@ class Sale extends Admin_Controller{
 	}
 
 	public function index_sale($id = NULL){
-		$data['addONS'] = 'plugins_datatables';
+		$data['addONS'] = 'plugins_create_products_sale';
 		$id = decode(urldecode($id));
 		
 		$data['listsale'] = $this->Sale_m->selectall_sale()->result();

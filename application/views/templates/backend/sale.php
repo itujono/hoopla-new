@@ -143,7 +143,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
               <div class="uk-width-medium-1-1 uk-margin-top">
                 <label>Deskripsi Barang</label>
                 <br>
-                <textarea cols="30" rows="4" name="descriptionSALE" class="md-input label-fixed"  required><?php echo $getsale->descriptionSALE;?></textarea>
+                <textarea id="wysiwyg_tinymces" cols="30" rows="4" name="descriptionSALE" class="md-input label-fixed"  required><?php echo $getsale->descriptionSALE;?></textarea>
                 <p class="text-red"><?php echo form_error('descriptionSALE'); ?></p>
               </div>
             </div>
