@@ -427,6 +427,9 @@ main {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
 }
 
 .most-recent {
@@ -491,10 +494,11 @@ main {
 }
 
 .card {
-  -webkit-flex-basis: 24%;
-  -ms-flex-preferred-size: 24%;
-  flex-basis: 24%;
+  -webkit-flex-basis: 23%;
+  -ms-flex-preferred-size: 23%;
+  flex-basis: 23%;
   margin-right: 15px;
+  margin-bottom: 15px;
   border-radius: 8px;
 }
 
@@ -517,6 +521,10 @@ main {
 }
 
 .card:last-child {
+  margin-right: 0;
+}
+
+.card:nth-child(4) {
   margin-right: 0;
 }
 
@@ -561,6 +569,8 @@ main {
   border-top: none;
   border-radius: 0 0 8px 8px;
   padding: 8px 10px;
+  max-height: 52px;
+  min-height: 52px;
 }
 
 .card .card-bottom h3 {
@@ -568,7 +578,6 @@ main {
   margin: 0 0 5px 0;
   color: #999;
   overflow: hidden;
-  white-space: nowrap;
 }
 
 .card .card-bottom small {
@@ -2737,6 +2746,21 @@ tbody tr.total td {
   grid-template-columns: 1fr;
   grid-template-rows: auto;
   padding-left: 3em;
+}
+
+#sale .page-title {
+  margin-bottom: 3em;
+}
+
+#sale .page-title h2 {
+  font-size: 3em;
+  color: #96d019;
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+#sale .page-title p {
+  line-height: 1.6;
 }
 
 #sale section {

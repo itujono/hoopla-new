@@ -17,7 +17,7 @@ $telp= $social->telpSOCIAL;
                 <a href="#" title="<?php echo $line;?>">LINE</a>
             </li>
             <li class="wow bounceInRight" data-wow-delay=".3s">
-                <a href="http://instagram.com/<?php echo $ig;?>/" title="<?php echo $wa;?>">IG</a>
+                <a href="http://instagram.com/<?php echo $ig;?>/" title="<?php echo $ig;?>">IG</a>
             </li>
         </ul>
     </div>

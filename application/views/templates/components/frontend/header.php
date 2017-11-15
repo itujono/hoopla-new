@@ -25,7 +25,7 @@ $telp= $social->telpSOCIAL;
     <header>
         <div class="top-panel">
             <div>
-                Contact kami di <span class="coolgreen"><?php echo $telp;?></span> atau <a href="mailto:<?php echo $email;?>?subject=feedback" class="coolgreen"><?php echo $email;?></a></a>
+                Contact kami di <!--<span class="coolgreen"><?php //echo $telp;?></span>--> <a href="mailto:<?php echo $email;?>?subject=feedback" class="coolgreen"><?php echo $email;?></a></a>
             </div>
         </div>
         <div class="main-logo">

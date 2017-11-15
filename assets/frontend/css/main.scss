@@ -352,6 +352,7 @@ main {
 
 .wrapper {
     display: flex;
+    flex-wrap: wrap;
 }
 
 .most-recent {
@@ -392,8 +393,9 @@ main {
 }
 
 .card {
-    flex-basis: 24%;
+    flex-basis: 23%;
     margin-right: 15px;
+    margin-bottom: 15px;
     border-radius: 8px;
     &:hover {
         transform: translateY(-3px);
@@ -406,6 +408,9 @@ main {
         transform: translateY(-3px);
     }
     &:last-child {
+        margin-right: 0;
+    }
+    &:nth-child(4) {
         margin-right: 0;
     }
     .card-content {
@@ -432,12 +437,13 @@ main {
         border-top: none;
         border-radius: 0 0 8px 8px;
         padding: 8px 10px;
+        max-height: 52px;
+        min-height: 52px;
         h3 {
             font-size: 12px;
             margin: 0 0 5px 0;
             color: #999;
             overflow: hidden;
-            white-space: nowrap;
         }
         small {
             color: $coolGreen;
@@ -2071,6 +2077,18 @@ tbody tr {
     grid-template-columns: 1fr;
     grid-template-rows: auto;
     padding-left: 3em;
+}
+
+#sale .page-title {
+    margin-bottom: 3em;
+    h2 {
+        font-size: 3em;
+        color: $coolGreen;
+        @include marginHeading;
+    }
+    p {
+        line-height: $lineHeightP;
+    }
 }
 
 #sale section {
