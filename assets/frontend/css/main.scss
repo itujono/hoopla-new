@@ -2118,6 +2118,9 @@ tbody tr {
     .card {
         flex-basis: 22%;
         margin-bottom: 1.2em;
+        .card-bottom {
+            min-height: 64px;
+        }
         &.continue {
             flex-direction: column;
             @include flexCenter;
@@ -2171,6 +2174,21 @@ tbody tr {
     }
 }
 
+.empty-list {
+    padding: 2em;
+    background: #eee;
+    border: 1px solid #e3e3e3;
+    border-radius: 7px;
+    color: #777;
+    h3 {
+        color: #999;
+        margin-bottom: 5px;
+    }
+    p {
+        margin-top: 0;
+        color: #999;
+    }
+}
 
 
 

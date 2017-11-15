@@ -70,6 +70,10 @@
 			<!-- Buat <span class="coolgreen">mama</span> -->
 			<span class="coolgreen"><?php echo strtolower($cat->namaCATSALE); ?></span>
 		</h4>
+        <div class="empty-list">
+            <h3>Uh oh!</h3>
+            <p>Tampaknya untuk bagian ini masih belum ada data nya, ya.</p>
+        </div>
 		<div class="wrapper">
 			<?php
 			if(!empty($listsale)){

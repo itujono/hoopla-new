@@ -2809,6 +2809,10 @@ tbody tr.total td {
   margin-bottom: 1.2em;
 }
 
+#sale .wrapper .card .card-bottom {
+  min-height: 64px;
+}
+
 #sale .wrapper .card.continue {
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
@@ -2897,6 +2901,24 @@ tbody tr.total td {
   -webkit-transform: translateY(-5px);
   -ms-transform: translateY(-5px);
   transform: translateY(-5px);
+}
+
+.empty-list {
+  padding: 2em;
+  background: #eee;
+  border: 1px solid #e3e3e3;
+  border-radius: 7px;
+  color: #777;
+}
+
+.empty-list h3 {
+  color: #999;
+  margin-bottom: 5px;
+}
+
+.empty-list p {
+  margin-top: 0;
+  color: #999;
 }
 
 #titip-sewa {
