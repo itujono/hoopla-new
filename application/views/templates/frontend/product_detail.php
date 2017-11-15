@@ -1,15 +1,23 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
 <main>
     <div class="demooo">
-        <ul id="product-slider">
-            <?php if(!empty($getrental->map)){ 
+        <ul id="product-slider" class="owl-carousel owl-theme">
+            <?php if(!empty($getrental->map)){
                 foreach ($getrental->map as $key => $val_img) {
             ?>
-            <li data-thumb="<?php echo $val_img; ?>"
-                data-src="<?php echo $val_img; ?>">
-                <img src="<?php echo $val_img; ?>" alt="<?php echo $getrental->namaRENTAL;?>"/>
+            <!-- <li data-thumb="<?php //echo $val_img; ?>"
+                data-src="<?php //echo $val_img; ?>">
+                <img src="<?php //echo $val_img; ?>" alt="<?php //echo $getrental->namaRENTAL;?>"/>
+            </li> -->
+            <li class="item">
+                <a href="<?php echo base_url().$this->data['asfront'];?>img/toys1.png" data-fancybox="group" data-caption="Super caption gitu deh">
+                    <!-- <div class="caption">
+                        <h4>Mainan Minion</h4>
+                    </div> -->
+                    <img src="<?php echo base_url().$this->data['asfront'];?>img/toys1.png" alt="Toy Minion">
+                </a>
             </li>
-                <?php } ?>
+            <?php } ?>
             <?php } ?>
         </ul>
     </div>
