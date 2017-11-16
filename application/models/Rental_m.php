@@ -89,7 +89,7 @@ class Rental_m extends MY_Model{
 		}
 		if($mostrecent != NULL){
 			$this->db->order_by('idRENTAL', 'desc');
-			$this->db->limit(3);
+			$this->db->limit(4);
 		}
 		if($popular != NULL){
 			$this->db->where('popularRENTAL', 1);
