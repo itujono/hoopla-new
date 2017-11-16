@@ -7,6 +7,7 @@ class Sale extends Admin_Controller{
 		parent::__construct();
 		$this->load->model('Sale_m');
 		$this->load->model('Category_sale_m');
+		$this->load->model('Introsale_m');
 	}
 
 	public function index_sale($id = NULL){
@@ -243,6 +244,90 @@ class Sale extends Admin_Controller{
 		        );
 		        $this->session->set_flashdata('message',$data);
 		        $this->category_sale();
+		}
+	}
+
+	public function index_intro($id = NULL){
+		$data['addONS'] = 'plugins_datatables';
+		$id = decode(urldecode($id));
+		
+		$data['listintro'] = $this->Introsale_m->selectall_intro()->result();
+
+		if($id == NULL){
+	        $data['tab'] = array(
+	            'data-tab' => 'uk-active',
+	            'form-tab' => '',
+	        );
+			$data['getintro'] = $this->Introsale_m->get_new();
+		} else {
+			
+			//conf tab (optional)
+	        $data['tab'] = array(
+	            'data-tab' => '',
+	            'form-tab' => 'uk-active',
+	        );
+			$data['getintro'] = $this->Introsale_m->selectall_intro($id)->row();
+		}
+
+		if(!empty($this->session->flashdata('message'))) {
+            $data['message'] = $this->session->flashdata('message');
+        }
+
+		$data['subview'] = $this->load->view($this->data['backendDIR'].'intro_sale', $data, TRUE);
+		$this->load->view('templates/_layout_base',$data);
+	}
+
+	public function saveintro() {
+		$rules = $this->Introsale_m->rules_intro;
+		$this->form_validation->set_rules($rules);
+		$this->form_validation->set_message('required', 'Form %s tidak boleh dikosongkan');
+        $this->form_validation->set_message('trim', 'Form %s adalah Trim');
+
+		if ($this->form_validation->run() == TRUE) {
+				$data = $this->Introsale_m->array_from_post(array('titleINTROSALE','descINTROSALE'));
+				$id = decode(urldecode($this->input->post('idINTROSALE')));
+
+				if(empty($id))$id=NULL;
+				$data = $this->security->xss_clean($data);
+				$this->Introsale_m->save($data, $id);
+		  		$data = array(
+	            	'title' => 'Sukses',
+	                'text' => 'Penyimpanan Data berhasil dilakukan',
+	                'type' => 'success'
+	          	);
+		    	$this->session->set_flashdata('message', $data);
+		  		redirect('hooplaadmin/sale/index_intro');
+		  		
+		} else {
+			$data = array(
+	            'title' => 'Terjadi Kesalahan',
+	            'text' => 'mohon ulangi inputan form anda dibawah.',
+	            'type' => 'warning'
+	        );
+	        $this->session->set_flashdata('message',$data);
+	        $this->index_intro();
+		}
+	}
+
+	public function actiondelete_intro($id=NULL){
+		$id = decode(urldecode($id));
+		if($id != 0){
+			$this->Introsale_m->delete($id);
+			$data = array(
+                    'title' => 'Sukses',
+                    'text' => 'Penghapusan Data berhasil dilakukan',
+                    'type' => 'success'
+                );
+                $this->session->set_flashdata('message',$data);
+                redirect('hooplaadmin/sale/index_intro');
+		}else{
+			$data = array(
+	            'title' => 'Terjadi Kesalahan',
+	            'text' => 'Maaf, data tidak berhasil dihapus silakan coba beberapa saat kembali',
+	            'type' => 'error'
+		        );
+		        $this->session->set_flashdata('message',$data);
+		        redirect('hooplaadmin/sale/index_intro');
 		}
 	}
 }

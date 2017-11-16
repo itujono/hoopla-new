@@ -1,55 +1,89 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
+<?php
+    $why = selectall_why_only_one();
+    $title1 = $why->titleWHY;
+    $desc1 = $why->descWHY;
+    $point = $why->pointWHY;
+    $title2 = $why->title2WHY;
+    $mustwhy1 = $why->mustWHY;
+    $descmust1 = $why->descmustWHY;
+    $mustwhy2 = $why->must2WHY;
+    $descmust2 = $why->descmust2WHY;
+
+    $map = directory_map('assets/upload/why/why-hoopla/pic-why-hoopla-'.folenc($why->idWHY), FALSE, TRUE);
+    if(!empty($map)){
+        $imagewhyHOOPLA = base_url() . 'assets/upload/why/why-hoopla/pic-why-hoopla-'.folenc($why->idWHY).'/'.$map[0];
+    } else {
+        $imagewhyHOOPLA = '';
+    }
+
+    $map2 = directory_map('assets/upload/why/must-why/pic-must-why-1-'.folenc($why->idWHY), FALSE, TRUE);
+    if(!empty($map2)){
+        $imagewhymustHOOPLA = base_url() . 'assets/upload/why/must-why/pic-must-why-1-'.folenc($why->idWHY).'/'.$map2[0];
+    } else {
+        $imagewhymustHOOPLA = '';
+    }
+
+    $map3 = directory_map('assets/upload/why/must-why-second/pic-must-why-2-'.folenc($why->idWHY), FALSE, TRUE);
+    if(!empty($map3)){
+        $imagewhymust2HOOPLA = base_url() . 'assets/upload/why/must-why-second/pic-must-why-2-'.folenc($why->idWHY).'/'.$map3[0];
+    } else {
+        $imagewhymust2HOOPLA = '';
+    }
+?>
 <main>
     <section class="first">
         <div>
-            <h2>Kalo bisa rental, <br> ngapain beli?</h2>
-            <p class="m0">Mainan terbukti dapat meningkatkan/menstimulasi gerak motorik bayi dan anak. Tapi tentunya tidak serta merta para orang tua harus membeli mainan yang diinginkan untuk si buah hati, karena saat ini mainan bayi dan anak bisa disewa. Banyak alasan mengapa menyewa mainan lebih baik daripada membeli:</p>
+            <h2><?php echo $title1;?></h2>
+            <p class="m0"><?php echo $desc1;?></p>
         </div>
         <div class="figure">
-            <img src="<?php echo base_url().$this->data['asfront'];?>img/toy-store.png" alt="Toys Store">
+            <img src="<?php echo $imagewhyHOOPLA;?>" alt="<?php echo $title1;?>">
         </div>
     </section>
     <section class="why-hoopla">
-        <div class="wow bounceInUp">
-            <span><i class="fa fa-github-square"></i></span>
-            <h4>Harga mainan dengan brand bagus harganya sangat mahal</h4>
-            <p>Produk dengan brand premium seperti Fisher Price atau Evenflo Exercauser misalnya sangatlah mahal. Harga retail mainan baru untuk tipe jumperoo misalnya bisa mencapai Rp 2.000.000 lebih belum termasuk ongkos kirim, dan itu hanya untuk satu mainan. Bayangkan berapa banyak uang yang harus dikeluarkan oleh para orang tua apabila ingin membeli lebih dari satu mainan. Akan lebih bermanfaat jika uangnya disimpan untuk kebutuhan yang lain.</p>
+    <?php
+        if(!empty($point)){
+            $decode_point = json_decode($point,TRUE);
+            foreach ($decode_point as $key => $val) {
+            if($key == 0){
+                $class = 'class="wow bounceInUp"';
+                $iclass = '<i class="fa fa-github-square"></i>' ;
+            } else if($key == 1){
+                $class = 'class="wow bounceInDown" data-wow-delay=".3s"';
+                $iclass = '<i class="fa fa-futbol-o"></i>' ;
+            } else {
+                $class = 'class="wow bounceInRight" data-wow-delay=".6s"';
+                $iclass = '<i class="fa fa-gift"></i>' ;
+            }
+    ?>
+        <div <?php echo $class;?>>
+            <span><?php echo $iclass;?></span>
+            <h4><?php echo $val[0];?></h4>
+            <p><?php echo $val[1];?></p>
         </div>
-        <div class="wow bounceInDown" data-wow-delay=".3s">
-            <span><i class="fa fa-futbol-o"></i></span>
-            <h4>Kebutuhan mainan setiap usia bayi dan anak berbeda.</h4>
-            <p>Dikarenakan cepatnya pertumbuhan pada bayi, setiap mainan biasanya hanya cocok untuk beberapa waktu saja, setelahnya bayi akan memberontak apabila dipaksakan menggunakan satu mainan. Contoh, produk Nuna Leaf sangat cocok untuk menenangkan bayi usia 1-5 bulan. Namun setelah itu bayi tidak akan betah lagi karena di atas 5 bulan bayi biasanya akan mulai berguling dan banyak gerak.</p>
-        </div>
-        <div class="wow bounceInRight" data-wow-delay=".6s">
-            <span><i class="fa fa-gift"></i></span>
-            <h4>Tidak semua bayi dan anak menyukai mainan.</h4>
-            <p>Tidak semua bayi dan anak suka dan betah apabila diletakkan di suatu mainan. Apabila bayi/anak tidak suka/tidak cocok terhadap suatu mainan, tentunya orang tua akan merasa menyesal telah mengeluarkan uang yang tidak sedikit untuk membeli suatu mainan.</p>
-        </div>
-        <div class="wow bounceInRight" data-wow-delay=".6s">
-            <span><i class="fa fa-gift"></i></span>
-            <h4>Mainan anak memakan tempat.</h4>
-            <p>Mainan-mainan anak saat ini besar-besar dan cukup memakan tempat di rumah. Apabila hanya 1-2 mainan mungkin masih ok, namun kalau di atas itu? Untuk beberapa orang, mungkin dengan banyaknya mainan akan membuat rumah terasa tidak nyaman dikarenakan keterbatasan tempat untuk menyimpan mainan-mainan tersebut.</p>
-        </div>
+            <?php } ?>
+        <?php } ?>
     </section>
     <section class="conclusion">
-        <h2>Lalu, kenapa mesti <br> di <span class="colorh4">Hoopla?</span></h2>
+        <h2><?php echo $title2;?></h2>
         <div class="reasons">
             <div>
                 <div class="figs">
-                    <img src="<?php echo base_url().$this->data['asfront'];?>img/kid-smiling.png" alt="">
+                    <img src="<?php echo $imagewhymustHOOPLA;?>" alt="<?php echo $mustwhy1;?>">
                 </div>
                 <div class="texts">
-                    <h3>Bersih dan Aman</h3>
-                    Kebersihan dan kehigienisan merupakan prioritas utama Hoopla. Seluruh mainan Hoopla selalu dibersihkan dengan cleaner anti-bacterial khusus mainan sebelum disewakan ke Penyewa. Selain itu, setelah setiap pemakaian, Hoopla selalu mengecek mainan untuk memastikan mainan dalam keadaan baik dan aman digunakan untuk Penyewa selanjutnya.
+                    <h3><?php echo $mustwhy1;?></h3>
+                    <?php echo $descmust1;?>
                 </div>
             </div>
             <div>
                 <div class="figs">
-                    <img src="<?php echo base_url().$this->data['asfront'];?>img/colors.png" alt="">
+                    <img src="<?php echo $imagewhymust2HOOPLA;?>" alt="<?php echo $mustwhy2;?>">
                 </div>
                 <div class="texts">
-                    <h3>Hoopla Memiliki Paket Spesial</h3>
-                    Hoopla juga menawarkan paket <a href="#">Grow Up With Hoopla</a> dan paket <a href="#">Happy Mom</a>, dimana Anda dapat menyewa mainan serta perlengkapan bayi dan anak dengan harga murah
+                    <h3><?php echo $mustwhy2;?></h3>
+                    <?php echo $descmust2;?>
                 </div>
             </div>
         </div>

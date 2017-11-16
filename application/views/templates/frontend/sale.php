@@ -55,11 +55,16 @@
         </div>
     </section>
 </main>
-<?php } else { ?>
+<?php } else { 
+$intro = selectall_intro_sale_only_one();
+$titleintro = $intro->titleINTROSALE;
+$descintro = $intro->descINTROSALE;
+?>
+
 <main>
     <div class="page-title">
-        <h2>For Sale</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+        <h2><?php echo $titleintro;?></h2>
+        <p><?php echo $descintro;?></p>
     </div>
 	<?php
 	if(!empty($getcatsale)){
@@ -67,13 +72,9 @@
 	?>
 	<section class="section" id="mom">
 		<h4 title="Barang-barang untuk dijual - <?php echo strtolower($cat->namaCATSALE); ?>">
-			<!-- Buat <span class="coolgreen">mama</span> -->
 			<span class="coolgreen"><?php echo strtolower($cat->namaCATSALE); ?></span>
 		</h4>
-        <div class="empty-list">
-            <h3>Uh oh!</h3>
-            <p>Tampaknya untuk bagian ini masih belum ada data nya, ya.</p>
-        </div>
+        
 		<div class="wrapper">
 			<?php
 			if(!empty($listsale)){
@@ -92,8 +93,12 @@
 				</div>
 			</div>
 			<?php } ?>
+            <!-- <div class="empty-list">
+                <h3>Uh oh!</h3>
+                <p>Tampaknya untuk bagian ini masih belum ada data nya, ya.</p>
+            </div> -->
 			<?php } ?>
-			<?php } ?>
+            <?php } ?>
 		</div>
 	</section>
 	<?php } ?>

@@ -10,6 +10,8 @@ $datatables = '
 ';
 $forms_advanced='<script src="'.base_url().$this->data['asbackbower'].'ion.rangeslider/js/ion.rangeSlider.min.js"></script>
     <script src="'.base_url().$this->data['asback'].'js/pages/forms_advanced.min.js"></script>';
+$forms_validation='<script> altair_forms.parsley_validation_config();</script><script src="'.base_url().$this->data['asbackbower'].'parsleyjs/dist/parsley.min.js"></script>
+    <script src="'.base_url().$this->data['asback'].'js/pages/forms_validation.min.js"></script>';
 ?>
 
 <?php
@@ -258,6 +260,28 @@ altair_wysiwyg = {
         }
     }
 };
+</script>
+<?php
+} elseif($plugins == 'plugins_create_why_data') { 
+?>
+
+<?php echo $datatables;?>
+<!--  preloaders functions -->
+<script src="<?php echo base_url().$this->data['asback'];?>js/pages/components_preloaders.min.js"></script>
+
+<?php echo $forms_advanced;?>
+<?php echo $forms_validation;?>
+<script type="text/javascript">
+    $('.multi-field-wrapper').each(function() {
+        var $wrapper = $('.multi-fields', this);
+        $(".add-field", $(this)).click(function(e) {
+            $('.multi-field:first-child', $wrapper).clone(true).appendTo($wrapper).find('input').val('').focus();
+        });
+        $('.multi-field .remove-field ', $wrapper).click(function() {
+            if ($('.multi-field', $wrapper).length > 1)
+                $(this).parents('.multi-field').remove();
+        });
+    });
 </script>
 
 <?php                   

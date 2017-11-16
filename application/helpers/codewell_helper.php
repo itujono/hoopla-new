@@ -99,6 +99,7 @@ function selectall_terms_caratitip_only_one(){
     $CI->db->select('*');
     $CI->db->from('terms_caratitip');
     $CI->db->where('idTERMSTITIP', 1);
+    $CI->db->limit(1);
 
     $data = $CI->db->get()->row();
     return $data;
@@ -229,5 +230,39 @@ function select_all_multiple_age($id=NULL){
     }
 
     $data = $CI->db->get()->result();
+    return $data;
+}
+
+function selectall_why_only_one(){
+    $CI =& get_instance();
+    $CI->db->select('*');
+    $CI->db->from('why');
+    $CI->db->where('idWHY', 1);
+
+    $data = $CI->db->get()->row();
+    return $data;
+}
+
+function encodingdata($json=0, $type=0, $descpointWHY=0){
+    
+    if($type == 0) {
+        $jj = array();
+        foreach ($json as $key => $value) {
+            $jj[]=array($value, $descpointWHY[$key]);
+        }
+    } else {
+        $jj = $json;
+    }
+    return json_encode($jj);
+}
+
+function selectall_intro_sale_only_one(){
+    $CI =& get_instance();
+    $CI->db->select('*');
+    $CI->db->from('intro_sale');
+    $CI->db->where('idINTROSALE', 1);
+    $CI->db->limit(1);
+
+    $data = $CI->db->get()->row();
     return $data;
 }
