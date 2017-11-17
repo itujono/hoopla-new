@@ -161,7 +161,7 @@ if ($plugins == 'home') { ?>
         $('#product-slider').owlCarousel({
             center: true,
             items:2,
-            loop:true,
+            // loop:true,
             margin:10,
             responsive:{
                 600:{
