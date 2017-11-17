@@ -98,10 +98,11 @@ class Rental_m extends MY_Model{
 		return $this->db->get();
 	}
 
-	public function selectall_random_rental($id=NULL) {
+	public function selectall_random_rental($id=NULL, $id2=NULL) {
 		$this->db->select('*');
 		$this->db->from('barang_rental');
 		$this->db->where('idBRAND', $id);
+		$this->db->where('idRENTAL !=', $id2);
 		$this->db->order_by('RAND()');
 		$this->db->limit(4);
 		return $this->db->get();
