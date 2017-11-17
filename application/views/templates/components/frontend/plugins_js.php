@@ -32,9 +32,6 @@ if ($plugins == 'home') { ?>
         document.querySelector('#btn-order').addEventListener('click', function(e) {
             modal.open(); e.preventDefault();
         });
-
-        modalTitip.setContent(document.querySelector('#titip').innerHTML);
-        btnTitip.addEventListener('click', function(e) { modalTitip.open(); e.preventDefault(); });
     </script>
 
 <?php
@@ -55,9 +52,6 @@ if ($plugins == 'home') { ?>
         document.querySelector('#btn-order').addEventListener('click', function(e) {
             modal.open(); e.preventDefault();
         });
-
-        modalTitip.setContent(document.querySelector('#titip').innerHTML);
-        btnTitip.addEventListener('click', function(e) { modalTitip.open(); e.preventDefault(); });
 
         formOrder.setContent(document.querySelector('#form-order').innerHTML);
         document.querySelector('#rent-now').addEventListener('click', function(e) {
@@ -136,9 +130,6 @@ if ($plugins == 'home') { ?>
         document.querySelector('#btn-order').addEventListener('click', function(e) {
             modal.open(); e.preventDefault();
         });
-
-        modalTitip.setContent(document.querySelector('#titip').innerHTML);
-        btnTitip.addEventListener('click', function(e) { modalTitip.open(); e.preventDefault(); });
     </script>
 <?php
 } elseif ($plugins == 'contact') {
@@ -187,9 +178,6 @@ if ($plugins == 'home') { ?>
         document.querySelector('#btn-order').addEventListener('click', function(e) {
             modal.open(); e.preventDefault();
         });
-
-        modalTitip.setContent(document.querySelector('#titip').innerHTML);
-        btnTitip.addEventListener('click', function(e) { modalTitip.open(); e.preventDefault(); });
     </script>
 
     <script>

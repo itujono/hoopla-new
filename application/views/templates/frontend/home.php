@@ -2,7 +2,7 @@
 <main>
 	<section class="main-news">
 		<div class="owl-carousel wow bounceInUp" data-wow-delay=".2s">
-		<?php if(!empty($listslider)){ 
+		<?php if(!empty($listslider)){
 			foreach ($listslider as $key => $slider) {
 			$array_button_name = array('Lihat','lihat lagi','Selanjutnya','Selengkapnya');
 			$but_name = array_rand($array_button_name);
@@ -141,7 +141,7 @@
 	<div class="promo-sidebar wow bounceInRight">
 		<div class="bg" style="background: url(<?php echo base_url().$this->data['asfront'];?>img/kids.jpg)">
 			<h3>Mau titip sewa di Hoopla?</h3>
-			<a href="#" class="btn-hoopla" id="btn-titip">Klik di sini</a>
+			<a href="<?php echo base_url();?>form" class="btn-hoopla" id="btn-titip">Klik di sini</a>
 		</div>
 	</div>
 	<div class="cta-sidebar wow bounceInLeft" data-wow-delay="1.3s">

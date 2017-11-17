@@ -8,7 +8,7 @@
             Pencarian
         </h4>
         <div class="wrapper">
-            <?php 
+            <?php
             if(!empty($searching)){
                 foreach ($searching as $key => $src) {
             ?>
@@ -35,7 +35,7 @@
             Pencarian
         </h4>
         <div class="wrapper">
-            <?php 
+            <?php
             if(!empty($searchsortby)){
                 foreach ($searchsortby as $key => $sort) {
             ?>
@@ -62,7 +62,7 @@
             Pencarian dengan kata kunci <span class="coolgreen"><?php echo $keywords;?></span>
         </h4>
         <div class="wrapper">
-            <?php 
+            <?php
             if(!empty($searching_all_rental)){
                 foreach ($searching_all_rental as $key => $src) {
             ?>
@@ -110,7 +110,7 @@
             <a href="#">Lihat selengkapnya</a>
         </h4>
         <div class="wrapper">
-            <?php 
+            <?php
             if(!empty($listrentalbybrands)){
                 foreach ($listrentalbybrands as $key => $rent) {
             ?>
@@ -135,7 +135,7 @@
             <a href="#">Lihat selengkapnya</a>
         </h4>
         <div class="wrapper">
-            <?php 
+            <?php
             if(!empty($listrentalbycat)){
                 foreach ($listrentalbycat as $key => $rentcat) {
             ?>
@@ -160,7 +160,7 @@
             <a href="#">Lihat selengkapnya</a>
         </h4>
         <div class="wrapper">
-            <?php 
+            <?php
             if(!empty($listrentalbyage)){
                 foreach ($listrentalbyage as $key => $age) {
             ?>
@@ -198,8 +198,8 @@
         <form method="get" name="formsortby" action="<?php echo base_url();?>product/sortby">
         <select name="sortbrand">
             <option value="" selected="selected" disabled="disabled">Pilih Brand</option>
-            <?php 
-            if(!empty($getbrand)){ 
+            <?php
+            if(!empty($getbrand)){
                 foreach ($getbrand as $brand) {
             ?>
             <option value="<?php echo $brand->idBRAND;?>"><?php echo $brand->namaBRAND;?></option>
@@ -208,8 +208,8 @@
         </select>
         <select name="sorttype">
             <option value="" selected="selected" disabled="disabled">Pilih Type</option>
-            <?php 
-            if(!empty($gettype)){ 
+            <?php
+            if(!empty($gettype)){
                 foreach ($gettype as $type) {
             ?>
             <option value="<?php echo $type->idTYPE;?>"><?php echo $type->namaTYPE;?></option>
@@ -218,8 +218,8 @@
         </select>
         <select name="sortage">
             <option value="" selected="selected" disabled="disabled">Pilih Umur</option>
-            <?php 
-            if(!empty($getage)){ 
+            <?php
+            if(!empty($getage)){
                 foreach ($getage as $age) {
             ?>
             <option value="<?php echo $age->idAGE;?>"><?php echo $age->namaAGE;?></option>
@@ -238,7 +238,7 @@
     <div class="promo-sidebar wow bounceInRight">
         <div class="bg" style="background: url(<?php echo base_url().$this->data['asfront'];?>img/kids.jpg)">
             <h3>Mau titip sewa di Hoopla?</h3>
-            <a href="#" class="btn-hoopla" id="btn-titip">Klik di sini</a>
+            <a href="<?php echo base_url();?>form" class="btn-hoopla" id="btn-titip">Klik di sini</a>
         </div>
     </div>
     <div class="cta-sidebar wow bounceInLeft" data-wow-delay="1.3s">

@@ -2233,8 +2233,12 @@ p.par-heading {
   margin-top: 2.4em;
 }
 
-.product-description .category a:hover {
+.product-description .category a {
   color: #96d019;
+}
+
+.product-description .category a:hover {
+  text-decoration: underline;
 }
 
 .demooo {
@@ -2264,7 +2268,7 @@ p.par-heading {
   background-color: #9d6ad8;
 }
 
-.owl-item {
+#product-slider .owl-item {
   -webkit-backface-visibility: visible !important;
   backface-visibility: visible !important;
   opacity: .5;
@@ -2274,7 +2278,7 @@ p.par-heading {
   overflow: hidden;
 }
 
-.owl-item.active.center {
+#product-slider .owl-item.active.center {
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   -webkit-transform: scale(1.3);
@@ -2283,7 +2287,7 @@ p.par-heading {
   opacity: 1;
 }
 
-.owl-item img {
+#product-slider .owl-item img {
   display: block;
   width: 100%;
 }
