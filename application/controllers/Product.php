@@ -78,8 +78,8 @@ class Product extends Frontend_Controller {
 		}
 		$data['getrental']->map = $maps;
 		
-		$data['similarental'] = $this->Rental_m->selectall_random_rental($data['getrental']->idBRAND)->result();
-
+		$data['similarental'] = $this->Rental_m->selectall_random_rental($data['getrental']->idBRAND, $data['getrental']->idRENTAL)->result();
+		
 		foreach ($data['similarental'] as $key => $value) {
 			$map = directory_map('assets/upload/rental/pic-rental-'.folenc($data['similarental'][$key]->idRENTAL), FALSE, TRUE);
 			

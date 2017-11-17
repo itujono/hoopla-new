@@ -79,10 +79,11 @@ class Sale_m extends MY_Model{
 		}
 	}
 
-	public function selectall_random_sale($id=NULL) {
+	public function selectall_random_sale($id=NULL, $id2=NULL) {
 		$this->db->select('*');
 		$this->db->from('barang_sale');
 		$this->db->where('idCATSALE', $id);
+		$this->db->where('idSALE !=', $id2);
 		$this->db->order_by('RAND()');
 		return $this->db->get();
 	}

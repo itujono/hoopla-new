@@ -44,7 +44,7 @@ class Sale extends Frontend_Controller {
 			$data['getsale']->imageSALE = base_url() . 'assets/upload/sale/pic-sale-'.folenc($data['getsale']->idSALE).'/'.$map[0];
 		}
 		
-		$data['similarsale'] = $this->Sale_m->selectall_random_sale($data['getsale']->idCATSALE)->result();
+		$data['similarsale'] = $this->Sale_m->selectall_random_sale($data['getsale']->idCATSALE, $data['getsale']->idSALE)->result();
 
 		foreach ($data['similarsale'] as $key => $value) {
 			$map = directory_map('assets/upload/sale/pic-sale-'.folenc($data['similarsale'][$key]->idSALE), FALSE, TRUE);
