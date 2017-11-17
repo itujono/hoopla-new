@@ -392,7 +392,7 @@ main {
     }
 }
 
-.card {
+#home .card {
     flex-basis: 23%;
     margin-right: 15px;
     margin-bottom: 15px;
@@ -439,6 +439,67 @@ main {
         padding: 8px 10px;
         max-height: 82px;
         min-height: 52px;
+        h3 {
+            font-size: 12px;
+            margin: 0 0 5px 0;
+            color: #999;
+            overflow: hidden;
+            max-width: 140px;
+            height: 30px;
+            text-overflow: ellipsis;
+            white-space: normal;
+        }
+        small {
+            color: $coolGreen;
+        }
+    }
+}
+
+.card {
+    flex-basis: 23%;
+    margin-right: 15px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    &:hover {
+        transform: translateY(-3px);
+        box-shadow: $boxShadow;
+    }
+    &:hover .card-bottom h3 {
+        color: $colorH4;
+    }
+    &:hover .card-content img {
+        transform: translateY(-3px);
+    }
+    &:last-child {
+        margin-right: 0;
+    }
+    &:nth-child(4) {
+        margin-right: 0;
+    }
+    .card-content {
+        height: 160px;
+        overflow: hidden;
+        border-radius: 8px 8px 0 0;
+        background-color: white;
+        border: 1px solid #ddd;
+        @include flexCenter;
+        &.softblue {
+            background-color: $softBlue;
+        }
+        &.softpurple {
+            background-color: $softPurple;
+        }
+        img {
+            width: 100%;
+            max-width: 120px;
+            transition: $transitionEase;
+        }
+    }
+    .card-bottom {
+        border: 1px solid #ddd;
+        border-top: none;
+        border-radius: 0 0 8px 8px;
+        padding: 8px 10px;
         h3 {
             font-size: 12px;
             margin: 0 0 5px 0;
