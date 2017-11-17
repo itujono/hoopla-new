@@ -205,6 +205,7 @@ function chart_visitor_labels(){
     $CI->db->select('date_format(dateVISITOR, ("%d %b")) as date');
     $CI->db->from('visitor');
     $CI->db->group_by('dateVISITOR');
+    $CI->db->order_by('dateVISITOR','desc');
     $CI->db->limit(12);
     $data = $CI->db->get()->result();
     return json_encode($data);
