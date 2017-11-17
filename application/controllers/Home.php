@@ -15,13 +15,13 @@ class Home extends Frontend_Controller {
 
 	public function index() {
 		$data['addONS'] = 'home';
-		$data['title'] = 'Hoopla - Toys Rent';
+		$data['title'] = 'Hoopla - Hoopla Rental Mainan';
 		$data['idbody'] = 'home';
 
 		$data['listrentalmostrecent'] = $this->Rental_m->selectall_rental('','','','','',1)->result();
 		foreach ($data['listrentalmostrecent'] as $key => $value) {
 			$map = directory_map('assets/upload/rental/pic-rental-'.folenc($data['listrentalmostrecent'][$key]->idRENTAL), FALSE, TRUE);
-			
+
 			if (empty($map)) {
 				$data['listrentalmostrecent'][$key]->imageRENTAL = base_url() . 'assets/upload/no-image-available.png';
 			} else {
@@ -32,14 +32,14 @@ class Home extends Frontend_Controller {
 		$data['listrentalmostpopular'] = $this->Rental_m->selectall_rental('','','','','','',1)->result();
 		foreach ($data['listrentalmostpopular'] as $key => $value) {
 			$map = directory_map('assets/upload/rental/pic-rental-'.folenc($data['listrentalmostpopular'][$key]->idRENTAL), FALSE, TRUE);
-			
+
 			if (empty($map)) {
 				$data['listrentalmostpopular'][$key]->imageRENTAL = base_url() . 'assets/upload/no-image-available.png';
 			} else {
 				$data['listrentalmostpopular'][$key]->imageRENTAL = base_url() . 'assets/upload/rental/pic-rental-'.folenc($data['listrentalmostpopular'][$key]->idRENTAL).'/'.$map[0];
 			}
 		}
-		
+
 		$data['listslider'] = $this->Slider_m->selectall_slider()->result();
 		foreach ($data['listslider'] as $key => $value) {
 			$map = directory_map('assets/upload/slider/pic-slider-'.folenc($data['listslider'][$key]->idSLIDER), FALSE, TRUE);

@@ -10,7 +10,7 @@ class Contact extends Frontend_Controller {
 
 	public function index() {
 		$data['addONS'] = '';
-		$data['title'] = 'Contact us - Toys Rent';
+		$data['title'] = 'Contact us - Hoopla Rental Mainan';
 		$data['idbody'] = 'contact';
 
 		if(!empty($this->session->flashdata('message'))) {
@@ -338,7 +338,7 @@ class Contact extends Frontend_Controller {
 		//configure email settings
         $config = $this->mail_config();
         $this->email->initialize($config);
-        
+
         //send mail
         $this->email->from($from_email, 'Hoopla Toys Rental');
         $this->email->to($emailadmin);

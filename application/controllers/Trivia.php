@@ -10,7 +10,7 @@ class Trivia extends Frontend_Controller {
 
 	public function index() {
 		$data['addONS'] = '';
-		$data['title'] = 'Trivia - Toys Rent';
+		$data['title'] = 'Trivia - Hoopla Rental Mainan';
 		$data['idbody'] = 'trivia';
 
 		$data['listtrivia'] = $this->Trivia_m->selectall_trivia()->result();
@@ -43,7 +43,7 @@ class Trivia extends Frontend_Controller {
 		} else {
 			$data['gettrivia']->imageTRIVIA = base_url() . 'assets/upload/no-image-available.png';
 		}
-		
+
 		$data['similartrivia'] = $this->Trivia_m->selectall_similar_trivia($data['gettrivia']->idCATTRIVIA)->result();
 
 		$data['subview'] = $this->load->view($this->data['frontendDIR'].'trivia_post', $data, TRUE);
