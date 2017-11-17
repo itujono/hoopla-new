@@ -437,13 +437,17 @@ main {
         border-top: none;
         border-radius: 0 0 8px 8px;
         padding: 8px 10px;
-        max-height: 52px;
+        max-height: 82px;
         min-height: 52px;
         h3 {
             font-size: 12px;
             margin: 0 0 5px 0;
             color: #999;
             overflow: hidden;
+            max-width: 140px;
+            height: 30px;
+            text-overflow: ellipsis;
+            white-space: normal;
         }
         small {
             color: $coolGreen;
