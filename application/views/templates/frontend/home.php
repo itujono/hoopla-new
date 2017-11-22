@@ -109,6 +109,7 @@
 					<?php } ?>
 				<?php } ?>
 			</select>
+			<button type="submit" class="btn-hoopla">Okay, Sortir!</button>
 			<select name="sorttype">
 				<option value="" selected="selected" disabled="disabled">Pilih Type</option>
 				<?php
@@ -119,6 +120,7 @@
 					<?php } ?>
 				<?php } ?>
 			</select>
+			<button type="submit" class="btn-hoopla">Okay, Sortir!</button>
 			<select name="sortage">
 				<option value="" selected="selected" disabled="disabled">Pilih Umur</option>
 				<?php
