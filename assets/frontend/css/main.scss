@@ -1664,9 +1664,13 @@ p.par-heading {
 }
 
 .product-description {
+    line-height: $lineHeightP;
     p {
         line-height: $lineHeightP;
-        margin-bottom: 4em;
+        margin-bottom: 1em;
+        &:last-child:not[class^="category"] {
+            margin-bottom: 1em;
+        }
     }
     .title {
         @include marginHeading;
@@ -1711,12 +1715,16 @@ p.par-heading {
     }
     .category {
         margin-top: 2.4em;
+        margin-bottom: 3em;
         a {
             color: $coolGreen;
             &:hover {
                 text-decoration: underline;
             }
         }
+    }
+    li {
+        list-style-type: initial;
     }
 }
 

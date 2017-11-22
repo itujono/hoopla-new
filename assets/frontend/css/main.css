@@ -2269,9 +2269,17 @@ p.par-heading {
   margin-bottom: 2em;
 }
 
+.product-description {
+  line-height: 1.6;
+}
+
 .product-description p {
   line-height: 1.6;
-  margin-bottom: 4em;
+  margin-bottom: 1em;
+}
+
+.product-description p:last-child:not[class^="category"] {
+  margin-bottom: 1em;
 }
 
 .product-description .title {
@@ -2334,6 +2342,7 @@ p.par-heading {
 
 .product-description .category {
   margin-top: 2.4em;
+  margin-bottom: 3em;
 }
 
 .product-description .category a {
@@ -2342,6 +2351,10 @@ p.par-heading {
 
 .product-description .category a:hover {
   text-decoration: underline;
+}
+
+.product-description li {
+  list-style-type: initial;
 }
 
 .demooo {
