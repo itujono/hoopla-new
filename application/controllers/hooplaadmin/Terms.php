@@ -46,7 +46,7 @@ class Terms extends Admin_Controller {
         $this->form_validation->set_message('trim', 'Form %s adalah Trim');
 
 		if ($this->form_validation->run() == TRUE) {
-				$data = $this->Terms_m->array_from_post(array('title1TERMS','title2TERMS','title3TERMS','title4TERMS','desc1TERMS','desc2TERMS','desc3TERMS','desc4TERMS','harga1TERMS','harga2TERMS','harga3TERMS','place1TERMS','place2TERMS','place3TERMS'));
+				$data = $this->Terms_m->array_from_post(array('title1TERMS','title2TERMS','title3TERMS','title4TERMS','desc1TERMS','desc2TERMS','desc3TERMS','desc4TERMS','harga1TERMS','harga2TERMS','harga3TERMS','harga4TERMS','place1TERMS','place2TERMS','place3TERMS','place4TERMS'));
 				$id = decode(urldecode($this->input->post('idTERMS')));
 
 				if(empty($id))$id=NULL;

@@ -69,7 +69,7 @@ class Sale extends Admin_Controller{
         $this->form_validation->set_message('numeric', 'Silakan masukan hanya berupa angka');
 
 		if ($this->form_validation->run() == TRUE) {
-			$data = $this->Sale_m->array_from_post(array('namaSALE','brandSALE','hargaSALE','statusSALE','descriptionSALE','idCATSALE'));
+			$data = $this->Sale_m->array_from_post(array('namaSALE','brandSALE','hargaSALE','statusSALE','idCATSALE'));
 			$data['statusSALE']=1;
 			$data['hargaSALE'] = str_replace(['Rp.',' ',','], ['','',''], $data['hargaSALE']);
 			$id = decode(urldecode($this->input->post('idSALE')));
@@ -77,6 +77,7 @@ class Sale extends Admin_Controller{
 			if(empty($id))$id=NULL;
 			
 			$data = $this->security->xss_clean($data);
+			$data['descriptionSALE'] = $this->input->post('descriptionSALE');
 			$idsave = $this->Sale_m->save($data, $id);
 
 			$subject = $idsave;

@@ -58,6 +58,7 @@ class Slider extends Admin_Controller {
         $this->form_validation->set_message('trim', 'Form %s adalah Trim');
 
 		if ($this->form_validation->run() == TRUE) {
+
 			$data = $this->Slider_m->array_from_post(array('titleSLIDER','descSLIDER','linkSLIDER'));
 			$id = decode(urldecode($this->input->post('idSLIDER')));
 
@@ -67,29 +68,28 @@ class Slider extends Admin_Controller {
 
 			$subject = $idsave;
 			$filenamesubject = 'pic-slider-'.folenc($subject);
+			
+			if(!empty($_FILES['imgSLIDER']['name'][0])){
 
-			$path = 'assets/upload/slider/'.$filenamesubject;
-			if (!file_exists($path)){
-            	mkdir($path, 0777, true);
-        	}
-
-			$config['upload_path']		= $path;
-            $config['allowed_types']	= 'jpg|png|jpeg';
-            $config['file_name']        = $this->security->sanitize_filename($filenamesubject);
-
-	        $this->upload->initialize($config);
-
-	        if ($this->upload->do_upload('imgSLIDER')){
-	        	$data['uploads'] = $this->upload->data();
-	          	$data = array(
-		        	'title' => 'Sukses',
-		            'text' => 'Penyimpanan Data berhasil dilakukan',
-		            'type' => 'success'
-	      		);
-	      		$this->session->set_flashdata('message', $data);
-	  			redirect('hooplaadmin/slider/index_slider');
-	        }
-		  		
+				$path = 'assets/upload/slider/'.$filenamesubject;
+				if (!file_exists($path)){
+	            	mkdir($path, 0777, true);
+	        	}
+				$config['upload_path']		= $path;
+	            $config['allowed_types']	= 'jpg|png|jpeg';
+	            $config['file_name']        = $this->security->sanitize_filename($filenamesubject);
+		        $this->upload->initialize($config);
+		        if ($this->upload->do_upload('imgSLIDER')){
+		        	$data['uploads'] = $this->upload->data();
+		        }
+  			}
+  			$data = array(
+	        	'title' => 'Sukses',
+	            'text' => 'Penyimpanan Data berhasil dilakukan',
+	            'type' => 'success'
+      		);
+      		$this->session->set_flashdata('message', $data);
+  			redirect('hooplaadmin/slider/index_slider');
 		} else {
 			$data = array(
 	            'title' => 'Terjadi Kesalahan',
@@ -97,7 +97,7 @@ class Slider extends Admin_Controller {
 	            'type' => 'warning'
 	        );
 	        $this->session->set_flashdata('message',$data);
-	        $this->index_about();
+	        $this->index_slider();
 		}
 	}
 

@@ -191,6 +191,20 @@ $url = base_url().'hooplaadmin/'.$controller.'/'.$actions;
                     <p class="text-red"><?php echo form_error('place3TERMS'); ?></p>
                   </div>
                 </div>
+                <div class="uk-grid" data-uk-grid-margin>
+                  <div class="uk-width-medium-1-2 uk-margin-top">
+                    <label>Harga 4</label>
+                    <br>
+                    <input type="text" class="md-input label-fixed" name="harga4TERMS" autocomplete value="<?php echo $getterms->harga4TERMS;?>" required/>
+                    <p class="text-red"><?php echo form_error('harga4TERMS'); ?></p>
+                  </div>
+                  <div class="uk-width-medium-1-2 uk-margin-top">
+                    <label>Tempat 4</label>
+                    <br>
+                    <input type="text" class="md-input label-fixed" name="place4TERMS" autocomplete value="<?php echo $getterms->place4TERMS;?>" required/>
+                    <p class="text-red"><?php echo form_error('place4TERMS'); ?></p>
+                  </div>
+                </div>
                 <?php 
                   if(!empty($getterms->idTERMS)){
                 ?>
