@@ -98,7 +98,7 @@
 	</div>
 	<div class="sort">
 		<h4>Sort by:</h4>
-		<form method="get" name="formsortby" action="<?php echo base_url();?>product/sortby">
+		<form method="GET" name="formsortbybrand" action="<?php echo base_url();?>product/sortby">
 			<select name="sortbrand">
 				<option value="" selected="selected" disabled="disabled">Pilih Brand</option>
 				<?php
@@ -110,6 +110,8 @@
 				<?php } ?>
 			</select>
 			<button type="submit" class="btn-hoopla">Okay, Sortir!</button>
+		</form>
+		<form method="GET" name="formsortbytype" action="<?php echo base_url();?>product/sortby">
 			<select name="sorttype">
 				<option value="" selected="selected" disabled="disabled">Pilih Type</option>
 				<?php
@@ -121,6 +123,8 @@
 				<?php } ?>
 			</select>
 			<button type="submit" class="btn-hoopla">Okay, Sortir!</button>
+		</form>
+		<form method="GET" name="formsortbyage" action="<?php echo base_url();?>product/sortby">
 			<select name="sortage">
 				<option value="" selected="selected" disabled="disabled">Pilih Umur</option>
 				<?php
