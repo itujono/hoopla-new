@@ -183,16 +183,12 @@
 <?php } ?>
 <aside class="sidebar">
     <div class="sort">
-        <h4>Filter by:</h4>
-        <form method="get" name="formfiler" action="<?php echo base_url();?>product/filterby">
-        <select name="filter" required="required">
-            <option value="az">Brand (A-Z)</option>
-            <option value="za">Brand (Z-A)</option>
-            <option value="category">Kategori</option>
-        </select>
-        <button type="submit" class="btn-hoopla">Okay, Filter!</button>
-        </form>
-    </div>
+		<h4>Cari yang kamu butuhkan</h4>
+		<form class="form-control" action="<?php echo base_url();?>product/searching" method="GET">
+			<input type="search" class="form-group" name="search" placeholder="Misal: Ergobaby carrier" required="required" min="3">
+			<button type="submit" class="btn-hoopla">Cari!</button>
+		</form>
+	</div>
     <div class="sort">
         <h4>Sort by:</h4>
         <form method="get" name="formsortby" action="<?php echo base_url();?>product/sortby">
@@ -206,6 +202,7 @@
                 <?php } ?>
             <?php } ?>
         </select>
+        <button type="submit" class="btn-hoopla">Okay, Sortir!</button>
         <select name="sorttype">
             <option value="" selected="selected" disabled="disabled">Pilih Type</option>
             <?php
@@ -216,6 +213,7 @@
                 <?php } ?>
             <?php } ?>
         </select>
+        <button type="submit" class="btn-hoopla">Okay, Sortir!</button>
         <select name="sortage">
             <option value="" selected="selected" disabled="disabled">Pilih Umur</option>
             <?php

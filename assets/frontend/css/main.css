@@ -30,13 +30,17 @@ select {
   border-radius: 5px;
   border: 1px solid #ddd;
   display: block;
-  margin-bottom: 25px;
+  margin-bottom: 10px;
   width: 100%;
   font-family: "GothamRoundedMedium", Helvetica, sans-serif;
 }
 
 select:focus {
   outline: none;
+}
+
+select + .btn-hoopla {
+  margin-bottom: 2em;
 }
 
 .btn-hoopla {

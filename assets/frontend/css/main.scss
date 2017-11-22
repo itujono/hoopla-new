@@ -32,11 +32,14 @@ select {
     border-radius: 5px;
     border: 1px solid #ddd;
     display: block;
-    margin-bottom: 25px;
+    margin-bottom: 10px;
     width: 100%;
     font-family: $fontDefault;
     &:focus {
         outline: none;
+    }
+    + .btn-hoopla {
+        margin-bottom: 2em;
     }
 }
 
