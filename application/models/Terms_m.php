@@ -63,6 +63,11 @@ class Terms_m extends MY_Model{
 			'label' => 'Harga Keempat', 
 			'rules' => 'trim|required'
 		),
+		'harga4TERMS' => array(
+			'field' => 'harga4TERMS', 
+			'label' => 'Harga Keempat', 
+			'rules' => 'trim|required'
+		),
 		'place1TERMS' => array(
 			'field' => 'place1TERMS', 
 			'label' => 'Tempat Pertama', 
@@ -75,6 +80,11 @@ class Terms_m extends MY_Model{
 		),
 		'place3TERMS' => array(
 			'field' => 'place3TERMS', 
+			'label' => 'Tempat Ketiga', 
+			'rules' => 'trim|required'
+		),
+		'place4TERMS' => array(
+			'field' => 'place4TERMS', 
 			'label' => 'Tempat Ketiga', 
 			'rules' => 'trim|required'
 		),
@@ -98,9 +108,11 @@ class Terms_m extends MY_Model{
 		$terms->harga1TERMS = '';
 		$terms->harga2TERMS = '';
 		$terms->harga3TERMS = '';
+		$terms->harga4TERMS = '';
 		$terms->place1TERMS = '';
 		$terms->place2TERMS = '';
 		$terms->place3TERMS = '';
+		$terms->place4TERMS = '';
 		
 		return $terms;
 	}
