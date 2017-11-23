@@ -155,6 +155,7 @@ function replacesymbol($string){
 
 function seo_url($string){
     $change = str_replace([' ','&',',','.','(',')','!','?'], ['-','-','-','-','-','-','-','-'], $string);
+    $change = urlencode($change);
     return strtolower($change);
 }
 

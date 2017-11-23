@@ -69,8 +69,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 <td><?php echo date('d F Y', strtotime($sale->createdateSALE));?></td>
                 <?php
                  $icndel = '&#xE16C;';
-                  $msg1 = 'Are you sure want to delete this data <b>'.$sale->namaSALE.'</b> ?';
-                  $msg2 = 'Are you sure want to change this data ' . ' <b>'.$sale->namaSALE.'</b> ?';
+                  $msg1 = 'Are you sure want to delete this data ?';
+                  $msg2 = 'Are you sure want to change this data ?';
                   $url1 = 'hooplaadmin/'.$controller.'/actiondelete/'.urlencode($id);
                   $url2 = 'hooplaadmin/'.$controller.'/index_sale/'.urlencode($id);
                 ?>

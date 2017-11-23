@@ -91,9 +91,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                   $icnpopular = '&#xE83A;';
                   $tooltip = 'Not Popular Product';
                 }
-                $msg1 = 'Are you sure want to delete this data <b>'.$rental->namaRENTAL.'</b> ?';
-                $msg2 = 'Are you sure want to change this data ' . ' <b>'.$rental->namaRENTAL.'</b> ?';
-                $msg3 = 'Are you sure want to change this popular item ' . ' <b>'.$rental->namaRENTAL.'</b> ?';
+                $msg1 = 'Are you sure want to delete this data ?';
+                $msg2 = 'Are you sure want to change this data ?';
+                $msg3 = 'Are you sure want to change this popular item ?';
                 $url1 = 'hooplaadmin/'.$controller.'/actiondelete/'.urlencode($id);
                 $url2 = 'hooplaadmin/'.$controller.'/index_product/'.urlencode($id);
                 $url3 = 'hooplaadmin/'.$controller.'/change_popular_product/'.urlencode($id).$id2;
@@ -151,12 +151,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                   <?php echo form_dropdown('idTYPE', $gettype, $getrental->idTYPE,'required id="select_demo_5" data-md-selectize data-md-selectize-bottom'); ?>
                   <p class="text-red"><?php echo form_error('idTYPE'); ?></p>
               </div>
-              <!-- <div class="uk-width-medium-1-4 uk-margin-top">
-                <label>Age/Umur Anak</label>
-                <br>
-                  <?php //echo form_dropdown('idAGE', $getage, $getrental->idAGE,'required id="select_demo_5" data-md-selectize data-md-selectize-bottom'); ?>
-                  <p class="text-red"><?php //echo form_error('idAGE'); ?></p>
-              </div> -->
             </div>
             <div class="uk-grid" data-uk-grid-margin>
               <div class="uk-width-medium-1-1 uk-margin-top">
@@ -212,7 +206,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
               <div class="uk-width-medium-1-1 uk-margin-top">
                 <label>Deskripsi Barang</label>
                 <br>
-                <textarea id="wysiwyg_tinymce" cols="30" rows="4" name="descriptionRENTAL" class="md-input label-fixed"  required><?php echo $getrental->descriptionRENTAL;?></textarea>
+                <textarea id="wysiwyg_tinymce" cols="30" rows="4" name="descriptionRENTAL" class="md-input label-fixed"><?php echo $getrental->descriptionRENTAL;?></textarea>
                 <p class="text-red"><?php echo form_error('descriptionRENTAL'); ?></p>
               </div>
             </div>

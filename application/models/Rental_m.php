@@ -36,7 +36,7 @@ class Rental_m extends MY_Model{
 		'descriptionRENTAL' => array(
 			'field' => 'descriptionRENTAL', 
 			'label' => 'Deskripsi Barang Rental', 
-			'rules' => 'trim|required'
+			'rules' => 'trim'
 		),
 		'idTYPE' => array(
 			'field' => 'idTYPE', 
