@@ -11,6 +11,7 @@ class Home extends Frontend_Controller {
 		$this->load->model('Type_rental_m');
 		$this->load->model('Slider_m');
 		$this->load->model('Trivia_m');
+		$this->load->model('Package_m');
 	}
 
 	public function index() {
@@ -47,6 +48,15 @@ class Home extends Frontend_Controller {
 				$data['listslider'][$key]->imageSLIDER = base_url() . 'assets/upload/slider/pic-slider-'.folenc($data['listslider'][$key]->idSLIDER).'/'.$map[0];
 			} else {
 				$data['listslider'][$key]->imageSLIDER = base_url() . 'assets/upload/no-image-available.png';
+			}
+		}
+		$data['listpackage'] = $this->Package_m->selectall_package('',1)->result();
+		foreach ($data['listpackage'] as $key => $value) {
+			$map = directory_map('assets/upload/package/pic-package-'.folenc($data['listpackage'][$key]->idPAKET), FALSE, TRUE);
+			if(!empty($map)){
+				$data['listpackage'][$key]->imagePACKAGE = base_url() . 'assets/upload/package/pic-package-'.folenc($data['listpackage'][$key]->idPAKET).'/'.$map[0];
+			} else {
+				$data['listpackage'][$key]->imagePACKAGE = base_url() . 'assets/upload/no-image-available.png';
 			}
 		}
 

@@ -27,14 +27,17 @@
 		</div>
 	</section>
 	<section class="main-news_small">
-		<div class="wow bounceInUp">
-			<h3>Paket Grow up with Hoopla</h3>
-			<a href="<?php echo base_url();?>discount" class="btn-hoopla">Lihat</a>
+		<?php 
+			if(!empty($listpackage)){
+				foreach ($listpackage as $key => $pac) {
+		?>
+		<div style="background: url('<?php echo $pac->imagePACKAGE;?>" class="wow bounceInUp" data-wow-delay="1s">
+			<h3><?php echo $pac->titlePAKET;?></h3>
+			<a href="<?php echo base_url();?>package" class="btn-hoopla">Lihat</a>
 		</div>
-		<div style="background: url('<?php echo base_url().$this->data['asfront'];?>img/kid-laughing.jpg')" class="wow bounceInUp" data-wow-delay="1s">
-			<h3>Paket Happy Moms!</h3>
-			<a href="<?php echo base_url();?>discount" class="btn-hoopla">Lihat</a>
-		</div>
+			<?php } ?>
+		<?php } ?>
+
 		<?php if(!empty($featuredtrivia)){ ?>
 		<div style="background: url('<?php echo base_url().$this->data['asfront'];?>img/bg1.jpg')" class="wow bounceInUp" data-wow-delay="1s">
 			<h3><?php echo $featuredtrivia->titleTRIVIA;?></h3>

@@ -22,9 +22,8 @@ if($plugins == 'plugins_datatables'){
 <!--  preloaders functions -->
 <script src="<?php echo base_url().$this->data['asback'];?>js/pages/components_preloaders.min.js"></script>
 
-<?php echo $forms_advanced;?>
-<!-- inputmask-->
-<script src="<?php echo base_url().$this->data['asbackbower'];?>jquery.inputmask/dist/jquery.inputmask.bundle.js"></script>
+<?php echo $forms_validation;?>
+
 <?php
 } elseif($plugins == 'plugins_dashboard') { 
 ?>
@@ -283,7 +282,70 @@ altair_wysiwyg = {
         });
     });
 </script>
+<?php
+} elseif($plugins == 'plugins_create_paket') { 
+?>
+<?php echo $datatables;?>
+<!--  preloaders functions -->
+<script src="<?php echo base_url().$this->data['asback'];?>js/pages/components_preloaders.min.js"></script>
+<?php echo $forms_validation;?>
+<!-- tinymce -->
+<script src="<?php echo base_url().$this->data['asbackbower']; ?>tinymce/tinymce.min.js"></script>
+<script>
+    $(function() {
+    // tinymce
+    altair_wysiwyg._tinymce();
+    altair_wysiwyg._tinymces();
+});
 
+// wysiwyg editors
+altair_wysiwyg = {
+    _tinymce: function() {
+        var $tinymce = '#wysiwyg_tinymce';
+        if($($tinymce).length) {
+            tinymce.init({
+                skin_url: '<?php echo base_url().$this->data['asback']; ?>skins/tinymce/material_design',
+                selector: "#wysiwyg_tinymce",
+                plugins: [
+                    "advlist autolink lists link image charmap print preview anchor",
+                    "searchreplace visualblocks code fullscreen",
+                    "insertdatetime media table contextmenu paste"
+                ],
+                toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image"
+            });
+            
+        }
+    },
+    _tinymces: function() {
+        var $tinymce = '#wysiwyg_tinymces';
+        if($($tinymce).length) {
+            tinymce.init({
+                skin_url: '<?php echo base_url().$this->data['asback']; ?>skins/tinymce/material_design',
+                selector: "#wysiwyg_tinymces",
+                plugins: [
+                    "advlist autolink lists link image charmap print preview anchor",
+                    "searchreplace visualblocks code fullscreen",
+                    "insertdatetime media table contextmenu paste"
+                ],
+                toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image"
+            });
+            
+        }
+    }
+};
+</script>
+<script type="text/javascript">
+    $('.multi-field-wrapper').each(function() {
+        var $wrapper = $('.multi-fields', this);
+        $(".add-field", $(this)).click(function(e) {
+            $('.multi-field:first-child', $wrapper).clone(true).appendTo($wrapper).find('input').val('').focus();
+        });
+        $('.multi-field .remove-field ', $wrapper).click(function() {
+            if ($('.multi-field', $wrapper).length > 1)
+                $(this).parents('.multi-field').remove();
+        });
+    });
+</script>
 <?php                   
 }
 ?>
