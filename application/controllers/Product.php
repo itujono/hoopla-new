@@ -145,6 +145,14 @@ class Product extends Frontend_Controller {
 					$data['searchsortby'][$key]->imageRENTAL = base_url() . 'assets/upload/rental/pic-rental-'.folenc($data['searchsortby'][$key]->idRENTAL).'/'.$map[0];
 				}
 			}
+		} else {
+			$data = array(
+				'title' => 'Maaf, ',
+                'text' => 'Barang anda tidak dapat kami temukan!',
+                'desc' => 'Silakan melakukan pencarian kembali.'
+            );
+            $this->session->set_flashdata('not_founds_sort_by', $data);
+            redirect('product');
 		}
 
 		$data['getbrand'] = $this->Brand_rental_m->dropdown_getbrand()->result();

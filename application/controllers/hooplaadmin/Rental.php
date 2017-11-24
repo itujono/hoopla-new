@@ -25,6 +25,13 @@ class Rental extends Admin_Controller{
 			} else {
 				$data['listrental'][$key]->imageRENTAL = base_url() . 'assets/upload/no-image-available.png';
 			}
+
+			// $rowing = select_all_multiple_age_for_row($data['listrental'][$key]->idRENTAL);
+			// $norowing = select_all_multiple_age();
+			// echo "<pre>";
+			// print_r($rowing);
+			// exit;
+
 		}
 		
 		if($id == NULL){

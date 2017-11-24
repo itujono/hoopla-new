@@ -32,6 +32,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <thead>
               <tr>
                   <th>No.</th>
+                  <th>Action</th>
                   <th>Gambar</th>
                   <th>Nama</th>
                   <th>Brand</th>
@@ -40,12 +41,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                   <th>Harga per 2 Minggu</th>
                   <th>Harga per 4 Minggu</th>
                   <th>Created</th>
-                  <th>Action</th>
               </tr>
             </thead>
             <tfoot>
               <tr>
                 <th>No.</th>
+                <th>Action</th>
                 <th>Gambar</th>
                 <th>Nama</th>
                 <th>Brand</th>
@@ -54,7 +55,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 <th>Harga per 2 Minggu</th>
                 <th>Harga per 4 Minggu</th>
                 <th>Created</th>
-                <th>Action</th>
               </tr>
             </tfoot>
             <tbody>
@@ -62,24 +62,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             if(!empty($listrental)){
               foreach ($listrental  as $key => $rental) {
               $id = encode($rental->idRENTAL);
-              $multiple_age = select_all_multiple_age($rental->idRENTAL);
+              $multiple_age = select_all_multiple_age_for_row($rental->idRENTAL);
             ?>
              <tr>
                 <td><?php echo $key+1; ?></td>
-                <td><img class="img_thumb" src="<?php echo $rental->imageRENTAL;?>" alt="<?php echo $rental->namaRENTAL;?>"/></td>
-                <td><?php echo $rental->namaRENTAL; ?></td>
-                <td><?php echo $rental->namaBRAND; ?></td>
-                <td><?php echo $rental->namaTYPE; ?></td>
-                <td>
-                  <?php foreach ($multiple_age as $val) { ?>
-                    (<?php echo $val->namaAGE;?>) - <a href="#" onclick="UIkit.modal.confirm('Are you sure want to delete this data?', function(){ document.location.href='<?php echo base_url().'hooplaadmin/'.$controller."/delete_join_age_rental/".urlencode(encode($val->idAGEJOINRENTAL)); ?>'; });">
-                      <span><i class="fa fa-times">X</i></span>
-                    </a> 
-                  <?php } ?>
-                </td>
-                <td>Rp. <?php echo number_format($rental->harga2RENTAL, 0,',','.'); ?></td>
-                <td>Rp. <?php echo number_format($rental->harga4RENTAL, 0,',','.'); ?></td>
-                <td><?php echo date('d F Y', strtotime($rental->createdateRENTAL));?></td>
                 <?php
                  $icndel = '&#xE16C;';
                 if($rental->popularRENTAL == 1){
@@ -103,6 +89,20 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                   <a href="#" onclick="UIkit.modal.confirm('<?php echo $msg1; ?>', function(){ document.location.href='<?php echo site_url($url1);?>'; });"><i class="md-icon material-icons"><?php echo $icndel; ?></i></a>
                   <a href="#" onclick="UIkit.modal.confirm('<?php echo $msg2; ?>', function(){ document.location.href='<?php echo site_url($url2);?>'; });"><i class="md-icon material-icons">&#xE254;</i></a>
                 </td>
+                <td><img class="img_thumb" src="<?php echo $rental->imageRENTAL;?>" alt="<?php echo $rental->namaRENTAL;?>"/></td>
+                <td><?php echo $rental->namaRENTAL; ?></td>
+                <td><?php echo $rental->namaBRAND; ?></td>
+                <td><?php echo $rental->namaTYPE; ?></td>
+                <td>
+                  <?php foreach ($multiple_age as $val) { ?>
+                    (<?php echo $val->namaAGE;?>) - <a href="#" onclick="UIkit.modal.confirm('Are you sure want to delete this data?', function(){ document.location.href='<?php echo base_url().'hooplaadmin/'.$controller."/delete_join_age_rental/".urlencode(encode($val->idAGEJOINRENTAL)); ?>'; });">
+                      <span><i class="fa fa-times">X</i></span>
+                    </a> 
+                  <?php } ?>
+                </td>
+                <td>Rp. <?php echo number_format($rental->harga2RENTAL, 0,',','.'); ?></td>
+                <td>Rp. <?php echo number_format($rental->harga4RENTAL, 0,',','.'); ?></td>
+                <td><?php echo date('d F Y', strtotime($rental->createdateRENTAL));?></td>
               </tr>
             <?php } ?>
             <?php } ?>
@@ -158,12 +158,18 @@ defined('BASEPATH') OR exit('No direct script access allowed');
               <br>
                 <select id="select_age" name="idAGE[]" multiple required="required">
                 <?php
-                $getage = select_all_multiple_age($getrental->idRENTAL);
-                
+                if(!empty($getrental->namaRENTAL)){
+                  $getage = select_all_multiple_age_for_row($getrental->idRENTAL);
+                  $selected = "selected";
+                } else {
+                  $getage = select_all_multiple_age();
+                  $selected = "";
+                }
+
                 if(!empty($getage)){
                   foreach ($getage as $key => $age) {
                 ?>
-                  <option value="<?php echo $age->idAGE;?>" selected><?php echo $age->namaAGE;?></option>
+                  <option value="<?php echo $age->idAGE;?>" <?php echo $selected;?>><?php echo $age->namaAGE;?></option>
                   <?php } ?>
                 <?php } ?>
                 </select>

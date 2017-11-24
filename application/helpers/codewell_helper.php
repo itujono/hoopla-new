@@ -221,15 +221,22 @@ function chart_visitor_series(){
     return json_encode($data);
 }
 
-function select_all_multiple_age($id=NULL){
+function select_all_multiple_age(){
+    $CI =& get_instance();
+    $CI->db->select('age_rental.namaAGE, age_rental.idAGE');
+    $CI->db->from('age_rental');
+
+    $data = $CI->db->get()->result();
+    return $data;
+}
+
+function select_all_multiple_age_for_row($id){
     $CI =& get_instance();
     $CI->db->select('age_rental.namaAGE, age_rental.idAGE');
     $CI->db->select('age_join_rental.idAGEJOINRENTAL');
     $CI->db->from('age_rental');
     $CI->db->join('age_join_rental', 'age_join_rental.idAGE = age_rental.idAGE');
-    if($id != NULL){
-        $CI->db->where('age_join_rental.idRENTAL', $id);
-    }
+    $CI->db->where('age_join_rental.idRENTAL', $id);
 
     $data = $CI->db->get()->result();
     return $data;

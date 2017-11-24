@@ -102,6 +102,16 @@
         </h4>
     </section>
 </main>
+<?php } else if(!empty($not_founds_sort_by)){ ?>
+<main>
+    <section class="section" id="brands">
+        <h4 title="Pencarian tidak dapat ditemukan!">
+            <?php echo $not_founds_sort_by['title']; ?><span class="coolgreen"><?php echo $not_founds_sort_by['text']; ?></span>
+            <br>
+            <a href="<?php echo base_url();?>"><?php echo $not_founds_sort_by['desc']; ?></a>
+        </h4>
+    </section>
+</main>
 <?php } else { ?>
 <main>
     <section class="section" id="brands">
