@@ -88,6 +88,11 @@ class Terms_m extends MY_Model{
 			'label' => 'Tempat Ketiga', 
 			'rules' => 'trim|required'
 		),
+		'deschargaplaceTERMS' => array(
+			'field' => 'deschargaplaceTERMS', 
+			'label' => 'Deskripsi Harga & Tempat', 
+			'rules' => 'trim|required'
+		)
 	);
 
 	function __construct (){
@@ -113,6 +118,7 @@ class Terms_m extends MY_Model{
 		$terms->place2TERMS = '';
 		$terms->place3TERMS = '';
 		$terms->place4TERMS = '';
+		$terms->deschargaplaceTERMS = '';
 		
 		return $terms;
 	}

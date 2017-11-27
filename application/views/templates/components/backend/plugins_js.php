@@ -38,9 +38,10 @@ if($plugins == 'plugins_datatables'){
 <?php
     $charings = chart_visitor_labels();
     $replacechartlabels = str_replace(['{',':','}','date','""'], ['','','','',''], $charings);
-
+    
     $charing = chart_visitor_series();
     $replacechartseries = str_replace(['{','"',':','}','jumlah'], ['','','','',''], $charing);
+    
 ?>
 <script type="text/javascript">
 $(function() {

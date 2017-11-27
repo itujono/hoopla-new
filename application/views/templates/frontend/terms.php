@@ -10,13 +10,17 @@ $desc3 = $datarow->desc3TERMS;
 $title4 = $datarow->title4TERMS;
 $desc4 = $datarow->desc4TERMS;
 
+$deschargatempat = $datarow->deschargaplaceTERMS;
+
 $harga1 = $datarow->harga1TERMS;
 $harga2 = $datarow->harga2TERMS;
 $harga3 = $datarow->harga3TERMS;
+$harga4 = $datarow->harga4TERMS;
 
 $place1 = $datarow->place1TERMS;
 $place2 = $datarow->place2TERMS;
 $place3 = $datarow->place3TERMS;
+$place4 = $datarow->place4TERMS;
 
 $datarows = selectall_terms_caratitip_only_one();
 
@@ -55,14 +59,16 @@ $syarat = $datarows->syaratTERMSTITIP;
             </div>
         </div>
         <div class="delivery-charge">
-            <h4>Berapa biaya pengantarannya?</h4>
+            <h4><?php echo $deschargatempat; ?></h4>
             <dl>
                 <dt><?php echo $harga1; ?></dt>
                 <dd><?php echo $place1; ?></dd>
                 <dt><?php echo $harga2; ?></dt>
                 <dd><?php echo $place2; ?></dd>
-                <dt><?php echo $title3; ?></dt>
+                <dt><?php echo $harga3; ?></dt>
                 <dd><?php echo $place3; ?></dd>
+                <dt><?php echo $harga4; ?></dt>
+                <dd><?php echo $place4; ?></dd>
             </dl>
         </div>
     </section>

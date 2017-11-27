@@ -93,7 +93,7 @@ class Rental_m extends MY_Model{
 		}
 		if($popular != NULL){
 			$this->db->where('popularRENTAL', 1);
-			$this->db->limit(3);
+			$this->db->limit(4);
 		}
 		return $this->db->get();
 	}

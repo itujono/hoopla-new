@@ -200,14 +200,24 @@ function indonesian_date ($timestamp = '', $date_format = 'l, j F Y | H:i', $suf
     $date = "{$date} {$suffix}";
     return $date;
 }
+// SELECT
+//     *
+// FROM
+//     hoopla_visitor
+// WHERE
+//     DATE_SUB(CURDATE(), INTERVAL 7 DAY) <= dateVISITOR
+// ORDER BY
+//     idVISITOR DESC
+// LIMIT 7;
 
 function chart_visitor_labels(){
     $CI =& get_instance();
     $CI->db->select('date_format(dateVISITOR, ("%d %b")) as date');
     $CI->db->from('visitor');
+    $CI->db->where('DATE_SUB(CURDATE(), INTERVAL 13 DAY) <= dateVISITOR');
     $CI->db->group_by('dateVISITOR');
-    $CI->db->order_by('dateVISITOR','desc');
-    $CI->db->limit(12);
+    $CI->db->order_by('idVISITOR','asc');
+
     $data = $CI->db->get()->result();
     return json_encode($data);
 }
@@ -215,8 +225,10 @@ function chart_visitor_series(){
     $CI =& get_instance();
     $CI->db->select('COUNT(ipVISITOR) as jumlah');
     $CI->db->from('visitor');
+    $CI->db->where('DATE_SUB(CURDATE(), INTERVAL 13 DAY) <= dateVISITOR');
     $CI->db->group_by('dateVISITOR');
-    $CI->db->limit(12);
+    $CI->db->order_by('idVISITOR','asc');
+
     $data = $CI->db->get()->result();
     return json_encode($data);
 }

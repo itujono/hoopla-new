@@ -150,6 +150,14 @@ $url = base_url().'hooplaadmin/'.$controller.'/'.$actions;
                   </div>
                 </div>
                 <div class="uk-grid" data-uk-grid-margin>
+                  <div class="uk-width-medium-1-1 uk-margin-top">
+                    <label>Title Harga &amp; Tempat</label>
+                    <br>
+                    <input type="text" class="md-input label-fixed" name="deschargaplaceTERMS" autocomplete value="<?php echo $getterms->deschargaplaceTERMS;?>" required/>
+                    <p class="text-red"><?php echo form_error('deschargaplaceTERMS'); ?></p>
+                  </div>
+                </div>
+                <div class="uk-grid" data-uk-grid-margin>
                   <div class="uk-width-medium-1-2 uk-margin-top">
                     <label>Harga</label>
                     <br>
