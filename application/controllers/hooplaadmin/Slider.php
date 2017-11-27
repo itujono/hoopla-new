@@ -13,6 +13,7 @@ class Slider extends Admin_Controller {
 		$id = decode(urldecode($id));
 		
 		$data['listslider'] = $this->Slider_m->selectall_slider()->result();
+
 		foreach ($data['listslider'] as $key => $value) {
 			$map = directory_map('assets/upload/slider/pic-slider-'.folenc($data['listslider'][$key]->idSLIDER), FALSE, TRUE);
 			if(!empty($map)){
@@ -35,7 +36,9 @@ class Slider extends Admin_Controller {
 	            'form-tab' => 'uk-active',
 	        );
 			$data['getslider'] = $this->Slider_m->selectall_slider($id)->row();
+
 			$map = directory_map('assets/upload/slider/pic-slider-'.folenc($data['getslider']->idSLIDER), FALSE, TRUE);
+			
 			if(!empty($map)){
 				$data['getslider']->imageSLIDER = base_url() . 'assets/upload/slider/pic-slider-'.folenc($data['getslider']->idSLIDER).'/'.$map[0];
 			} else {
@@ -70,7 +73,6 @@ class Slider extends Admin_Controller {
 			$filenamesubject = 'pic-slider-'.folenc($subject);
 			
 			if(!empty($_FILES['imgSLIDER']['name'][0])){
-
 				$path = 'assets/upload/slider/'.$filenamesubject;
 				if (!file_exists($path)){
 	            	mkdir($path, 0777, true);
@@ -127,6 +129,7 @@ class Slider extends Admin_Controller {
 		if($id1 != NULL){
 			$id = decode(urldecode($id1));
 			$map = directory_map('assets/upload/slider/pic-slider-'.folenc($id), FALSE, TRUE);
+			
 			$path = 'assets/upload/slider/pic-slider-'.folenc($id);
 			foreach ($map as $value) {
 				unlink('assets/upload/slider/pic-slider-'.folenc($id).'/'.$value);
