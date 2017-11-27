@@ -2225,9 +2225,14 @@ p.par-heading {
   transform: translateY(-5px);
 }
 
+#product-detail {
+  grid-gap: 0;
+}
+
 #product-detail main {
   padding: 0 2em;
   padding-bottom: 4em;
+  padding-right: 0;
   grid-template-columns: 1fr 2fr;
   grid-template-rows: auto auto;
   grid-gap: 30px;
@@ -2353,8 +2358,17 @@ p.par-heading {
   text-decoration: underline;
 }
 
-.product-description li {
+.product-description ul li {
   list-style-type: initial;
+}
+
+.product-description ol {
+  padding-left: 15px;
+}
+
+.product-description ol li {
+  list-style-type: inherit;
+  padding-left: 10px;
 }
 
 .demooo {

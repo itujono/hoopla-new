@@ -1633,9 +1633,14 @@ p.par-heading {
 
 // Eh ternyata kita udah di Product Detail aja heheh
 
+#product-detail {
+    grid-gap: 0;
+}
+
 #product-detail main {
     padding: 0 2em;
     padding-bottom: 4em;
+    padding-right: 0;
     grid-template-columns: 1fr 2fr;
     grid-template-rows: auto auto;
     grid-gap: 30px;
@@ -1723,8 +1728,17 @@ p.par-heading {
             }
         }
     }
-    li {
-        list-style-type: initial;
+    ul {
+        li {
+            list-style-type: initial;
+        }
+    }
+    ol {
+        padding-left: 15px;
+        li {
+            list-style-type: inherit;
+            padding-left: 10px;
+        }
     }
 }
 
