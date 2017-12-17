@@ -310,7 +310,7 @@ function select_all_multiple_menu_for_row($id){
     $CI->db->join('menus_admin_join_users_admin', 'menus_admin_join_users_admin.idMENU = menus_admin.idMENU');
     $CI->db->where('menus_admin_join_users_admin.idADMIN', $id);
 
-    $data = $CI->db->get()->result();
+    $data = $CI->db->get()->row();
     return $data;
 }
 
@@ -329,21 +329,7 @@ function find_menu_for_admin_user($admin, $menu){
     $CI->db->from('menus_admin_join_users_admin');
     $CI->db->where('idADMIN',$admin);
     $CI->db->where('idMENU',$menu);
-    //$CI->db->limit(1);
 
     $data = $CI->db->get()->row();
     return $data;
-}
-
-/* strpos that takes an array of values to match against a string
- * note the stupid argument order (to match strpos)
- * needle is array
- * haystack is word you created
- */
-function strpos_array($haystack, $needle, $offset=0) {
-    if(!is_array($needle)) $needle = array($needle);
-    foreach($needle as $query) {
-        if(strpos($haystack, $query, $offset) !== false) return true; // stop on first true result
-    }
-    return false;
 }
