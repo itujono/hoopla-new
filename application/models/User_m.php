@@ -7,6 +7,14 @@ class User_m extends MY_Model{
 	protected $_order_by = 'idADMIN';
 	protected $_primary_key = 'idADMIN';
 
+	public $rules_save_user = array(
+		'emailADMIN' => array(
+			'field' => 'emailADMIN',
+			'label' => 'Email',
+			'rules' => 'trim|required|valid_email'
+			)
+		);
+
 	public $rules_login = array(
 		'email' => array(
 			'field' => 'email',
@@ -81,6 +89,16 @@ class User_m extends MY_Model{
 
 	public function logout(){
 		$this->session->sess_destroy();
+	}
+
+	public function selectall_user_admin($id=NULL){
+		$this->db->select('*');
+		$this->db->from('users_admin');
+		if($id != NULL){
+			$this->db->where('idADMIN', $id);
+		}
+		
+		return $this->db->get();
 	}
 
 	public function checkoldpassword($id){

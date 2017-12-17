@@ -47,8 +47,8 @@
       $seg1 = strtolower($this->uri->segment(2));
       $seg2 = strtolower($this->uri->segment(3));
 
-      $menus = selectall_menu_active(1);
-      $menuschild = selectall_menu_active(NULL,1);
+      $menus = selectall_menu_active(1,NULL,1);
+      $menuschild = selectall_menu_active(NULL,1,1);
   ?>
   <div class="menu_section">
     <ul>

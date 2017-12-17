@@ -22,18 +22,23 @@ function dF($date, $format){
 	return date($format, strtotime($date));
 }
 
-function selectall_menu_active($parent=NULL, $child=NULL){
+function selectall_menu_active($parent=NULL, $child=NULL, $session=NULL){
     $CI =& get_instance();
-    $CI->db->select('*');
+    $CI->db->select('menus_admin.idMENU, parentMENU, namaMENU, functionMENU, iconMENU');
+    $CI->db->select('menus_admin_join_users_admin.idMENUSJOINADMIN');
     $CI->db->from('menus_admin');
+    $CI->db->join('menus_admin_join_users_admin', 'menus_admin_join_users_admin.idMENU = menus_admin.idMENU');
+
     if($parent != NULL){
-        $CI->db->where('parentMENU', 0);
+        $CI->db->where('menus_admin.parentMENU', 0);
     }
     if($child != NULL){
-        $CI->db->where('parentMENU !=', 0);
+        $CI->db->where('menus_admin.parentMENU !=', 0);
     }
-    
-    $CI->db->where('statusMENU', 1);
+    if($session != NULL){
+        $CI->db->where('menus_admin_join_users_admin.idADMIN', $CI->session->userdata('idADMIN'));
+    }
+    $CI->db->where('menus_admin.statusMENU', 1);
 
     $data = $CI->db->get()->result();
     return $data;
@@ -200,15 +205,6 @@ function indonesian_date ($timestamp = '', $date_format = 'l, j F Y | H:i', $suf
     $date = "{$date} {$suffix}";
     return $date;
 }
-// SELECT
-//     *
-// FROM
-//     hoopla_visitor
-// WHERE
-//     DATE_SUB(CURDATE(), INTERVAL 7 DAY) <= dateVISITOR
-// ORDER BY
-//     idVISITOR DESC
-// LIMIT 7;
 
 function chart_visitor_labels(){
     $CI =& get_instance();
@@ -286,4 +282,68 @@ function selectall_intro_sale_only_one(){
 
     $data = $CI->db->get()->row();
     return $data;
+}
+
+function selectall_menu_name_row($id){
+    $CI =& get_instance();
+    $CI->db->select('namaMENU');
+    $CI->db->from('menus_admin');
+    $CI->db->where('idMENU', $id);
+    $data = $CI->db->get()->row();
+    return $data;
+}
+
+function select_all_multiple_menu(){
+    $CI =& get_instance();
+    $CI->db->select('namaMENU, idMENU');
+    $CI->db->from('menus_admin');
+
+    $data = $CI->db->get()->result();
+    return $data;
+}
+
+function select_all_multiple_menu_for_row($id){
+    $CI =& get_instance();
+    $CI->db->select('menus_admin.namaMENU, menus_admin.idMENU');
+    $CI->db->select('menus_admin_join_users_admin.idMENUSJOINADMIN');
+    $CI->db->from('menus_admin');
+    $CI->db->join('menus_admin_join_users_admin', 'menus_admin_join_users_admin.idMENU = menus_admin.idMENU');
+    $CI->db->where('menus_admin_join_users_admin.idADMIN', $id);
+
+    $data = $CI->db->get()->result();
+    return $data;
+}
+
+function find_row__menu($func){
+    $CI =& get_instance();
+    $CI->db->select('idMENU');
+    $CI->db->from('menus_admin');
+    $CI->db->where('functionMENU', $func);
+    $data = $CI->db->get()->row();
+    return $data;
+}
+
+function find_menu_for_admin_user($admin, $menu){
+    $CI =& get_instance();
+    $CI->db->select('idADMIN, idMENU');
+    $CI->db->from('menus_admin_join_users_admin');
+    $CI->db->where('idADMIN',$admin);
+    $CI->db->where('idMENU',$menu);
+    //$CI->db->limit(1);
+
+    $data = $CI->db->get()->row();
+    return $data;
+}
+
+/* strpos that takes an array of values to match against a string
+ * note the stupid argument order (to match strpos)
+ * needle is array
+ * haystack is word you created
+ */
+function strpos_array($haystack, $needle, $offset=0) {
+    if(!is_array($needle)) $needle = array($needle);
+    foreach($needle as $query) {
+        if(strpos($haystack, $query, $offset) !== false) return true; // stop on first true result
+    }
+    return false;
 }
