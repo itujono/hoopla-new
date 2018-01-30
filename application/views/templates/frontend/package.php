@@ -5,8 +5,8 @@
 ?>
     <section>
         <div class="discount-item">
-            <h2><?php echo $pac->titlePAKET;?></h2>
-            <h5>Valid sampai <?php echo $pac->validPAKET;?></h5>
+            <div class="title"><?php echo $pac->titlePAKET;?></div>
+            <div class="validity">Valid sampai <?php echo $pac->validPAKET;?></div>
             <div class="figure">
                 <img src="<?php echo $pac->imagePACKAGE;?>" alt="<?php echo $pac->titlePAKET;?>">
             </div>
@@ -19,19 +19,7 @@
             <?php } 
                 if(!empty($pac->titlebenefitPAKET)){
             ?>
-            <div class="benefits">
-                <h4><?php echo $pac->titlebenefitPAKET;?></h4>
-                <dl>
-                <?php 
-                  $data_point_benefit = json_decode($pac->descbenefitPAKET,TRUE);
-                  if(!empty($data_point_benefit)){
-                    foreach ($data_point_benefit as $key => $value) {
-                ?>
-                    <dt><?php echo $value[0];?></dt>
-                    <dd><?php echo $value[1];?></dd>
-                <?php } ?>
-                <?php } ?>
-                </dl>
+            <div class="description"> <!-- sebelumnya benefits -->
             </div>
             <?php } ?>
             <a href="<?php echo $pac->linkbuttonPAKET;?>" class="btn-hoopla"><?php echo $pac->titlebuttonPAKET;?></a>

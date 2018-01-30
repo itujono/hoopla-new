@@ -1808,6 +1808,10 @@ p.par-heading {
     grid-template-rows: auto;
     > section {
         padding: 3em;
+        border-bottom: 1px solid #ddd;
+        &:last-of-type {
+            border-bottom: none;
+        }
         > h4 {
             position: relative;
             padding-left: 1.4em;
