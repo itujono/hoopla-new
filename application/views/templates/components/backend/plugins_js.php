@@ -73,6 +73,7 @@ altair_charts = {
 <?php echo $datatables;?>
 <!--  preloaders functions -->
 <script src="<?php echo base_url().$this->data['asback'];?>js/pages/components_preloaders.min.js"></script>
+<?php echo $forms_validation;?>
 <!-- tinymce -->
 <script src="<?php echo base_url().$this->data['asbackbower']; ?>tinymce/tinymce.min.js"></script>
 <script>

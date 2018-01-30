@@ -10,7 +10,7 @@ class Trivia extends Admin_Controller{
 	}
 
 	public function index_trivia($id = NULL){
-		$data['addONS'] = 'plugins_datatables';
+		$data['addONS'] = 'plugins_create_products_sale';
 		$id = decode(urldecode($id));
 		
 		$data['listtrivia'] = $this->Trivia_m->selectall_trivia()->result();
@@ -58,7 +58,7 @@ class Trivia extends Admin_Controller{
         $this->form_validation->set_message('trim', 'Form %s adalah Trim');
 
 		if ($this->form_validation->run() == TRUE) {
-			$data = $this->Trivia_m->array_from_post(array('titleTRIVIA','idCATTRIVIA','descriptionTRIVIA','statusTRIVIA','featuredTRIVIA'));
+			$data = $this->Trivia_m->array_from_post(array('titleTRIVIA','idCATTRIVIA','statusTRIVIA','featuredTRIVIA'));
 			$data['statusTRIVIA']=1;
 			if($data['featuredTRIVIA'] == 'on')$data['featuredTRIVIA']=1;
 			else $data['featuredTRIVIA']=0;
@@ -67,6 +67,7 @@ class Trivia extends Admin_Controller{
 			if(empty($id))$id=NULL;
 			
 			$data = $this->security->xss_clean($data);
+			$data['descriptionTRIVIA'] = $this->input->post('descriptionTRIVIA');
 			$idsave = $this->Trivia_m->save($data, $id);
 
 			$subject = $idsave;

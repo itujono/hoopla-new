@@ -142,7 +142,7 @@ $url = base_url().'hooplaadmin/'.$controller.'/'.$actions;
                   <div class="uk-width-medium-1-1 uk-margin-top">
                     <label>Deskripsi</label>
                     <br>
-                    <textarea cols="30" rows="4" name="descriptionTRIVIA" class="md-input label-fixed"  required><?php echo cetak($gettrivia->descriptionTRIVIA);?></textarea>
+                    <textarea id="wysiwyg_tinymces" cols="30" rows="4" name="descriptionTRIVIA" class="md-input label-fixed"  required><?php echo cetak($gettrivia->descriptionTRIVIA);?></textarea>
                     <p class="text-red"><?php echo form_error('descriptionTRIVIA'); ?></p>
                   </div>
                 </div>
