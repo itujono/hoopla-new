@@ -1905,14 +1905,16 @@ p.par-heading {
     p {
         line-height: $lineHeightP;
     }
-    h2 {
+    .title {
+        font-size: 1.8em;
         color: $coolGreen;
         @include marginHeading;
     }
-    h5 {
+    .subtitle {
         color: #999;
         font-weight: normal;
-        margin-top: 0;
+        margin-top: -.5em;
+        margin-bottom: 2em;
     }
 }
 

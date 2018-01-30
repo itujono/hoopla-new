@@ -2497,16 +2497,18 @@ p.par-heading {
   line-height: 1.6;
 }
 
-.discount-item h2 {
+.discount-item .title {
+  font-size: 1.8em;
   color: #96d019;
   margin-top: 0;
   margin-bottom: 10px;
 }
 
-.discount-item h5 {
+.discount-item .subtitle {
   color: #999;
   font-weight: normal;
-  margin-top: 0;
+  margin-top: -.5em;
+  margin-bottom: 2em;
 }
 
 .table-comparison {
