@@ -15,8 +15,8 @@
             <span class="cat">
                 <i class="fa fa-file-text-o"></i> <?php echo $gettrivia->namaCATTRIVIA;?>
             </span>
-            <p class="main-post"><?php echo $gettrivia->descriptionTRIVIA;?>
-            </p>
+            <div class="main-post"><?php echo $gettrivia->descriptionTRIVIA;?>
+            </div>
             <div class="share-post">
                 <h4>Suka artikel ini?</h4>
                 <p>Bagikan ke teman-teman kamu.</p>

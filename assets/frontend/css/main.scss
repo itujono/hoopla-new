@@ -801,6 +801,8 @@ section > h4 {
     @include flexCenter;
     img {
         width: 100%;
+        height: 100%;
+        object-fit: cover;
         min-height: 80px;
     }
 }
@@ -1058,6 +1060,7 @@ section > h4 {
         padding: 15px;
         padding-bottom: 25px;
         background-color: white;
+        min-height: 120px;
         h4 {
             font-size: 1.2em;
             @include marginHeading;
@@ -1690,9 +1693,11 @@ p.par-heading {
     }
     .infos {
         display: flex;
+        flex-wrap: wrap;
         margin-bottom: 2.4em;
         > div {
-            margin-right: 20px;
+            margin-right: 0;
+            margin-bottom: 1em;
             h4 {
                 color: #777;
                 margin: 0;
@@ -1706,6 +1711,7 @@ p.par-heading {
     }
     .minimum {
         display: flex;
+        flex: 1 0 auto;
         span {
             color: #777;
         }
