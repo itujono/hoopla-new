@@ -310,7 +310,7 @@ function select_all_multiple_menu_for_row($id){
     $CI->db->join('menus_admin_join_users_admin', 'menus_admin_join_users_admin.idMENU = menus_admin.idMENU');
     $CI->db->where('menus_admin_join_users_admin.idADMIN', $id);
 
-    $data = $CI->db->get()->row();
+    $data = $CI->db->get()->result();
     return $data;
 }
 

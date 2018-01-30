@@ -70,7 +70,6 @@ class Product extends Frontend_Controller {
 		$data['getrental'] = $this->Rental_m->selectall_rental($id)->row();
 		$map = directory_map('assets/upload/rental/pic-rental-'.folenc($data['getrental']->idRENTAL), FALSE, TRUE);
 		$maps = array();
-		$imgs = array();
 		if(!empty($map)){
 			foreach ($map  as $key => $value) {
 				$maps[] = base_url().'assets/upload/rental/pic-rental-'.folenc($data['getrental']->idRENTAL).'/'.$value;

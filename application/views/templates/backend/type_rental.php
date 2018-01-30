@@ -32,17 +32,17 @@ $url = base_url().'hooplaadmin/'.$controller.'/'.$actions;
             <thead>
               <tr>
                 <th class="number-order">No.</th>
+                <th class="action-order">Action</th>
                 <th>Nama Type</th>
                 <th>Created</th>
-                <th class="action-order">Action</th>
               </tr>
             </thead>
             <tfoot>
               <tr>
                 <th class="number-order">No.</th>
+                <th class="action-order">Action</th>
                 <th>Nama Type</th>
                 <th>Created</th>
-                <th class="action-order">Action</th>
               </tr>
             </tfoot>
             <tbody>
@@ -53,8 +53,6 @@ $url = base_url().'hooplaadmin/'.$controller.'/'.$actions;
                   ?>
                   <tr>
                     <td><?php echo $key+1; ?></td>
-                    <td><?php echo $type->namaTYPE; ?></td>
-                    <td><?php echo date('d F Y', strtotime($type->createdateTYPE));?></td>
                     <?php
                     $icndel = '&#xE16C;';
                     $msg1 = 'Are you sure want to delete this data <b>'.$type->namaTYPE.'</b> ?';
@@ -66,6 +64,8 @@ $url = base_url().'hooplaadmin/'.$controller.'/'.$actions;
                       <a href="#" onclick="UIkit.modal.confirm('<?php echo $msg1; ?>', function(){ document.location.href='<?php echo site_url($url1);?>'; });"><i class="md-icon material-icons"><?php echo $icndel; ?></i></a>
                       <a href="#" onclick="UIkit.modal.confirm('<?php echo $msg2; ?>', function(){ document.location.href='<?php echo site_url($url2);?>'; });"><i class="md-icon material-icons">&#xE254;</i></a>
                     </td>
+                    <td><?php echo $type->namaTYPE; ?></td>
+                    <td><?php echo date('d F Y', strtotime($type->createdateTYPE));?></td>
                   </tr>
                   <?php } ?>
                   <?php } ?>
