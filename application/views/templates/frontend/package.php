@@ -19,7 +19,19 @@
             <?php } 
                 if(!empty($pac->titlebenefitPAKET)){
             ?>
-            <div class="description"> <!-- sebelumnya benefits -->
+            <div class="benefits">
+                <h4><?php echo $pac->titlebenefitPAKET;?></h4>
+                <dl>
+                <?php 
+                  $data_point_benefit = json_decode($pac->descbenefitPAKET,TRUE);
+                  if(!empty($data_point_benefit)){
+                    foreach ($data_point_benefit as $key => $value) {
+                ?>
+                    <dt><?php echo $value[0];?></dt>
+                    <dd><?php echo $value[1];?></dd>
+                <?php } ?>
+                <?php } ?>
+                </dl>
             </div>
             <?php } ?>
             <a href="<?php echo $pac->linkbuttonPAKET;?>" class="btn-hoopla"><?php echo $pac->titlebuttonPAKET;?></a>
