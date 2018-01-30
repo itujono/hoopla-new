@@ -23,6 +23,22 @@ class Admin_Controller extends MY_Controller{
             $this->session->set_flashdata('message',$data);
             redirect('login');
         }
+        $url = $this->uri->segment(3);
+        $idsession = $this->session->userdata('idADMIN');
+
+        $find_menu_id = find_row__menu($url);
+        if(!empty($find_menu_id)){
+            $find_menu = find_menu_for_admin_user($idsession, $find_menu_id->idMENU);
+            if(empty($find_menu)) {
+                $data = array(
+                    'title' => 'Warning',
+                    'type' => 'danger',
+                    'text' => 'You are not allowed to access that menu.'
+                );
+                $this->session->set_flashdata('message',$data);
+                redirect('hooplaadmin/dashboard/index_dashboard');
+            }
+        }
 	}
 
 	function mail_config(){

@@ -26,12 +26,6 @@ class Rental extends Admin_Controller{
 				$data['listrental'][$key]->imageRENTAL = base_url() . 'assets/upload/no-image-available.png';
 			}
 
-			// $rowing = select_all_multiple_age_for_row($data['listrental'][$key]->idRENTAL);
-			// $norowing = select_all_multiple_age();
-			// echo "<pre>";
-			// print_r($rowing);
-			// exit;
-
 		}
 		
 		if($id == NULL){
@@ -48,8 +42,6 @@ class Rental extends Admin_Controller{
 	            'form-tab' => 'uk-active',
 	        );
 			$data['getrental'] = $this->Rental_m->selectall_rental($id)->row();
-
-
 
 			$map = directory_map('assets/upload/rental/pic-rental-'.folenc($data['getrental']->idRENTAL), FALSE, TRUE);
 			$maps = array();

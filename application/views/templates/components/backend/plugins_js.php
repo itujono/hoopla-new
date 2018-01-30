@@ -347,6 +347,84 @@ altair_wysiwyg = {
         });
     });
 </script>
+<?php
+} elseif($plugins == 'plugins_create_menu_admin_and_user') { 
+?>
+
+<?php echo $datatables;?>
+<!--  preloaders functions -->
+<script src="<?php echo base_url().$this->data['asback'];?>js/pages/components_preloaders.min.js"></script>
+
+<?php
+$menus = select_all_multiple_menu();
+?>
+<script type="text/javascript">
+$(function() {
+    // advanced selects
+    altair_form_adv.adv_selects();
+});
+altair_form_adv = {
+    adv_selects: function() {
+        $('#select_menu').selectize({
+            plugins: {
+                'remove_button': {
+                    label: ''
+                }
+            },
+            options: [
+            <?php foreach ($menus as $menu) { ?>
+                {class: 'menu_list', id: <?php echo $menu->idMENU;?>, title: '<?php echo $menu->namaMENU;?>'},
+            <?php } ?>
+            ],
+            optgroups: [
+                {value: 'menu_list', label: 'Daftar Menu'}
+            ],
+            optgroupField: 'class',
+            maxItems: null,
+            valueField: 'id',
+            labelField: 'title',
+            searchField: 'title',
+            create: false,
+            render: {
+                option: function(data, escape) {
+                    return  '<div class="option">' +
+                                '<span class="title">' + escape(data.title) + '</span>' +
+                            '</div>';
+                },
+                item: function(data, escape) {
+                    return '<div class="item"><a href="' + escape(data.url) + '" target="_blank">' + escape(data.title) + '</a></div>';
+                },
+                optgroup_header: function(data, escape) {
+                    return '<div class="optgroup-header">' + escape(data.label) + '</div>';
+                }
+            },
+            onDropdownOpen: function($dropdown) {
+                $dropdown
+                    .hide()
+                    .velocity('slideDown', {
+                        begin: function() {
+                            $dropdown.css({'margin-top':'0'})
+                        },
+                        duration: 200,
+                        easing: easing_swiftOut
+                    })
+            },
+            onDropdownClose: function($dropdown) {
+                $dropdown
+                    .show()
+                    .velocity('slideUp', {
+                        complete: function() {
+                            $dropdown.css({'margin-top':''})
+                        },
+                        duration: 200,
+                        easing: easing_swiftOut
+                    })
+            }
+        });
+    }
+};
+</script>
+
 <?php                   
 }
 ?>

@@ -32,21 +32,21 @@ $url = base_url().'hooplaadmin/'.$controller.'/'.$actions;
             <thead>
               <tr>
                 <th>No.</th>
+                <th>Action</th>
                 <th>Thumbnail</th>
                 <th>Judul</th>
                 <th>Deskripsi</th>
                 <th>Created</th>
-                <th>Action</th>
               </tr>
             </thead>
             <tfoot>
               <tr>
                 <th>No.</th>
+                <th>Action</th>
                 <th>Thumbnail</th>
                 <th>Judul</th>
                 <th>Deskripsi</th>
                 <th>Created</th>
-                <th>Action</th>
               </tr>
             </tfoot>
             <tbody>
@@ -57,10 +57,6 @@ $url = base_url().'hooplaadmin/'.$controller.'/'.$actions;
                   ?>
                   <tr>
                     <td><?php echo $key+1; ?></td>
-                    <td><img class="img_thumb" src="<?php echo $slider->imageSLIDER;?>" alt="<?php echo $slider->titleSLIDER;?>"/></td>
-                    <td><?php echo $slider->titleSLIDER; ?></td>
-                    <td><?php echo $slider->descSLIDER; ?></td>
-                    <td><?php echo date('d F Y', strtotime($slider->createdateSLIDER));?></td>
                     <?php
                     $icndel = '&#xE16C;';
                     $msg1 = 'Are you sure want to delete this data ?';
@@ -72,6 +68,10 @@ $url = base_url().'hooplaadmin/'.$controller.'/'.$actions;
                       <a href="#" onclick="UIkit.modal.confirm('<?php echo $msg1; ?>', function(){ document.location.href='<?php echo site_url($url1);?>'; });"><i class="md-icon material-icons"><?php echo $icndel; ?></i></a>
                       <a href="#" onclick="UIkit.modal.confirm('<?php echo $msg2; ?>', function(){ document.location.href='<?php echo site_url($url2);?>'; });"><i class="md-icon material-icons">&#xE254;</i></a>
                     </td>
+                    <td><img class="img_thumb" src="<?php echo $slider->imageSLIDER;?>" alt="<?php echo $slider->titleSLIDER;?>"/></td>
+                    <td><?php echo $slider->titleSLIDER; ?></td>
+                    <td><?php echo $slider->descSLIDER; ?></td>
+                    <td><?php echo date('d F Y', strtotime($slider->createdateSLIDER));?></td>
                   </tr>
                   <?php } ?>
                   <?php } ?>
