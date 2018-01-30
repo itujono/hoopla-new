@@ -133,23 +133,33 @@ defined('BASEPATH') OR exit('No direct script access allowed');
               </div>
             </div>
             <div class="uk-grid" data-uk-grid-margin>
-              <div class="uk-width-medium-1-3 uk-margin-top">
+              <div class="uk-width-medium-1-4 uk-margin-top">
                   <label>Nama Barang</label>
                   <br>
                   <input type="text" class="md-input label-fixed" name="namaRENTAL" autocomplete value="<?php echo $getrental->namaRENTAL;?>"/>
                   <p class="text-red"><?php echo form_error('namaRENTAL'); ?></p>
               </div>
-              <div class="uk-width-medium-1-3 uk-margin-top">
+              <div class="uk-width-medium-1-4 uk-margin-top">
                   <label>Brand Barang</label>
                   <br>
                   <?php echo form_dropdown('idBRAND', $getbrand, $getrental->idBRAND,'required id="select_demo_5" data-md-selectize data-md-selectize-bottom'); ?>
                   <p class="text-red"><?php echo form_error('idBRAND'); ?></p>
               </div>
-              <div class="uk-width-medium-1-3 uk-margin-top">
+              <div class="uk-width-medium-1-4 uk-margin-top">
                 <label>Type Barang</label>
                 <br>
                   <?php echo form_dropdown('idTYPE', $gettype, $getrental->idTYPE,'required id="select_demo_5" data-md-selectize data-md-selectize-bottom'); ?>
                   <p class="text-red"><?php echo form_error('idTYPE'); ?></p>
+              </div>
+              <div class="uk-width-medium-1-4 uk-margin-top">
+                <div class="parsley-row">
+                  <?php
+                    $checkdis= '';
+                    if($getrental->popularRENTAL == 1) $checkdis = 'checked' ;
+                  ?>
+                  <input type="checkbox" data-switchery <?php echo $checkdis; ?> data-switchery-size="large" data-switchery-color="#7cb342" name="popularRENTAL" id="switch_demo_large">
+                  <label for="switch_demo_large" class="inline-label"><b>Popular Produk</b></label>
+                </div>
               </div>
             </div>
             <div class="uk-grid" data-uk-grid-margin>
@@ -177,37 +187,47 @@ defined('BASEPATH') OR exit('No direct script access allowed');
               </div>
             </div>
             <div class="uk-grid" data-uk-grid-margin>
-              <div class="uk-width-medium-1-3 uk-margin-top">
-                  <label>Harga per 2 Minggu</label>
-                  <br>
-                  <?php
-                        $price = '';
-                        if(!empty($getrental->harga2RENTAL))$price = $getrental->harga2RENTAL;
-                    ?>
-                    <input class="md-input masked_input label-fixed" id="masked_currency" type="text" data-inputmask="'alias': 'currency', 'groupSeparator': '.', 'autoGroup': true, 'digits': 0, 'digitsOptional': false, 'prefix': 'Rp. ', 'placeholder': '0'" data-inputmask-showmaskonhover="false" name="harga2RENTAL" value="<?php echo $price;?>" required>
-                  <p class="text-red"><?php echo form_error('harga2RENTAL'); ?></p>
-              </div>
-              <div class="uk-width-medium-1-3 uk-margin-top">
-                  <label>Harga per 4 Minggu</label>
-                  <br>
-                  <?php
-                        $price = '';
-                        if(!empty($getrental->harga4RENTAL))$price = $getrental->harga4RENTAL;
-                    ?>
-                    <input class="md-input masked_input label-fixed" id="masked_currency" type="text" data-inputmask="'alias': 'currency', 'groupSeparator': '.', 'autoGroup': true, 'digits': 0, 'digitsOptional': false, 'prefix': 'Rp. ', 'placeholder': '0'" data-inputmask-showmaskonhover="false" name="harga4RENTAL" value="<?php echo $price;?>" required>
-                  <p class="text-red"><?php echo form_error('harga4RENTAL'); ?></p>
-              </div>
-              <div class="uk-width-medium-1-3 uk-margin-top">
-                <div class="parsley-row">
-                  <?php
-                    $checkdis= '';
-                    if($getrental->popularRENTAL == 1) $checkdis = 'checked' ;
-                  ?>
-                  <input type="checkbox" data-switchery <?php echo $checkdis; ?> data-switchery-size="large" data-switchery-color="#7cb342" name="popularRENTAL" id="switch_demo_large">
-                  <label for="switch_demo_large" class="inline-label"><b>Popular Produk</b></label>
+                <div class="uk-width-medium-1-4 uk-margin-top">
+                    <label>Harga per 1 Minggu</label>
+                    <br>
+                    <?php
+                          $price1 = '';
+                          if(!empty($getrental->harga1RENTAL))$price1 = $getrental->harga1RENTAL;
+                      ?>
+                      <input class="md-input masked_input label-fixed" id="masked_currency" type="text" data-inputmask="'alias': 'currency', 'groupSeparator': '.', 'autoGroup': true, 'digits': 0, 'digitsOptional': false, 'prefix': 'Rp. ', 'placeholder': '0'" data-inputmask-showmaskonhover="false" name="harga1RENTAL" value="<?php echo $price1;?>" required>
+                    <p class="text-red"><?php echo form_error('harga1RENTAL'); ?></p>
+                </div>
+                <div class="uk-width-medium-1-4 uk-margin-top">
+                    <label>Harga per 2 Minggu</label>
+                    <br>
+                    <?php
+                          $price2 = '';
+                          if(!empty($getrental->harga2RENTAL))$price2 = $getrental->harga2RENTAL;
+                      ?>
+                      <input class="md-input masked_input label-fixed" id="masked_currency" type="text" data-inputmask="'alias': 'currency', 'groupSeparator': '.', 'autoGroup': true, 'digits': 0, 'digitsOptional': false, 'prefix': 'Rp. ', 'placeholder': '0'" data-inputmask-showmaskonhover="false" name="harga2RENTAL" value="<?php echo $price2;?>" required>
+                    <p class="text-red"><?php echo form_error('harga2RENTAL'); ?></p>
+                </div>
+                <div class="uk-width-medium-1-4 uk-margin-top">
+                    <label>Harga per 3 Minggu</label>
+                    <br>
+                    <?php
+                          $price3 = '';
+                          if(!empty($getrental->harga3RENTAL))$price3 = $getrental->harga3RENTAL;
+                      ?>
+                      <input class="md-input masked_input label-fixed" id="masked_currency" type="text" data-inputmask="'alias': 'currency', 'groupSeparator': '.', 'autoGroup': true, 'digits': 0, 'digitsOptional': false, 'prefix': 'Rp. ', 'placeholder': '0'" data-inputmask-showmaskonhover="false" name="harga3RENTAL" value="<?php echo $price3;?>" required>
+                    <p class="text-red"><?php echo form_error('harga3RENTAL'); ?></p>
+                </div>
+                <div class="uk-width-medium-1-4 uk-margin-top">
+                    <label>Harga per 4 Minggu</label>
+                    <br>
+                    <?php
+                          $price4 = '';
+                          if(!empty($getrental->harga4RENTAL))$price4 = $getrental->harga4RENTAL;
+                      ?>
+                      <input class="md-input masked_input label-fixed" id="masked_currency" type="text" data-inputmask="'alias': 'currency', 'groupSeparator': '.', 'autoGroup': true, 'digits': 0, 'digitsOptional': false, 'prefix': 'Rp. ', 'placeholder': '0'" data-inputmask-showmaskonhover="false" name="harga4RENTAL" value="<?php echo $price4;?>" required>
+                    <p class="text-red"><?php echo form_error('harga4RENTAL'); ?></p>
                 </div>
               </div>
-            </div>
             <div class="uk-grid" data-uk-grid-margin>
               <div class="uk-width-medium-1-1 uk-margin-top">
                 <label>Deskripsi Barang</label>

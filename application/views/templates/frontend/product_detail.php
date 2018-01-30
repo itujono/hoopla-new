@@ -34,6 +34,24 @@
                     <span><i class="fa fa-clock-o"></i></span>
                 </div>
                 <div>
+                    <p>Per 1 minggu</p>
+                    <h4><?php echo number_format($getrental->harga2RENTAL, 0,',','.'); ?></h4>
+                </div>
+            </div>
+            <div class="minimum">
+                <div>
+                    <span><i class="fa fa-clock-o"></i></span>
+                </div>
+                <div>
+                    <p>Per 2 minggu</p>
+                    <h4><?php echo number_format($getrental->harga2RENTAL, 0,',','.'); ?></h4>
+                </div>
+            </div>
+            <div class="minimum">
+                <div>
+                    <span><i class="fa fa-clock-o"></i></span>
+                </div>
+                <div>
                     <p>Per 4 minggu</p>
                     <h4><?php echo number_format($getrental->harga4RENTAL, 0,',','.'); ?></h4>
                 </div>
