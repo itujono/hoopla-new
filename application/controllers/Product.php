@@ -68,6 +68,9 @@ class Product extends Frontend_Controller {
 
 		$id = base64_decode(cutting($id));
 		$data['getrental'] = $this->Rental_m->selectall_rental($id)->row();
+		if(empty($data['getrental'])){
+			redirect('product','refresh');
+		}
 		$map = directory_map('assets/upload/rental/pic-rental-'.folenc($data['getrental']->idRENTAL), FALSE, TRUE);
 		$maps = array();
 		if(!empty($map)){

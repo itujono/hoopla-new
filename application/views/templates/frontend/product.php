@@ -19,7 +19,15 @@
                 <div class="card-bottom">
                     <a href="<?php echo base_url();?>product/detail/<?php echo base64_encode($src->idRENTAL).'-'.seo_url($src->namaRENTAL);?>">
                         <h3><?php echo $src->namaRENTAL;?></h3>
+                        <?php
+                            if(!empty($src->harga2RENTAL) || $src->harga2RENTAL != 0){
+                        ?>
                         <small>Rp. <?php echo number_format($src->harga2RENTAL, 0,',','.'); ?></small>
+                        <?php } elseif (!empty($src->harga4RENTAL) || $src->harga4RENTAL != 0) { ?>
+                        <small>Rp. <?php echo number_format($src->harga4RENTAL, 0,',','.'); ?></small>
+                        <?php } else { ?>
+                        <small> - </small>
+                        <?php } ?>
                     </a>
                 </div>
             </div>
@@ -46,7 +54,15 @@
                 <div class="card-bottom">
                     <a href="<?php echo base_url();?>product/detail/<?php echo base64_encode($sort->idRENTAL).'-'.seo_url($sort->namaRENTAL);?>">
                         <h3><?php echo $sort->namaRENTAL;?></h3>
+                        <?php
+                            if(!empty($sort->harga2RENTAL) || $sort->harga2RENTAL != 0){
+                        ?>
                         <small>Rp. <?php echo number_format($sort->harga2RENTAL, 0,',','.'); ?></small>
+                        <?php } elseif (!empty($sort->harga4RENTAL) || $sort->harga4RENTAL != 0) { ?>
+                        <small>Rp. <?php echo number_format($sort->harga4RENTAL, 0,',','.'); ?></small>
+                        <?php } else { ?>
+                        <small> - </small>
+                        <?php } ?>
                     </a>
                 </div>
             </div>
@@ -73,7 +89,15 @@
                 <div class="card-bottom">
                     <a href="<?php echo base_url();?>product/detail/<?php echo base64_encode($src->idRENTAL).'-'.seo_url($src->namaRENTAL);?>">
                         <h3><?php echo $src->namaRENTAL;?></h3>
+                        <?php
+                            if(!empty($src->harga2RENTAL) || $src->harga2RENTAL != 0){
+                        ?>
                         <small>Rp. <?php echo number_format($src->harga2RENTAL, 0,',','.'); ?></small>
+                        <?php } elseif (!empty($src->harga4RENTAL) || $src->harga4RENTAL != 0) { ?>
+                        <small>Rp. <?php echo number_format($src->harga4RENTAL, 0,',','.'); ?></small>
+                        <?php } else { ?>
+                        <small> - </small>
+                        <?php } ?>
                     </a>
                 </div>
             </div>
@@ -131,7 +155,15 @@
                 <div class="card-bottom">
                     <a href="<?php echo base_url();?>product/detail/<?php echo base64_encode($rent->idRENTAL).'-'.seo_url($rent->namaRENTAL);?>">
                         <h3><?php echo $rent->namaRENTAL;?></h3>
+                        <?php
+                            if(!empty($rent->harga2RENTAL) || $rent->harga2RENTAL != 0){
+                        ?>
                         <small>Rp. <?php echo number_format($rent->harga2RENTAL, 0,',','.'); ?></small>
+                        <?php } elseif (!empty($rent->harga4RENTAL) || $rent->harga4RENTAL != 0) { ?>
+                        <small>Rp. <?php echo number_format($rent->harga4RENTAL, 0,',','.'); ?></small>
+                        <?php } else { ?>
+                        <small> - </small>
+                        <?php } ?>
                     </a>
                 </div>
             </div>
@@ -156,7 +188,15 @@
                 <div class="card-bottom">
                     <a href="<?php echo base_url();?>product/detail/<?php echo base64_encode($rentcat->idRENTAL).'-'.seo_url($rentcat->namaRENTAL);?>">
                         <h3><?php echo $rentcat->namaRENTAL;?></h3>
+                        <?php
+                            if(!empty($rentcat->harga2RENTAL) || $rentcat->harga2RENTAL != 0){
+                        ?>
                         <small>Rp. <?php echo number_format($rentcat->harga2RENTAL, 0,',','.'); ?></small>
+                        <?php } elseif (!empty($rentcat->harga4RENTAL) || $rentcat->harga4RENTAL != 0) { ?>
+                        <small>Rp. <?php echo number_format($rentcat->harga4RENTAL, 0,',','.'); ?></small>
+                        <?php } else { ?>
+                        <small> - </small>
+                        <?php } ?>
                     </a>
                 </div>
             </div>
@@ -181,7 +221,15 @@
                 <div class="card-bottom">
                     <a href="<?php echo base_url();?>product/detail/<?php echo base64_encode($age->idRENTAL).'-'.seo_url($age->namaRENTAL);?>">
                         <h3><?php echo $age->namaRENTAL;?></h3>
+                        <?php
+                            if(!empty($age->harga2RENTAL) || $age->harga2RENTAL != 0){
+                        ?>
                         <small>Rp. <?php echo number_format($age->harga2RENTAL, 0,',','.'); ?></small>
+                        <?php } elseif (!empty($age->harga4RENTAL) || $age->harga4RENTAL != 0) { ?>
+                        <small>Rp. <?php echo number_format($age->harga4RENTAL, 0,',','.'); ?></small>
+                        <?php } else { ?>
+                        <small> - </small>
+                        <?php } ?>
                     </a>
                 </div>
             </div>
