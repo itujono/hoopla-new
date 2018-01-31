@@ -2504,11 +2504,16 @@ p.par-heading {
   margin-bottom: 10px;
 }
 
-.discount-item .subtitle { 
+.discount-item .subtitle {
   color: #999;
   font-weight: normal;
   margin-top: -.5em;
   margin-bottom: 2em;
+}
+
+.description ul li {
+  line-height: 1.6;
+  list-style-type: disc;
 }
 
 .table-comparison {

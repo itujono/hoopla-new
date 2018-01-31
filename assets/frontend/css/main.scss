@@ -1918,6 +1918,15 @@ p.par-heading {
     } 
 }
 
+.description {
+    ul {
+        li {
+            line-height: $lineHeightP;
+            list-style-type: disc;
+        }
+    }
+}
+
 .table-comparison {
     margin-bottom: 3em;
     table {
