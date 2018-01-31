@@ -58,7 +58,7 @@ class Package extends Admin_Controller {
         $this->form_validation->set_message('trim', 'Form %s adalah Trim');
 
 		if ($this->form_validation->run() == TRUE) {
-			$data = $this->Package_m->array_from_post(array('titlePAKET','validPAKET','tablePAKET','titlebenefitPAKET','descbenefitPAKET','titlebuttonPAKET','linkbuttonPAKET','featuredPAKET'));
+			$data = $this->Package_m->array_from_post(array('titlePAKET','validPAKET','titlebenefitPAKET','descbenefitPAKET','titlebuttonPAKET','linkbuttonPAKET','featuredPAKET'));
 			if($data['featuredPAKET'] == 'on')$data['featuredPAKET']=1;
 			else $data['featuredPAKET']=0;
 			$data['descbenefitPAKET'] = encodingdata($this->input->post('title_benefit'), 0, $this->input->post('desc_benefit'));
@@ -68,6 +68,7 @@ class Package extends Admin_Controller {
 			if(empty($id))$id=NULL;
 			$data = $this->security->xss_clean($data);
 			$data['descPAKET'] = $this->input->post('descPAKET');
+			$data['tablePAKET'] = $this->input->post('tablePAKET');
 			$idsave = $this->Package_m->save($data, $id);
 
 			$subject = $idsave;

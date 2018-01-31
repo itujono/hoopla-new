@@ -19,7 +19,7 @@
                     ?>
             </div>
 
-            <div class="table-comparison">
+            <div class="description">
                 <?php echo $pac->tablePAKET;?>
             </div>
 
