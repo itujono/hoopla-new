@@ -38,8 +38,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                   <th>Brand</th>
                   <th>Type</th>
                   <th>Age</th>
-                  <th>Harga per 2 Minggu</th>
-                  <th>Harga per 4 Minggu</th>
                   <th>Created</th>
               </tr>
             </thead>
@@ -52,8 +50,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 <th>Brand</th>
                 <th>Type</th>
                 <th>Age</th>
-                <th>Harga per 2 Minggu</th>
-                <th>Harga per 4 Minggu</th>
                 <th>Created</th>
               </tr>
             </tfoot>
@@ -97,11 +93,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                   <?php foreach ($multiple_age as $val) { ?>
                     (<?php echo $val->namaAGE;?>) - <a href="#" onclick="UIkit.modal.confirm('Are you sure want to delete this data?', function(){ document.location.href='<?php echo base_url().'hooplaadmin/'.$controller."/delete_join_age_rental/".urlencode(encode($val->idAGEJOINRENTAL)); ?>'; });">
                       <span><i class="fa fa-times">X</i></span>
-                    </a> 
+                    </a>
+                    <br>
                   <?php } ?>
                 </td>
-                <td>Rp. <?php echo number_format($rental->harga2RENTAL, 0,',','.'); ?></td>
-                <td>Rp. <?php echo number_format($rental->harga4RENTAL, 0,',','.'); ?></td>
                 <td><?php echo date('d F Y', strtotime($rental->createdateRENTAL));?></td>
               </tr>
             <?php } ?>
@@ -194,7 +189,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                           $price1 = '';
                           if(!empty($getrental->harga1RENTAL))$price1 = $getrental->harga1RENTAL;
                       ?>
-                      <input class="md-input masked_input label-fixed" id="masked_currency" type="text" data-inputmask="'alias': 'currency', 'groupSeparator': '.', 'autoGroup': true, 'digits': 0, 'digitsOptional': false, 'prefix': 'Rp. ', 'placeholder': '0'" data-inputmask-showmaskonhover="false" name="harga1RENTAL" value="<?php echo $price1;?>" required>
+                      <input class="md-input masked_input label-fixed" id="masked_currency" type="text" data-inputmask="'alias': 'currency', 'groupSeparator': '.', 'autoGroup': true, 'digits': 0, 'digitsOptional': false, 'prefix': 'Rp. ', 'placeholder': '0'" data-inputmask-showmaskonhover="false" name="harga1RENTAL" value="<?php echo $price1;?>">
                     <p class="text-red"><?php echo form_error('harga1RENTAL'); ?></p>
                 </div>
                 <div class="uk-width-medium-1-4 uk-margin-top">
@@ -204,7 +199,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                           $price2 = '';
                           if(!empty($getrental->harga2RENTAL))$price2 = $getrental->harga2RENTAL;
                       ?>
-                      <input class="md-input masked_input label-fixed" id="masked_currency" type="text" data-inputmask="'alias': 'currency', 'groupSeparator': '.', 'autoGroup': true, 'digits': 0, 'digitsOptional': false, 'prefix': 'Rp. ', 'placeholder': '0'" data-inputmask-showmaskonhover="false" name="harga2RENTAL" value="<?php echo $price2;?>" required>
+                      <input class="md-input masked_input label-fixed" id="masked_currency" type="text" data-inputmask="'alias': 'currency', 'groupSeparator': '.', 'autoGroup': true, 'digits': 0, 'digitsOptional': false, 'prefix': 'Rp. ', 'placeholder': '0'" data-inputmask-showmaskonhover="false" name="harga2RENTAL" value="<?php echo $price2;?>">
                     <p class="text-red"><?php echo form_error('harga2RENTAL'); ?></p>
                 </div>
                 <div class="uk-width-medium-1-4 uk-margin-top">
@@ -214,7 +209,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                           $price3 = '';
                           if(!empty($getrental->harga3RENTAL))$price3 = $getrental->harga3RENTAL;
                       ?>
-                      <input class="md-input masked_input label-fixed" id="masked_currency" type="text" data-inputmask="'alias': 'currency', 'groupSeparator': '.', 'autoGroup': true, 'digits': 0, 'digitsOptional': false, 'prefix': 'Rp. ', 'placeholder': '0'" data-inputmask-showmaskonhover="false" name="harga3RENTAL" value="<?php echo $price3;?>" required>
+                      <input class="md-input masked_input label-fixed" id="masked_currency" type="text" data-inputmask="'alias': 'currency', 'groupSeparator': '.', 'autoGroup': true, 'digits': 0, 'digitsOptional': false, 'prefix': 'Rp. ', 'placeholder': '0'" data-inputmask-showmaskonhover="false" name="harga3RENTAL" value="<?php echo $price3;?>">
                     <p class="text-red"><?php echo form_error('harga3RENTAL'); ?></p>
                 </div>
                 <div class="uk-width-medium-1-4 uk-margin-top">
@@ -224,7 +219,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                           $price4 = '';
                           if(!empty($getrental->harga4RENTAL))$price4 = $getrental->harga4RENTAL;
                       ?>
-                      <input class="md-input masked_input label-fixed" id="masked_currency" type="text" data-inputmask="'alias': 'currency', 'groupSeparator': '.', 'autoGroup': true, 'digits': 0, 'digitsOptional': false, 'prefix': 'Rp. ', 'placeholder': '0'" data-inputmask-showmaskonhover="false" name="harga4RENTAL" value="<?php echo $price4;?>" required>
+                      <input class="md-input masked_input label-fixed" id="masked_currency" type="text" data-inputmask="'alias': 'currency', 'groupSeparator': '.', 'autoGroup': true, 'digits': 0, 'digitsOptional': false, 'prefix': 'Rp. ', 'placeholder': '0'" data-inputmask-showmaskonhover="false" name="harga4RENTAL" value="<?php echo $price4;?>">
                     <p class="text-red"><?php echo form_error('harga4RENTAL'); ?></p>
                 </div>
               </div>

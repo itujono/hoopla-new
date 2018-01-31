@@ -18,15 +18,25 @@ class Rental_m extends MY_Model{
 			'label' => 'Brand Barang Rental', 
 			'rules' => 'trim|required'
 		),
+		'harga1RENTAL' => array(
+			'field' => 'harga1RENTAL', 
+			'label' => 'Harga Per 1 Minggu Rental', 
+			'rules' => 'trim'
+		),
 		'harga2RENTAL' => array(
 			'field' => 'harga2RENTAL', 
 			'label' => 'Harga Per 2 Minggu Rental', 
-			'rules' => 'trim|required'
+			'rules' => 'trim'
+		),
+		'harga3RENTAL' => array(
+			'field' => 'harga3RENTAL', 
+			'label' => 'Harga Per 3 Minggu Rental', 
+			'rules' => 'trim'
 		),
 		'harga4RENTAL' => array(
 			'field' => 'harga4RENTAL', 
 			'label' => 'Harga Per 4 Minggu Rental', 
-			'rules' => 'trim|required'
+			'rules' => 'trim'
 		),
 		'idAGE[]' => array(
 			'field' => 'idAGE[]', 
@@ -54,12 +64,13 @@ class Rental_m extends MY_Model{
 		$rental->idRENTAL = '';
 		$rental->namaRENTAL = '';
 		$rental->idBRAND = '';
+		$rental->harga1RENTAL = '';
 		$rental->harga2RENTAL = '';
+		$rental->harga3RENTAL = '';
 		$rental->harga4RENTAL = '';
 		$rental->umurRENTAL = '';
 		$rental->descriptionRENTAL = '';
 		$rental->idTYPE = '';
-		$rental->map = '';
 		$rental->statusRENTAL = '';
 		$rental->popularRENTAL = '';
 		return $rental;

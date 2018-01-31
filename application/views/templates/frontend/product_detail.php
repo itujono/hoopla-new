@@ -16,28 +16,24 @@
     </div>
     <div class="product-description">
         <h2 class="title"><?php echo $getrental->namaRENTAL;?></h2>
-        <h4 class="price">Rp. <?php echo number_format($getrental->harga2RENTAL, 0,',','.'); ?>
-            <small>/  2 Minggu</small>
-        </h4>
+        <?php $multiple_age = select_all_multiple_age_for_row($getrental->idRENTAL); ?>
+        <h4 class="price">Tipe: <?php echo $getrental->namaTYPE;?> Umur: <?php foreach ($multiple_age as $val_age) {?><?php echo $val_age->namaAGE.', '?><?php } ?></h4>
         <div class="infos">
-            <div class="minimum">
-                <div>
-                    <span><i class="fa fa-clock-o"></i></span>
-                </div>
-                <div>
-                    <p>Per 2 minggu</p>
-                    <h4><?php echo number_format($getrental->harga2RENTAL, 0,',','.'); ?></h4>
-                </div>
-            </div>
+        <?php
+            if(!empty($getrental->harga1RENTAL)){
+        ?>
             <div class="minimum">
                 <div>
                     <span><i class="fa fa-clock-o"></i></span>
                 </div>
                 <div>
                     <p>Per 1 minggu</p>
-                    <h4><?php echo number_format($getrental->harga2RENTAL, 0,',','.'); ?></h4>
+                    <h4><?php echo number_format($getrental->harga1RENTAL, 0,',','.'); ?></h4>
                 </div>
             </div>
+        <?php }
+            if(!empty($getrental->harga2RENTAL)){
+        ?>
             <div class="minimum">
                 <div>
                     <span><i class="fa fa-clock-o"></i></span>
@@ -47,6 +43,21 @@
                     <h4><?php echo number_format($getrental->harga2RENTAL, 0,',','.'); ?></h4>
                 </div>
             </div>
+        <?php } 
+            if(!empty($getrental->harga3RENTAL)){
+        ?>
+            <div class="minimum">
+                <div>
+                    <span><i class="fa fa-clock-o"></i></span>
+                </div>
+                <div>
+                    <p>Per 3 minggu</p>
+                    <h4><?php echo number_format($getrental->harga3RENTAL, 0,',','.'); ?></h4>
+                </div>
+            </div>
+        <?php } 
+            if(!empty($getrental->harga4RENTAL)){
+        ?>
             <div class="minimum">
                 <div>
                     <span><i class="fa fa-clock-o"></i></span>
@@ -56,6 +67,7 @@
                     <h4><?php echo number_format($getrental->harga4RENTAL, 0,',','.'); ?></h4>
                 </div>
             </div>
+        <?php } ?>
         </div>
         <p class="description"><?php echo $getrental->descriptionRENTAL;?></p>
         <p class="category">Kategori: <a href="#"><?php echo $getrental->namaBRAND;?></a></p>
